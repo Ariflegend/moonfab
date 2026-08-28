@@ -1,0 +1,1053 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_jweqe3": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_nqYqkJ": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "text_Chx7h4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.vehicle_title.value }}</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "body"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_hEJrh4": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>MoonShade and MoonWall Bundle Deal—</strong>Purchase a MoonShade<br/>and a MoonWall and get $10 off</p>",
+            "text-additional": "<p><strong>MoonShade and MoonWall Bundle Deal—</strong>Purchase a MoonShade and a MoonWall and get $10 off</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "text_NyVEpR": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>About MoonShade</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "body"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "products_bundle_UqyYQL": {
+          "type": "products-bundle",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_jweqe3",
+        "judge_me_reviews_preview_badge_nqYqkJ",
+        "text_Chx7h4",
+        "price",
+        "text_hEJrh4",
+        "text_NyVEpR",
+        "description",
+        "buy_buttons",
+        "products_bundle_UqyYQL"
+      ],
+      "settings": {
+        "show_multicolumn": true,
+        "add_button_shade": "",
+        "add-text": "Add to cart",
+        "add_button_url": "#",
+        "add_custom_class": "moon-vehicle-pdp moonshade-pdp",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "primary_setup_xGhyzn": {
+      "type": "primary-setup",
+      "blocks": {
+        "text_WaygLe": {
+          "type": "text",
+          "settings": {
+            "title": "Default Title"
+          }
+        }
+      },
+      "block_order": [
+        "text_WaygLe"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_wYGDAp": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Enp8Ah": {
+          "type": "button",
+          "settings": {
+            "button_label": "{{ product.metafields.custom.expertbutton_name.value }}",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Enp8Ah"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "shop-setup-for-runner",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_WbTTLf": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Wn4bRd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/mve-logo-horizontal_dd1e0c4e-45f1-4f3b-812c-b61ae91f6d76_png.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Wn4bRd"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "m-v-e",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "moon_vehicle_bio_WdrVgw": {
+      "type": "moon-vehicle-bio",
+      "disabled": true,
+      "settings": {}
+    },
+    "collapsible_content_FQDwUH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wdYWRb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 1",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_xcQPRk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 2",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_YPPpnA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 3",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_zxdadT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 4",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_iJhQWN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 5",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_K4JXky": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 6",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wdYWRb",
+        "collapsible_row_xcQPRk",
+        "collapsible_row_YPPpnA",
+        "collapsible_row_zxdadT",
+        "collapsible_row_iJhQWN",
+        "collapsible_row_K4JXky"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption-custom-cls": "faq-sec moon-faq",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": true,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1736157872bcb673c3": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    },
+    "rich_text_RBJUUP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9gR6c8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_rrCEA8": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_cehJAd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9gR6c8",
+        "text_rrCEA8",
+        "button_cehJAd"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "bg-co-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "home_product_bundle_LXc7Ym": {
+      "type": "home-product-bundle",
+      "blocks": {
+        "product_slide_gzJP6Q": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "ryans-setup"
+          }
+        },
+        "product_slide_MbCkfW": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "jason-fletchers-setup"
+          }
+        },
+        "product_slide_HnxjEX": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "george-and-arlenes-setup"
+          }
+        },
+        "product_slide_mPQ7EF": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "basecamp-rail-anchors"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_gzJP6Q",
+        "product_slide_MbCkfW",
+        "product_slide_HnxjEX",
+        "product_slide_mPQ7EF"
+      ],
+      "disabled": true,
+      "settings": {
+        "slider_title": "SEE ALL",
+        "add_button_class": "",
+        "button_url": "",
+        "button_title": "",
+        "add_title-cls": "explore Other vehicle experts"
+      }
+    },
+    "rich_text_hEgmr7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jiYBRV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jiYBRV"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_page_icon_nRR9zT": {
+      "type": "product-page-icon",
+      "settings": {
+        "image": "shopify://shop_images/moon-wall-logo_png.png",
+        "link_text": "About",
+        "link_url": "#about",
+        "link_text2": "Features",
+        "link_url2": "#set-features",
+        "link_text3": "Reviews",
+        "link_url3": "#shopify-block-AZmtxTDdieldnYnlJQ__okendo_reviews_widget_gL7Dky",
+        "link_text4": "Specs",
+        "link_url4": "#specification",
+        "link_text5": "Find Your Setup",
+        "link_url5": "",
+        "link_text6": "",
+        "link_url6": ""
+      }
+    },
+    "rich_text_dPLAC9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wGkJtC": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>FEATURED IN</strong>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wGkJtC"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile feat-in-mob",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_BbkYe4": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_gfCLNg": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "FEATURED IN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_h8BEWm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_e6b5958e-fd01-49fb-8210-c61d3fac3efc.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TNBFkn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qTaQBA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WcAVBr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_btjwKf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_gfCLNg",
+        "column_h8BEWm",
+        "column_TNBFkn",
+        "column_qTaQBA",
+        "column_WcAVBr",
+        "column_btjwKf"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle featured-line moonshade-feature",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_JnFjLz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_zJXg7L": {
+          "type": "heading",
+          "settings": {
+            "heading": "Privacy on the Go",
+            "heading_size": "h2"
+          }
+        },
+        "text_hFzNwJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Looking for a way to create a more private outdoor space? MoonWall is a modular, packable privacy screen that can be attached to your existing MoonShade to provide continuous shade and increased privacy. The Short MoonWall attaches to the 7 ft side of MoonShade and provides shade and privacy for smaller vehicle setups. MoonWall is made of durable, light weight materials and is available in Shadow Blue. The Short MoonWall measures 78\"x78\" and folds up to fit easily inside the MoonShade carry bag.<br/><br/>Find MoonWall Short <a href=\"#\" title=\"#\">here</a>.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zJXg7L",
+        "text_hFzNwJ"
+      ],
+      "settings": {
+        "img-with-txt-class": "moonshade-pdp-imgtext how-do-attach privacy-image privcy-for-mob",
+        "img-id": "about",
+        "image": "shopify://shop_images/moonwall-1_9240b432-da3b-42be-9094-1ae160b7be20_jpg.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_t7Dxj7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jTetX7": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jTetX7"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "mobile_video_LQFKJc": {
+      "type": "mobile-video",
+      "settings": {
+        "heading": "Setup Video",
+        "img-id": "",
+        "video_controls": true,
+        "add_custom_class": "moonshade-product setup-video",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/wE7KT_JMxow",
+        "cover_image": "shopify://shop_images/Body_b5bf46ec-72db-4fb3-9436-a51071b70635.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image_link_text_bGV9Mh": {
+      "type": "image-link-text",
+      "disabled": true,
+      "settings": {
+        "add_content": "Find more Moon videos and tutorials"
+      }
+    },
+    "rich_text_bXDNpD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_H7EmBV": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_hNJpDw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FEATURES</p>"
+          }
+        },
+        "button_ztV8pe": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_H7EmBV",
+        "text_hNJpDw",
+        "button_ztV8pe"
+      ],
+      "settings": {
+        "rich-custom-cls": "feat-mobi",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-cd993f03-ca7c-415f-a02e-1034ba9654c7",
+        "full_width": true,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_er7aeB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_q89fgJ": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Features",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cLYm8y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_0004bed1-7a33-4552-b292-aa318aaff251.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Durable<br/>Construction</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8rFf6P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/feather.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Lightweight<br/>Materials</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_K94iiq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_009f1b54-3d8e-480f-8574-33ac27439804.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Packable Design</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ddqhGM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/caribiner.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Easy Attachment</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_L7i6Nx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/setup_svg.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Simple Setup</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_q89fgJ",
+        "column_cLYm8y",
+        "column_8rFf6P",
+        "column_K94iiq",
+        "column_ddqhGM",
+        "column_L7i6Nx"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle featured-line moonshade-feature moonwall-short-feature",
+        "img-id": "set-features",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-cd993f03-ca7c-415f-a02e-1034ba9654c7",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_gXCawc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6eJfVr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Background_Shadow.png",
+            "videoupload": "",
+            "title": "Privacy",
+            "text": "<p>More privacy means you can prep meals in peace, take a nap, change or shower,  dance like no one’s watching, or just spend some quality time with your favorite person.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_kRcpnK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/245-F68A6580_d02b8541-eda5-443f-a683-4809a311dfb1_jpg.png",
+            "videoupload": "",
+            "title": "Weather",
+            "text": "<p>Blocks out the sun's rays so you can work in peace. Additionally, MoonWall acts as a barrier for light winds and precipitation, making your space more comfortable.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zw9bnz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/247-F68A6587_jpg_0ffb18c8-86fa-4609-800f-28fca4c6fd73.png",
+            "videoupload": "",
+            "title": "More Room",
+            "text": "<p>MoonWall expands your MoonShade’s live able space. Spread out, invite the whole crew. More room = more fun.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6eJfVr",
+        "column_kRcpnK",
+        "column_zw9bnz"
+      ],
+      "settings": {
+        "give-title": "privacy-weather-room",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_rCVCXX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_yK9PeX": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Find Shade Anywhere",
+            "text": "<p>MoonShade’s versatile design andhardware makes it easy to set up and packdown in almost any environment.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8Jp4YY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_moonshade-setup-sprinter-van_jpg.png",
+            "videoupload": "",
+            "title": "Mobile Living",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_k7QA9p": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-field-with-moonshade-bag_jpg_24d0ab00-a158-40aa-a0b1-b6eac4388b7e.png",
+            "videoupload": "",
+            "title": "Camping / Adventuring",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8FtNip": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-vest-moonshade_jpg.png",
+            "videoupload": "",
+            "title": "Hunting / Fishing",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_yK9PeX",
+        "column_8Jp4YY",
+        "column_k7QA9p",
+        "column_8FtNip"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "moonshade-product-multi find-shade",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_table_fPmJq3": {
+      "type": "product-table",
+      "blocks": {
+        "item_3a9F8x": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Color",
+            "rich_text": "<p>Shadow Blue</p>"
+          }
+        },
+        "item_dtTzhH": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Weight",
+            "rich_text": "<p>31oz</p>"
+          }
+        },
+        "item_VBKwFB": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Dimensions",
+            "rich_text": "<p>78\"x78\"</p>"
+          }
+        },
+        "item_4YQ4MH": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Components",
+            "rich_text": "<p>Hypalon reinforced corners & Adjustable grommet webbing (18\" of adjustability)<br/>Black anodized aluminum G-hook with 3/4\" wide webbing<br/>12\" guyline cordage through webbing grommets<br/>Steel ground stakes (2)<br/>Carry bag with drawstring</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_3a9F8x",
+        "item_dtTzhH",
+        "item_VBKwFB",
+        "item_4YQ4MH"
+      ],
+      "settings": {
+        "custom_class": "",
+        "product_image": "shopify://shop_images/224-F68A6468_jpg.png",
+        "img-id": "specification",
+        "heading_text": "Specs"
+      }
+    },
+    "image_with_text_zTbNaz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pnBhxe": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>How Do I Attach MoonShade?</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_PVhXr3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our heavy duty anchor options make MoonShade compatiblewith almost any vehicle. Use our setup quiz to find out whichanchor solution is the right fit.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_EcN4hA": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "FIND YOUR SETUP",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pnBhxe",
+        "text_PVhXr3",
+        "button_EcN4hA"
+      ],
+      "disabled": true,
+      "settings": {
+        "img-with-txt-class": "moonshade-pdp-imgtext how-do-attach",
+        "img-id": "about",
+        "image": "shopify://shop_images/Picture_moon-anchors-hero_jpg_10155841-111c-446d-afb9-7160d2589594.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-965e3e0b-28af-4683-821b-d7708903e3c2",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "primary_setup_xGhyzn",
+    "rich_text_wYGDAp",
+    "multicolumn_WbTTLf",
+    "moon_vehicle_bio_WdrVgw",
+    "collapsible_content_FQDwUH",
+    "1736157872bcb673c3",
+    "rich_text_RBJUUP",
+    "home_product_bundle_LXc7Ym",
+    "rich_text_hEgmr7",
+    "product_page_icon_nRR9zT",
+    "rich_text_dPLAC9",
+    "multicolumn_BbkYe4",
+    "image_with_text_JnFjLz",
+    "rich_text_t7Dxj7",
+    "mobile_video_LQFKJc",
+    "image_link_text_bGV9Mh",
+    "rich_text_bXDNpD",
+    "multicolumn_er7aeB",
+    "multicolumn_gXCawc",
+    "multicolumn_rCVCXX",
+    "product_table_fPmJq3",
+    "image_with_text_zTbNaz"
+  ]
+}

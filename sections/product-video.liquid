@@ -1,0 +1,228 @@
+{% if product.metafields.custom.product_video != blank %}
+  <div class="product-video-section">
+    <div class="page-width">
+      <div class="video-wrapper" id="videoWrapper">
+        
+        {% if product.metafields.custom.product_video_thumbnail != blank %}
+          <div class="video-thumbnail" id="videoThumbnail">
+            <img 
+              src="{{ product.metafields.custom.product_video_thumbnail | image_url: width: 1200 }}" 
+              alt="Product Video Thumbnail"
+            >
+            <div class="play-button">&#9658;</div>
+          </div>
+        {% endif %}
+
+        <iframe 
+          id="productVideo"
+          data-src="{{ product.metafields.custom.product_video | replace: 'watch?v=', 'embed/' }}?autoplay=1"
+          frameborder="0" 
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="display:none;">
+        </iframe>
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{%- if section.settings.enable_video_schema and product.metafields.custom.product_video != blank -%}
+  {%- liquid
+    assign product_video_source = product.metafields.custom.product_video | strip
+    assign youtube_id = ''
+
+    if product_video_source contains 'embed/'
+      assign youtube_id = product_video_source | split: 'embed/' | last | split: '?' | first | split: '&' | first
+    elsif product_video_source contains 'watch?v='
+      assign youtube_id = product_video_source | split: 'watch?v=' | last | split: '&' | first
+    elsif product_video_source contains 'youtu.be/'
+      assign youtube_id = product_video_source | split: 'youtu.be/' | last | split: '?' | first | split: '&' | first
+    endif
+  -%}
+  {%- if youtube_id != blank -%}
+  {%- liquid
+    assign video_name = section.settings.video_title | strip
+    if video_name == blank and product
+      assign video_name = product.title | append: ' Video'
+    endif
+    if video_name == blank
+      assign video_name = shop.name
+    endif
+
+    assign video_description = section.settings.video_description | strip_html | strip
+    if video_description == blank and product.description != blank
+      assign video_description = product.description | strip_html | strip
+    endif
+    if video_description == blank
+      assign video_description = shop.description | default: shop.name
+    endif
+
+    assign video_watch_url = 'https://www.youtube.com/watch?v=' | append: youtube_id
+    assign video_embed_url = 'https://www.youtube.com/embed/' | append: youtube_id
+
+    assign video_thumbnail_url = ''
+    if product.metafields.custom.product_video_thumbnail != blank
+      assign video_thumbnail_url = product.metafields.custom.product_video_thumbnail | image_url: width: 1200 | prepend: 'https:'
+    else
+      assign video_thumbnail_url = 'https://i.ytimg.com/vi/' | append: youtube_id | append: '/maxresdefault.jpg'
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": {{ video_name | json }},
+      "description": {{ video_description | json }},
+      "thumbnailUrl": {{ video_thumbnail_url | json }},
+      "embedUrl": {{ video_embed_url | json }},
+      "contentUrl": {{ video_watch_url | json }},
+      "url": {{ video_watch_url | json }}
+      {%- if section.settings.video_upload_date != blank -%}
+      ,
+      "uploadDate": {{ section.settings.video_upload_date | json }}
+      {%- endif -%}
+      {%- if section.settings.video_duration != blank -%}
+      ,
+      "duration": {{ section.settings.video_duration | json }}
+      {%- endif -%}
+      ,
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
+        "url": {{ request.origin | json }}
+        {%- if settings.logo -%}
+        ,
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }}
+        }
+        {%- endif -%}
+      }
+    }
+  </script>
+  {%- endif -%}
+{%- endif -%}
+
+<style>
+.product-video-section {
+  margin: 40px 0;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-wrapper iframe,
+.video-thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+{% comment %} .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+} {% endcomment %}
+
+@media only screen and (max-width: 1100px) {
+.play-button {
+    font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+.play-button {
+    font-size: 12px;
+}
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var thumbnail = document.getElementById("videoThumbnail");
+  var iframe = document.getElementById("productVideo");
+
+  if (thumbnail) {
+    thumbnail.addEventListener("click", function() {
+      iframe.src = iframe.getAttribute("data-src");
+      iframe.style.display = "block";
+      thumbnail.style.display = "none";
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Video",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Structured data (JSON-LD)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_schema",
+      "default": false,
+      "label": "Enable VideoObject schema",
+      "info": "Outputs VideoObject schema from the product video metafield and thumbnail."
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video title",
+      "info": "Optional override. Defaults to the product title plus \" Video\"."
+    },
+    {
+      "type": "textarea",
+      "id": "video_description",
+      "label": "Video description",
+      "info": "Optional override. Defaults to the product description."
+    },
+    {
+      "type": "text",
+      "id": "video_upload_date",
+      "label": "Video upload date",
+      "info": "Optional. Use ISO format, e.g. 2024-03-15"
+    },
+    {
+      "type": "text",
+      "id": "video_duration",
+      "label": "Video duration",
+      "info": "Optional. Use ISO 8601 format, e.g. PT2M30S for 2 minutes 30 seconds"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Video"
+    }
+  ]
+}
+{% endschema %}

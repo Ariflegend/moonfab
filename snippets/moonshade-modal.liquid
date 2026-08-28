@@ -1,0 +1,90 @@
+<!-- Pop-up HTML -->
+<div id="popup-container" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <div class="popup-icon">{{ 'check-icon-checkout.svg' | asset_url | img_tag }}</div>
+    <h2>MoonShade was added to your cart.</h2>
+    <p class="every-desktop">MoonShade was added to your cart, but it requires permanent or semi-permanent anchor hardware to attach to your vehicle. Select an anchor option below to be included with your order.</p>
+    <p class="every-mobile">MoonShade was added to your cart, but it requires permanent or semi-permanent anchor hardware to attach to your vehicle. Select an anchor option below to be included with your order.</p>
+    <div class="popup-buttons">
+      <button class="btn btn-primary" id="view_anchors">View Anchor options</button>
+      <button class="btn btn-secondary" onclick="window.location.href='/checkout'">Checkout Now</button>
+      <p class="edit-cart-here">or edit your cart</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pop-up HTML -->
+<div id="popup-container-anchors" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+     <div class="row">
+       <div class="column-9">
+         <h2>Select Anchor Hardware</h2>
+         <p>MoonShade was added to your cart, but it requires permanent or semi-permanent anchor hardware to attach to your vehicle. Select an anchor option below to be included with your order.</p>
+         <!-- <a class="recommend">Get Recommendations</a> -->
+         <a
+            data-bs-toggle="modal"
+            href="#setup-quiz"
+            class="btn btn-xs-block btn-primary ms-sm-2 button recommend"
+            data-convert-linking-binding="done"
+            ><span href="#setup-quiz" data-convert-linking="done">Get Recommendations</span></a
+          >
+         <div class="fullrows">
+             <!----- All rows here ------->
+              {% assign product_handles = "moonmount-oval-vacuum-mount-with-eyelet,4-5-vacuum-mount,suction-cup-anchors,pad-eye-anchors,nite-ize-gear-tie-loopable-twist-tie,large-suction-cup-anchors,basecamp-rail-anchors,adhesive-aluminum-anchor,magnet-anchors,sprinter-rail-anchors,awning-rail-anchors-3-8" | split: "," %}
+
+                <div id="product-list">
+                  {% for handle in product_handles %}
+                    {% assign product = all_products[handle] %}
+                    {%- # <spark:twk8f> -%}
+                      {%- capture visibility -%}
+                        {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:product -%}
+                      {%- endcapture -%}
+                      {%- if visibility == 'hide' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+                    {%- # </spark:twk8f> -%}
+                     {% if product and product.available and product.published_at and product.title != blank and product.price > 0 %}
+                    <div class="product-item" data-handle="{{ product.variants.first.id }}">
+
+                      <div class="prodimg">
+                        <img src="{{ product.featured_image | image_url }}" style="height:80px;width:80px" alt="{{ product.title }}">
+                      </div>
+                      <div class="prodcontent">
+                        <h2>{{ product.title }} ${{ product.price | money_without_currency | round }}</h2>
+                        <p>{{ product.metafields.descriptors.summary }}</p>
+
+                        <div class="btnswrap">
+                          <a href="" class="select-btn add-cart" data-product-id="{{ product.variants.first.id }}">Add ${{ product.price | money_without_currency | round }}</a>
+                          <a href="{{ product.url }}" class="more-details-btn">More Details</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                  </div>
+                 <div class="bottomcont">
+                    <a href="/collections/moonanchors" class="more_anchorbtn">View more anchors</a>
+                     <a class="close-btn" href="javascript:void(0)">Close and keep browsing</a>
+                 </div>
+         </div>
+       </div>
+       <div class="column-3">
+          <div class="cart-popup-content">
+            <h3>Your Cart</h3>
+            <ul id="cart-items" class="cart-list"></ul>
+            <p class="cart-total">
+              <span>Subtotal</span>
+              <span id="cart-subtotal" class="cart-total-amount">$0.00</span>
+            </p>
+            <div class="cart-actions">
+              <a href="/checkout" class="btn-primary">Checkout</a>
+              <a href="/cart" class="btn-secondary">Edit Cart</a>
+            </div>
+          </div>
+       </div>
+     </div>
+  </div>
+</div>

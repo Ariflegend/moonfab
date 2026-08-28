@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_hwAtya": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_e8nkij": {
+          "type": "heading",
+          "settings": {
+            "heading": "Partner with Moon",
+            "heading_size": "h1"
+          }
+        },
+        "text_VQ8TJz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thank you for your interest in partnering with Moon. In order to help us determine what type of partnership you are interested in, please answer a few quick questions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_e8nkij",
+        "text_VQ8TJz"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 56
+      }
+    },
+    "partner_with_moon_form_JfVEam": {
+      "type": "partner-with-moon-form",
+      "settings": {
+        "contact-form-bg": "request-replace",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_hwAtya",
+    "partner_with_moon_form_JfVEam"
+  ]
+}

@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multicolumn_HQG9VX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CTVt9g": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cropped-orbit-icon-dark-blue_png.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CTVt9g"
+      ],
+      "settings": {
+        "give-title": "",
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "enable_shop_login_button": false,
+        "padding_top": 72,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "multicolumn_HQG9VX",
+    "main"
+  ]
+}

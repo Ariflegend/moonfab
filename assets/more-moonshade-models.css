@@ -1,0 +1,252 @@
+ .subtext-metafield p {
+    margin: 0;
+    color: #3B4752;
+    font-family: Poligon;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+}
+  .related-collection-section.custom-swiper-section {
+    width: 100%;
+    overflow: hidden;
+    background-color:#FBF5E7;
+    padding: 36px 10px 46px 9rem; 
+
+  }
+
+  .related-collection-container.custom-swiper-container {
+    margin: 0 auto;
+  }
+
+
+  .related-collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 23px;
+    padding-right: 9rem;
+  }
+
+  /* Heading - Exact specifications */
+  .related-collection-heading.custom-swiper-heading {
+    font-family: Berringer_Rough !important;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 26px;
+    line-height: 33px;
+    letter-spacing: 0px;
+    margin: 0;
+    color: #3B4752 !important;
+    flex: 1;
+  }
+
+  /* Navigation Buttons Container */
+  .swiper-nav-buttons {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+  }
+
+  /* Swiper Container */
+  .swiper-container.related-products-swiper {
+    width: 100%;
+    overflow: visible !important;
+  }
+
+  .swiper-wrapper.related-products-wrapper {
+    display: grid;
+  }
+
+  /* Product Card / Slide */
+  .swiper-slide.related-products-slide {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 1 / 5;
+gap: 14.88px;
+  }
+
+  .related-products-slide .custom-product-card {
+    display:grid;
+      grid-template-rows: subgrid;
+      grid-row:1/5;  
+}
+
+
+  .related-products-slide .custom-product-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-products-slide .custom-product-image {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+    border-radius: 10.28px !important;
+    border-radius:10.28px !important;
+  }
+
+  .related-products-slide .custom-product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14.88px;
+    flex-grow: 1;
+  }
+
+  /* Product Title */
+  .related-products-slide .custom-product-title {
+    font-family: Berringer_Rough !important;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 28px;
+    line-height: 32.24px;
+    letter-spacing: 0%;
+    margin: 0;
+    color: #3B4752;
+  }
+
+  /* Subtext */
+  .related-products-slide .custom-product-subtext {
+    font-family: Poligon, sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 17px;
+    line-height: 23px;
+    letter-spacing: 0px;
+    color: #5a5a5a;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Shop Now Link */
+  .related-products-slide .custom-product-link {
+color: #3B4752;
+font-family: Poligon;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 27.28px; /* 151.556% */
+letter-spacing: 1.24px;
+text-decoration-line: underline;
+text-decoration-style: solid;
+
+  }
+
+
+
+  /* Navigation Buttons - Using both Swiper and custom classes */
+  .swiper-button-prev.swiper-button-prev-v2,
+  .swiper-button-next.swiper-button-next-v2 {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+    .swiper-button-prev.swiper-button-prev-v2>svg,
+  .swiper-button-next.swiper-button-next-v2>svg{
+fill:none;
+} 
+
+
+
+
+  .swiper-button-prev.swiper-button-prev-v2.swiper-button-disabled,
+  .swiper-button-next.swiper-button-next-v2.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Pagination */
+  .related-products-swiper .swiper-pagination {
+    margin-top: 20px;
+  }
+
+  .related-products-swiper .swiper-pagination-bullet {
+    background-color: #ddd;
+    opacity: 0.5;
+  }
+
+  .related-products-swiper .swiper-pagination-bullet-active {
+    background-color: #2c2c2c;
+    opacity: 1;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .related-collection-section.custom-swiper-section{
+    padding: 30px 20px 50px 20px;
+    }
+    .related-collection-header {
+        flex-direction: column;
+        margin-bottom: 26px;
+        text-align: center;
+        width: 100%;
+        padding-right: 20px;
+    }
+
+    .related-collection-heading.custom-swiper-heading {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    .swiper-nav-buttons {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .related-products-slide .custom-product-title {
+      font-size: 20px;
+      line-height: 22px;
+    }
+.subtext-metafield p{
+color: #3B4752;
+font-family: Poligon;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+}
+        .related-collection-heading.custom-swiper-heading {
+      font-size: 21px;
+      line-height: 26px;
+    }
+    .swiper-nav-buttons{
+    display:none;
+  }
+  .related-products-slide .custom-product-image{
+  object-fit: cover !important;
+  height: 160.497px;
+  border-radius: 15px;
+  }
+  .related-products-slide .custom-product-link{
+  font-size: 16px;
+  }
+  .swiper-pagination.swiper-pagination-related-2{
+display:block !important;
+    position: relative;
+  }
+    .swiper-pagination.swiper-pagination-related-2{
+display:block !important;
+    position: relative;
+  }
+      .swiper-pagination.swiper-pagination-related-2>.swiper-pagination-bullet{
+border-radius: 3.864px;
+border: 0.483px solid #191919;
+background: transparent;
+width: 9.661px;
+        height: 9.661px;
+  }
+.swiper-pagination.swiper-pagination-related-2>.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background: #37414B;
+}
+
+  }

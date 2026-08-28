@@ -1,0 +1,292 @@
+p.note-after-ul {
+    line-height: normal;
+    font-size: 18px !important;
+    margin-top: -58px !important;
+    margin-bottom: 90px !important;
+    margin: auto;
+}
+.product-card.ovall-card {
+    background: #F9F9F9;
+}
+p.note-after-ul.mobile {
+  display: none;
+  padding: 0;
+}
+.product__info-wrapper .notice_price {
+    padding: 10px;
+}
+
+.okeReviews-reviews {
+    box-shadow: unset !important;
+}
+.apply-moon-pro-program .rich-text__blocks.center {
+    background-color: #fff;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.apply-moon-pro-program a.button.button--primary {
+    height: 50px;
+    background-color: #3b4753;
+    font-size: 14.63px;
+    letter-spacing: 2px;
+    width: 248px;
+    text-transform: uppercase;
+    color: #fff !important;
+}
+.special-colr h3.inline-richtext {
+    /* font-size: 16px; */
+    /* font-family: HelveticaNeueMedium!important; */
+    /* font-weight: 700; */
+    color: #3B4752 !important;
+    font-size: 14.38px !important;
+    letter-spacing: 2px !important;
+    /* letter-spacing: 3.5px; */
+}
+.apply-moon-pro-program h2.rich-text__heading.rte.inline-richtext.h1 {
+    color: #3B4752;
+    font-size: 32px;
+    font-family: 'Poligon_Semi_Bold';
+}
+.moon-description-pro p {
+    font-size: 18px;
+    color: #3B4752;
+}
+.moon-description-pro p>strong {
+    font-weight: 700;
+    font-family: 'Poligon_Bold';
+}
+.moon-description-pro a>strong {
+    color: #3B4752;
+}
+.moon-pro-banner h2.banner__heading.inline-richtext.h0 {
+    margin-bottom: -40px;
+    font-family: 'Berringer_Rough';
+    font-size: 80.26px;
+}
+.miltary-sec h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: 'Berringer_Rough';
+    font-size: 60px;
+    color: #3B4752;
+}
+.miltary-sec p {
+    color: #3B4752;
+    size: 20px;
+    line-height: 28px;
+}
+.register-ac h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: Berringer_Rough;
+    font-size: 55.89px;
+    line-height: 64.4px;
+    margin-top: 0;
+}
+.register-ac p {
+    max-width: 47.8rem;
+    margin: auto;
+    text-align: left;
+    line-height: 24px;
+}
+.apply-moon-pro-program.apply-mobile {
+    display: none;
+}
+.apply-moon-pro-program.apply-mobile p {
+    color: #3b4752;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Poligon_Semi_Bold;
+}
+.moon-pro-banner .banner__box {
+    width: auto;
+    max-width: 71rem;
+    min-width: 100%;
+}
+.already-have p {
+    color: #3B4752;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poligon_Light';
+}
+.register-ac.for-mob-resgiter {
+    display: none;
+}
+.register-ac.for-mob-resgiter .rich-text__wrapper.rich-text__wrapper--center.page-width {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+.forgot-btn a, .customer.login a {
+    color: #3B4752 !important;
+    font-size: 16px;
+    font-family: 'Poligon_Light';
+}
+.forgot-btn {
+    margin-top: 10px;
+}
+.events-banner h2.banner__heading.inline-richtext.h1 {
+    color: #FBF5E7;
+    font-size: 40px;
+    line-height: 46px;
+    font-family: 'Berringer_Rough';
+}
+.events-banner p {
+    color: #FBF5E7;
+    font-size: 16px;
+    font-family: 'Poligon_Light';
+}
+p.event-month.mb-0.small.fw-bold.text-uppercase, p.event-year.mb-0.small.fw-bold {
+    font-size: 12.2px;
+    font-family: 'Poligon_Bold';
+    font-weight: 700;
+    color: #3B4752;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    line-height: 0;
+}
+p.pre-title.text-info.mb-0 {
+    margin-bottom: 5px;
+    margin-top: 3px;
+}
+p.event-day.mb-0.h2 {
+    font-family: 'Berringer_Rough';
+    margin: 0;
+    font-size: 32px;
+    line-height: 36.8px;
+    color: #3B4752;
+}
+p.pre-title.text-info.mb-0 {
+    font-family: 'Poligon_Bold';
+    font-weight: 700;
+    color: #A4BBCA;
+    font-size: 11.7px;
+    line-height: 19.2px;
+    text-transform: uppercase;
+    letter-spacing: 1.28px;
+}
+p.lead.fw-bold.mb-2 {
+    margin: 0;
+}
+.reviews-sec-title h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: 'Berringer_Rough';
+    font-size: 56px;
+    color: #3B4752;
+}
+.reviews-sec-title h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: Berringer_Rough;
+    font-size: 56px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #090B0C1A;
+    color: #3b4752;
+}
+.reviews-sec-title .rich-text__blocks.left {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:750px) and (max-width:991px) {
+
+}
+
+@media screen and (max-width: 1390px){ 
+p.moon-lp-des {
+    font-size: 14px;
+    color: #3B4752;
+}
+}
+
+@media screen and (max-width: 990px){ 
+.moon-wal-quiz .row {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90% !important;
+    margin: auto;
+    padding-bottom: 55px;
+}
+}
+
+@media screen and (max-width: 830px){ 
+.moon-pro-banner h2.banner__heading.inline-richtext.h0 {
+    margin-bottom: -40px;
+    font-family: Berringer_Rough;
+    font-size: 60.26px;
+}
+}
+  
+
+@media screen and (max-width: 749px){ 
+p.note-after-ul.desktop {
+  display: none;
+}
+p.note-after-ul.mobile {
+  display: block !important;
+}
+p.note-after-ul {
+    line-height: normal;
+    font-size: 14px !important;
+    margin-top: -58px !important;
+    margin-bottom: 90px !important;
+    margin: auto;
+}
+.reviews-sec-title h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 32px;
+}
+.register-ac.for-mob-resgiter {
+    display: block;
+}
+.register-ac {
+    display: none;
+}
+.apply-moon-pro-program h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 24px;
+}
+.apply-moon-pro-program {
+    display: none;
+}
+.apply-moon-pro-program.apply-mobile {
+    display: Block;
+}
+.moon-description-pro p {
+    font-size: 16px;
+    line-height: 25px;
+    color: #3b4752;
+}
+.moon-pro-banner h2.banner__heading.inline-richtext.h0 {
+    margin-bottom: 0;
+    font-family: Berringer_Rough;
+    font-size: 55px;
+    line-height: 57px;
+}
+.banner__media.media {
+    height: 439px !Important;
+}
+.banner {
+    height: 439px !Important;
+}
+.banner__content.banner__content--bottom-center.moon-pro-banner.page-width {
+    display: flex;
+    justify-content: end;
+    align-items: self-end;
+}
+}
+
+
+@media screen and (max-width: 482px){ 
+input#ContactForm-retail_partnership {
+    height: 70px !important;
+}
+label.field__label {
+    width: 84%;
+    word-wrap: break-word;
+}
+}

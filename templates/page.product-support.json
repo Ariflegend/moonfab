@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_Nc3cfz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3ALnrT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Support",
+            "heading_size": "h1"
+          }
+        },
+        "text_rLNUWy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We designed MoonShade to be simple and easy to use. View setup tutorial videos and download setup instructions <a href=\"https://moonfab.com/pages/moonshade-setup\" title=\"MoonShade Setup Guides\">here</a>. If you’re having trouble with something not covered in the setup guides, use this form to send a question about how to get the most out of your MoonShade.</p><p>If you’re looking for assistance ordering a MoonShade, need help with an existing order, or have questions about discounts or shipping, use our order support form <a href=\"https://moonfab.com/pages/order-support\"><span style=\"text-decoration:underline\">here</span></a>.</p>"
+          }
+        },
+        "button_RbCBrk": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3ALnrT",
+        "text_rLNUWy",
+        "button_RbCBrk"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 48
+      }
+    },
+    "product_support_form_xcTGC6": {
+      "type": "product-support-form",
+      "settings": {
+        "contact-form-bg": "request-replace",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Nc3cfz",
+    "product_support_form_xcTGC6"
+  ]
+}

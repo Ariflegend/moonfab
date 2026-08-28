@@ -1,0 +1,160 @@
+     <style>
+        
+        .vehicle-experts {
+          padding: 2rem;
+          text-align: center;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        .cards-container {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        
+        .card {
+          position: relative; /* Required for overlaying text */
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          max-width: 300px;
+          text-align: left;
+        }
+        
+        .card-image {
+          width: 100%;
+          height: auto;
+        }
+        
+        .card-content {
+          position: absolute; /* Overlay the text */
+          top: 0; /* Position at the top */
+          left: 0; /* Position at the left */
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+          color: #fff; /* White text color */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+          text-align: center;
+        }
+        
+        .badge {
+          display: inline-block;
+          background-color: #f8cf5e;
+          color: #000;
+          padding: 0.25rem 0.5rem;
+          font-size: 0.75rem;
+          font-weight: bold;
+          border-radius: 4px;
+          margin-bottom: 0.5rem;
+        }
+        
+        .vehicle-name {
+          font-size: 1.25rem;
+          margin: 0.5rem 0;
+        }
+        
+        .price,
+        .expert {
+          margin: 0.25rem 0;
+        }
+        
+        .shop-button {
+          display: inline-block;
+          background-color: #f8cf5e;
+          color: #000;
+          border: none;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          font-weight: bold;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 1rem;
+        }
+        
+        .shop-button:hover {
+          background-color: #e0b852;
+        }
+        </style>
+
+
+
+<section class="vehicle-experts">
+  <h2 class="section-title">{{ section.settings.Product_title }}</h2>
+  <div class="cards-container">
+    {% for block in section.blocks %}
+      {% assign product = all_products[block.settings.product_handle] %}
+      {%- # <spark:fvhx4> -%}
+        {%- capture visibility -%}
+          {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:product -%}
+        {%- endcapture -%}
+        {%- if visibility == 'hide' -%}
+          {%- continue -%}
+        {%- endif -%}
+      {%- # </spark:fvhx4> -%}
+      {% if product %}
+        <div class="card">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="card-image">
+          <div class="card-content">
+            <span class="badge">MVE Expert</span>
+            <h3 class="vehicle-name">{{ product.title }}</h3>
+            <p class="price">{{ product.price | money }}</p>
+            <p class="expert">Vehicle Expert: Example Expert</p>
+            <a href="{{ product.url }}" class="shop-button">
+              {{ section.settings.button_title }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "product-vehicle",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Product Title",
+      "id": "Product_title",
+      "default": "Check Latest Vehicle Experts"
+    },
+    {
+      "type": "text",
+      "label": "Button Title",
+      "id": "button_title",
+      "default": "Shop Setup"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "label": "Select Product",
+          "id": "product_handle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-vehicle",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

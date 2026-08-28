@@ -1,0 +1,210 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_L3f89n": {
+      "type": "rich-text",
+      "settings": {
+        "rich-custom-cls": "apparel-banner",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": false,
+        "custom_class": "vechicle-collection",
+        "show_collection_image": true,
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "load_more": "Load More",
+        "add-class-grid": "all-vehicle-grid",
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "vehicle_collection_product_grid_Kg4jCV": {
+      "type": "vehicle-collection-product-grid",
+      "settings": {
+        "load_more": "Load More",
+        "add-class-grid": "collection-type-2",
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-ff768fde-4741-4740-bcb9-95e97bab1f16",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_9MGRLr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TjRRhi": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TjRRhi"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_EnxGmP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wifKCr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Want to Become a Moon Vehicle Expert?",
+            "heading_size": "h2"
+          }
+        },
+        "text_zWTyjy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, moonshade setup and tell a bit of your storyall while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and someone from Moon will get in touch with you.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_i84BxG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wifKCr",
+        "text_zWTyjy",
+        "button_i84BxG"
+      ],
+      "disabled": true,
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert mobile-size",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_NkcJHM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hFiepx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Which Anchors You Need?",
+            "heading_size": "h1"
+          }
+        },
+        "text_Fx9KTU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Answer a few basic questions about your setup to get hardware suggestions.</p>"
+          }
+        },
+        "button_D7cF9y": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Your Setup",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hFiepx",
+        "text_Fx9KTU",
+        "button_D7cF9y"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "moonachor-text moon",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "rich_text_L3f89n",
+    "banner",
+    "product-grid",
+    "vehicle_collection_product_grid_Kg4jCV",
+    "rich_text_9MGRLr",
+    "image_with_text_EnxGmP",
+    "rich_text_NkcJHM"
+  ]
+}

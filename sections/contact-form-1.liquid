@@ -1,0 +1,342 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="contact-1">
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding {{ section.settings.contact-form-bg }}">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+
+    {%- liquid
+      assign contact_form_class = 'isolate'
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+      endif
+    -%}
+
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+      <style>
+        body.gradient {
+            background-color: #fbf5e7;
+        }
+        .contact-head h2.rich-text__heading.rte.inline-richtext.h1 {
+            font-size: 56px;
+            font-family: Berringer_Rough !important;
+        }
+        .contact-head p {
+            margin-top: -10px !important;
+            color: #3B4752;
+            font-family: 'Poligon_Light';
+            line-height: 24px;
+        }
+        .contact__button button.button {
+            font-size: 14.63px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #3B4752;
+            height: 61px;
+        }
+        .field:after {
+          box-shadow: none !important;
+        }
+        span.all-label-form {
+            font-size: 13.34px;
+            font-family: 'Poligon_Bold';
+            color: #3B4752;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            margin-top: -29px;
+        }
+        input::placeholder {
+           color: #3B4752BF;
+        }
+        input#ContactForm-first-name, input#ContactForm-last-name, input#ContactForm-email {
+            font-size: 16px;
+            height: 48px;
+            color: #3B4752BF;
+            border: 2px solid #DDDBD7;
+            background-color: transparent;
+            border-radius: 36px !important;
+        }
+        textarea#ContactForm-body {
+             height: 48px;
+            border: 2px solid #DDDBD7;
+            background-color: transparent;
+            border-radius: 36px !important;
+        }
+        .field-row {
+          display: flex;
+          gap: 15px;
+        }
+        
+        .field-row .field {
+          flex: 1;
+        }
+        
+        .field--full-width {
+          width: 100%;
+        }
+        .contact__fields {
+           padding: 30px;
+        }
+        .contact-form-first {
+          background-color: #fff;
+      }
+      .contact-form-first {
+          border-radius: 6px;
+          margin-bottom: 100px;
+          box-shadow: 1px 1px 2px 1px #0000001A;
+      }
+
+    @media screen and (max-width: 990px) {
+       .contact-head .rich-text__blocks {
+            max-width: 98rem;
+        }
+         .contact-form-first {
+            margin-right: 30px;
+            margin-left: 30px;
+            border-radius: 6px;
+            margin-bottom: 50px;
+            box-shadow: 1px 1px 2px 1px #0000001A;
+        }
+        .contact-form-first {
+            padding-bottom: 40px !important;
+            background-color: #fff;
+            padding: 15px;
+        }
+    }
+        
+    @media screen and (min-width: 990px) {
+        .page-width--narrow {
+            max-width: 78.6rem;
+            padding: 0;
+        }
+        }
+            
+      @media screen and (min-width: 750px){
+        .contact__fields {
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          grid-column-gap: 2rem;
+      }
+      }
+        @media screen and (max-width: 749px){
+          .contact__button {
+            margin-top: 3rem;
+            /* width: 100%; */
+            /* display: block; */
+        }
+        .contact__button button.button {
+            width: 100%;
+        }
+        .contact__fields {
+            padding: 0 1.5rem;
+        }
+       
+        }
+        
+      </style>
+      {%- if form.posted_successfully? -%}
+        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+          {{- 'icon-success.svg' | inline_asset_content -}}
+          {{ 'templates.contact.form.post_success' | t }}
+        </h2>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+        <ul class="form-status-list caption-large" role="list">
+          <li>
+            <a href="#ContactForm-email" class="link">
+              {{ form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}
+            </a>
+          </li>
+        </ul>
+      {%- endif -%}
+
+      <div class="contact__fields">
+        <span class="all-label-form">Name*</span>
+        <!-- First Row: First Name & Last Name -->
+        <div class="field-row">
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="given-name"
+              type="text"
+              id="ContactForm-first-name"
+              name="contact[first_name]"
+              placeholder="First"
+            >
+            <label class="field__label" for="ContactForm-first-name">First</label>
+          </div>
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="family-name"
+              type="text"
+              id="ContactForm-last-name"
+              name="contact[last_name]"
+              placeholder="Last"
+            >
+            <label class="field__label" for="ContactForm-last-name">Last</label>
+          </div>
+        </div>
+        <p class="info-line">Your name will not be shared without permission.</p>
+        
+        <span class="all-label-form">Email*</span>
+
+        <!-- Second Row: Email (Full Width) -->
+        <div class="field field--full-width">
+          <input
+            autocomplete="email"
+            type="email"
+            id="ContactForm-email"
+            class="field__input"
+            name="contact[email]"
+            spellcheck="false"
+            autocapitalize="off"
+            aria-required="true"
+            placeholder="your@email.com"
+          >
+          <label class="field__label" for="ContactForm-email">
+            your@email.com
+            <span aria-hidden="true">*</span>
+          </label>
+        </div>
+        <p class="info-line">Your email will not be shared.</p>
+
+        <!-- Third Row: Message (Full Width) -->
+        <span class="all-label-form">How can we help you?*</span>
+        <div class="field field--full-width">
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area field__input"
+            name="contact[message]"
+            placeholder="Your Message"
+          ></textarea>
+          <label class="form__label field__label" for="ContactForm-body">
+           
+          </label>
+        </div>
+
+        <!-- Fourth Row: Submit Button -->
+        <div class="contact__button">
+          <button type="submit" class="button">
+            {{ 'templates.contact.form.send' | t }}
+          </button>
+        </div>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "contact-form-1",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact-form-bg",
+      "label": "Add Contact Class"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.contact-form.settings.title.default",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "contact-form-1"
+    }
+  ]
+}
+{% endschema %}

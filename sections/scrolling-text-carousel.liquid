@@ -1,0 +1,111 @@
+{% schema %}
+{
+  "name": "Scrolling Text Carousel",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "marquee_items",
+      "label": "Scrolling Text Items (separate with comma)",
+      "default": "NO LEGS., HEAVY-DUTY., NO RUST., MADE IN THE USA."
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll Speed (seconds)",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "left", "label": "Left to Right" },
+        { "value": "right", "label": "Right to Left" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Text Carousel"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="scrolling-text-section">
+  <div class="scrolling-text-wrapper">
+    <div class="scrolling-text-inner direction-{{ section.settings.direction }}" style="--scroll-time: {{ section.settings.speed }}s;">
+      {% assign items = section.settings.marquee_items | split: "," %}
+      {% for i in (1..4) %}
+        {% for item in items %}
+        {%- # <spark:ak7um> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'search.item', subject:item -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:ak7um> -%}
+        
+          <span>{{ item | strip }}</span>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.scrolling-text-section {
+    margin-top: -8rem;
+    overflow: hidden;
+    padding: 20px 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.scrolling-text-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.scrolling-text-inner {
+  display: inline-flex;
+  gap: 4rem;
+  animation: scroll-left var(--scroll-time) linear infinite;
+}
+
+.scrolling-text-inner.direction-right {
+  animation-name: scroll-right;
+}
+
+.scrolling-text-inner span {
+  color: #3B475299;
+  font-size: 31px;
+  line-height: 32px;
+  font-weight: 700;
+  font-family: 'Berringer_Rough', sans-serif;
+  opacity: 0.6; /* same greyish look */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Animation for left to right */
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Animation for right to left */
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+</style>

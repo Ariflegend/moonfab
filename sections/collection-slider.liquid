@@ -1,0 +1,556 @@
+<div class="home-slider slider1 collection-slider-home {{ section.settings.add_custom_class }}">
+  <div class="custom-cls">
+<div class="shop-vechicle-title">
+    <h1>{{ section.settings.slider_title }}</h1>
+</div>
+    <div class="banner-arrow">
+      <button class="arrow1-mobile arrow-left1">
+       <svg class="custom-svg" width="10" height="15" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_1_2)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.70781 11.9667C6.52673 12.1478 6.23313 12.1478 6.05205 11.9667L0.4877 6.40237C0.30661 6.22129 0.30661 5.92769 0.4877 5.74661L6.05205 0.182299C6.23313 0.00119866 6.52673 0.00119866 6.70781 0.182299C6.8889 0.363299 6.8889 0.656899 6.70781 0.837999L1.47134 6.07449L6.70781 11.311C6.8889 11.492 6.8889 11.7856 6.70781 11.9667Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1_2">
+      <rect width="7" height="13" fill="white" transform="matrix(-1 0 0 -1 7 13)"/>
+    </clipPath>
+  </defs>
+</svg>
+      </button>
+      <button class="arrow1-mobile arrow-right1">
+      <svg class="custom-svg" width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292186 1.03327C0.47327 0.85219 0.766866 0.85219 0.947951 1.03327L6.5123 6.59763C6.69339 6.77871 6.69339 7.07231 6.5123 7.25339L0.947951 12.8177C0.766866 12.9988 0.47327 12.9988 0.292186 12.8177C0.111101 12.6367 0.111101 12.3431 0.292186 12.162L5.52866 6.92551L0.292186 1.68904C0.111101 1.50796 0.111101 1.21436 0.292186 1.03327Z" fill="white"/>
+</svg>
+
+
+      </button>
+    </div>
+    
+    <div class="home-slides slides1">
+      {% assign block_count = section.blocks.size %}
+      {% assign imagesPerSlide = 4 %} <!-- Default to 4 for desktop -->
+      {% assign last_index = block_count | minus: 1 %}
+      {% for i in (0..last_index) %}
+        {% assign collection = collections[section.blocks[i].settings.collection_handle] %}
+        {% if collection %}
+          <div class="image-container1">
+            <div class="under-box1">
+              <a href="{{ collection.url }}" class="collection-link">
+                <img src="{{ collection.image | img_url: '800x' }}" alt="{{ collection.title }}">
+                
+              </a>
+            </div>
+            <div class="collection-title">{{ collection.title }}</div>
+          </div>
+          
+        {% endif %}
+      {% endfor %}
+      
+    </div>
+    
+  </div>
+
+</div>
+
+
+<div class="navigation-dots1">
+  {% assign total_images = block_count %}
+  {% assign dots_count = total_images | divided_by: imagesPerSlide | floor %}
+  {% assign remainder = total_images | modulo: imagesPerSlide %}
+  {% if remainder != 0 %}
+    {% assign dots_count = dots_count | plus: 1 %}
+  {% endif %}
+  {% for dot in (1..dots_count) %}
+    <div class="dot1 {% if dot == 1 %}active1{% endif %}" data-index="{{ dot }}"></div>
+  {% endfor %}
+</div>
+
+     <div class="shop-buttons">
+ <a href="{{ section.settings.button_url }}" class="custom-button  {{ section.settings.add_button_class }}">
+    {{ section.settings.button_title }}
+  </a>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.home-slides.slides1');
+    const imageContainers = Array.from(document.querySelectorAll('.image-container1'));
+    const leftArrow = document.querySelector('.arrow-left1');
+    const rightArrow = document.querySelector('.arrow-right1');
+    const leftArrowMobile = document.querySelector('.arrow1-mobile.arrow-left1');
+    const rightArrowMobile = document.querySelector('.arrow1-mobile.arrow-right1');
+    const dotsContainer = document.querySelector('.navigation-dots1');
+
+    let currentTranslate = 0;
+    let maxTranslate = 0;
+    let startX = 0;
+    let moveX = 0;
+    let isDragging = false;
+    const imagesPerSlideMobile = 4;
+    const imagesPerSlideDesktop = 5.5;
+
+    function createSlides() {
+        slides.innerHTML = '';
+
+        if (window.innerWidth < 749) {
+            let tempSlide = document.createElement('div');
+            tempSlide.className = 'slide';
+
+            imageContainers.forEach((container, index) => {
+                tempSlide.appendChild(container);
+
+                if ((index + 1) % imagesPerSlideMobile === 0 || index === imageContainers.length - 1) {
+                    slides.appendChild(tempSlide);
+                    tempSlide = document.createElement('div');
+                    tempSlide.className = 'slide';
+                }
+            });
+        } else {
+            imageContainers.forEach(container => slides.appendChild(container));
+        }
+
+        updateMaxTranslate();
+        resetSliderPosition();
+        updateDots();
+    }
+
+    function updateMaxTranslate() {
+        const isMobile = window.innerWidth < 749;
+        const imagesPerSlide = isMobile ? imagesPerSlideMobile : imagesPerSlideDesktop;
+
+        if (isMobile) {
+            const slidesCount = Math.ceil(imageContainers.length / imagesPerSlide);
+            maxTranslate = -(slidesCount - 1) * 100;
+        } else {
+            const totalItems = imageContainers.length;
+            const visibleWidthPercentage = 100 / imagesPerSlideDesktop;
+            const totalVisibleWidth = totalItems * visibleWidthPercentage;
+
+            maxTranslate = -(totalVisibleWidth - 100);
+        }
+    }
+
+    function resetSliderPosition() {
+        currentTranslate = 0;
+        slides.style.transform = `translateX(0%)`;
+        updateArrowStates();
+    }
+
+    function updateArrowStates() {
+        const isMobile = window.innerWidth < 749;
+        if (isMobile) {
+            leftArrowMobile.disabled = currentTranslate === 0;
+            rightArrowMobile.disabled = currentTranslate === maxTranslate;
+        } else {
+            leftArrow.disabled = currentTranslate === 0;
+            rightArrow.disabled = currentTranslate === maxTranslate;
+        }
+    }
+
+    function updateDots() {
+        dotsContainer.innerHTML = '';
+        const isMobile = window.innerWidth < 749;
+        const slidesCount = isMobile ? Math.ceil(imageContainers.length / imagesPerSlideMobile) : Math.ceil(imageContainers.length / imagesPerSlideDesktop);
+
+        for (let i = 0; i < slidesCount; i++) {
+            const dot = document.createElement('div');
+            dot.className = `dot1 ${i === 0 ? 'active1' : ''}`;
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function goToSlide(index) {
+        currentTranslate = -index * 100;
+        slides.style.transform = `translateX(${currentTranslate}%)`;
+        updateArrowStates();
+        updateDotsState(index);
+    }
+
+    function updateDotsState(activeIndex) {
+        const dots = document.querySelectorAll('.dot1');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active1', index === activeIndex);
+        });
+    }
+ 
+ 
+function moveNext() {
+  if (window.innerWidth >= 749) {
+ const isMobile = window.innerWidth < 749;
+const imagesPerSlide = isMobile ? imagesPerSlideMobile : imagesPerSlideDesktop;
+let shiftAmount = 100 / imagesPerSlide; // Full slide shift
+
+// 🛠 If at last slide, show the full item (image) and double the shift amount
+if (currentTranslate - shiftAmount < maxTranslate) {
+    shiftAmount = shiftAmount * 4; // Double the shift amount for the last slide
+  
+    currentTranslate = maxTranslate; // Set to maxTranslate to show the full last slide
+} else {
+    currentTranslate -= shiftAmount; // Move to the next slide
+}
+
+slides.style.transform = `translateX(${currentTranslate}%)`;
+updateArrowStates();
+updateDotsState(Math.abs(currentTranslate / shiftAmount));
+
+
+  }else{
+            if (currentTranslate > maxTranslate) {
+            currentTranslate -= 100;
+            slides.style.transform = `translateX(${currentTranslate}%)`;
+            updateArrowStates();
+            updateDotsState(Math.abs(currentTranslate / 100));
+        } else {
+            currentTranslate = 0;
+            slides.style.transform = `translateX(${currentTranslate}%)`;
+            updateArrowStates();
+            updateDotsState(0);
+        }
+  
+
+}
+}
+
+function movePrev() {
+
+   if (window.innerWidth >= 749) {
+
+ const isMobile = window.innerWidth < 749;
+    const imagesPerSlide = isMobile ? imagesPerSlideMobile : imagesPerSlideDesktop;
+    const shiftAmount = 100 / imagesPerSlide; // Full slide shift
+
+    // 🛠 If at first slide, go to last slide (Infinite Loop)
+    console.log("currentTranslate", currentTranslate + shiftAmount)
+    if (currentTranslate + shiftAmount > 0) {
+        currentTranslate = 0; // Jump to last slide
+        console.log("currentTranslate if", currentTranslate)
+    } else {
+        currentTranslate += shiftAmount;
+        console.log("currentTranslate else", currentTranslate)
+    }
+
+    slides.style.transform = `translateX(${currentTranslate}%)`;
+    updateArrowStates();
+    updateDotsState(Math.abs(currentTranslate / shiftAmount));
+
+   }else{
+ 
+     
+       if (currentTranslate < 0) {
+            currentTranslate += 100;
+            slides.style.transform = `translateX(${currentTranslate}%)`;
+            updateArrowStates();
+            updateDotsState(Math.abs(currentTranslate / 100));
+        }
+   }
+   
+}
+
+    rightArrow.addEventListener('click', moveNext);
+    leftArrow.addEventListener('click', movePrev);
+    rightArrowMobile.addEventListener('click', moveNext);
+    leftArrowMobile.addEventListener('click', movePrev);
+
+    slides.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        isDragging = true;
+    });
+
+    slides.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        moveX = e.clientX;
+        let diff = startX - moveX;
+
+        if (diff > 50) {
+            moveNext();
+            isDragging = false;
+        } else if (diff < -50) {
+            movePrev();
+            isDragging = false;
+        }
+    });
+
+    slides.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    slides.addEventListener('mouseleave', () => {
+        isDragging = false;
+    });
+
+    slides.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    slides.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        moveX = e.touches[0].clientX;
+        let diff = startX - moveX;
+
+        if (diff > 50) {
+            moveNext();
+            isDragging = false;
+        } else if (diff < -50) {
+            movePrev();
+            isDragging = false;
+        }
+    });
+
+    slides.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    function initializeSlider() {
+        createSlides();
+        updateMaxTranslate();
+    }
+
+    initializeSlider();
+    window.addEventListener('resize', initializeSlider);
+});
+
+
+
+</script>
+
+<style>
+/* Slider Container */
+.home-slider.slider1 {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.navigation-dots1 {
+    padding-bottom:0 px;
+    margin-top: 0;
+}
+
+.arrow1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Adjust padding for spacing */
+}
+
+.arrow-left1 img,
+.arrow-right1 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.collection-title {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #3B4752;
+    padding: 10px 5px;
+    height: auto;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.dot1:after {
+    left: 50%;
+    top: 50%;
+    content: '';
+    display: block;
+    /* border: 2px solid #A4BBCA; */
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.dot1 {
+    color: #A4BBCA;
+    position: relative;
+}
+
+.slider1 .custom-cls {
+    position: relative;
+    padding: 0 40px;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+
+/* Slide Wrapper */
+.slides1 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-container1 {
+    flex: 0 0 calc(100% / 5.5); /* Default to 5.5 images per slide */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Ensure images are square within their container */
+.image-container1 img {
+    border-radius: 15px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+
+/* Arrows */
+.arrow1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.banner-arrow {
+    justify-content: end;
+    /* display: flex; */
+    text-align: right;
+    align-items: center;
+}
+  
+button.arrow1-mobile.arrow-left1, button.arrow1-mobile.arrow-right1 {
+    background-color: transparent;
+    border: none;
+}
+  
+/* Dots Navigation */
+.navigation-dots1 {
+    text-align: center;
+}
+
+.dot1 {
+    margin-top: 20px !important;
+    width: 12px;
+    height: 12px;
+    margin: 0 9px;
+    display: inline-block;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot1.active1 {
+    background: #A4BBCA;
+}
+    .navigation-dots1 {
+    display: none;
+}
+
+
+@media (max-width: 749px) {
+button.arrow1-mobile.arrow-right1 {
+    margin-left: 10px;
+    padding: 6px 12px;
+}
+button.arrow1-mobile.arrow-left1 {
+    padding: 6px 10px;
+}
+.image-container1 {
+    padding-left: 7px !IMPORTANT;
+    padding-top: 0 !important;
+    padding-bottom: 0 !IMPORTANT;
+    padding-right: 7px !important;
+}
+  .image-container1 img {
+    border-radius: 10px;
+}
+        .navigation-dots1 {
+          display: block !important;
+      }
+    .slide {
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 10%;
+    flex: 0 0 100%;
+}
+
+.image-container1 {
+    flex: 0 0 47%;
+    box-sizing: border-box;
+}
+
+    .image-container1 img {
+        width: 100%;
+        margin: 0 auto; /* Center images */
+    }
+}
+
+
+
+  
+</style>
+
+{% schema %}
+{
+  "name": "collection-slider",
+  "settings": [  {
+      "type": "text",
+      "label": "Slider Title",
+      "id": "slider_title",
+      "default": "Shop By Vehicle"
+    },
+    {
+         "type": "text",
+      "label": "add custom class",
+      "id": "add_custom_class",
+      "default": "Shop By Vehicle"
+    },
+      {
+         "type": "text",
+      "label": "Add Button Clsdd",
+      "id": "add_button_class",
+    },
+  {
+      "type": "url",
+      "label": "Button URL",
+      "id": "button_url",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "label": "Button Title",
+      "id": "button_title",
+      "default": "Shop Now"
+    }],
+  "blocks": [
+    {
+      "type": "collection_slide",
+      "name": "Collection Slide",
+      "settings": [
+        {
+          "type": "collection",
+          "label": "Select collection",
+          "id": "collection_handle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "collection-slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %} 

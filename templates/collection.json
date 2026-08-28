@@ -1,0 +1,379 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": false,
+        "custom_class": "vechicle-collection",
+        "show_collection_image": true,
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "enable_collection_page_schema": true
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "load_more": "Load More",
+        "add-class-grid": "all-vehicle-grid",
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "enable_itemlist_schema": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_9MGRLr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TjRRhi": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TjRRhi"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_7G3gK7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_gTeN4d": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "FEATURED IN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_X84D4G": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_e6b5958e-fd01-49fb-8210-c61d3fac3efc.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9bC9Dp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BJTLWk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aUcBU6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EgXHFw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_gTeN4d",
+        "column_X84D4G",
+        "column_9bC9Dp",
+        "column_BJTLWk",
+        "column_aUcBU6",
+        "column_EgXHFw"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "find_my_vechicle_J47Ctd": {
+      "type": "find-my-vechicle",
+      "name": "Match My Rig",
+      "settings": {
+        "title": "Couldn't find your vehicle?",
+        "subtitle": "This guide will match you with the right MoonShade setup.",
+        "button_label": "Match My Rig",
+        "button_url": "shopify://pages/which-moonshade-is-right-for-me",
+        "image": "shopify://shop_images/Frame_1597885326_1.png"
+      }
+    },
+    "image_with_text_dgPk9r": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_T8BJJQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Want to Become a Moon Vehicle Expert?",
+            "heading_size": "h2"
+          }
+        },
+        "text_8cDrew": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, MoonShade setup and tell a bit of your story all while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and someone from Moon will get in touch with you.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_XMy6T9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "https://docs.google.com/forms/d/e/1FAIpQLSeAbikAkaZwp4LpwsiQ6MHZwykDSKN05hwuz99gCI0mm_Uwww/viewform",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_T8BJJQ",
+        "text_8cDrew",
+        "button_XMy6T9"
+      ],
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 60
+      }
+    },
+    "image_with_text_EnxGmP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wifKCr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Want to Become a Moon Vehicle Expert?",
+            "heading_size": "h2"
+          }
+        },
+        "text_zWTyjy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, moonshade setup and tell a bit of your story all while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and someone from Moon will get in touch with you.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_i84BxG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wifKCr",
+        "text_zWTyjy",
+        "button_i84BxG"
+      ],
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert mobile-size",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_8WGXwg": {
+      "type": "rich-text",
+      "blocks": {
+        "button_WV98if": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_WV98if"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_tnXkGD": {
+      "type": "rich-text",
+      "blocks": {
+        "button_yJMh9V": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_yJMh9V"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1736139526d603fa9c": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_FDRqwp": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "left",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_FDRqwp"
+      ],
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "rich_text_9MGRLr",
+    "multicolumn_7G3gK7",
+    "find_my_vechicle_J47Ctd",
+    "image_with_text_dgPk9r",
+    "image_with_text_EnxGmP",
+    "rich_text_8WGXwg",
+    "rich_text_tnXkGD",
+    "1736139526d603fa9c"
+  ]
+}

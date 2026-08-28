@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.vendor }}</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_multicolumn": false,
+        "add_button_shade": "",
+        "add-text": "",
+        "add_button_url": "",
+        "add_custom_class": "",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "rich_text_RWxE6F": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gjmx6G": {
+          "type": "heading",
+          "settings": {
+            "heading": "Military receive 20% off",
+            "heading_size": "h1"
+          }
+        },
+        "text_yEEj4J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Verify your eligibility with ID.me to receieve exclusive discount.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gjmx6G",
+        "text_yEEj4J"
+      ],
+      "settings": {
+        "rich-custom-cls": "miltary",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_gaVr9i": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<a href=\"https://discountify.id.me/oauth/checkpoint/moonfab\"><image src=\"https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Input.png?v=1743089896\" class=\"verify-pic\"></a>\n\n<style>\nimg.verify-pic {\n    max-width: 304px;\n    width: 100%;\n    margin: auto;\n    text-align: center;\n}\n.section-template--16784211148889__custom_liquid_gaVr9i-padding a {\n    text-align: center;\n    display: block;\n}\n</style>",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_BRbLEK": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<button style=\"align-items: center; background-color: rgba(0, 0, 0, 0); background-image: linear-gradient(45deg, rgb(8, 174, 234) 0px, rgb(42, 245, 152) 100%); background-size: 130% auto; border-color: rgb(255, 255, 255); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-style: none; box-sizing: border-box; color: rgb(255, 255, 255); cursor: pointer; display: inline-flex; font-size: 17px; font-weight: 700; height: 45px; justify-content: center; letter-spacing: normal; line-height: 28.9px; margin-right: 10px; padding: 12px 24px; position: relative; text-align: center; text-decoration: none; transform: matrix(1, 0, 0, 1, 0, 0); transition: all 0.2s ease-in-out; vertical-align: middle; white-space: nowrap; width: 150px; word-spacing: 0px; -webkit-font-smoothing: antialiased; -webkit-user-select: none;\" onclick=\"window.open('https://verifypass.com/auth/fcd944f269', 'VerifyPass', 'width=475,height=700');\">Verify Yourself</button>\n<style>\n.section-template--16784211148889__custom_liquid_BRbLEK-padding {\n    text-align: center;\n}\n\n.section-template--16784211148889__custom_liquid_BRbLEK-padding button {\n    width: 300px !important;\n    padding: 35px 0 !important;\n    text-transform: uppercase;\n    background: #3b4753 !important;\n    border-radius: 50px !important;\n    letter-spacing: 2px !important;\n}\n</style>",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "1740371186d04c7177": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1740478998275d753d": {
+      "type": "apps",
+      "custom_css": [],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_RWxE6F",
+    "related-products",
+    "custom_liquid_gaVr9i",
+    "custom_liquid_BRbLEK",
+    "1740371186d04c7177",
+    "1740478998275d753d"
+  ]
+}

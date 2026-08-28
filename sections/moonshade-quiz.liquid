@@ -1,0 +1,312 @@
+<div class="moon-wal-quiz">
+<div class="bg-light pt-grid2" id="choose-moonwall">
+	<div class="container-xxl py-grid2">
+		<h2 class="text-center mb-grid">Even More Shade</h2>
+        <p class="qiuz-detail">Which MoonShade is Right for My Setup?</p>
+		<h3 class="text-center mb-grid">Universal MoonShades:</h2>
+    <br>
+        <div class="row">
+			<div class="col-md mb-4 mb-md-0">
+				{% assign product = all_products['moonshade'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'fa-van-shuttle|fa-truck-pickup|fa-rv' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade Vehicle Awning', width: 1200, height: 900, class: 'background-image h-100 w-100', loading: 'lazy' }}
+
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade - Original</a></h3>
+                    <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+                {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 0.8 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}{% endcomment %}
+                           {% comment %}<span>$500 USD</span>  {% endcomment %}
+                            {% unless product.metafields.my_fields.hide_reviews %}
+                                 <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                            {% comment %} {% if product.metafields.okendo.ProductListingSnippet %}
+                            <div data-oke-reviews-product-listing-rating>{{ product.metafields.okendo.ProductListingSnippet }}</div>
+                            {% endif %} {% endcomment %}
+                            {% endunless %}
+                        </p>
+                     </div>
+                  
+					<p class="moon-lp-des"><b>Best for:</b> any vehicle or surface with at least 7 ft between anchoring points. Add a strut pole for setups under 7 ft.</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}" class="btn btn-primary">Shop MoonShade OG</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md">
+				{% assign product = all_products['moonshade-xl'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'suv.svg|jeep.svg|fa-caravan' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade XL', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% else %}
+									<img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade - XL</a></h3>
+                      <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+                {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+                          {% comment %} <span>$650 USD</span>  {% endcomment %}
+                            {% unless product.metafields.my_fields.hide_reviews %}
+   <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                            {% endunless %}
+                        </p>
+                     </div>
+					<p class="moon-lp-des"><b>Best for:</b> any vehicle or surface with at least 9 ft between anchoring points. Ideal for mid- to larger-sized vehicles.</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}"  class="btn btn-primary">Shop MoonShade XL</a>
+					</p>
+				</div>
+			</div>
+            <!-- MoonWall XL Column -->
+            <div class="col-md">
+  {% assign product = all_products['moonshade-pro'] %}
+  {% assign image = product.featured_image %}
+  {% assign icons = 'truck.svg|awning.svg|fa-trailer' | split: '|' %}
+  <div class="card card-body">
+    <a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+      {{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade Pro Vehicle Awning', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+      <div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem;">
+        <div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+          {% for icon in icons %}
+            <span class="col-auto">
+              {% if icon contains 'fa-' %}
+                <span class="far {{ icon }}"></span>
+              {% else %}
+                <img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+              {% endif %}
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </a>
+    <h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade - PRO</a></h3>
+    <div class="pricesec_comp">
+      <p class="custom-price-pro">
+        {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+        {% comment %} <span>$1000 USD</span>  {% endcomment %}
+        {% unless product.metafields.my_fields.hide_reviews %}
+             <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+          {% comment %} {% if product.metafields.okendo.ProductListingSnippet %}
+            <div data-oke-reviews-product-listing-rating>{{ product.metafields.okendo.ProductListingSnippet }}</div>
+          {% endif %} {% endcomment %}
+        {% endunless %}
+      </p>
+    </div>
+    <p class="moon-lp-des"><b>Best for:</b> almost any large vehicle with at least 9 ft of mounting space.  Includes 3 zippered walls for extra privacy.</p>
+    <p class="mb-0">
+      <a href="{{ product.url }}" class="btn btn-primary">Shop MoonShade Pro</a>
+    </p>
+  </div>
+</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- Specific Setups -->
+
+<div class="moon-wal-quiz">
+<div class="bg-light pt-grid2" id="choose-moonwall">
+	<div class="container-xxl py-grid2">
+        <h3 class="text-center mb-grid">Specific Setup & Limited-Edition MoonShades:</h2>
+    <br>
+		<div class="row">
+			<div class="col-md mb-4 mb-md-0">
+				{% assign product = all_products['moonshade-apex'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'fa-van-shuttle|fa-truck-pickup|fa-rv' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade A-Frame Vehicle Awning', width: 1200, height: 900, class: 'background-image h-100 w-100', loading: 'lazy' }}
+
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade - APEX</a></h3>
+                    <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+                {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+                          {% comment %} <span>$450 USD</span>  {% endcomment %}
+                            {% unless product.metafields.my_fields.hide_reviews %}
+                       <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                            {% endunless %}
+                        </p>
+                     </div>
+                  
+					<p class="moon-lp-des"><b>Best for:</b> Aliners & Rockwood Hardsides. Our OG shade redesigned for A-frame trailers.</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}" class="btn btn-primary">Shop MoonShade APEX</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md">
+				{% assign product = all_products['moonshade-rv'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'suv.svg|jeep.svg|fa-caravan' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade RV Awning', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% else %}
+									<img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade -RV</a></h3>
+                      <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+                {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+                          {% comment %} <span>$550 USD</span>  {% endcomment %}
+                            {% unless product.metafields.my_fields.hide_reviews %}
+                           <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                            {% endunless %}
+                        </p>
+                     </div>
+					<p class="moon-lp-des"><b>Best for:</b> RVs with 3/8" Keder rail attachments (Keder welt 8mm or 5/16” diameter).</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}"  class="btn btn-primary">Shop MoonShade RV</a>
+					</p>
+				</div>
+			</div>
+            <!-- Column3  -->
+            <div class="col-md">
+  {% assign product = all_products['moonshade-sunset'] %}
+  {% assign image = product.featured_image %}
+  {% assign icons = 'truck.svg|awning.svg|fa-trailer' | split: '|' %}
+  <div class="card card-body">
+    <a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+      {{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonShade Sunset Vehicle Awning', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+      <div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem;">
+        <div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+          {% for icon in icons %}
+            <span class="col-auto">
+              {% if icon contains 'fa-' %}
+                <span class="far {{ icon }}"></span>
+              {% else %}
+                <img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+              {% endif %}
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </a>
+    <h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonShade - Sunset (Limited)</a></h3>
+    <div class="pricesec_comp">
+      <p class="custom-price-pro">
+        {% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+        {% comment %} <span>$500 USD</span>  {% endcomment %}
+        {% unless product.metafields.my_fields.hide_reviews %}
+         <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+        {% endunless %}
+      </p>
+    </div>
+    <p class="moon-lp-des"><b>Best for:</b> any vehicle with at least 9 ft between anchoring points. Limited edition sunset color.</p>
+    <p class="mb-0">
+      <a href="{{ product.url }}" class="btn btn-primary">Shop MoonShade Sunset</a>
+    </p>
+  </div>
+</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "moonshade quiz",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Select First Product"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Select Second Product"
+    }
+   
+  ],"blocks": [
+   
+  ],
+  "presets": [
+    {
+      "name": "moonshade quiz",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

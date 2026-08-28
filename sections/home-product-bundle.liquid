@@ -1,0 +1,392 @@
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<style>
+  .discover-bundle .swiper-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container {
+    margin: auto;
+    overflow: hidden;
+  }
+  .swiper-button-next {
+      right: 30px;
+  }
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: 20px;
+    box-shadow: 0 0 4px 0 #00000040;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+}
+
+  .discover-bundle .swiper-wrapper.swiper-wrappers {
+    display: flex;
+    flex-wrap: nowrap; /* No wrapping for slides */
+    justify-content: space-between;
+  }
+
+  .discover-bundle .swiper-slide {
+    height: 300px;
+    flex: 1 0 calc(29.5% - 10px);
+    max-width: calc(29.5% - 10px);
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: #f9f9f9;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding-bottom: 10px !important;
+    padding: 20px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid #ddd;
+}
+
+  .discover-bundle .swiper-slide h2,
+  .discover-bundle .swiper-slide .moonshade-meta,
+  .discover-bundle .swiper-slide .product-price,
+  .discover-bundle .swiper-slide .author-name,
+  .discover-bundle .swiper-slide a {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 13px;
+  }
+  .discover-bundle .swiper-slide span.product-price {
+      margin: 0;
+  }
+  .discover-bundle .swiper-slide a {
+      width: 200px;
+      padding: 13px 14px !important;
+      text-decoration: none;
+      background-color: #DAC0A1;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      font-weight: 400;
+      text-transform: uppercase;
+      /* border: 1px solid #525252; */
+      color: #3B4752;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: unset !important;;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: unset !important;
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color,var(--swiper-theme-color));
+  }
+
+  .discover-bundle .swiper-slide a:hover {
+    text-decoration: underline;
+  }
+
+  .discover-bundle .swiper-button-prev, .discover-bundle .swiper-button-next {
+    color: #858585;
+    margin-top: -190px;
+    display: block !important;
+    transition: all 0.3s ease;
+  }
+
+  /* Responsive adjustments */
+
+  @media (max-width: 1310px) {
+ .discover-bundle .swiper-slide {
+    flex: 1 0 calc(29.5% - 12px) !important;
+    max-width: calc(29.5% - 5px) !important;
+  }
+    .container {
+      width: 1100px;
+      margin: auto;
+      overflow: hidden;
+  }
+  }
+
+ @media (max-width: 1230px) {
+  .container {
+    width: 1067px;
+  }
+     .discover-bundle .swiper-slide {
+    flex: 1 0 calc(29.5% - 13px) !important;
+    max-width: calc(29.5% - 5px) !important;
+  }
+  }
+
+@media (max-width: 1160px) {
+  .container {
+    width: 1067px;
+  }
+     .discover-bundle .swiper-slide {
+    flex: 1 0 calc(29.5% - 13px) !important;
+    max-width: calc(29.5% - 5px) !important;
+  }
+  }
+  @media (max-width: 1067px) {
+  .container {
+    width: 100%;
+  }
+     /* .discover-bundle .swiper-slide {
+    flex: 1 0 calc(29.5% - 13px) !important;
+    max-width: calc(29.5% - 5px) !important;
+  } */
+  }
+  
+  @media (max-width: 749px) {
+    .discover-bundle .swiper-slide {
+      flex: 0 0 calc(50% - 10px); /* 2 slides per row on smaller screens */
+      max-width: calc(50% - 10px);
+    }
+    .discover-bundle .swiper-wrapper.swiper-wrappers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .discover-bundle .swiper-slide {
+      flex: 100% !important;
+      max-width: 100% !important;
+      margin-top: 25px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .discover-bundle .swiper-button-prev, .discover-bundle .swiper-button-next {
+      display: none !important;
+      visibility: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .discover-bundle .swiper-slide {
+      flex: 0 0 calc(100% - 10px); /* 1 slide per row on very small screens */
+      max-width: calc(100% - 10px);
+    }
+  }
+
+
+
+
+
+
+</style>
+
+<div class="explore-vehicle">
+<div class="container" style="max-width: 1200px;">
+  <div class="row">
+    <div class="col-12 discover-bundle">
+      <div class="sec-heading"><h2>{{ section.settings.add_title-cls }}</h2></div>
+      <!-- Slider main container -->
+      <div class="swiper-container" id="sliderContainer">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper swiper-wrappers">
+          <!-- Dynamically generated slides -->
+          {% for block in section.blocks %}
+            {% if block.type == 'product_slide' %}
+              {% assign product = all_products[block.settings.product_handle] %}
+              {% if product %}
+                <div class="swiper-slide" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('{{ product.featured_image | image_url }}');">
+                  <!-- Metafield: bundle-type -->
+                  <span class="moonshade-meta">
+                <img src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Tag_Variant_25ee8702-4cf4-4797-bea2-e87b04943c64.png?v=1740979682"/>
+                  </span>
+                  <h2>{{ product.metafields.custom.vehicle_title }}</h2>
+                  <span class="product-price">{{ product.price | money }}</span>
+                  <span class="author-name">Vehicle Experts: {{ product.metafields.custom.bundle_type | default: 'No bundle type' }}</span>
+                  <a href="{{ product.url }}">Shop Setup</a>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <!-- Show All Button -->
+      <div class="text-discover-btn">
+        <a href="{{ section.settings.button_url }}" class="button btn btn-primary slider-title">{{ section.settings.slider_title }}</a>
+      </div>
+      <div class="mobile-text-discover-btn">
+        <a href="{{ section.settings.button_url }}" class="button btn btn-primary slider-title">{{ section.settings.slider_title }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "home-product-bundle",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Slider Title",
+      "id": "slider_title",
+      "default": "Show All"
+    },
+    {
+      "type": "text",
+      "label": "Add Button Class",
+      "id": "add_button_class",
+    },
+    {
+      "type": "url",
+      "label": "Button URL",
+      "id": "button_url",
+    },
+    {
+      "type": "text",
+      "label": "Button Title",
+      "id": "button_title"
+    },
+    {
+      "type": "text",
+      "label": "Add Title",
+      "id": "add_title-cls"
+    },
+  ],
+  
+  "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product Slide",
+      "settings": [
+        {
+          "type": "product",
+          "label": "Select product",
+          "id": "product_handle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "home-product-bundle"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 749) {
+    const showAllBtn = document.querySelector(".mobile-text-discover-btn .button");
+    const swiperWrapper = document.querySelector(".swiper-wrapper.swiper-wrappers");
+console.log(swiperWrapper)
+    if (showAllBtn && swiperWrapper) {
+      const slides = swiperWrapper.querySelectorAll(".swiper-slide");
+
+      // Initially hide all slides except the first three
+      slides.forEach((slide, index) => {
+        if (index >= 3) {
+          slide.style.display = "none"; // Use inline style instead of class
+        }
+      });
+
+      // Add click event listener to "Show More" button
+      showAllBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // Show all slides
+        slides.forEach((slide) => {
+          slide.style.display = ""; // Reset inline style
+        });
+
+        // Hide the "Show All" button
+        showAllBtn.style.display = "none";
+      });
+    }
+  }
+});
+
+
+</script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- jQuery and Bootstrap JS (if needed) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your custom JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Swiper only for screens larger than 749px
+    let swiperInstance = null;
+
+    function initializeSwiper() {
+      if (swiperInstance) return; // Prevent re-initializing if already initialized
+
+      swiperInstance = new Swiper('.discover-bundle .swiper-container', {
+        loop: true,
+        slidesPerView: 3, // Show 3 slides at a time
+        spaceBetween: 10, // Space between slides
+        pagination: {
+          el: '.discover-bundle .swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="outer-dot swiper-pagination-bullet"><span class="inner-dot"></span></span>`;
+          },
+        },
+        navigation: {
+          nextEl: '.discover-bundle .swiper-button-next',
+          prevEl: '.discover-bundle .swiper-button-prev',
+        },
+      });
+    }
+
+    // Function to destroy Swiper instance for smaller screens
+    function destroySwiper() {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+    }
+
+    // Initialize or destroy Swiper based on screen size
+    function handleResize() {
+      if (window.innerWidth > 749) {
+        initializeSwiper(); // Initialize Swiper on larger screens
+      } else {
+        destroySwiper(); // Destroy Swiper on smaller screens
+      }
+    }
+
+    // Run once on page load
+    handleResize();
+
+    // Run on window resize
+    window.addEventListener('resize', handleResize);
+  });
+</script>
+
+

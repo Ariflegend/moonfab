@@ -1,0 +1,321 @@
+{%- liquid
+  assign customer_is_b2b = false
+  assign customer_tag_count = 0
+
+  if customer
+    if customer.b2b?
+      assign customer_is_b2b = true
+    endif
+    if customer.current_company != blank
+      assign customer_is_b2b = true
+    endif
+    for tag in customer.tags
+      assign customer_tag_count = customer_tag_count | plus: 1
+      assign tag_l = tag | downcase | strip
+      if tag_l == 'b2b'
+        assign customer_is_b2b = true
+      endif
+    endfor
+  endif
+
+  assign product_is_b2b_only = false
+  if template.name == 'product' and product
+    for tag in product.tags
+      assign ptag_l = tag | downcase | strip
+      if ptag_l == 'b2b-only'
+        assign product_is_b2b_only = true
+      endif
+    endfor
+  endif
+
+  assign should_redirect_b2b_only = false
+  if product_is_b2b_only and customer_is_b2b == false
+    if customer == blank
+      assign should_redirect_b2b_only = true
+    elsif customer_tag_count > 0
+      assign should_redirect_b2b_only = true
+    endif
+  endif
+-%}
+
+<script>
+  window.customerIsB2B = {{ customer_is_b2b }};
+  console.log('[B2B Filter] customer tags:', {{ customer.tags | json }}, '| has b2b:', {{ customer_is_b2b | json }});
+  {% if template.name == 'product' %}
+  console.log('[B2B Filter] product tags:', {{ product.tags | json }}, '| has b2b-only:', {{ product_is_b2b_only | json }});
+  {% endif %}
+</script>
+
+{%- if should_redirect_b2b_only -%}
+  <script>
+    console.log('[B2B Filter] redirect home: no b2b customer tag, product has b2b-only');
+    window.location.replace('/');
+  </script>
+{%- endif -%}
+
+{%- if customer_is_b2b -%}
+  <script>
+    console.log('[B2B Filter] customer is B2B — keep bundle price visible');
+    (function keepB2BProductPrice() {
+      if ({{ template.name | json }} !== 'product') return;
+
+      var PRICE_SELECTORS = [
+        '#price_item',
+        '.price',
+        '.price__container',
+        '.price__regular',
+        '.price__sale',
+        '.product .price',
+        'product-info .price',
+        '.product__info-container .price',
+        '.product__info-wrapper .price'
+      ].join(',');
+
+      var snapshots = [];
+
+      function capture() {
+        document.querySelectorAll(PRICE_SELECTORS).forEach(function (el) {
+          if (el.getAttribute('data-b2b-price-snap') === '1') return;
+          var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!text) return;
+          snapshots.push({
+            el: el,
+            html: el.innerHTML
+          });
+          el.setAttribute('data-b2b-price-snap', '1');
+          console.log('[B2B Filter] captured price for B2B:', text);
+        });
+      }
+
+      function restore() {
+        snapshots.forEach(function (item) {
+          var el = item.el;
+          if (!el || !el.isConnected) return;
+
+          el.style.removeProperty('display');
+          el.style.removeProperty('visibility');
+          el.style.removeProperty('opacity');
+          el.removeAttribute('hidden');
+
+          var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!text && item.html) {
+            el.innerHTML = item.html;
+            console.log('[B2B Filter] restored B2B price that was cleared');
+          }
+        });
+      }
+
+      capture();
+      document.addEventListener('DOMContentLoaded', capture);
+      window.addEventListener('load', function () {
+        capture();
+        restore();
+      });
+
+      var scheduled = false;
+      function scheduleRestore() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(function () {
+          scheduled = false;
+          capture();
+          restore();
+        });
+      }
+
+      function start() {
+        if (!document.body) {
+          document.addEventListener('DOMContentLoaded', start);
+          return;
+        }
+        new MutationObserver(scheduleRestore).observe(document.body, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+          attributes: true,
+          attributeFilter: ['style', 'hidden', 'class']
+        });
+      }
+      start();
+    })();
+  </script>
+{%- else -%}
+<script>
+  (function hideB2BOnlyFromSearch() {
+    var B2B_ONLY_TAG = 'b2b-only';
+    var tagCache = {};
+    var inFlight = {};
+    var SEARCH_ROOT_SELECTORS = [
+      '.rebuy-quick-view',
+      '.rebuy-quick-view__product-section',
+      '.rebuy-smart-search',
+      '.rebuy-search-results'
+    ].join(',');
+
+    function productHasB2BOnlyTag(tagsValue) {
+      var tags = Array.isArray(tagsValue) ? tagsValue : String(tagsValue || '').split(/[,|]/);
+      return tags.some(function (tag) {
+        return String(tag).trim().toLowerCase() === B2B_ONLY_TAG;
+      });
+    }
+
+    function isB2BOnlyProduct(product) {
+      if (!product) return false;
+      return productHasB2BOnlyTag(
+        product.tags ||
+        product.tag_list ||
+        (product.product && (product.product.tags || product.product.tag_list))
+      );
+    }
+
+    function getHandle(value) {
+      if (!value) return null;
+      if (typeof value === 'object') {
+        return value.handle || getHandle(value.url || value.link || '');
+      }
+      var match = String(value).match(/\/products\/([^\/?#]+)/i);
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    function isProductPageContent(node) {
+      return !!(
+        node.closest('product-info') ||
+        node.closest('.product__info-wrapper') ||
+        node.closest('.product__info-container') ||
+        node.closest('.product__media-wrapper') ||
+        node.closest('form[action*="/cart/add"]')
+      );
+    }
+
+    function lookupTags(handle) {
+      if (!handle) return Promise.resolve(false);
+      if (Object.prototype.hasOwnProperty.call(tagCache, handle)) {
+        return Promise.resolve(tagCache[handle]);
+      }
+      if (inFlight[handle]) return inFlight[handle];
+
+      inFlight[handle] = fetch('/products/' + encodeURIComponent(handle) + '.js')
+        .then(function (res) {
+          if (!res.ok) throw new Error('status ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          tagCache[handle] = productHasB2BOnlyTag(data.tags);
+          console.log('[B2B Filter] product', handle, 'tags:', data.tags, '| has b2b-only:', tagCache[handle], tagCache[handle] ? '→ HIDE from search' : '→ SHOW in search');
+          return tagCache[handle];
+        })
+        .catch(function (err) {
+          console.warn('[B2B Filter] could not read tags for', handle, err);
+          tagCache[handle] = false;
+          return false;
+        })
+        .finally(function () {
+          delete inFlight[handle];
+        });
+
+      return inFlight[handle];
+    }
+
+    function stripB2BOnlyFromArray(products) {
+      if (!products || !products.length) return Promise.resolve();
+
+      var checks = [];
+      for (var i = 0; i < products.length; i++) {
+        (function (product) {
+          if (isB2BOnlyProduct(product)) {
+            checks.push(Promise.resolve({ product: product, hide: true }));
+            return;
+          }
+          var handle = getHandle(product);
+          checks.push(
+            lookupTags(handle).then(function (hide) {
+              return { product: product, hide: hide };
+            })
+          );
+        })(products[i]);
+      }
+
+      return Promise.all(checks).then(function (results) {
+        results.forEach(function (result) {
+          if (!result.hide) return;
+          var index = products.indexOf(result.product);
+          if (index > -1) products.splice(index, 1);
+        });
+      });
+    }
+
+    function onSearchProductsChange(event) {
+      var products = (event.detail || {}).products;
+      if (!products || !products.length) return;
+
+      for (var i = products.length - 1; i >= 0; i--) {
+        var handle = getHandle(products[i]);
+        if (isB2BOnlyProduct(products[i]) || tagCache[handle] === true) {
+          products.splice(i, 1);
+        }
+      }
+
+      stripB2BOnlyFromArray(products);
+    }
+
+    document.addEventListener('rebuy:smartsearch.quickview.productsChange', onSearchProductsChange);
+    document.addEventListener('rebuy:smartsearch.quickview.beforeProductsChange', onSearchProductsChange);
+    document.addEventListener('rebuy:smartsearch.resultsPage.productsChange', onSearchProductsChange);
+    document.addEventListener('rebuy:smartsearch.resultsPage.beforeProductsChange', onSearchProductsChange);
+
+    function getProductCard(node) {
+      return (
+        node.closest('.rebuy-product-block') ||
+        node.closest('.rebuy-quick-view__product') ||
+        node
+      );
+    }
+
+    function hideSearchCard(card) {
+      if (!card || isProductPageContent(card)) return;
+      card.style.setProperty('display', 'none', 'important');
+      card.setAttribute('hidden', 'hidden');
+    }
+
+    function hideMatchingCardsInSearch() {
+      var roots = document.querySelectorAll(SEARCH_ROOT_SELECTORS);
+      if (!roots.length) return;
+
+      roots.forEach(function (root) {
+        var links = root.querySelectorAll('a[href*="/products/"]');
+        links.forEach(function (el) {
+          if (isProductPageContent(el)) return;
+          var handle = getHandle(el.getAttribute('href') || el.href);
+          if (!handle) return;
+          lookupTags(handle).then(function (hide) {
+            if (hide) hideSearchCard(getProductCard(el));
+          });
+        });
+      });
+    }
+
+    var scheduled = false;
+    function scheduleDomHide() {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(function () {
+        scheduled = false;
+        hideMatchingCardsInSearch();
+      });
+    }
+
+    function startDomWatcher() {
+      if (!document.body) {
+        document.addEventListener('DOMContentLoaded', startDomWatcher);
+        return;
+      }
+      new MutationObserver(scheduleDomHide).observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      scheduleDomHide();
+    }
+    startDomWatcher();
+  })();
+</script>
+{%- endif -%}

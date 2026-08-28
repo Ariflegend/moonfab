@@ -1,0 +1,356 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_L3f89n": {
+      "type": "rich-text",
+      "settings": {
+        "rich-custom-cls": "apparel-banner",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": false,
+        "custom_class": "vechicle-collection",
+        "show_collection_image": true,
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "enable_collection_page_schema": true
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "load_more": "Load More",
+        "add-class-grid": "all-vehicle-grid",
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "enable_itemlist_schema": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "vehicle_collection_product_grid_Kg4jCV": {
+      "type": "vehicle-collection-product-grid",
+      "settings": {
+        "load_more": "Load More",
+        "add-class-grid": "collection-type-2",
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-ff768fde-4741-4740-bcb9-95e97bab1f16",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "enable_itemlist_schema": true,
+        "padding_top": 24,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_9MGRLr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TjRRhi": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TjRRhi"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_EnxGmP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wifKCr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Want to Become a Moon Vehicle Expert?",
+            "heading_size": "h2"
+          }
+        },
+        "text_zWTyjy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, moonshade setup and tell a bit of your storyall while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and someone from Moon will get in touch with you.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_i84BxG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wifKCr",
+        "text_zWTyjy",
+        "button_i84BxG"
+      ],
+      "disabled": true,
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert mobile-size",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "about_moonchors_8pNiA6": {
+      "type": "about-moonchors",
+      "blocks": {
+        "card_4XXqNM": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_28.png",
+            "bold_text": "MoonMounts&nbsp",
+            "regular_text": "offer a stronger semi-permanent hold for vans and larger rigs."
+          }
+        },
+        "card_73Df3c": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_25.png",
+            "bold_text": "Pad Eye and Adhesive Anchors&nbsp;",
+            "regular_text": "are available for A-frame trailers and specialty surfaces."
+          }
+        },
+        "card_AyNwzw": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_26.png",
+            "bold_text": "Suction cups&nbsp;",
+            "regular_text": "use a vacuum mechanism to grip smooth glass and painted metal — removable, no residue."
+          }
+        },
+        "card_gttdk3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Group_27.png",
+            "bold_text": "Magnetic anchors&nbsp;",
+            "regular_text": "bond to steel surfaces."
+          }
+        }
+      },
+      "block_order": [
+        "card_4XXqNM",
+        "card_73Df3c",
+        "card_AyNwzw",
+        "card_gttdk3"
+      ],
+      "disabled": true,
+      "name": "MoonAnchors Features Layout",
+      "settings": {
+        "heading": "ABOUT MOONANCHORS",
+        "description": "MoonAnchors are how MoonShade attaches to your vehicle. They're the compatibility layer between the canopy and your specific surface — the reason MoonShade works on a Sprinter, a Jeep, a teardrop trailer, and a beach house fence without drilling into any of them. Which anchor is right for you depends on your vehicle type and how permanent you want the mount to be."
+      }
+    },
+    "rich_text_NkcJHM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hFiepx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Which Anchors You Need?",
+            "heading_size": "h1"
+          }
+        },
+        "text_Fx9KTU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Answer a few basic questions about your setup to get hardware suggestions.</p>"
+          }
+        },
+        "button_D7cF9y": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Your Setup",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hFiepx",
+        "text_Fx9KTU",
+        "button_D7cF9y"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rich-text__text.rte {margin-top: 10px;}",
+        "a.button.button--primary {background-color: #3b4752; text-transform: uppercase;}"
+      ],
+      "settings": {
+        "rich-custom-cls": "moonachor-text moonshade-hide",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_iracG8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_imrEM6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are MoonAnchors?",
+            "icon": "none",
+            "row_content": "<p>MoonAnchors are the mounting hardware that attach MoonShade to your vehicle. Every MoonShade setup requires them. The type you need depends on your vehicle's surface and how permanent you want the mount to be.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UcLXCg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need MoonAnchors to use MoonShade?",
+            "icon": "none",
+            "row_content": "<p>Yes — every MoonShade requires anchors to mount. MoonShade RV is the one exception: it slides directly into a keder rail with no separate anchor needed.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_T9nrei": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are MoonAnchors permanent?",
+            "icon": "none",
+            "row_content": "<p>Most are fully removable with no surface damage. Suction and magnetic anchors come on and off in seconds. MoonMounts create a stronger semi-permanent bond — designed for vans and larger rigs that stay set up for longer periods. No drilling needed.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FcfR6H": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use the same MoonAnchors on different vehicles?",
+            "icon": "none",
+            "row_content": "<p>It depends on the anchor type. Suction and magnetic anchors can move between compatible surfaces. MoonMounts are typically matched to a specific surface type. Check each anchor listing for compatibility details.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wLNNcC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do MoonAnchors hold up in wind?",
+            "icon": "none",
+            "row_content": "<p>Customers have reported MoonShade (OG) holding in gusts up to 30–40 mph with MoonAnchors. For high-wind conditions, pairing anchors with guy lines is the recommended setup.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_f4U6dK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the difference between MoonAnchors and MoonMounts?",
+            "icon": "none",
+            "row_content": "<p> MoonAnchors is the product family name covering all anchor types. MoonMounts are a specific anchor within that family — a semi-permanent mount designed for vans and larger rigs that need a stronger hold than suction or magnetic options provide.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_imrEM6",
+        "collapsible_row_UcLXCg",
+        "collapsible_row_T9nrei",
+        "collapsible_row_FcfR6H",
+        "collapsible_row_wLNNcC",
+        "collapsible_row_f4U6dK"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption-custom-cls": "faq-sec",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "<p>For more information check out <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\"><strong>FAQ page</strong></a></p>",
+        "caption": "",
+        "heading": "FAq",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "rich_text_L3f89n",
+    "banner",
+    "product-grid",
+    "vehicle_collection_product_grid_Kg4jCV",
+    "rich_text_9MGRLr",
+    "image_with_text_EnxGmP",
+    "about_moonchors_8pNiA6",
+    "rich_text_NkcJHM",
+    "collapsible_content_iracG8"
+  ]
+}

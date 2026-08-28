@@ -1,0 +1,1045 @@
+{% comment %} {% comment %}
+  MoonShade vehicle checker — paste into theme (snippet or product section).
+  PROXY: api/vehicle-check.js on Vercel must return { valid: false } for non-vehicles.
+{% endcomment %}
+<style>
+
+.vehicle-wrapper{
+  margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8e8e8;
+     display:none;
+}
+
+  .ms-cta-btn.ms-strut-pole-btn:disabled {
+    opacity: 0.85;
+    cursor: default;
+  }
+
+  #ms-vehicle-checker h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: #3B4752;
+    letter-spacing: 0.6px;
+    line-height: 27.3px;
+    font-family: 'Poligon_Semi_Bold';
+
+  }
+  #ms-vehicle-checker p.ms-subtitle {
+    font-size: 15px;
+    color: #3B4752;
+    margin: 10px 0px 10px 0px !important;
+    line-height: 18px;
+    font-family: 'Poligon_Regular';
+  }
+  #ms-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #E4E4E4;
+    border-radius: 40px;
+    padding: 13px 18px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 12px;
+    font-family: 'Poligon_Regular';
+  }
+  #ms-check-btn {
+    width: 100%;
+    background: #3B4752;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    font-family: 'Poligon_Regular';
+    line-height: 17px;
+  }
+  #ms-result {
+    margin-top: 20px;
+    display: none;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    padding-bottom: 20px;
+  }
+  .ms-card {
+    position: relative;
+    border-radius: 6px 6px 0px 0px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ms-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .ms-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.58) 100%);
+  }
+  .ms-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: .6px;
+    padding: 1px 10px 0px 10px;
+    border-radius: 40px;
+    border: 0.9px solid #0CCB29;
+    font-family: 'Poligon_Regular';
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 1.8px;
+    background: #69CA77;
+  }
+  .ms-card-text {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+  }
+  .ms-product-name {
+    color: #fff;
+    font-size: 30.87px;
+    line-height: 38.31px;
+    letter-spacing: 0.84px;
+    font-family: 'Berringer_Rough';
+  }
+  .ms-headline {
+    color: #CDCDCD;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: 'Poligon_Regular';
+  }
+  div#ms-result > p {
+    color: #000000;
+    font-family: 'Poligon_Regular';
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    margin: 20px 0px 20px 0px !important;
+    padding: 0px 20px;
+  }
+  .ms-cta-btn {
+    display: block;
+    text-align: center;
+    width: 98%;
+    box-sizing: border-box;
+    background: #3B4752;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poligon_Semi_Bold';
+    line-height: 17px;
+    margin: 0 auto;
+  }
+  .ms-cta-btn.ms-strut-pole-btn {
+    margin-top: 10px;
+    background: #4a5568 !important;
+  }
+  .ms-upsell {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    color: #8D8D8D;
+    text-decoration: underline;
+    font-family: 'Poligon_Regular';
+  }
+</style>
+  <div class="vehicle-wrapper">
+<div id="ms-vehicle-checker">
+  <h2>Does MoonShade fit your car?</h2>
+  <p class="ms-subtitle">Type in your vehicle to check compatibility.</p>
+  <input id="ms-input" type="text" placeholder="Toyota 4Runner" />
+  <button id="ms-check-btn">CHECK COMPATIBILITY</button>
+  <div id="ms-result"></div>
+</div>
+</div>
+<script>
+(function() {
+
+  var PROXY_URL = 'https://moonshade-proxy.vercel.app/api/vehicle-check';
+
+  /** Strut pole PDP — confirm handle in Shopify admin */
+  var STRUT_POLE_HREF = '/products/strut-pole-replacement-moonshade-original';
+
+  var PDP = {
+    original: '/products/moonshade',
+    xl:       '/products/moonshade-xl',
+    apex:     '/products/moonshade-apex',
+  };
+
+  var VARIANT_IDS = {
+    original: '42235542110297',
+    rv:       '42848537313369',
+      strut_pole: '42582109782105',
+  };
+
+var PRODUCTS = {
+  original: { name: 'MOONSHADE',      img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333.png?v=1776769848' },
+  rv:       { name: 'MOONSHADE',      img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333.png?v=1776769848' },
+  xl:       { name: 'MOONSHADE XL',   img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333_1.png?v=1776769848' },
+  apex:     { name: 'MOONSHADE APEX', img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885334.png?v=1776769848' },
+};
+
+  var BADGE = {
+    this_fits:       { label: '✓ THIS FITS',           bg: '#69CA77', border: '#0CCB29' },
+    we_recommend:    { label: '✓ WE RECOMMEND',        bg: '#1b6fc8', border: '#1b6fc8' },
+    needs_accessory: { label: '⚠ FITS WITH ACCESSORY', bg: '#d4760a', border: '#d4760a' },
+  };
+
+  var UPSELL = {
+    pro: { label: 'Upgrade to Moonshade Pro', href: '/products/moonshade-pro' },
+    rv:  { label: 'Upgrade to Moonshade RV',  href: '/products/moonshade-rv'  },
+  };
+
+  document.getElementById('ms-check-btn').addEventListener('click', runCheck);
+  document.getElementById('ms-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') runCheck();
+  });
+
+  async function runCheck() {
+    var vehicle = document.getElementById('ms-input').value.trim();
+    if (!vehicle) { document.getElementById('ms-input').focus(); return; }
+
+    var btn = document.getElementById('ms-check-btn');
+    btn.textContent = 'Checking…';
+    btn.disabled = true;
+
+    var resultDiv = document.getElementById('ms-result');
+    resultDiv.style.display = 'none';
+    resultDiv.innerHTML = '';
+
+    try {
+      var res = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ vehicle: vehicle }),
+      });
+      var data = await res.json();
+
+      if (!res.ok || data.error) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Something went wrong. Please try again.</p>';
+        resultDiv.style.display = 'block';
+      } else if (data.valid === false) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Please enter a valid vehicle make and model.</p>';
+        resultDiv.style.display = 'block';
+      } else if (!data.product) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Please enter a valid vehicle make and model.</p>';
+        resultDiv.style.display = 'block';
+      } else {
+        renderResult(data, vehicle);
+      }
+    } catch(e) {
+      resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Something went wrong. Please try again.</p>';
+      resultDiv.style.display = 'block';
+    } finally {
+      btn.textContent = 'CHECK COMPATIBILITY';
+      btn.disabled = false;
+    }
+  }
+
+  function renderResult(r, vehicleInput) {
+    var prodKey = (r.product === 'original' && r.upsell_product === 'rv') ? 'rv' : r.product;
+    var prod   = PRODUCTS[prodKey] || PRODUCTS.original;
+    var badge  = BADGE[r.badge] || BADGE.this_fits;
+    var upsell = r.upsell_product ? UPSELL[r.upsell_product] : null;
+    var isXLorApex = r.badge === 'we_recommend';
+    var needsStrut = r.needs_strut_pole === true;
+
+    var ctaHtml;
+    if (isXLorApex) {
+      ctaHtml = '<a href="' + PDP[r.product] + '" class="ms-cta-btn">SHOP NOW</a>';
+    } else {
+      var variantId = (r.upsell_product === 'rv') ? VARIANT_IDS.rv : VARIANT_IDS.original;
+      ctaHtml = '<button type="button" onclick="msAddToCart(\'' + variantId + '\')" class="ms-cta-btn">ADD TO CART</button>';
+    }
+
+    if (needsStrut) {
+      ctaHtml += '<button type="button" onclick="msAddStrutToCart(this,\'' + VARIANT_IDS.strut_pole + '\')" class="ms-cta-btn ms-strut-pole-btn">ADD STRUT POLE — $25</button>';
+    }
+
+    var upsellHtml = upsell
+      ? '<a href="' + upsell.href + '" class="ms-upsell">' + upsell.label + '</a>'
+      : '';
+
+    var badgeStyle = 'background:' + badge.bg + ';border-color:' + (badge.border || badge.bg) + ';';
+
+    var v = (typeof vehicleInput === 'string' ? vehicleInput : document.getElementById('ms-input').value).trim();
+    var headline = (r.headline && String(r.headline).trim()) || ('Perfect Fit for your ' + v);
+
+    var html = '<div class="ms-card">'
+      + '<img src="' + prod.img + '" alt="' + escapeAttr(prod.name) + '" />'
+      + '<div class="ms-card-overlay"></div>'
+      + '<span class="ms-badge" style="' + badgeStyle + '">' + badge.label + '</span>'
+      + '<div class="ms-card-text">'
+      + '<div class="ms-product-name">' + prod.name + '</div>'
+      + '<div class="ms-headline">' + escapeHtml(headline) + '</div>'
+      + '</div>'
+      + '</div>';
+
+    if (r.description) {
+      html += '<p>' + escapeHtml(r.description) + '</p>';
+    }
+
+    html += ctaHtml + upsellHtml;
+
+    var resultDiv = document.getElementById('ms-result');
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = 'block';
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function escapeAttr(s) {
+    return escapeHtml(s).replace(/'/g, '&#39;');
+  }
+
+  /** Drawer theme also loads <cart-notification> CSS; always prefer the active cart UI (drawer first). */
+  function msGetCartUi() {
+    return document.querySelector('cart-drawer') || document.querySelector('cart-notification');
+  }
+
+  function msSectionIdsFor(cart) {
+    var defaults = 'cart-drawer,cart-icon-bubble';
+    if (cart && typeof cart.getSectionsToRender === 'function') {
+      return cart.getSectionsToRender()
+        .map(function(s) { return s.id; })
+        .join(',');
+    }
+    return defaults;
+  }
+
+  /** Match Dawn product-form: open drawer via renderContents; never send shoppers to /cart from here. */
+  function msRenderCartAfterAdd(cart, data, variantId) {
+    var ui = cart || msGetCartUi();
+    if (!ui) return;
+
+    if (ui.classList && ui.classList.contains('is-empty')) {
+      ui.classList.remove('is-empty');
+    }
+
+    function pub() {
+      if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+        publish(PUB_SUB_EVENTS.cartUpdate, {
+          source: 'ms-vehicle-checker',
+          productVariantId: variantId != null ? String(variantId) : undefined,
+          cartData: data
+        });
+      }
+    }
+
+    if (data && data.sections && typeof ui.renderContents === 'function') {
+      try {
+        pub();
+        ui.renderContents(data);
+        return;
+      } catch (err) {}
+    }
+
+    pub();
+
+    var ids = msSectionIdsFor(ui);
+    fetch('/?sections=' + encodeURIComponent(ids))
+      .then(function(r) {
+        if (!r.ok) throw new Error('sections');
+        return r.json();
+      })
+      .then(function(sections) {
+        if (ui && typeof ui.renderContents === 'function') {
+          ui.renderContents({ sections: sections });
+        } else {
+          var d = document.querySelector('cart-drawer');
+          if (d && typeof d.open === 'function') d.open();
+        }
+      })
+      .catch(function() {
+        var d = document.querySelector('cart-drawer');
+        if (d && typeof d.open === 'function') d.open();
+      });
+  }
+
+  window.msAddStrutToCart = function(btn, variantId) {
+    if (!variantId || btn.getAttribute('data-ms-strut-added') === '1') return;
+    btn.disabled = true;
+    var cart = msGetCartUi();
+    var sectionIds = msSectionIdsFor(cart);
+    var addUrl = (window.routes && window.routes.cart_add_url) ? window.routes.cart_add_url : '/cart/add.js';
+    fetch(addUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        items: [{ id: parseInt(String(variantId), 10), quantity: 1 }],
+        sections: sectionIds,
+        sections_url: window.location.pathname
+      })
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('add failed');
+      return res.json();
+    })
+    .then(function(data) {
+      if (data.status) {
+        throw new Error(data.description || data.message || 'add failed');
+      }
+      btn.textContent = 'Added to Cart';
+      btn.setAttribute('data-ms-strut-added', '1');
+      btn.disabled = true;
+      msRenderCartAfterAdd(cart, data, variantId);
+    })
+    .catch(function() {
+      btn.disabled = false;
+      alert('Could not add to cart. Please try again.');
+    });
+  };
+
+  window.msAddToCart = function(variantId) {
+    var cart = msGetCartUi();
+    var sectionIds = msSectionIdsFor(cart);
+    var addUrl = (window.routes && window.routes.cart_add_url) ? window.routes.cart_add_url : '/cart/add.js';
+
+    var formData = new FormData();
+    formData.append('id', String(variantId));
+    formData.append('quantity', '1');
+    formData.append('sections', sectionIds);
+    formData.append('sections_url', window.location.pathname);
+
+    fetch(addUrl, {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        Accept: 'application/json'
+      },
+      body: formData
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('add failed');
+      return res.json();
+    })
+    .then(function(data) {
+      if (data.status) {
+        throw new Error(data.description || data.message || 'add failed');
+      }
+      msRenderCartAfterAdd(cart, data, variantId);
+    })
+    .catch(function() {
+      alert('Could not add to cart. Please try again.');
+    });
+  };
+
+})();
+</script> {% endcomment %}
+
+{% comment %}
+  MoonShade vehicle checker — paste into theme (snippet or product section).
+  PROXY: api/vehicle-check.js on Vercel must return { valid: false } for non-vehicles.
+{% endcomment %}
+{% assign ms_vc_strut_vid = nil %}
+{% assign ms_vc_strut_prod = all_products['strut-pole-replacement-moonshade-original'] %}
+{% if ms_vc_strut_prod and ms_vc_strut_prod.selected_or_first_available_variant %}
+  {% assign ms_vc_strut_vid = ms_vc_strut_prod.selected_or_first_available_variant.id %}
+{% endif %}
+<style>
+
+.vehicle-wrapper{
+  margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8e8e8;
+     display:none;
+}
+
+  .ms-cta-btn.ms-strut-pole-btn:disabled {
+    opacity: 0.85;
+    cursor: default;
+  }
+
+  #ms-vehicle-checker h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: #3B4752;
+    letter-spacing: 0.6px;
+    line-height: 27.3px;
+    font-family: 'Poligon_Semi_Bold';
+
+  }
+  #ms-vehicle-checker p.ms-subtitle {
+    font-size: 15px;
+    color: #3B4752;
+    margin: 10px 0px 10px 0px !important;
+    line-height: 18px;
+    font-family: 'Poligon_Regular';
+  }
+  #ms-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #E4E4E4;
+    border-radius: 40px;
+    padding: 13px 18px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 12px;
+    font-family: 'Poligon_Regular';
+  }
+  #ms-check-btn {
+    width: 100%;
+    background: #3B4752;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    font-family: 'Poligon_Regular';
+    line-height: 17px;
+  }
+  #ms-result {
+    margin-top: 20px;
+    display: none;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    padding-bottom: 20px;
+  }
+  .ms-card {
+    position: relative;
+    border-radius: 6px 6px 0px 0px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ms-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .ms-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.58) 100%);
+  }
+  .ms-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: .6px;
+    padding: 1px 10px 0px 10px;
+    border-radius: 40px;
+    border: 0.9px solid #0CCB29;
+    font-family: 'Poligon_Regular';
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 1.8px;
+    background: #69CA77;
+  }
+  .ms-card-text {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+  }
+  .ms-product-name {
+    color: #fff;
+    font-size: 30.87px;
+    line-height: 38.31px;
+    letter-spacing: 0.84px;
+    font-family: 'Berringer_Rough';
+  }
+  .ms-headline {
+    color: #CDCDCD;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: 'Poligon_Regular';
+  }
+  div#ms-result > p {
+    color: #000000;
+    font-family: 'Poligon_Regular';
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    margin: 20px 0px 20px 0px !important;
+    padding: 0px 20px;
+  }
+  .ms-cta-btn {
+    display: block;
+    text-align: center;
+    width: 98%;
+    box-sizing: border-box;
+    background: #3B4752;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poligon_Semi_Bold';
+    line-height: 17px;
+    margin: 0 auto;
+  }
+  .ms-cta-btn.ms-strut-pole-btn {
+    margin-top: 10px;
+    background: #4a5568 !important;
+  }
+  .ms-upsell {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    color: #8D8D8D;
+    text-decoration: underline;
+    font-family: 'Poligon_Regular';
+  }
+</style>
+  <div class="vehicle-wrapper">
+<div id="ms-vehicle-checker">
+  <h2>Does MoonShade fit your car?</h2>
+  <p class="ms-subtitle">Type in your vehicle to check compatibility.</p>
+  <input id="ms-input" type="text" placeholder="Toyota 4Runner" />
+  <button id="ms-check-btn">CHECK COMPATIBILITY</button>
+  <div id="ms-result"></div>
+</div>
+</div>
+<script>
+(function() {
+
+  window.__msVcPdpVariantId = {% if product and product.selected_or_first_available_variant %}{{ product.selected_or_first_available_variant.id | json }}{% else %}null{% endif %};
+  window.__msVcStrutVariantId = {% if ms_vc_strut_vid %}{{ ms_vc_strut_vid | json }}{% else %}null{% endif %};
+
+  var PROXY_URL = 'https://moonshade-proxy.vercel.app/api/vehicle-check';
+
+  /** Strut pole PDP — confirm handle in Shopify admin */
+  var STRUT_POLE_HREF = '/products/strut-pole-replacement-moonshade-original';
+
+  var PDP = {
+    original: '/products/moonshade',
+    xl:       '/products/moonshade-xl',
+    apex:     '/products/moonshade-apex',
+  };
+
+  var VARIANT_IDS = {
+    original: '42235542110297',
+    rv:       '42848537313369',
+      strut_pole: '42582109782105',
+  };
+
+var PRODUCTS = {
+  original: { name: 'MOONSHADE',      img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333.png?v=1776769848' },
+  rv:       { name: 'MOONSHADE',      img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333.png?v=1776769848' },
+  xl:       { name: 'MOONSHADE XL',   img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885333_1.png?v=1776769848' },
+  apex:     { name: 'MOONSHADE APEX', img: 'https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Frame_1597885334.png?v=1776769848' },
+};
+
+  var BADGE = {
+    this_fits:       { label: '✓ THIS FITS',           bg: '#69CA77', border: '#0CCB29' },
+    we_recommend:    { label: '✓ WE RECOMMEND',        bg: '#1b6fc8', border: '#1b6fc8' },
+    needs_accessory: { label: '⚠ FITS WITH ACCESSORY', bg: '#d4760a', border: '#d4760a' },
+  };
+
+  var UPSELL = {
+    pro: { label: 'Upgrade to Moonshade Pro', href: '/products/moonshade-pro' },
+    rv:  { label: 'Upgrade to Moonshade RV',  href: '/products/moonshade-rv'  },
+  };
+
+  document.getElementById('ms-check-btn').addEventListener('click', runCheck);
+  document.getElementById('ms-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') runCheck();
+  });
+
+  async function runCheck() {
+    var vehicle = document.getElementById('ms-input').value.trim();
+    if (!vehicle) { document.getElementById('ms-input').focus(); return; }
+
+    var btn = document.getElementById('ms-check-btn');
+    btn.textContent = 'Checking…';
+    btn.disabled = true;
+
+    var resultDiv = document.getElementById('ms-result');
+    resultDiv.style.display = 'none';
+    resultDiv.innerHTML = '';
+
+    try {
+      var res = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ vehicle: vehicle }),
+      });
+      var data = await res.json();
+
+      if (!res.ok || data.error) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Something went wrong. Please try again.</p>';
+        resultDiv.style.display = 'block';
+      } else if (data.valid === false) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Please enter a valid vehicle make and model.</p>';
+        resultDiv.style.display = 'block';
+      } else if (!data.product) {
+        resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Please enter a valid vehicle make and model.</p>';
+        resultDiv.style.display = 'block';
+      } else {
+        renderResult(data, vehicle);
+      }
+    } catch(e) {
+      resultDiv.innerHTML = '<p style="color:#c0392b;font-size:13px;">Something went wrong. Please try again.</p>';
+      resultDiv.style.display = 'block';
+    } finally {
+      btn.textContent = 'CHECK COMPATIBILITY';
+      btn.disabled = false;
+    }
+  }
+
+  function renderResult(r, vehicleInput) {
+    var prodKey = (r.product === 'original' && r.upsell_product === 'rv') ? 'rv' : r.product;
+    var prod   = PRODUCTS[prodKey] || PRODUCTS.original;
+    var badge  = BADGE[r.badge] || BADGE.this_fits;
+    var upsell = r.upsell_product ? UPSELL[r.upsell_product] : null;
+    var isXLorApex = r.badge === 'we_recommend';
+    var needsStrut = r.needs_strut_pole === true;
+
+    var ctaHtml;
+    if (isXLorApex) {
+      ctaHtml = '<a href="' + PDP[r.product] + '" class="ms-cta-btn">SHOP NOW</a>';
+    } else {
+      var variantId = (r.upsell_product === 'rv') ? VARIANT_IDS.rv : VARIANT_IDS.original;
+      ctaHtml = '<button type="button" data-ms-main-variant-id="' + escapeAttr(String(variantId)) + '" class="ms-cta-btn">ADD TO CART</button>';
+    }
+
+    if (needsStrut) {
+      var strutId = (window.__msVcStrutVariantId != null && window.__msVcStrutVariantId !== '')
+        ? String(window.__msVcStrutVariantId)
+        : String(VARIANT_IDS.strut_pole);
+      ctaHtml += '<button type="button" data-ms-strut-variant-id="' + escapeAttr(strutId) + '" class="ms-cta-btn ms-strut-pole-btn">ADD STRUT POLE — $25</button>';
+    }
+
+    var upsellHtml = upsell
+      ? '<a href="' + upsell.href + '" class="ms-upsell">' + upsell.label + '</a>'
+      : '';
+
+    var badgeStyle = 'background:' + badge.bg + ';border-color:' + (badge.border || badge.bg) + ';';
+
+    var v = (typeof vehicleInput === 'string' ? vehicleInput : document.getElementById('ms-input').value).trim();
+    var headline = (r.headline && String(r.headline).trim()) || ('Perfect Fit for your ' + v);
+
+    var html = '<div class="ms-card">'
+      + '<img src="' + prod.img + '" alt="' + escapeAttr(prod.name) + '" />'
+      + '<div class="ms-card-overlay"></div>'
+      + '<span class="ms-badge" style="' + badgeStyle + '">' + badge.label + '</span>'
+      + '<div class="ms-card-text">'
+      + '<div class="ms-product-name">' + prod.name + '</div>'
+      + '<div class="ms-headline">' + escapeHtml(headline) + '</div>'
+      + '</div>'
+      + '</div>';
+
+    if (r.description) {
+      html += '<p>' + escapeHtml(r.description) + '</p>';
+    }
+
+    html += ctaHtml + upsellHtml;
+
+    var resultDiv = document.getElementById('ms-result');
+    resultDiv.innerHTML = html;
+    resultDiv.style.display = 'block';
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function escapeAttr(s) {
+    return escapeHtml(s).replace(/'/g, '&#39;');
+  }
+
+  /** Drawer theme also loads <cart-notification> CSS; always prefer the active cart UI (drawer first). */
+  function msGetCartUi() {
+    return document.querySelector('cart-drawer') || document.querySelector('cart-notification');
+  }
+
+  function msSectionIdsFor(cart) {
+    var defaults = 'cart-drawer,cart-icon-bubble';
+    if (cart && typeof cart.getSectionsToRender === 'function') {
+      return cart.getSectionsToRender()
+        .map(function(s) { return s.id; })
+        .join(',');
+    }
+    return defaults;
+  }
+
+  function msVcResolvePdpVariantId() {
+    var v = window.__msVcPdpVariantId;
+    if (v != null && v !== '') return v;
+    if (typeof mainProductVariantId !== 'undefined') return mainProductVariantId;
+    return null;
+  }
+
+  function msVcAnchorModalAvailable() {
+    return document.getElementById('first-modal') != null && msVcResolvePdpVariantId() != null;
+  }
+
+  /** Vehicle checker ADD TO CART: open anchor modal only; MoonShade (+ optional anchor) added after user completes modal — never bundles strut. */
+  function msBeginVehicleCheckerAnchorFlow() {
+    var firstModal = document.getElementById('first-modal');
+    if (!firstModal) return false;
+    var pdpVid = msVcResolvePdpVariantId();
+    if (pdpVid == null) return false;
+    window.__msVehicleCheckerPendingAdd = true;
+    window.__msVehicleCheckerPendingStrutOnly = false;
+    window.__msVehicleCheckerPendingStrutVariantId = null;
+    window.__msVehicleCheckerPendingVariantId = pdpVid;
+    window.setTimeout(function () {
+      firstModal.style.display = 'block';
+    }, 10);
+    return true;
+  }
+
+  /** ADD STRUT POLE: same anchor modal; confirm adds strut + optional anchor only (no MoonShade). */
+  function msBeginVehicleCheckerStrutAnchorFlow(strutVariantId) {
+    var firstModal = document.getElementById('first-modal');
+    if (!firstModal) return false;
+    if (strutVariantId == null || strutVariantId === '') return false;
+    window.__msVehicleCheckerPendingAdd = true;
+    window.__msVehicleCheckerPendingStrutOnly = true;
+    window.__msVehicleCheckerPendingStrutVariantId = String(strutVariantId);
+    window.__msVehicleCheckerPendingVariantId = null;
+    window.setTimeout(function () {
+      firstModal.style.display = 'block';
+    }, 10);
+    return true;
+  }
+
+  function msOpenAnchorModalFromVehicleChecker() {
+    return msBeginVehicleCheckerAnchorFlow();
+  }
+
+  window.msFinalizeVehicleCheckerPendingMainOnly = function () {
+    if (!window.__msVehicleCheckerPendingAdd) return;
+    var strutOnly = window.__msVehicleCheckerPendingStrutOnly === true;
+    var strutVid = window.__msVehicleCheckerPendingStrutVariantId;
+    var vid = window.__msVehicleCheckerPendingVariantId;
+    window.__msVehicleCheckerPendingAdd = false;
+    window.__msVehicleCheckerPendingStrutOnly = false;
+    window.__msVehicleCheckerPendingStrutVariantId = null;
+    window.__msVehicleCheckerPendingVariantId = null;
+    var firstModal = document.getElementById('first-modal');
+    if (firstModal) firstModal.style.display = 'none';
+
+    var lineVid = strutOnly ? strutVid : vid;
+    if (lineVid == null || lineVid === '') return;
+
+    var cart = msGetCartUi();
+    var sectionIds = msSectionIdsFor(cart);
+    var addUrl = (window.routes && window.routes.cart_add_url) ? window.routes.cart_add_url : '/cart/add.js';
+    var idNum = parseInt(String(lineVid), 10);
+
+    fetch(addUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        items: [{ id: idNum, quantity: 1 }],
+        sections: sectionIds,
+        sections_url: window.location.pathname
+      })
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('add failed');
+        return res.json();
+      })
+      .then(function (data) {
+        if (data.status) {
+          throw new Error(data.description || data.message || 'add failed');
+        }
+        msRenderCartAfterAdd(cart, data, lineVid);
+      })
+      .catch(function () {
+        alert('Could not add to cart. Please try again.');
+      });
+  };
+
+  /** Match Dawn product-form: open drawer via renderContents; never send shoppers to /cart from here. */
+  function msRenderCartAfterAdd(cart, data, variantId) {
+    var ui = cart || msGetCartUi();
+    if (!ui) return;
+
+    if (ui.classList && ui.classList.contains('is-empty')) {
+      ui.classList.remove('is-empty');
+    }
+
+    function pub() {
+      if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+        publish(PUB_SUB_EVENTS.cartUpdate, {
+          source: 'ms-vehicle-checker',
+          productVariantId: variantId != null ? String(variantId) : undefined,
+          cartData: data
+        });
+      }
+    }
+
+    if (data && data.sections && typeof ui.renderContents === 'function') {
+      try {
+        pub();
+        ui.renderContents(data);
+        return;
+      } catch (err) {}
+    }
+
+    pub();
+
+    var ids = msSectionIdsFor(ui);
+    fetch('/?sections=' + encodeURIComponent(ids))
+      .then(function(r) {
+        if (!r.ok) throw new Error('sections');
+        return r.json();
+      })
+      .then(function(sections) {
+        if (ui && typeof ui.renderContents === 'function') {
+          ui.renderContents({ sections: sections });
+        } else {
+          var d = document.querySelector('cart-drawer');
+          if (d && typeof d.open === 'function') d.open();
+        }
+      })
+      .catch(function() {
+        var d = document.querySelector('cart-drawer');
+        if (d && typeof d.open === 'function') d.open();
+      });
+  }
+
+  window.msAddStrutToCart = function (btn, variantId, evt) {
+    if (evt) {
+      if (evt.stopPropagation) evt.stopPropagation();
+      if (evt.preventDefault) evt.preventDefault();
+    }
+    if (!variantId || btn.getAttribute('data-ms-strut-added') === '1') return;
+
+    btn.disabled = true;
+    var cart = msGetCartUi();
+    var sectionIds = msSectionIdsFor(cart);
+    var addUrl = (window.routes && window.routes.cart_add_url) ? window.routes.cart_add_url : '/cart/add.js';
+    fetch(addUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        items: [{ id: parseInt(String(variantId), 10), quantity: 1 }],
+        sections: sectionIds,
+        sections_url: window.location.pathname
+      })
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('add failed');
+      return res.json();
+    })
+    .then(function(data) {
+      if (data.status) {
+        throw new Error(data.description || data.message || 'add failed');
+      }
+      btn.textContent = 'Added to Cart';
+      btn.setAttribute('data-ms-strut-added', '1');
+      btn.disabled = true;
+      msRenderCartAfterAdd(cart, data, variantId);
+    })
+    .catch(function() {
+      btn.disabled = false;
+      alert('Could not add to cart. Please try again.');
+    });
+  };
+
+  window.msAddToCart = function (variantId, evt) {
+    if (evt) {
+      if (evt.stopPropagation) evt.stopPropagation();
+      if (evt.preventDefault) evt.preventDefault();
+    }
+    if (msVcAnchorModalAvailable() && msOpenAnchorModalFromVehicleChecker()) {
+      return;
+    }
+
+    var cart = msGetCartUi();
+    var sectionIds = msSectionIdsFor(cart);
+    var addUrl = (window.routes && window.routes.cart_add_url) ? window.routes.cart_add_url : '/cart/add.js';
+
+    var formData = new FormData();
+    formData.append('id', String(variantId));
+    formData.append('quantity', '1');
+    formData.append('sections', sectionIds);
+    formData.append('sections_url', window.location.pathname);
+
+    fetch(addUrl, {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        Accept: 'application/json'
+      },
+      body: formData
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('add failed');
+      return res.json();
+    })
+    .then(function(data) {
+      if (data.status) {
+        throw new Error(data.description || data.message || 'add failed');
+      }
+      msRenderCartAfterAdd(cart, data, variantId);
+    })
+    .catch(function() {
+      alert('Could not add to cart. Please try again.');
+    });
+  };
+
+  (function msVcBindResultCtas() {
+    var root = document.getElementById('ms-vehicle-checker');
+    if (!root) return;
+    root.addEventListener(
+      'click',
+      function (e) {
+        var strutBtn = e.target.closest('button.ms-strut-pole-btn');
+        if (strutBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          var sid = strutBtn.getAttribute('data-ms-strut-variant-id');
+          if (sid && strutBtn.getAttribute('data-ms-strut-added') !== '1') {
+            if (document.getElementById('first-modal') && msBeginVehicleCheckerStrutAnchorFlow(sid)) {
+              return;
+            }
+            window.msAddStrutToCart(strutBtn, sid, e);
+          }
+          return;
+        }
+        var mainBtn = e.target.closest('button.ms-cta-btn:not(.ms-strut-pole-btn)');
+        if (mainBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          var mid = mainBtn.getAttribute('data-ms-main-variant-id');
+          if (mid) {
+            window.msAddToCart(mid, e);
+          }
+        }
+      },
+      true
+    );
+  })();
+
+})();
+</script>

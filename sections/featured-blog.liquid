@@ -1,0 +1,548 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign posts_displayed = section.settings.blog.articles_count
+  if section.settings.post_limit <= section.settings.blog.articles_count or section.settings.post_limit <= 4
+    assign posts_exceed_limit = true
+    assign posts_displayed = section.settings.post_limit
+  endif
+-%}
+<div    class="blog color-{{ section.settings.color_scheme }} {{ section.settings.custom-blog-cls }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
+  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
+    {%- unless section.settings.heading == blank -%}
+      <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+        >
+          {{ section.settings.heading }}
+        </h2>
+
+        {%- if section.settings.blog != blank
+          and section.settings.show_view_all
+          and section.settings.post_limit < section.settings.blog.articles_count
+        -%}
+          <a
+            href="{{ section.settings.blog.url }}"
+            class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          >
+            {{ 'sections.featured_blog.view_all' | t }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  {% paginate blog.articles by 15 %}
+      <ul 
+        id="Slider-{{ section.id }}"
+        class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.blog_card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
+        role="list"
+      >
+        {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
+          {% if template == "blog" %}
+ {% for article in blog.articles reversed %}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              
+              {% render 'article-card',
+                blog: section.settings.blog,
+                article: article,
+                media_aspect_ratio: 1.66,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: true
+              %}
+            </li>
+          {%- endfor -%}
+            {% else %}
+
+ {% for article in blog.articles %}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              
+              {% render 'article-card',
+                blog: section.settings.blog,
+                article: article,
+                media_aspect_ratio: 1.66,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: true
+              %}
+            </li>
+   {%- endfor -%}
+            {% endif %}
+         
+        {%- else -%}
+          {% for i in (1..section.settings.post_limit) -%}
+            {%- assign placeholder_image_index = forloop.index0 | modulo: 3 | plus: 1 -%}
+            {%- assign placeholder_image = 'blog-apparel-' | append: placeholder_image_index -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              <div  class="article-card-wrapper card-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                <div
+                  class="
+                    card article-card card--{{ settings.blog_card_style }}
+                    {% if settings.blog_card_style == 'card' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %}
+                    {% if section.settings.show_image %} card--media{% else %} card--text{% endif %}
+                  "
+                  style=" {% if settings.blog_card_style == 'standard' %} --ratio-percent: 100%;{% elsif settings.blog_card_style == 'card' %} --ratio-percent: 0%;{% endif %}"
+                >
+                  <div
+                    class="card__inner{% if settings.blog_card_style == 'standard' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %} ratio"
+                    style="--ratio-percent: 80%;"
+                  >
+                    {%- if section.settings.show_image == true -%}
+                      <div class="article-card__image-wrapper card__media">
+                        <div class="article-card__image media">
+                          {{ placeholder_image | placeholder_svg_tag: 'blog-placeholder-svg' }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading h2">
+                          {{ 'sections.featured_blog.onboarding_title' | t }}
+                        </h3>
+                        <p class="article-card__excerpt rte-width">
+                          {{ 'sections.featured_blog.onboarding_content' | t }}
+                        </p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h2">
+                        {{ 'sections.featured_blog.onboarding_title' | t }}
+                      </h3>
+                      <p class="article-card__excerpt rte-width">
+                        {{ 'sections.featured_blog.onboarding_content' | t }}
+                      </p>
+
+                      <a href="/blogs/otr/adventure-is-in-our-dna" class="button btn btn-outline-dark" data-convert-linking-binding="done"> Watch this Entry </a>
+
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </li>
+          {%- endfor -%}
+        {%- endif -%}
+      </ul>
+
+
+
+<div class="pagination">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}"> <</a>
+    {% endif %}
+
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.url }}">{{ part.title }}</a>
+      {% else %}
+        <span class="current">{{ part.title }}</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}">></a>
+    {% endif %}
+  </div>
+
+    {%- if section.settings.enable_itemlist_schema and blog.articles_count > 0 -%}
+      {%- liquid
+        assign itemlist_url = canonical_url | default: blog.url
+        unless itemlist_url contains '://'
+          assign itemlist_url = request.origin | append: blog.url
+        endunless
+        assign itemlist_id = itemlist_url | append: '#itemlist'
+        assign itemlist_name = section.settings.heading | strip_html | strip
+        if itemlist_name == blank
+          assign itemlist_name = blog.title
+        endif
+      -%}
+      {%- capture itemlist_elements -%}
+        {%- assign itemlist_first = true -%}
+        {%- if template == 'blog' -%}
+          {%- for article in blog.articles reversed -%}
+            {%- assign list_position = paginate.current_offset | plus: forloop.index -%}
+            {%- assign article_url = request.origin | append: article.url -%}
+            {%- unless itemlist_first -%},{%- endunless -%}
+            {
+              "@type": "ListItem",
+              "position": {{ list_position }},
+              "url": {{ article_url | json }},
+              "item": {
+                "@type": "BlogPosting",
+                "headline": {{ article.title | json }},
+                "url": {{ article_url | json }}
+                {%- if article.image -%}
+                ,
+                "image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}
+                {%- endif -%}
+                {%- if article.published_at -%}
+                ,
+                "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }}
+                {%- endif -%}
+                {%- if article.author != blank -%}
+                ,
+                "author": {
+                  "@type": "Person",
+                  "name": {{ article.author | json }}
+                }
+                {%- endif -%}
+              }
+            }
+            {%- assign itemlist_first = false -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for article in blog.articles -%}
+            {%- assign list_position = paginate.current_offset | plus: forloop.index -%}
+            {%- assign article_url = request.origin | append: article.url -%}
+            {%- unless itemlist_first -%},{%- endunless -%}
+            {
+              "@type": "ListItem",
+              "position": {{ list_position }},
+              "url": {{ article_url | json }},
+              "item": {
+                "@type": "BlogPosting",
+                "headline": {{ article.title | json }},
+                "url": {{ article_url | json }}
+                {%- if article.image -%}
+                ,
+                "image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}
+                {%- endif -%}
+                {%- if article.published_at -%}
+                ,
+                "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }}
+                {%- endif -%}
+                {%- if article.author != blank -%}
+                ,
+                "author": {
+                  "@type": "Person",
+                  "name": {{ article.author | json }}
+                }
+                {%- endif -%}
+              }
+            }
+            {%- assign itemlist_first = false -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endcapture -%}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "@id": {{ itemlist_id | json }},
+          "name": {{ itemlist_name | json }},
+          "url": {{ itemlist_url | json }},
+          "numberOfItems": {{ blog.articles_count }},
+          "itemListElement": [{{ itemlist_elements }}]
+        }
+      </script>
+    {%- endif -%}
+
+{% endpaginate %}
+
+
+
+
+
+
+  <!-- Pagination Controls -->
+
+
+
+
+        
+      {%- if posts_exceed_limit -%}
+        <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+      {%- endif -%}
+       <!-- Pagination -->
+ 
+ 
+    </slider-component>
+
+       
+     <!-- Sidebar Section with Contact Form -->
+  <aside class="blog-sidebar">
+    <div class="sidebar-form">
+      <h3>Sign Up</h3>
+
+         {% if template == "blog.moon-blog" %}
+                 <p class="contact-desc">Get new content from Moon delivered straight to your inbox. </p>
+          {% else %}
+                 <p class="contact-desc">Get new “On the Road” content delivered straight to your inbox. </p>
+          {% endif %}
+        
+
+    <div class="custom-contact-form">
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <p class="success-message">Thank you! Your message has been sent successfully.</p>
+    {% endif %}
+
+    {% if form.errors %}
+      <p class="error-message">There was an error sending your message. Please try again.</p>
+    {% endif %}
+
+    <!-- First Row: First Name & Last Name -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first-name">Name</label>
+        <input type="text" id="first-name" placeholder="First" name="contact[first_name]" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name" style="color: #fff;">.</label>
+        <input type="text" id="last-name" placeholder="Last" name="contact[last_name]" required>
+      </div>
+    </div>
+
+    <!-- Second Row: Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="your@email.com" name="contact[email]" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="button">Sign Up</button>
+  {% endform %}
+</div>
+    </div>
+  </aside>
+
+    {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
+      <div
+        class="blog__view-all center small-hide medium-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        <a
+          href="{{ section.settings.blog.url }}"
+          id="ViewAll-{{ section.id }}"
+          class="blog__button button"
+          aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+        >
+          {{ 'sections.featured_blog.view_all' | t }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-blog.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.featured-blog.settings.heading.default",
+      "label": "t:sections.featured-blog.settings.heading.label"
+    },
+    {
+      "type": "text",
+      "id": "custom-blog-cls",
+      "label": "Add Blog Class"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.post_limit.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.columns_desktop.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_image.label",
+      "info": "t:sections.featured-blog.settings.show_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.featured-blog.settings.show_author.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_view_all.label"
+    },
+    {
+      "type": "header",
+      "content": "Structured data (JSON-LD)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_itemlist_schema",
+      "default": false,
+      "label": "Enable ItemList schema",
+      "info": "Outputs ItemList schema from the blog posts shown on this page, including pagination position."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-blog.presets.name"
+    }
+  ]
+}
+{% endschema %}

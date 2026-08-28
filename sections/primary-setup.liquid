@@ -1,0 +1,240 @@
+{% if product.metafields.custom.primary_setup_title %}
+  <div class="primary-image page-width">
+    <h2>{{ product.metafields.custom.primary_setup_title }}</h2>
+  </div>
+{% endif %}
+
+<div id="shopify-section-template--{{ section.id }}__primary_setup_xGhyzn" class="shopify-section primary-setup page-width">
+    {% assign images = product.metafields.custom.primary_setup_images.value | uniq %}
+    {% assign captions = product.metafields.custom.caption | split: ',' %}
+    
+    {% if images.size > 0 %}
+        {% assign counter = 0 %}
+        {% for image in images %}
+            <div class="image-caption-block">
+                {% if image %}
+                    <img src="{{ image | file_url }}" alt="Product Image" loading="lazy">
+                {% else %}
+                    <p>No valid image available.</p>
+                {% endif %}
+                <p>{{ captions[counter] | remove: '"' | remove: '[' | remove: ']' | strip | default: '' }}</p>
+            </div>
+  
+            {% assign counter = counter | plus: 1 %}
+        {% endfor %}
+    {% else %}
+        <p>No images or captions available in the metafields.</p>
+    {% endif %}
+</div>
+
+{% if product.metafields.custom.primary_setup_note %}
+    <p class="note-after-ul desktop page-width" style="margin-top: 10px; font-size: 14px; color: #666;">
+        <strong>Note:</strong> {{ product.metafields.custom.primary_setup_note }}
+    </p>
+{% endif %}
+
+<!-- Swiper -->
+<div class="swipe-box pre-setup">
+    <div class="swiper-container">
+        <ul class="swiper-wrapper">
+            {% if images.size > 0 %}
+                {% assign counter = 0 %}
+                {% for image in images %}
+                    <li class="swiper-slide primary-setup">
+                        {% if image %}
+                            <img src="{{ image | file_url }}" alt="Product Image" loading="lazy">
+                        {% else %}
+                            <p>No valid image available.</p>
+                        {% endif %}
+                        <p>{{ captions[counter] | remove: '"' | remove: '[' | remove: ']' | strip | default: 'No caption available' }}</p>
+                    </li>
+                    {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+            {% else %}
+                <li class="swiper-slide">
+                    <p>No images or captions available in the metafields.</p>
+                </li>
+            {% endif %}
+        </ul>
+
+        <!-- ✅ Navigation Arrows -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        {% if product.metafields.custom.primary_setup_note %}
+            <p class="note-after-ul mobile page-width" style="margin-top: 10px; font-size: 14px; color: #666;">
+                <strong>Note:</strong> {{ product.metafields.custom.primary_setup_note }}
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper Styles -->
+<style>
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-wrapper {
+    padding-left: initial;
+    margin: 0;
+}
+.pre-setup {
+  position: relative;
+}
+.pre-setup .swiper-button-next, .pre-setup .swiper-button-prev {
+    top: 35% !important;
+    color: #d1d1d1 !important;
+}
+.pre-setup .swiper-button-next, .pre-setup .swiper-button-prev, .pre-setup .swiper-button-next:after, .pre-setup .swiper-button-prev:after {
+    display: flex!important;
+    background-color: transparent;
+    border-radius: 100px;
+    width: 33px;
+    right: 10px;
+    border: 1px solid #d1d1d1;
+}
+.pre-setup .swiper-button-next:after, .pre-setup .swiper-button-prev:after {
+    font-size: 11px;
+    box-shadow: unset;
+    padding: 10px 13px;
+}
+.pre-setup .swiper-button-next, .pre-setup .swiper-button-prev {
+    display: block !important;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: auto;
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000; /* Change arrow color if needed */
+    width: 30px;
+    height: 30px;
+}
+
+.swiper-button-disabled {
+  display: none;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+
+
+/* Optional: Hide arrows on desktop or mobile using media queries */
+/*
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+*/
+</style>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper('.swipe-box .swiper-container', {
+    loop: false, // 🔁 disables infinite scroll
+    slidesPerView: 2,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      init: function () {
+        // Initial arrow check
+        toggleArrows(this);
+      },
+      slideChange: function () {
+        // Check arrow state on every slide change
+        toggleArrows(this);
+      },
+    }
+  });
+
+  function toggleArrows(swiperInstance) {
+    const prevBtn = document.querySelector('.swiper-button-prev');
+    const nextBtn = document.querySelector('.swiper-button-next');
+
+    // Disable prev button if at the first slide
+    if (swiperInstance.isBeginning) {
+      prevBtn.classList.add('swiper-button-disabled');
+    } else {
+      prevBtn.classList.remove('swiper-button-disabled');
+    }
+
+    // Disable next button if at the last slide
+    if (swiperInstance.isEnd) {
+      nextBtn.classList.add('swiper-button-disabled');
+    } else {
+      nextBtn.classList.remove('swiper-button-disabled');
+    }
+  }
+
+  // Fix Shopify double "files/files" issue in image URLs
+  const images = document.querySelectorAll(".primary-setup img");
+  images.forEach((img) => {
+    let src = img.getAttribute("src");
+    let updatedSrc = src.replace(/files\/files\//, "files/");
+    img.setAttribute("src", updatedSrc);
+  });
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "primary setup",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Primary Setup Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default Title"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Primary Setup Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "primary setup",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

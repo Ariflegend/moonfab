@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_LGMAxp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6PqtnG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact",
+            "heading_size": "h1"
+          }
+        },
+        "text_6VDDeP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you're reaching out about support for a specific order, problems placing an order, or issues with a discount, use the order support form below.<br/><br/> For product return requests, go <a href=\"https://moonfab.com/pages/request-a-return-v2\" title=\"https://moonfab.com/pages/request-a-return-v2\">here</a>. You may also want to refer to our FAQ page <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\">here</a>.</p>"
+          }
+        },
+        "text_HWG73X": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use the form below to send us a message. If you’re reaching out about support for a specific order, problems placing an order, or issues with a discount, use our order support form here. For product return requests, go <a href=\"https://moonfab.com/pages/request-a-return-v2\" title=\"https://moonfab.com/pages/request-a-return-v2\">here</a>. You may also want to refer to our FAQ page <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\">here</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6PqtnG",
+        "text_6VDDeP",
+        "text_HWG73X"
+      ],
+      "settings": {
+        "rich-custom-cls": "contact-head",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 24
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_1_9gbeg9": {
+      "type": "contact-form-1",
+      "settings": {
+        "contact-form-bg": "contact-form-first",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_LGMAxp",
+    "main",
+    "contact_form_1_9gbeg9"
+  ]
+}

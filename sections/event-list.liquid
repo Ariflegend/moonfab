@@ -1,0 +1,106 @@
+{% schema %}
+{
+  "name": "Event List",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "event",
+      "name": "Event",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Event Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Event Link"
+        },
+        {
+          "type": "url",
+          "id": "rsvp_link",
+          "label": "RSVP Link"
+        },
+        {
+          "type": "select",
+          "id": "month",
+          "label": "Month",
+          "options": [
+            { "value": "Jan", "label": "January" },
+            { "value": "Feb", "label": "February" },
+            { "value": "Mar", "label": "March" },
+            { "value": "Apr", "label": "April" },
+            { "value": "May", "label": "May" },
+            { "value": "Jun", "label": "June" },
+            { "value": "Jul", "label": "July" },
+            { "value": "Aug", "label": "August" },
+            { "value": "Sep", "label": "September" },
+            { "value": "Oct", "label": "October" },
+            { "value": "Nov", "label": "November" },
+            { "value": "Dec", "label": "December" }
+          ],
+          "default": "Jan"
+        },
+        {
+          "type": "text",
+          "id": "day",
+          "label": "Day"
+        },
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": "2022"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Event List",
+      "blocks": [
+        { "type": "event" },
+        { "type": "event" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="container">
+  <h3>Upcoming Events</h3>
+  {% for block in section.blocks %}
+    <div class="card event border shadow-sm">
+      <div class="d-flex">
+        <div class="event-date p-3 text-center d-flex flex-column align-items-center justify-content-center">
+          <p class="event-month mb-0 small fw-bold text-uppercase">{{ block.settings.month }}</p>
+          <p class="event-day mb-0 h2">{{ block.settings.day }}</p>
+          <p class="event-year mb-0 small fw-bold">{{ block.settings.year }}</p>
+        </div>
+        <div class="border-start"></div>
+        <div class="event-details p-3 p-md-4">
+          <p class="pre-title text-info mb-0">{{ block.settings.location }}</p>
+          <p class="lead fw-bold mb-2"><a href="{{ block.settings.link }}">{{ block.settings.title }}</a></p>
+          <div class="row">
+            {% if block.settings.link %}
+              <div class="col-md-auto">
+                <a target="_blank" href="{{ block.settings.link }}" class="pre-title">Learn More <i class="fas fa-arrow-right"></i></a>
+              </div>
+            {% endif %}
+            {% if block.settings.rsvp_link %}
+              <div class="col-md-auto">
+                <a target="_blank" href="{{ block.settings.rsvp_link }}" class="pre-title">RSVP <i class="fas fa-arrow-right"></i></a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

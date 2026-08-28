@@ -1,0 +1,74 @@
+.whole-sale-des .rich-text__blocks {
+    border-top: 1px solid #090B0C1A;
+    padding-top: 15px;
+}
+.whole-sale-des .rich-text__text.rte:nth-child(1) p {
+    color: #3B4752;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+    font-size: 14.63px;
+    font-family: 'Poligon_Extra_Bold';
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.whole-sale-des .rich-text__text.rte p {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poligon_Light';
+}
+.request-part p {
+    font-family: 'Poligon_Light';
+}
+.request-replace span {
+   font-size: 12.8px;
+   color: #3B4752BF;
+   font-family: 'Poligon_Light';
+}
+.request-part a {
+    font-weight: bold;
+}
+.main.page-width {
+    max-width: 88rem;
+}
+.main.page-width {
+    padding-bottom: 70px;
+}
+
+@media screen and (max-width: 749px){
+.main.page-width {
+    padding-bottom: 65px;
+    padding-top: 5px;
+}
+.main.page-width {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 95%;
+}
+}
+
+@media screen and (min-width:750px) and (max-width:991px) {
+.main.page-width {
+    padding-bottom: 70px !important;
+}
+.main.page-width {
+    max-width: 100%;
+    padding: 0 90px;
+}
+.whole-sale-des  .rich-text__blocks {
+    max-width: 88%;
+}
+}
+
+@media screen and (max-width: 500px){
+.main.page-width {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 95%;
+}
+}
+
+@media screen and (max-width: 375px){
+.request-part h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 30px;
+}
+}

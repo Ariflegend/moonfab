@@ -1,0 +1,312 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+
+  .collection-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+{%- endstyle -%}
+
+<div
+  class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient {{section.settings.custom_class}}"
+  style="{% if section.settings.show_collection_image and collection.image %}background-image: url('{{ collection.image | image_url }}');{% endif %}"
+  sty;
+>
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="collection-hero__text-wrapper page-width">
+      {% unless template == 'collection.moonanchors' %}
+        <h1 class="collection-hero__title">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+      {% endunless %}
+
+      <!--
+        <h1 class="collection-hero__title">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+      -->
+
+      {% if template == 'collection.moonanchors' %}
+        {% if collection.metafields.my_fields.logo %}
+          <img
+            src="{{ collection.metafields.my_fields.logo | image_url }}"
+            class="image-moonanchor collection-image"
+            alt="{{ collection.title }}"
+          >
+        {% else %}
+          {% if collection.title == 'All Products' %}
+              <div class="collection_above_wrap">
+          {% endif %}
+                <h1 class="collection-hero__title">
+                  <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+                  {% if collection.title == 'All Products' %}
+                      Shop Moon
+                    {% else %}
+                      {{- collection.title | escape -}}
+                  {% endif %}
+                </h1>
+
+                {% if collection.title == 'All Products' %}
+                  <ul class="allplist">
+                      <li>Universal Fit</li>
+                      <li>Easy Setup</li>
+                  </ul>
+                  <style>
+                    .collection_above_wrap {
+                            display: flex;
+                        }
+                        
+                        ul.allplist li {
+                            display: inline;
+                            margin: 46px;
+                            position: relative;
+                            font-size: 17px;
+                            font-weight: bold;
+                            color: #fff;
+                        }
+                        
+                        ul.allplist li::before {
+                            content: "•";  /* Bullet point */
+                            position: absolute;
+                            left: -20px; /* Adjust position as needed */
+                            color: #fff; /* Change color if needed */
+                            font-size: 2.2em; /* Adjust size if needed */
+                            top: -26px;
+                        }
+
+                        ul.allplist {
+                          margin-left: 90px;
+                      }
+
+                      @media only screen and (max-width: 1066px){
+                      ul.allplist {
+                          margin-left: 20px;
+                      }
+                      }
+
+                      @media screen and (min-device-width: 750px) and (max-device-width: 990px) { 
+                      
+                        .collection_above_wrap {
+                            flex-direction: column;
+                            text-align: left;
+                        }
+                        a.button.find-your {
+                          font-size: 12.25px;
+                      }
+                        ul.allplist {
+                            margin-left: -64px !important;
+                            margin-top: 0;
+                        }
+                      }
+                     
+                    
+                      @media only screen and (max-width: 749px){
+                        ul.allplist li::before {
+                            top: -21px;
+                        }
+                        .collection_above_wrap {
+                            flex-direction: column;
+                            text-align: left;
+                        }
+                        
+                        ul.allplist {
+                            margin-left: 0;
+                            margin-top: 37px;
+                        }
+                        
+                        ul.allplist li {
+                            display: list-item;
+                            margin: 0;
+                        }
+                        
+                        .collection-hero__inner.page-width {
+                            max-width: 100% !important;
+                            width: 100%;
+                        }
+                        
+                        .collection-hero.collection-hero--with-image {
+                            height: 291px !important;
+                        }
+                      }
+
+                  </style>
+                {% endif %}
+
+          {% if collection.title == 'All Products' %} 
+          </div>
+          {% endif %}
+          
+        {% endif %}
+
+
+        
+        {%- if collection.description -%}
+          <div class="collection-hero__description rte collection-des">{{ collection.description }}</div>
+        {%- endif -%}
+
+        {% if template.suffix == 'moonanchors' %}
+          {% if collection.metafields.my_fields.logo %}
+            <img
+              src="{{ collection.metafields.my_fields.logo | image_url }}"
+              class="image-moonanchors desktop-only"
+              alt="{{ collection.title }}"
+            >
+          {% endif %}
+          {% if collection.metafields.my_fields.logo != blank %}
+            <h1 class="collection-hero__title mobile-only">
+              <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+              {{- collection.title | escape -}}
+            </h1>
+          {% endif %}
+          {%- if collection.description -%}
+            <div class="collection-hero__description rte">{{ collection.description }}</div>
+          {%- endif -%}
+
+          <style>
+              @media (max-width: 767px) {
+                .desktop-only {
+                  display: none;
+                }
+                .mobile-only{
+              display: block !important;
+            }
+              }
+            .collection-image{
+              display:none;
+            }
+              .collection-des{
+                display:none;
+              }
+              @media (min-width: 768px) {
+                .mobile-only {
+                  display: none;
+                }
+              }
+          </style>
+        {% endif %}
+        <style>
+          .mobile-only{
+            display:none;
+          }
+        </style>
+      {% endif %}
+
+      {%- if section.settings.show_collection_description -%}
+        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+
+    
+
+    
+    {% if template == 'collection.new-vehicle-collection' or template == 'collection.moonanchors'  and collection.handle != 'moonwall' %}
+      <a
+        data-bs-toggle="modal"
+        href="#setup-quiz"
+        class="button find-your"
+        data-convert-linking-binding="done"
+        ><span href="#setup-quiz" data-convert-linking="done">Find Your Setup</span></a
+      >
+    {% endif %}
+  </div>
+</div>
+
+{%- if section.settings.enable_collection_page_schema -%}
+  {%- liquid
+    assign collection_page_url = canonical_url | default: collection.url
+    unless collection_page_url contains '://'
+      assign collection_page_url = request.origin | append: collection.url
+    endunless
+    assign collection_page_id = collection_page_url | append: '#collectionpage'
+    assign collection_page_description = collection.description | strip_html | strip
+    if collection_page_description == blank
+      assign collection_page_description = collection.title
+    endif
+    assign collection_page_language = request.locale.iso_code
+    if collection_page_language == 'en'
+      assign collection_page_language = 'en-US'
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": {{ collection_page_id | json }},
+      "name": {{ collection.title | json }},
+      "url": {{ collection_page_url | json }},
+      "description": {{ collection_page_description | json }},
+      "inLanguage": {{ collection_page_language | json }},
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": {{ request.origin | append: '/#website' | json }},
+        "name": {{ shop.name | json }},
+        "url": {{ request.origin | append: '/' | json }}
+      }
+      {%- if collection.image -%}
+      ,
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": {{ collection.image | image_url: width: 1200 | prepend: 'https:' | json }}
+      }
+      {%- endif -%}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Add custom class"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Structured data (JSON-LD)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_collection_page_schema",
+      "default": false,
+      "label": "Enable CollectionPage schema",
+      "info": "Outputs CollectionPage schema for this collection using the banner title, description, and image."
+    }
+  ]
+}
+{% endschema %}

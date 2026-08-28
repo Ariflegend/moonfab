@@ -1,0 +1,369 @@
+{% if section.settings.product_1 != blank and section.settings.product_2 != blank and section.settings.product_3 != blank and section.settings.product_4 != blank %}
+  <div class="recommended-products">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="recommended-products-grid">
+      {% for product in (1..4) %}
+  {% assign product_key = "product_" | append: product %}
+  {% assign current_product = section.settings[product_key] %}
+
+  <div class="product-card">
+    <a href="{{ current_product.url }}">
+      <img src="{{ current_product.featured_image | image_url  }}" alt="{{ current_product.title }}">
+      <h3>{{ current_product.title }}</h3>
+    </a>
+   
+
+      <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+                           <span>{{ current_product.price | money }}</span>
+                                                             <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                        </p>
+                     </div>
+   
+<p>{{ current_product.metafields.descriptors.summary }}</p>
+
+
+  <div class="view-add">
+    <a href="{{ current_product.url }}" class="view-btn">View</a>
+   <form method="post" action="/cart/add" class="add-to-cart-form">
+  <input type="hidden" name="id" value="{{ current_product.variants.first.id }}">
+  <button type="submit" class="add-btn">Add</button>
+     <div class="cart-loader"></div>
+</form>
+  </div>
+  </div>
+{% endfor %}
+
+    </div>
+  </div>
+
+{% endif %}
+
+<style>
+
+  .cart-loader {
+  display: none;
+  position: absolute;
+  right: -30px; /* Adjust based on spacing */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+  .recommended-products-grid {
+    display: flex;
+    gap: 10px !important;
+    flex-wrap: wrap;
+    height: 562px;
+}
+  /* .view-add {
+    position: absolute;
+    bottom: 20px;
+    width: 89%;
+} */
+ .recommended-products .product-card {
+    display: flex !important;
+    width: 24% !important;
+    flex-direction: column;
+    align-items: baseline;
+}
+  .recommended-products img {
+    width: 100% !important;
+    height: 262px;
+    object-fit: cover;
+}
+.view-add {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.recommended-products a.view-btn {
+    text-transform: uppercase;
+    font-family: 'Poligon_Bold';
+    background-color: transparent;
+    color: #3B4752;
+    border: 2px solid #3B4752;
+    border-radius: 60px;
+    width: 48%;
+    height: 41px;
+    line-height: normal;
+}
+form.add-to-cart-form {
+    position: relative;
+    width: 48%;
+}
+  .cart-loader {
+    right: 40px;
+    position: absolute;
+    top: 30px;
+}
+.recommended-products button.add-btn {
+    text-transform: uppercase;
+    font-family: 'Poligon_Bold';
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    background-color: #3B4752;
+    border-radius: 60px;
+    height: 41px;
+    border: none !important;
+}
+  .recommended-products {
+    padding: 20px;
+  }
+   .recommended-products  h3 {
+      margin-top: 0;
+      box-shadow: unset;
+      border: none !important;
+      font-family: 'Poligon_Bold';
+      font-size: 21.94px;
+      text-align: left;
+      text-decoration: none !important;
+      margin-bottom: 0;
+  }
+   .recommended-products p {
+    color: #3B4752;
+    text-align: left;
+    margin-top: -10px;
+}
+  .recommended-products h2 {
+      font-family: Berringer_Rough!important;
+      font-size: 24px;
+  }
+  .product-card {
+    box-shadow: 1px 1px 2px 1px #0000001A;
+    /* border: 1px solid #ddd; */
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+  .add-btn, .view-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media (min-width: 989px) {
+      .recommended-products  h3 {
+      margin-bottom: 20px;
+  }
+  }
+  
+@media (max-width: 989px) {
+.recommended-products .product-card {
+    display: block !important;
+    width: 49% !important;
+}
+  .recommended-products-grid {
+    display: flex;
+    gap: 10px !important;
+    flex-wrap: wrap;
+    height: 100% !important;
+}
+.recommended-products .product-card {
+    display: block !important;
+    width: 49% !important;
+}
+  .recommended-products  h3 {
+    margin-top: 10px;
+    box-shadow: unset;
+    border: none !important;
+    font-family: 'Poligon_Bold';
+    font-size: 20.8px;
+    text-align: left;
+    text-decoration: none !important;
+    margin-bottom: 20px;
+}
+  .view-add {
+    position: inherit;
+    bottom: 20px;
+    width: 100%;
+}
+}
+@media (max-width: 749px) {
+  .recommended-products .product-card {
+    display: block !important;
+    width: 100% !important;
+}
+  .view-add {
+    flex-direction: column;
+}
+.recommended-products a.view-btn {
+    text-transform: uppercase;
+    font-family: 'Poligon_Bold';
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+}
+.recommended-products  h3 {
+    margin-top: 10px;
+    box-shadow: unset;
+    border: none !important;
+    font-family: 'Poligon_Bold';
+    font-size: 19.74px;
+    text-align: left;
+    text-decoration: none !important;
+    margin-bottom: 30px;
+}
+form.add-to-cart-form {
+    width: 100%;
+}
+  .recommended-products h2 {
+    display: none;
+}
+.recommended-products {
+    padding-top: 50px;
+    margin-top: -11px;
+    border-top: 1px solid #DDDBD7;
+}
+.recommended-products img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+}
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".add-to-cart-form").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Default form submission ko rokna
+
+      let formData = new FormData(this);
+      let loader = form.querySelector(".cart-loader"); // Fix: Loader specific form ke andar dikhana
+
+      if (loader) loader.style.display = "block"; // Loader show karein
+
+      fetch("/cart/add.js", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Product added:", data);
+
+        return fetch("/?section_id=cart-drawer").then(response => response.text());
+      })
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+
+        const newCartDrawerContent = doc.querySelector("cart-drawer").innerHTML;
+        const cartDrawer = document.querySelector("cart-drawer");
+
+        if (cartDrawer) {
+          cartDrawer.innerHTML = newCartDrawerContent;
+          cartDrawer.classList.add("active");
+
+          if (cartDrawer.classList.contains("is-empty")) {
+            cartDrawer.classList.remove("is-empty");
+          }
+
+          reinitializeCartDrawerScripts();
+        }
+
+        const cartCount = document.querySelector(".cart-count-bubble .cart-count");
+        if (cartCount) {
+          const itemCountMatch = html.match(/"item_count":(\d+)/);
+          if (itemCountMatch) {
+            const itemCount = parseInt(itemCountMatch[1], 10);
+            cartCount.textContent = itemCount;
+          }
+        }
+      })
+      .catch(error => console.error("Error adding to cart:", error))
+      .finally(() => {
+        if (loader) loader.style.display = "none"; // Loader hide karein
+      });
+    });
+  });
+});
+
+
+// Function to reinitialize cart drawer scripts
+function reinitializeCartDrawerScripts() {
+  // Example: Reattach event listeners or reinitialize plugins
+  // This is a placeholder; actual implementation depends on the theme's scripts
+
+  // For instance, if the theme uses a specific function to initialize the cart drawer:
+  if (window.Shopify && Shopify.theme && typeof Shopify.theme.init === "function") {
+    Shopify.theme.init();
+  }
+
+  // If there are specific event listeners for cart drawer elements, reattach them here
+  // Example:
+  const closeButton = document.querySelector("cart-drawer .drawer__close");
+  if (closeButton) {
+    closeButton.addEventListener("click", function () {
+      const cartDrawer = document.querySelector("cart-drawer");
+      if (cartDrawer) {
+        cartDrawer.classList.remove("is-open");
+      }
+    });
+  }
+}
+
+
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Recommended Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recommended for you"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Select Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Select Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Select Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Select Product 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recommended Products",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_VMUEgz": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_DMNdYy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Introducing: On the Road",
+            "heading_size": "h1"
+          }
+        },
+        "text_VRVYLj": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_KqmWpL": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Watch the Video",
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DMNdYy",
+        "text_VRVYLj",
+        "buttons_KqmWpL"
+      ],
+      "disabled": true,
+      "settings": {
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "",
+        "add-idd-class": "",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "large"
+          }
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": true
+          }
+        },
+        "share_VLyXGE": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share_VLyXGE",
+        "content"
+      ],
+      "settings": {
+        "facebook_icon": "shopify://shop_images/Symbol.svg",
+        "facebook_url": "https://www.facebook.com/",
+        "twiter_icon": "shopify://shop_images/Link.svg",
+        "twiter_url": "",
+        "gmail_icon": "shopify://shop_images/Vector_a0edcd1c-9313-4fac-9591-e4468730b6c5.svg",
+        "gmail_url": ""
+      }
+    }
+  },
+  "order": [
+    "image_banner_VMUEgz",
+    "main"
+  ]
+}

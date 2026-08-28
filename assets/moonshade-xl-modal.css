@@ -1,0 +1,282 @@
+.whole-model .first-title {
+    margin: 0 !important;
+}
+.moon-vehicle-pdp.moonshade-pdp p {
+    /* margin-top: -15px !important; */
+}
+.whole-model .product-item {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+.whole-model button.confirm-select.button.disabled {
+    pointer-events: none;
+}
+p.price-popup, p.pro-price {
+    font-size: 14px !important;
+}
+.whole-model a.more-details-btn.button {
+    padding: 0 16px !important;
+    font-size: 14px !important;
+}
+.whole-model .right-con h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.whole-model a.more-details-btn.button:hover {
+    text-decoration: none !important;
+    background-color: #3b4752;
+    color: #fff;
+}
+body .button {
+    min-width: calc(10rem + var(--buttons-border-width) * 2) !important;
+    min-height: calc(4rem + var(--buttons-border-width) * 2) !important;
+}
+p.price-popup {
+    margin-bottom: 10px;
+}
+p.pro-price {
+    line-height: 21px !important;
+    font-family: 'Poligon_Regular' !important;
+    padding-top: 10px;
+    margin-bottom: 8px;
+}
+div#success-modal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+div#success-modal {
+    background-color: #0000006b;
+}
+.modal-content {
+    padding: 1.5rem !important;
+    border-radius: 6px;
+}
+.whole-model .right-con h2 {
+    font-weight: 700 !important;
+    letter-spacing: 0;
+    font-size: 18px;
+    font-family: 'Poligon_Semi_Bold' !important;
+}
+.whole-model .right-con h2 {
+    margin-top: 0;
+}
+.whole-model .product-item {
+    box-shadow: 1px 1px 2px 1px #0000001a;
+    border: none !important;
+    /* border: 1px solid #ddd; */
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 1.25rem !important;
+}
+.whole-model .right-con {
+    max-width: 490px !important;
+}
+.modal-content {
+    color: #3B4752 !important;
+}
+
+.whole-model button.close{
+  display:none;
+}
+ .whole-model    a.checkout-btn.button{
+     font-family: 'Poligon_Semi_Bold';
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background-color: #3b4752;
+    /* border:2px solid red; */
+  }
+  
+.whole-model   button.confirm-select.button{
+     font-family: 'Poligon_Semi_Bold';
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background-color: #47684D !important;
+    /* border:2px solid red; */
+  }
+ .whole-model     button.select-btn.button {
+      font-family: 'Poligon_Semi_Bold';
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background-color: #3b4752;
+  }
+.whole-model   a.more-details-btn.button {
+      font-family: 'Poligon_Semi_Bold';
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background-color: transparent;
+      color: #3b4752;
+      border: 1px solid #3b4752;
+  }
+.whole-model button.select-btn.button, a.btn.btn-sm.btn-outline-primary.ms-md-1.ms-lg-2 {
+    font-size: 14px;
+}
+ .whole-model    .right-con {
+        max-width: 550px;
+    }
+.whole-model    .left-con img {
+        max-width: 100% !important;
+    }
+.whole-model      .left-con {
+        max-width: 152px;
+    }
+.whole-model .product-item {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    /* justify-content: center; */
+        gap: 15px;
+}
+.whole-model     .modal-dialog {
+      max-width: 750px;
+  }
+ .whole-model  .moon-vehicle-pdp.moonshade-pdp p {
+      color: #3B4752;
+      font-size: 16px;
+      font-family: 'Poligon_Regular' !important;
+      line-height: 22px;
+  }
+.whole-model   .first-title{
+    font-family: 'Berringer_Rough';
+    font-size: 24px;
+    font-weight: 500 !important;
+  }
+ .whole-model  .modal-header{
+    border:none !important;
+  }
+ .whole-model  .product-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+ .whole-model  .selected-info {
+    color: green;
+    font-weight: bold;
+  }
+.whole-model   #confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.whole-model   .modal-footer {
+    display: block;
+   border:none !important;
+}
+.whole-model .success{
+  color : rgb(73 106 79);
+}
+.whole-model .success-message {
+    display: grid;
+    justify-content: center !important;
+    color:rgb(73 106 79);
+}
+button.withoutt-addon {
+    border: none;
+      border-radius: 41px;
+    background:rgba(71, 104, 77, 0.5)!important;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #fff !important;
+    letter-spacing:0px;
+    /* text-transform:uppercase; */
+    font-weight:400;
+        font-family: 'Poligon_Regular';
+}
+.whole-model button.confirm-select.button{
+    display:block;
+}
+.disabled.more-details-btn{
+    pointer-events:none;
+}
+/* @media screen and (min-width: 991px) {
+cart-drawer.drawer.active {
+    left: -15px;
+}
+} */
+.whole-model .moonshade-desc{
+  text-align:center;
+}
+.whole-model .success-btns {
+    display: grid;
+    width: 33%;
+    margin: auto;
+    text-align: center;
+}
+.whole-model .viewcart{
+  text-decoration:underline;
+}
+  /* .modal-content{
+    padding:33px;
+  }
+.modal-dialog{
+  padding-top:64px;
+} */
+  i.far.fa-check-circle {
+    margin: auto;
+}
+.whole-model   .confirmation-modals {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+.whole-model   p.cart-add {
+    font-size: 43px;
+}
+.whole-model #success-modal .modal-body {
+    padding-top: 0px;
+}
+.whole-model #success-modal .modal-title {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+.whole-model #success-modal a.checkout-btn.button {
+    font-family: Poligon_Semi_Bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #3b4752;
+    color: #fff !important;
+}
+.whole-model #success-modal .modal-body p {
+    color: #3b4752;
+    font-size: 16px;
+    font-family: Poligon_Regular;
+    line-height: 22px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+
+@media only screen and (max-width: 749px) {
+.whole-model .success-btns {
+    width: 100%;
+}
+.whole-model button.select-btn.button, a.btn.btn-sm.btn-outline-primary.ms-md-1.ms-lg-2 {
+    max-width: 100% !important;
+    width: 100%;
+    margin-top: 9px;
+}
+.whole-model a.more-details-btn.button {
+    width: 100%;
+    margin-top: 14px;
+    margin-top: 10px;
+}
+.whole-model button.confirm-select.button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+
+}
+.modal-dialog {
+    margin: 0 !IMPORTANT;
+}
+}

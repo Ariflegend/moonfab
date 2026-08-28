@@ -1,0 +1,507 @@
+<style>
+  .team-section {
+    width: 100%;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .team-section__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .team-section__header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 164px;
+    margin-bottom: 56px;
+  }
+
+  .team-section__heading {
+    font-family: 'Berringer_Rough', sans-serif;
+    font-weight: 400;
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 46px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #3B4752;
+    margin: 0;
+    max-width: 193px;
+    flex-shrink: 0;
+  }
+
+  .team-section__intro {
+    font-weight: 400;
+    font-style: normal;
+    color: #3B4752;
+    margin: 0;
+    max-width: 400px;
+  }
+
+  .team-section__intro p {
+    font-family:'HelveticaNeueLight' !important;
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    margin: 0;
+  }
+
+  .team-section__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns }}, 1fr);
+    gap: 32px 24px;
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-member__image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .team-member__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .team-member__name {
+    font-family: 'Berringer_Rough', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: #3B4752;
+    margin: 0 0 4px 0;
+    line-height:130%;
+  }
+
+.team-member__role {
+  font-family: 'HelveticaNeueMedium';
+  font-size: 14px;
+  color: rgba(59, 71, 82, 0.6);
+  margin: 0 0 14px 0;
+  font-weight: 700;
+  margin-top: -10px;
+}
+
+  .team-member__bio {
+    color: #3B4752;
+    margin: 0;
+  }
+
+  .team-member__bio p {
+    font-family: 'HelveticaNeueLight' !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    margin: 0;
+    color: #3B4752;
+  }
+
+  .team-section__scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    .team-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-section__header {
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .team-section {
+      padding-top: 66px;
+      padding-bottom: 44px;
+    }
+
+    .team-section__wrapper {
+      padding: 0 25px;
+      overflow: hidden;
+    }
+
+    .team-section__header {
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    .team-section__heading {
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0px;
+      margin-bottom: 13px;
+      max-width: none;
+      font-weight:400;
+    }
+
+    .team-section__intro {
+      font-size: 13px;
+      line-height: 140%;
+      max-width: none;
+    }
+
+    .team-section__grid-outer {
+      overflow: hidden;
+      margin: 0 -20px;
+    }
+
+    .team-section__grid {
+      display: flex;
+      grid-template-columns: unset;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 20px;
+      padding-bottom: 4px;
+      padding-left: 20px;
+      padding-right: 20px;
+      scrollbar-width: none;
+      box-sizing: border-box;
+    }
+
+    .team-section__grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .team-member {
+      flex: 0 0 250px;
+      width: 250px;
+      min-width: 250px;
+      scroll-snap-align: start;
+      padding-left:24px;
+    }
+
+    .team-section__scrollbar {
+      display: block;
+      position: relative;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 2px;
+      margin: 0px auto;
+      width: 235px;
+      max-width: 100%;
+      overflow: hidden;
+      margin-top:61px;
+    }
+
+    .team-section__scrollbar-fill {
+      display:block !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 86px;
+      background: #D6C0A4;
+      border-radius: 2px;
+      transition: transform 0.1s linear;
+      will-change: transform, width;
+    }
+  }
+
+  /* Fixes layout for very narrow mobile screens (320px) only */
+  @media screen and (max-width: 320px) {
+    .team-section__wrapper {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .team-section__grid {
+      padding-left: 12px;
+      padding-right: 12px;
+      gap: 16px;
+    }
+
+    .team-member {
+      flex: 0 0 210px;
+      width: 210px;
+      min-width: 210px;
+      padding-left: 12px;
+    }
+
+    .team-member__image-wrap {
+      margin-bottom: 12px;
+    }
+
+    .team-section__scrollbar {
+      width: 190px;
+      margin-top: 44px;
+    }
+
+    .team-section__scrollbar-fill {
+      width: 64px !important;
+    }
+  }
+</style>
+
+<!-- Desktop-specific image sizing: fix team images to 178x178 and keep centered -->
+<style>
+  @media screen and (min-width: 750px) {
+    .team-section {
+      padding-left: 72px !important;
+      padding-right: 72px !important;
+    }
+    .team-member__image-wrap {
+      width: 178px !important;
+      height: 178px !important;
+      aspect-ratio: unset !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .team-member__image-wrap img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+  }
+</style>
+
+<div class="team-section color-{{ section.settings.color_scheme }}" style="background-color: {{ section.settings.background_color }};">
+  <div class="team-section__wrapper">
+
+    <div class="team-section__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="team-section__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro_text != blank -%}
+        <div class="team-section__intro">{{ section.settings.intro_text }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="team-section__grid-outer">
+      <div class="team-section__grid" id="TeamGrid-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'team_member' -%}
+            <div class="team-member" {{ block.shopify_attributes }}>
+              <div class="team-member__image-wrap">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300,450,600' }}
+                {%- endif -%}
+              </div>
+              {%- if block.settings.name != blank -%}
+                <h3 class="team-member__name">{{ block.settings.name }}</h3>
+              {%- endif -%}
+              {%- if block.settings.role != blank -%}
+                <p class="team-member__role">{{ block.settings.role }}</p>
+              {%- endif -%}
+              {%- if block.settings.bio != blank -%}
+                <div class="team-member__bio">{{ block.settings.bio }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="team-section__scrollbar">
+      <div class="team-section__scrollbar-fill" id="TeamScrollFill-{{ section.id }}"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var grid = document.getElementById('TeamGrid-{{ section.id }}');
+    var fill = document.getElementById('TeamScrollFill-{{ section.id }}');
+    if (!grid || !fill) return;
+
+    function updateFill() {
+      var trackEl = fill.parentElement;
+      var trackWidth = trackEl.offsetWidth;
+      var maxScroll = grid.scrollWidth - grid.clientWidth;
+      if (maxScroll <= 0) {
+        fill.style.width = '100%';
+        fill.style.transform = 'translateX(0)';
+        return;
+      }
+      var scrollRatio = grid.scrollLeft / maxScroll;
+      var thumbPx = (grid.clientWidth / grid.scrollWidth) * trackWidth;
+      var maxTranslatePx = trackWidth - thumbPx;
+      fill.style.width = thumbPx + 'px';
+      fill.style.transform = 'translateX(' + (scrollRatio * maxTranslatePx) + 'px)';
+    }
+
+    grid.addEventListener('scroll', updateFill, { passive: true });
+    window.addEventListener('resize', updateFill);
+    updateFill();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Meet the team",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading & intro"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet the Moon Team."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text",
+      "default": "<p>Moon was started by people who were already living out of vans and spending weekends in the desert — who built MoonShade because the awning they actually wanted didn't exist yet. Every product has been tested in real conditions and refined based on real feedback. That hasn't changed.</p>"
+    },
+    {
+      "type": "range",
+      "id": "intro_size",
+      "label": "Intro text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Team members per row (desktop)",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FCF3E7"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 90
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Henry Proegler"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Co-Founder & CEO"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Bio",
+          "default": "<p>Henry is a co-founder and CEO of Moon, where he leads the company's vision, brand, and growth.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meet the team",
+      "blocks": [
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Henry Proegler",
+            "role": "Co-Founder & CEO",
+            "bio": "<p>Henry is a co-founder and CEO of Moon, where he leads the company's vision, brand, and growth. He helped shape a single product into a platform for people who live, travel, and explore outdoors, building partnerships across the outdoor, vanlife, and RV communities.</p>"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Matthew Pearson",
+            "role": "Co-Founder & Inventor",
+            "bio": "<p>Matthew Pearson is the inventor of the MoonShade and co-founder of Moon. What began as a personal solution for creating shade while camping grew into Moon's flagship product and the foundation of the company.</p>"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Eric Myers",
+            "role": "Product Manager",
+            "bio": "<p>Eric is Moon's Product Manager and a full-time nomad who has been living on the road since 2020. His firsthand experience camping, traveling, and testing gear informs every product decision.</p>"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Brandon Davey",
+            "role": "Lead Designer",
+            "bio": "<p>Brandon is Moon's Lead Designer, bringing more than 20 years of experience designing award-winning outdoor gear. He has led product development for some of the industry's most respected brands.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

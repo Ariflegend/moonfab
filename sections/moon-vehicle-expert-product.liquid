@@ -1,0 +1,200 @@
+<div class="mobile-discover" >
+  <div class="mobile-all-cols sss">
+  {% for block in section.blocks %}
+  {% if block.type == 'product_slide' %}
+    {% assign product = all_products[block.settings.product_handle] %}
+
+    {% if product and product.featured_image %}
+     <div class="mobile-single-cols" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('{{ product.featured_image | image_url }}');
+ background-repeat: no-repeat; background-size: cover;">
+          <!-- Metafield: bundle-type -->
+       <div class="moon-little-icon">
+       <img src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Tag_Variant_25ee8702-4cf4-4797-bea2-e87b04943c64.png?v=1740979682" class="moon-tag">
+       </div>
+          <!-- <span class="moonshade-meta">
+            {{ product.metafields.custom.mve_expet | default: 'No bundle type' }}
+          </span> -->
+          <h2>{{ product.metafields.custom.vehicle_title }}</h2>
+          <span class="product-price">{{ product.price | money }}</span>
+          <span class="author-name">Vehicle Experts: {{ product.metafields.custom.bundle_type | default: 'No bundle type' }}</span>
+          <a href="{{ product.url }}">Show Setup</a>
+     </div>
+
+
+ {% endif %}
+            {% endif %}
+          {% endfor %}
+                
+ 
+  </div>
+  <div class="show-more-mobile-discover">
+      <a href="{{ section.settings.button_url }}" class="button">SEE ALL</a>
+  </div>
+</div>
+
+{%- if section.settings.enable_itemlist_schema -%}
+  {%- liquid
+    assign itemlist_url = canonical_url | default: request.path
+    unless itemlist_url contains '://'
+      assign itemlist_url = request.origin | append: itemlist_url
+    endunless
+    assign itemlist_id = itemlist_url | append: '#itemlist-' | append: section.id
+    assign itemlist_count = 0
+    for block in section.blocks
+      if block.type != 'product_slide'
+        continue
+      endif
+      assign list_product = block.settings.product_handle
+      # <spark:e5bzi>
+        capture visibility
+          render 'sparklayer-b2b-catalogs-func', type:'product', subject:list_product
+        endcapture
+        if visibility == 'hide'
+          continue
+        endif
+      # </spark:e5bzi>
+      if list_product == blank
+        assign list_product = all_products[block.settings.product_handle]
+      endif
+      if list_product != blank and list_product.featured_image
+        assign itemlist_count = itemlist_count | plus: 1
+      endif
+    endfor
+  -%}
+  {%- if itemlist_count > 0 -%}
+    {%- capture itemlist_elements -%}
+      {%- assign itemlist_first = true -%}
+      {%- assign itemlist_position = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'product_slide' -%}
+          {%- continue -%}
+        {%- endif -%}
+        {%- assign list_product = block.settings.product_handle -%}
+        {%- # <spark:v55gt> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:list_product -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:v55gt> -%}
+        {%- if list_product == blank -%}
+          {%- assign list_product = all_products[block.settings.product_handle] -%}
+        {%- endif -%}
+        {%- if list_product == blank or list_product.featured_image == blank -%}
+          {%- continue -%}
+        {%- endif -%}
+        {%- assign itemlist_position = itemlist_position | plus: 1 -%}
+        {%- assign product_url = request.origin | append: list_product.url -%}
+        {%- assign product_image = list_product.featured_media | default: list_product.featured_image | image_url: width: 1200 | prepend: 'https:' -%}
+        {%- unless itemlist_first -%},{%- endunless -%}
+        {
+          "@type": "ListItem",
+          "position": {{ itemlist_position }},
+          "url": {{ product_url | json }},
+          "item": {
+            "@type": "Product",
+            "name": {{ list_product.title | json }},
+            "url": {{ product_url | json }}
+            ,
+            "image": {{ product_image | json }},
+            "offers": {
+              "@type": "Offer",
+              "price": {{ list_product.price | divided_by: 100.0 | json }},
+              "priceCurrency": {{ cart.currency.iso_code | json }},
+              "availability": "https://schema.org/{% if list_product.available %}InStock{% else %}OutOfStock{% endif %}",
+              "url": {{ product_url | json }}
+            }
+          }
+        }
+        {%- assign itemlist_first = false -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": {{ itemlist_id | json }},
+        "name": {{ 'MVE Products' | json }},
+        "url": {{ itemlist_url | json }},
+        "numberOfItems": {{ itemlist_count }},
+        "itemListElement": [{{ itemlist_elements }}]
+      }
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "MVE Products",
+    "settings": [
+       {
+      "type": "url",
+      "label": "Button URL",
+      "id": "button_url",
+    },
+    {
+      "type": "header",
+      "content": "Structured data (JSON-LD)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_itemlist_schema",
+      "default": false,
+      "label": "Enable ItemList schema",
+      "info": "Outputs ItemList schema from the MVE product slides in this section."
+    }
+    ],
+     "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product Slide",
+      "settings": [
+        {
+          "type": "product",
+          "label": "Select product",
+          "id": "product_handle"
+        }
+      ]
+    }
+  ],
+      "presets": [
+    {
+      "name": "MVE Products"
+    }
+  ]
+  }
+{% endschema %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 749) {
+    const showAllBtn = document.querySelector(".show-more-mobile-discover .button");
+    const productCols = document.querySelectorAll(".mobile-single-cols"); // Get all the product columns
+
+    if (showAllBtn && productCols.length) {
+      // Initially hide all product columns except the first 6
+      productCols.forEach((col, index) => {
+        if (index >= 6) {
+          col.style.display = "none"; // Hide items beyond the 6th
+        }
+      });
+
+      // Add click event listener to "SEE ALL" button
+      showAllBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // Show all product columns
+        productCols.forEach((col) => {
+          col.style.display = ""; // Reset inline style to show all
+        });
+
+        // Hide the "SEE ALL" button
+        showAllBtn.style.display = "none"; // Optionally hide the button
+      });
+    }
+  }
+});
+
+</script>

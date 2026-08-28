@@ -1,0 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "disabled": true,
+      "settings": {
+        "layout": "grid",
+        "show_image": false,
+        "image_height": "medium",
+        "show_date": false,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_Uf6taD": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_tHzf7D": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_jX8QRA": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Stories of connection, reflection, and discovery by Moon",
+            "text_style": "body"
+          }
+        },
+        "heading_dQbA63": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Moon Blog",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_jpNH7H": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Read the Latest Entry",
+            "open_in_new_tab_1": false,
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_tHzf7D",
+        "text_jX8QRA",
+        "heading_dQbA63",
+        "buttons_jpNH7H"
+      ],
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "image_pick": "shopify://shop_images/Image_23.png",
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "blog-banner moon-blog-bann",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/Header-_videoOuter-modi.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_blog_gydJAd": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "",
+        "custom-blog-cls": "blog-on-road",
+        "heading_size": "h1",
+        "blog": "moon",
+        "post_limit": 20,
+        "columns_desktop": 1,
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": false,
+        "enable_itemlist_schema": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_Uf6taD",
+    "featured_blog_gydJAd"
+  ]
+}

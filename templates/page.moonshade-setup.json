@@ -1,0 +1,424 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_GPMGi3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iYqgHB": {
+          "type": "heading",
+          "settings": {
+            "heading": "MoonShade Setup",
+            "heading_size": "h1"
+          }
+        },
+        "text_iYFXWX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Need help setting up your MoonShade? Watch videos or download instructional PDFs below. If you’re having trouble with something that’s not covered by these guides, reach out to Moon on the <a href=\"https://moonfab.com/pages/product-support-1\" title=\"https://moonfab.com/pages/product-support-1\">Product Support page.</a></p>"
+          }
+        },
+        "button_8CpQxy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iYqgHB",
+        "text_iYFXWX",
+        "button_8CpQxy"
+      ],
+      "settings": {
+        "rich-custom-cls": "moonshade-setup-banner-content",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "moonshade_videosection_gPkUXa": {
+      "type": "moonshade-videosection",
+      "blocks": {
+        "video_4fDEmW": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonShade XL Setup",
+            "add_video_title": "moon_shade_title",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/P3kjYrcmpRI?si=wHr3QV6gIl3Kj6oy"
+          }
+        },
+        "video_kC6etA": {
+          "type": "video",
+          "settings": {
+            "video_title": "Moonshade Apex",
+            "add_video_title": "moon_shade_title",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/bAAayTd4LFE"
+          }
+        },
+        "video_Kzn7ta": {
+          "type": "video",
+          "settings": {
+            "video_title": "Moonshade PRO",
+            "add_video_title": "moon_shade_title",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/QJBPvTxAkPA"
+          }
+        },
+        "video_emdhgy": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonShade Introduction",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/8zGu9du7tBc?feature=oembed"
+          }
+        },
+        "video_zNE48m": {
+          "type": "video",
+          "settings": {
+            "video_title": "Setup Walkthrough",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/8tt0tgSAEPo?feature=oembed"
+          }
+        },
+        "video_WnQtab": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonWall Intro + Setup",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/wE7KT_JMxow?feature=oembed"
+          }
+        },
+        "video_TDLiyW": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonShade Unboxing",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/xitHKTGD05Q?feature=oembed"
+          }
+        },
+        "video_QyDRrK": {
+          "type": "video",
+          "settings": {
+            "video_title": "Adhesive Anchor Installation Tutorial",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/n_gaMDjgGQQ?feature=oembed"
+          }
+        },
+        "video_yzTBfw": {
+          "type": "video",
+          "settings": {
+            "video_title": "Securing with Guylines",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/HhH7ohR2uS0?feature=oembed"
+          }
+        },
+        "video_jFyUz8": {
+          "type": "video",
+          "settings": {
+            "video_title": "Strut Pole Setup",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/sSK3GXsjK98?feature=oembed"
+          }
+        },
+        "video_JyeTQR": {
+          "type": "video",
+          "settings": {
+            "video_title": "Magnet Anchor Installation Tutorial",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/7L-Y4jgF6Hk?feature=oembed"
+          }
+        },
+        "video_WHQ8LQ": {
+          "type": "video",
+          "settings": {
+            "video_title": "Securing with Nite Ize Gear Ties",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/CyVTKVpl87Y?feature=oembed"
+          }
+        },
+        "video_wNV74f": {
+          "type": "video",
+          "settings": {
+            "video_title": "Hard Ground Setup",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/W4xX5efR_TM?feature=oembed"
+          }
+        },
+        "video_XdDKKA": {
+          "type": "video",
+          "settings": {
+            "video_title": "Tall Connect Setup",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/BdWugoYx5G4?feature=oembed"
+          }
+        },
+        "video_Vbg99i": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonAnchor Walkthrough",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/xRwtkXZxNms?feature=oembed"
+          }
+        },
+        "video_4NEP4q": {
+          "type": "video",
+          "settings": {
+            "video_title": "Suction Cups",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/6AcrG1LVCyI?feature=oembed"
+          }
+        },
+        "video_etKHh7": {
+          "type": "video",
+          "settings": {
+            "video_title": "Pad Eye Anchors",
+            "add_video_title": "",
+            "add_video_id": "",
+            "video_url": "https://www.youtube.com/embed/8MXt0NhJAeI?feature=oembed"
+          }
+        },
+        "video_KGarHk": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonMount Oval Vacuum Anchor",
+            "add_video_title": "",
+            "add_video_id": "mount-support-video",
+            "video_url": "https://www.youtube.com/embed/OPgx1nkOmwo?feature=oembed"
+          }
+        },
+        "video_XNENWJ": {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonSurface Walk-through",
+            "add_video_title": "",
+            "add_video_id": "moonsurface-walk-through",
+            "video_url": "https://www.youtube.com/embed/5z9AVDpnOyg"
+          }
+        }
+      },
+      "block_order": [
+        "video_4fDEmW",
+        "video_kC6etA",
+        "video_Kzn7ta",
+        "video_emdhgy",
+        "video_zNE48m",
+        "video_WnQtab",
+        "video_TDLiyW",
+        "video_QyDRrK",
+        "video_yzTBfw",
+        "video_jFyUz8",
+        "video_JyeTQR",
+        "video_WHQ8LQ",
+        "video_wNV74f",
+        "video_XdDKKA",
+        "video_Vbg99i",
+        "video_4NEP4q",
+        "video_etKHh7",
+        "video_KGarHk",
+        "video_XNENWJ"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "moonshade_pdfsection_eRX3JW": {
+      "type": "moonshade-pdfsection",
+      "blocks": {
+        "pdf_cVxQWb": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/MoonShade-Assembly_page-0001.jpg",
+            "pdf_title": "Assembly Instructions for MoonShade 9ftx7ft",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonShade-Assembly.pdf?v=1644936968"
+          }
+        },
+        "pdf_U3RJ9f": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/Screen-Shot-2020-10-19-at-6.34.42-PM.webp",
+            "pdf_title": "Tall-Connect Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Tall-Connect.pdf?v=1644936972"
+          }
+        },
+        "pdf_Ud8XrK": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/Moon-magnet-anchor-instructions.webp",
+            "pdf_title": "Magnet Anchor Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Moon-magnet-anchor-instructions.pdf?v=1644936968"
+          }
+        },
+        "pdf_MwzB4C": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/Moon-adhesive-anchor-instructions.webp",
+            "pdf_title": "Adhesive Anchor Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/adhesive-anchors.pdf?v=1644936968"
+          }
+        },
+        "pdf_rHpPFJ": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/Moon-adhesive-anchor-instructions_copy.webp",
+            "pdf_title": "Seam Seal Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonShade_Seam_Seal_Instructions.pdf?v=1648735039"
+          }
+        },
+        "pdf_UnwdTT": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/moonwall-instructions-preview.webp",
+            "pdf_title": "MoonWall Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonWall_Instructions.pdf?v=1661804601"
+          }
+        },
+        "pdf_Y4mnht": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/moonwall-corner-preview.webp",
+            "pdf_title": "MoonWall Corner Tabs",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonWall_Corner_Tab_Instructions_1.1.pdf?v=1656335715"
+          }
+        },
+        "pdf_8zTECB": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/pad-eye-instructions-preview.webp",
+            "pdf_title": "Pad Eye Anchors",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Pad_Eye_Instructions_1.1_web.pdf?v=1656335715"
+          }
+        },
+        "pdf_QxHcfB": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/MoonShade-Anchorless-_Soft-Top_-Setup_V2-1.webp",
+            "pdf_title": "Anchorless (Soft Top) Setup",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonShade_Anchorless_Soft_Top_Setup_V2.pdf?v=1664384814"
+          }
+        },
+        "pdf_6eghir": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/Screen_Shot_2022-11-23_at_12.33.50_PM.webp",
+            "pdf_title": "Strut Pole Setup Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/General_Strut_Pole_Instructions.pdf?v=1669228714"
+          }
+        },
+        "pdf_CJtnkz": {
+          "type": "pdf",
+          "settings": {
+            "pdf_image": "shopify://shop_images/MoonSurface_Instructions.png",
+            "pdf_title": "Moonsurface Instructions",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonSurface_Instructions.pdf?v=1778509713"
+          }
+        }
+      },
+      "block_order": [
+        "pdf_cVxQWb",
+        "pdf_U3RJ9f",
+        "pdf_Ud8XrK",
+        "pdf_MwzB4C",
+        "pdf_rHpPFJ",
+        "pdf_UnwdTT",
+        "pdf_Y4mnht",
+        "pdf_8zTECB",
+        "pdf_QxHcfB",
+        "pdf_6eghir",
+        "pdf_CJtnkz"
+      ],
+      "settings": {
+        "section_title": ""
+      }
+    },
+    "rich_text_BUc8YL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MVE6xF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Questions?",
+            "heading_size": "h2"
+          }
+        },
+        "text_LCQFkt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Explore the “Setup” section of our <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\">FAQ page</a> or <a href=\"https://moonfab.com/pages/product-support-1\" title=\"https://moonfab.com/pages/product-support-1\">contact support.</a></p>"
+          }
+        },
+        "button_bQXQfi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MVE6xF",
+        "text_LCQFkt",
+        "button_bQXQfi"
+      ],
+      "settings": {
+        "rich-custom-cls": "question-title",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_GPMGi3",
+    "moonshade_videosection_gPkUXa",
+    "moonshade_pdfsection_eRX3JW",
+    "rich_text_BUc8YL"
+  ]
+}

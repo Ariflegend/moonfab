@@ -1,0 +1,109 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_jcrkMR": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_fH3Rqm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Events",
+            "heading_size": "h1"
+          }
+        },
+        "text_AGVhck": {
+          "type": "text",
+          "settings": {
+            "text": "Meet Moon on the road at these vanlife and travel events",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fH3Rqm",
+        "text_AGVhck"
+      ],
+      "disabled": true,
+      "settings": {
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "events-banner",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/Image_46be7dc1-d274-4480-9f2f-a7fb84ea386c.png",
+        "image_overlay_opacity": 90,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "events": {
+      "type": "event-list",
+      "blocks": {
+        "event_gBwnYD": {
+          "type": "event",
+          "settings": {
+            "title": "TinyFest Southwest",
+            "link": "#",
+            "rsvp_link": "",
+            "month": "Dec",
+            "day": "3-4",
+            "year": "2022",
+            "location": "Scottsdale, AZ"
+          }
+        },
+        "event_r3gRTQ": {
+          "type": "event",
+          "settings": {
+            "title": "Stay tuned for 2025 Events",
+            "link": "",
+            "rsvp_link": "",
+            "month": "Jan",
+            "day": "",
+            "year": "2025",
+            "location": ""
+          }
+        }
+      },
+      "block_order": [
+        "event_gBwnYD",
+        "event_r3gRTQ"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "sidebar": {
+      "type": "sidebar-form",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_jcrkMR",
+    "events",
+    "sidebar"
+  ]
+}

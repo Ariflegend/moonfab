@@ -1,0 +1,131 @@
+<section class="custom-section-product-image">
+  <div class="container image-section">
+    <div class="image-block">
+   <img src="{{ section.settings.image | file_url }}" class="custom-image" alt="Custom Image">
+
+
+    </div>
+  <div class="link-block">
+  {% if section.settings.link_text %}
+    <a href="{{ section.settings.link_url }}">{{ section.settings.link_text }}</a>
+  {% endif %}
+
+  {% if section.settings.link_text2 %}
+    <a href="{{ section.settings.link_url2 }}">{{ section.settings.link_text2 }}</a>
+  {% endif %}
+
+  {% if section.settings.link_text3 %}
+    <a href="{{ section.settings.link_url3 }}">{{ section.settings.link_text3 }}</a>
+  {% endif %}
+
+  {% if section.settings.link_text4  %}
+    <a href="{{ section.settings.link_url4 }}" >{{ section.settings.link_text4 }}</a>
+  {% endif %}
+
+  {% if section.settings.link_text5  %}
+    <a href="{{ section.settings.link_url5 }}" >{{ section.settings.link_text5 }}</a>
+  {% endif %}
+
+  {% if section.settings.link_text6 %}
+    <a href="{{ section.settings.link_url6 }}" >{{ section.settings.link_text6 }}</a>
+  {% endif %}
+</div>
+
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".image-block img");
+
+  images.forEach((img) => {
+    let src = img.getAttribute("src");
+    // Ensure double "files/" is replaced with a single "files/"
+    let updatedSrc = src.replace(/files\/files\//, "files/");
+    img.setAttribute("src", updatedSrc);
+  });
+});
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Product page icon",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Upload Image"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+      {
+      "type": "text",
+      "id": "link_text2",
+      "label": "Link Text2"
+    },
+    {
+      "type": "url",
+      "id": "link_url2",
+      "label": "Link URL2"
+    }
+    ,
+      {
+      "type": "text",
+      "id": "link_text3",
+      "label": "Link Text3"
+    },
+    {
+      "type": "url",
+      "id": "link_url3",
+      "label": "Link URL3"
+    },
+      {
+      "type": "text",
+      "id": "link_text4",
+      "label": "Link Text4"
+    },
+    {
+      "type": "url",
+      "id": "link_url4",
+      "label": "Link URL4"
+    },
+     {
+      "type": "text",
+      "id": "link_text5",
+      "label": "Link Text5"
+    },
+    {
+      "type": "url",
+      "id": "link_url5",
+      "label": "Link URL5"
+    },
+     {
+      "type": "text",
+      "id": "link_text6",
+      "label": "Link Text6"
+    },
+    {
+      "type": "url",
+      "id": "link_url6",
+      "label": "Link URL6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-page-icon",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

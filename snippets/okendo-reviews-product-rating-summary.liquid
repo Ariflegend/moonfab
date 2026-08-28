@@ -1,0 +1,5 @@
+{% unless product.metafields.my_fields.hide_reviews %}
+{% if product.metafields.okendo.ProductListingSnippet %}
+<div data-oke-reviews-product-listing-rating>{{ product.metafields.okendo.ProductListingSnippet }}</div>
+{% endif %}
+{% endunless %}

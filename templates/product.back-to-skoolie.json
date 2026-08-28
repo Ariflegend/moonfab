@@ -1,0 +1,759 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "text_Chx7h4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.vehicle_title.value }}</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "body"
+          }
+        },
+        "title_jyVGkT": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "products_bundle_UqyYQL": {
+          "type": "products-bundle",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_BgBRqw": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_Niiqc3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping and Returns",
+            "icon": "none",
+            "content": "<p><a href=\"https://app.markup.io/markup/5ecb7369-91bc-4b73-abea-09f3745f135a#thread/b448da61-e220-46c1-b339-bdbb910548ff\" target=\"_blank\">Shipping & Returns content</a>: Orders to the lower 48 United States usually arrive within 4-7 business days of your purchase.</p><p>Orders for in-stock items are typically <strong>processed within 2-3 business days</strong>. Processing times may be longer (4-6+ business days) during peak spring and summer travel seasons and during the winter holidays. If you need your order more quickly, please contact <a href=\"https://moonfab.com/pages/order-support\" target=\"_blank\">Moon Customer Experience</a>. </p><p>Orders containing backorder or out-of-stock items may not ship until all items are available. Contact <a href=\"https://moonfab.com/pages/order-support\" target=\"_blank\">Moon Customer Experience </a>for assistance. For further information, please check our <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\">FAQs</a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Chx7h4",
+        "title_jyVGkT",
+        "price",
+        "description",
+        "products_bundle_UqyYQL",
+        "buy_buttons",
+        "custom_liquid_BgBRqw",
+        "collapsible_tab_Niiqc3"
+      ],
+      "settings": {
+        "show_multicolumn": true,
+        "add_button_shade": "",
+        "add-text": "",
+        "add_button_url": "#",
+        "add_custom_class": "moon-vehicle-pdp",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_eXmprB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_c7PFCg": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>FEATURED IN</strong>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_c7PFCg"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_er7aeB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_q89fgJ": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "FEATURED IN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cLYm8y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_b25c5058-ce87-46d1-8fa1-a3f2e80093c3.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8rFf6P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_K94iiq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ddqhGM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_L7i6Nx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_q89fgJ",
+        "column_cLYm8y",
+        "column_8rFf6P",
+        "column_K94iiq",
+        "column_ddqhGM",
+        "column_L7i6Nx"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 40
+      }
+    },
+    "primary_setup_xGhyzn": {
+      "type": "primary-setup",
+      "blocks": {
+        "text_WaygLe": {
+          "type": "text",
+          "settings": {
+            "title": "Default Title"
+          }
+        }
+      },
+      "block_order": [
+        "text_WaygLe"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_wYGDAp": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Enp8Ah": {
+          "type": "button",
+          "settings": {
+            "button_label": "{{ product.metafields.custom.expertbutton_name.value }}",
+            "button_link": "{{ product.metafields.custom.primary_button_link.value }}",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Enp8Ah"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "shop-setup-for-runner",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "home_product_bundle_LXc7Ym": {
+      "type": "home-product-bundle",
+      "blocks": {
+        "product_slide_gzJP6Q": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "maddy-and-zachs-setup"
+          }
+        },
+        "product_slide_MbCkfW": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "araujo-family-setup"
+          }
+        },
+        "product_slide_HnxjEX": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "mike-and-twyllas-setup"
+          }
+        },
+        "product_slide_mPQ7EF": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "passenger-side-setup"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_gzJP6Q",
+        "product_slide_MbCkfW",
+        "product_slide_HnxjEX",
+        "product_slide_mPQ7EF"
+      ],
+      "custom_css": [],
+      "settings": {
+        "slider_title": "SEE ALl",
+        "add_button_class": "",
+        "button_url": "",
+        "button_title": "",
+        "add_title-cls": "{{ product.metafields.custom.skoodie_bundle_section_title.value }}"
+      }
+    },
+    "multicolumn_WbTTLf": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Wn4bRd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2f468a669e33a7cb08153b16a6b6dcba.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Wn4bRd"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "m-v-e",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "moon_vehicle_bio_WdrVgw": {
+      "type": "moon-vehicle-bio",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_banner_jd8MaQ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_NbMibf": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.middle_skoodie_banner_heading.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_hPLTcj": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "{{ product.metafields.custom.middle_skoodie_banner_cta_label.value }}",
+            "open_in_new_tab_1": false,
+            "button_link_1": "{{ product.metafields.custom.middle_skoodie_banner_cta_link.value }}",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NbMibf",
+        "buttons_hPLTcj"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "big-rigs for-desktop",
+        "add-idd-class": "",
+        "image": "{{ product.metafields.custom.middle_skoodie_banner.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_KXbzJB": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_VgNddR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Big Rigs deserve Big Shade",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_Cynf49": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "GET THE BUNDLE",
+            "open_in_new_tab_1": false,
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_VgNddR",
+        "buttons_Cynf49"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "big-rigs for-mobile",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/Section_0f3ae87c-f120-42e7-bd67-4956d1c25a3f.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text_dEf779": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iTyDyf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Reviews",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iTyDyf"
+      ],
+      "settings": {
+        "rich-custom-cls": "reviw-heading",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "1736157872bcb673c3": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    },
+    "collapsible_content_FQDwUH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wdYWRb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the Big Rig Bundle?",
+            "icon": "none",
+            "row_content": "<p>The Big Rig Bundle is a limited-time deal built specifically for Skoolies, RVs, buses, and big van rigs. It includes everything you need for the ultimate outdoor setup: the spacious 12' x 9' MoonShade XL, a FREE set of MoonMount vacuum anchors for secure attachment to your rig.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xcQPRk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the Big Rig Bundle + MoonWall XL?",
+            "icon": "none",
+            "row_content": "<p>This is a separate Back to Skoolie bundle deal with the MoonWall XL for added privacy, protection, and shade. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YPPpnA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I get both deals?",
+            "icon": "none",
+            "row_content": "<p>Each deal already includes The MoonShade XL and MoonMounts. If you’re looking for a full shade setup including the MoonWall XL privacy wall, go with the Big Rig Bundle + MoomWall XL. If you just want the shade itself and the mounts, the Big Rig Bundle promo has you covered.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zxdadT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the difference between the MoonMount Oval and Round?",
+            "icon": "none",
+            "row_content": "<p>Both MoonMounts deliver serious holding power, it just comes down to the shape of your rig. The MoonMount Round (4.5\") is perfect for wide, flat panels like vans, trucks, and SUVs. The MoonMount Oval (3\" × 5.87\") has a slimmer profile made for tight spots and narrow surfaces like Casitas, trailers, and ridged roofs. Same strength, different shape—pick what fits your setup best. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iJhQWN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do MoonMounts work?",
+            "icon": "none",
+            "row_content": "<p>MoonMounts are heavy-duty vacuum anchors that attach to almost any non-porous surface—no roof rack required. They offer strong, reliable hold without damaging your paint or paneling, and they make setup and takedown quick and tool-free. Whether you’re parking on a cliffside or at a campground, MoonMounts give your MoonShade a rock-solid foundation.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wdYWRb",
+        "collapsible_row_xcQPRk",
+        "collapsible_row_YPPpnA",
+        "collapsible_row_zxdadT",
+        "collapsible_row_iJhQWN"
+      ],
+      "settings": {
+        "caption-custom-cls": "faq-sec moon-faq",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 92,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_AdjEVV": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Eyrqe9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For more information check out <a href=\"#\" title=\"#\">FAQ page</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Eyrqe9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "rich-custom-cls": "faq-link",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 60
+      }
+    },
+    "rich_text_RBJUUP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9gR6c8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_rrCEA8": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_cehJAd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9gR6c8",
+        "text_rrCEA8",
+        "button_cehJAd"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "bg-co-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_hEgmr7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jiYBRV": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jiYBRV"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_t7Dxj7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jTetX7": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jTetX7"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "17361600450f9d5c83": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_69rD6G": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_69rD6G"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "rich_text_eXmprB",
+    "multicolumn_er7aeB",
+    "primary_setup_xGhyzn",
+    "rich_text_wYGDAp",
+    "home_product_bundle_LXc7Ym",
+    "multicolumn_WbTTLf",
+    "moon_vehicle_bio_WdrVgw",
+    "image_banner_jd8MaQ",
+    "image_banner_KXbzJB",
+    "rich_text_dEf779",
+    "1736157872bcb673c3",
+    "collapsible_content_FQDwUH",
+    "rich_text_AdjEVV",
+    "rich_text_RBJUUP",
+    "rich_text_hEgmr7",
+    "rich_text_t7Dxj7",
+    "17361600450f9d5c83"
+  ]
+}

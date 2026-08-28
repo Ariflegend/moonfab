@@ -1,0 +1,1043 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_jweqe3": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_Chx7h4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.vehicle_title.value }}</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "body"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_liquid_99qDWd": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"additional-pera\">{{ product.metafields.descriptors.summary }}</p>"
+          }
+        },
+        "text_NyVEpR": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>About MoonShade</p>",
+            "text-additional": "<p>Text block</p>",
+            "text_style": "body"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker_jkhLiU": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "products_bundle_UqyYQL": {
+          "type": "products-bundle",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_liquid_8QtxCD": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<form action=\"/cart/add\" method=\"post\" enctype=\"multipart/form-data\" id=\"add-to-cart-form\">\n    <!-- Hidden input for the product variant ID -->\n    <input type=\"hidden\" name=\"id\" id=\"variant-id\" value=\"{{ product.variants.first.id }}\">\n    <input type=\"hidden\" name=\"quantity\" id=\"c_quantity\" value=\"1\">\n    \n    <!-- Add to Cart button -->\n    <button type=\"submit\" class=\"button btn btn--add-to-cart\">\n        Add to Cart \n    </button>\n\t<div class=\"check-edit\">\n\t\t<a href=\"/checkout\" id=\"c_check\">Checkout</a>\n\t\t<a href=\"#\" id=\"c_edit\">Edit</a>\n\t</div>\n</form>\n\n<script src=\"https://code.jquery.com/jquery-3.7.1.js\" integrity=\"sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=\" crossorigin=\"anonymous\"></script>\n\n<script>\n\njQuery(document).ready(function($){\n\n\tfunction checkVariantRefresh(selected_variant){\n\t\t//default cart button status\n\t\tfetch('/cart.js')\n\t\t  .then(response => response.json())\n\t\t  .then(cart => {\n\t\t\tconst variantIds = cart.items.map(item => item.variant_id);\n\t\t\t\tif(variantIds.length == 0){\n\t\t\t\t\t$(\".check-edit\").hide();\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tfor (let i = 0; i < variantIds.length; i++) {\n\t\t\t\t  if (variantIds[i] == selected_variant) {\n\t\t\t\t\t// hide checkout and quantity and show checkout and edit\n\t\t\t\t\t$(\".btn--add-to-cart, .product-form__quantity\").hide();\n\t\t\t\t\t$(\".check-edit\").show();\n\t\t\t\t\tbreak;\n\t\t\t\t  }else{\n\t\t\t\t\t$(\".btn--add-to-cart, .product-form__quantity\").show();\n\t\t\t\t\t$(\".check-edit\").hide();\n\t\t\t\t  }\n\t\t\t\t}\n\t\t\t\n\t\t\tconsole.log('Variant IDs in cart:', variantIds);\n\t\t\t//alert(variantIds);\n\t\t  })\n\t\t  .catch(error => console.error('Error fetching cart:', error));\n\t}\n\t\n\tfunction updateVariantId() {\n        const selectedRadio = document.querySelector('input[type=\"radio\"][name^=\"Denominations\"]:checked');\n        const variantInput = document.querySelector('#variant-id');\n\t\t\n\t\t$(\".btn--add-to-cart\").addClass(\"disabled\");\n\t\tsetTimeout(function(){\n\t\t\tconst selected_variant = document.querySelector(\"form.installment input[name='id']\").value;\n\t\t\t\n\t\t\tif (selectedRadio && variantInput) {\n\t\t\t\tvariantInput.value = selected_variant;\n\t\t\t\t\n\t\t\t}\n\t\t\t$(\".btn--add-to-cart\").removeClass(\"disabled\");\n\t\t\t\n\t\t\tcheckVariantRefresh(selected_variant);\n\t\t  \n\t\t  \n\t\t}, 2000);\n\t\t\n\t\t\n\n\t\t\n    }\n\n    // Initial update on page load\n    updateVariantId();\n\n    // Listen for changes on all radio buttons\n    document.addEventListener(\"change\", function (event) {\n        if (event.target.matches('input[type=\"radio\"][name^=\"Denominations\"]')) {\n            updateVariantId();\n        }\n    });\n\t\n\t$(\"input#Quantity-template--16793104941145__main\").on(\"change\", function(){\n\t\t$(\"#c_quantity\").val($(this).val());\n\t});\n\t\n\tdocument.getElementById('variant-id').value = getUrlParameter('variant');\n\t\n\t// Function to get URL parameters\n\tfunction getUrlParameter(name) {\n\t\tconst params = new URLSearchParams(window.location.search);\n\t\treturn params.get(name);\n\t}\n\t\n\t\n\t// Add to cart code\n\t\n\tdocument.querySelectorAll(\"#add-to-cart-form\").forEach(function (form) {\n\t\tform.addEventListener(\"submit\", function (event) {\n\t\t  event.preventDefault(); // Default form submission ko rokna\n\n\t\t  let formData = new FormData(this);\n\t\t  console.log(\"variant id : \"+document.getElementById(\"variant-id\").value);\n\t\t  let loader = form.querySelector(\".cart-loader\"); // Fix: Loader specific form ke andar dikhana\n\n\t\t  if (loader) loader.style.display = \"block\"; // Loader show karein\n\n\t\t  fetch(\"/cart/add.js\", {\n\t\t\tmethod: \"POST\",\n\t\t\tbody: formData\n\t\t  })\n\t\t  .then(response => response.json())\n\t\t  .then(data => {\n\t\t\tconsole.log(\"Product added:\", data);\n\t\t\t\n\t\t\tcheckVariantRefresh(data.id);\n\n\t\t\treturn fetch(\"/?section_id=cart-drawer\").then(response => response.text());\n\t\t  })\n\t\t  .then(html => {\n\t\t\tconst parser = new DOMParser();\n\t\t\tconst doc = parser.parseFromString(html, \"text/html\");\n\n\t\t\tconst newCartDrawerContent = document.querySelector(\"cart-drawer\").innerHTML;\n\t\t\tconst cartDrawer = document.querySelector(\"cart-drawer\");\n\n\t\t\tif (cartDrawer) {\n\t\t\t  cartDrawer.innerHTML = newCartDrawerContent;\n\t\t\t  cartDrawer.classList.add(\"active\");\n\n\t\t\t  if (cartDrawer.classList.contains(\"is-empty\")) {\n\t\t\t\tcartDrawer.classList.remove(\"is-empty\");\n\t\t\t  }\n\n\t\t\t  reinitializeCartDrawerScripts();\n\t\t\t}\n\n\t\t\tconst cartCount = document.querySelector(\".cart-count-bubble .cart-count\");\n\t\t\tif (cartCount) {\n\t\t\t  const itemCountMatch = html.match(/\"item_count\":(\\d+)/);\n\t\t\t  if (itemCountMatch) {\n\t\t\t\tconst itemCount = parseInt(itemCountMatch[1], 10);\n\t\t\t\tcartCount.textContent = itemCount;\n\t\t\t  }\n\t\t\t}\n\t\t  })\n\t\t  .catch(error => console.error(\"Error adding to cart:\", error))\n\t\t  .finally(() => {\n\t\t\tif (loader) loader.style.display = \"none\"; // Loader hide karein\n\t\t  });\n\t\t});\n\t  });\n\t  \n\t  \n\t  \n\t  $(\"#c_edit\").on(\"click\", function(e){\n\t  e.preventDefault();\n\t\t\tconst newCartDrawerContent = document.querySelector(\"cart-drawer\").innerHTML;\n\t\t\tconst cartDrawer = document.querySelector(\"cart-drawer\");\n\n\t\t\tif (cartDrawer) {\n\t\t\t  cartDrawer.innerHTML = newCartDrawerContent;\n\t\t\t  cartDrawer.classList.add(\"active\");\n\n\t\t\t  if (cartDrawer.classList.contains(\"is-empty\")) {\n\t\t\t\tcartDrawer.classList.remove(\"is-empty\");\n\t\t\t  }\n\n\t\t\t  reinitializeCartDrawerScripts();\n\t\t\t}\n\t  });\n\t  \n\t  \n\t  \n});\n    \n</script>"
+          }
+        },
+        "quantity_selector_w8qfhC": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_i9rLLi": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% assign variant_id = request.query_params.variant | default: product.variants.first.id %}\n\n<button class=\"giftcard-add-to-cart\" data-variant-id=\"{{ variant_id }}\">\n    Add to Cart\n</button>"
+          }
+        }
+      },
+      "block_order": [
+        "title_jweqe3",
+        "text_Chx7h4",
+        "price",
+        "custom_liquid_99qDWd",
+        "text_NyVEpR",
+        "description",
+        "variant_picker_jkhLiU",
+        "products_bundle_UqyYQL",
+        "custom_liquid_8QtxCD",
+        "quantity_selector_w8qfhC",
+        "buy_buttons",
+        "custom_liquid_i9rLLi"
+      ],
+      "settings": {
+        "show_multicolumn": true,
+        "add_button_shade": "",
+        "add-text": "Add to cart",
+        "add_button_url": "#",
+        "add_custom_class": "moon-vehicle-pdp moonshade-pdp",
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_eXmprB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_c7PFCg": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<strong>FEATURED IN</strong>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_c7PFCg"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile feature-moon",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_er7aeB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_q89fgJ": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "FEATURED IN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cLYm8y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_b25c5058-ce87-46d1-8fa1-a3f2e80093c3.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8rFf6P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_K94iiq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ddqhGM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_L7i6Nx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_q89fgJ",
+        "column_cLYm8y",
+        "column_8rFf6P",
+        "column_K94iiq",
+        "column_ddqhGM",
+        "column_L7i6Nx"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "feature-vehicle featured-line moonshade-feature",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "primary_setup_xGhyzn": {
+      "type": "primary-setup",
+      "blocks": {
+        "text_WaygLe": {
+          "type": "text",
+          "settings": {
+            "title": "Default Title"
+          }
+        }
+      },
+      "block_order": [
+        "text_WaygLe"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_wYGDAp": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Enp8Ah": {
+          "type": "button",
+          "settings": {
+            "button_label": "{{ product.metafields.custom.expertbutton_name.value }}",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Enp8Ah"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "shop-setup-for-runner",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_WbTTLf": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Wn4bRd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/mve-logo-horizontal_dd1e0c4e-45f1-4f3b-812c-b61ae91f6d76_png.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Wn4bRd"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "m-v-e",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "moon_vehicle_bio_WdrVgw": {
+      "type": "moon-vehicle-bio",
+      "disabled": true,
+      "settings": {}
+    },
+    "collapsible_content_FQDwUH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wdYWRb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 1",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_xcQPRk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 2",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_YPPpnA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 3",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_zxdadT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 4",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_iJhQWN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 5",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_K4JXky": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question 6",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wdYWRb",
+        "collapsible_row_xcQPRk",
+        "collapsible_row_YPPpnA",
+        "collapsible_row_zxdadT",
+        "collapsible_row_iJhQWN",
+        "collapsible_row_K4JXky"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption-custom-cls": "faq-sec moon-faq",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": true,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_RBJUUP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9gR6c8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_rrCEA8": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_cehJAd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9gR6c8",
+        "text_rrCEA8",
+        "button_cehJAd"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "bg-co-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "home_product_bundle_LXc7Ym": {
+      "type": "home-product-bundle",
+      "blocks": {
+        "product_slide_gzJP6Q": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "ryans-setup"
+          }
+        },
+        "product_slide_MbCkfW": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "jason-fletchers-setup"
+          }
+        },
+        "product_slide_HnxjEX": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "george-and-arlenes-setup"
+          }
+        },
+        "product_slide_mPQ7EF": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "basecamp-rail-anchors"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_gzJP6Q",
+        "product_slide_MbCkfW",
+        "product_slide_HnxjEX",
+        "product_slide_mPQ7EF"
+      ],
+      "disabled": true,
+      "settings": {
+        "slider_title": "SEE ALL",
+        "add_button_class": "",
+        "button_url": "",
+        "button_title": "",
+        "add_title-cls": "explore Other vehicle experts"
+      }
+    },
+    "rich_text_hEgmr7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jiYBRV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jiYBRV"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_page_icon_nRR9zT": {
+      "type": "product-page-icon",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/moonshade-logo_svg.png",
+        "link_text": "Video",
+        "link_url": "",
+        "link_text2": "Specs",
+        "link_url2": "",
+        "link_text3": "Reviews",
+        "link_url3": "",
+        "link_text4": "Find Your Setup",
+        "link_url4": "",
+        "link_text5": "",
+        "link_url5": "",
+        "link_text6": "",
+        "link_url6": ""
+      }
+    },
+    "rich_text_t7Dxj7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_jTetX7": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_jTetX7"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "mobile_video_LQFKJc": {
+      "type": "mobile-video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "img-id": "",
+        "video_controls": true,
+        "add_custom_class": "moonshade-product",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=wE7KT_JMxow",
+        "cover_image": "shopify://shop_images/Body.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image_link_text_bGV9Mh": {
+      "type": "image-link-text",
+      "disabled": true,
+      "settings": {
+        "add_content": "Find more Moon videos and tutorials <a href=\"#\" title=\"#\">here.</a>"
+      }
+    },
+    "multicolumn_gXCawc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6eJfVr": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-field-with-moonshade-bag_jpg.png",
+            "videoupload": "",
+            "title": "Heavy Duty. Not Heavy.",
+            "text": "<p>MoonShade’s efficient design offers durable protection andonly weighs 8 pounds.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_kRcpnK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_moonshade-setup-hammock_jpg.png",
+            "videoupload": "",
+            "title": "Shade or Shine.",
+            "text": "<p>Maximum sun protection by day. Reflective illumination bynight.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zw9bnz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-field-unzipping-moonshade_jpg.png",
+            "videoupload": "",
+            "title": "Big Coverage. Small Bag.",
+            "text": "<p>MoonShade covers a 9’x7’ site and packs down to about thesize of a yoga mat.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6eJfVr",
+        "column_kRcpnK",
+        "column_zw9bnz"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "moonshade-product-multi moonshade-multi",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_rCVCXX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_yK9PeX": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Find Shade Anywhere",
+            "text": "<p>MoonShade’s versatile design andhardware makes it easy to set up and packdown in almost any environment.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8Jp4YY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_moonshade-setup-sprinter-van_jpg.png",
+            "videoupload": "",
+            "title": "Mobile Living",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_k7QA9p": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-field-with-moonshade-bag_jpg_24d0ab00-a158-40aa-a0b1-b6eac4388b7e.png",
+            "videoupload": "",
+            "title": "Camping / Adventuring",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8FtNip": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Picture_man-in-vest-moonshade_jpg.png",
+            "videoupload": "",
+            "title": "Hunting / Fishing",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_yK9PeX",
+        "column_8Jp4YY",
+        "column_k7QA9p",
+        "column_8FtNip"
+      ],
+      "disabled": true,
+      "settings": {
+        "give-title": "moonshade-product-multi find-shade",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_table_fPmJq3": {
+      "type": "product-table",
+      "blocks": {
+        "item_3a9F8x": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Size deployed",
+            "rich_text": "<p>9ft x 7ft</p>"
+          }
+        },
+        "item_dtTzhH": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Size Stowed",
+            "rich_text": "<p>28in × 6in (diameter)</p>"
+          }
+        },
+        "item_VBKwFB": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Weight",
+            "rich_text": "<p>8 pounds</p>"
+          }
+        },
+        "item_4YQ4MH": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Shade Top Materials",
+            "rich_text": "<p>420D ripstop polyester with UV protective treatment</p>"
+          }
+        },
+        "item_HrViP8": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Shade Bottom Materials",
+            "rich_text": "<p>Reflective coating; heavy-duty polyester webbing trim</p>"
+          }
+        },
+        "item_PYqETn": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Poles",
+            "rich_text": "<p>13mm aluminum tension poles (2)<br/>19mm telescoping aluminum support poles (2), adjust from 78in to 96in<br/>19mm strut pole (1), 7ft for narrow-base mounting</p>"
+          }
+        },
+        "item_R94zV8": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Anchors Included",
+            "rich_text": "<p>Large suction cup anchors (2)<br/>Small suction cup anchors (2)</p>"
+          }
+        },
+        "item_dE7LP3": {
+          "type": "item",
+          "settings": {
+            "spec_title": "Hardware Included",
+            "rich_text": "<p>Stakes (4)<br/>Guy lines/tensioners (4)<br/>Carrying bag with shoulder strap<br/>Tall Connect cords for attaching to out of reach anchor points (4)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_3a9F8x",
+        "item_dtTzhH",
+        "item_VBKwFB",
+        "item_4YQ4MH",
+        "item_HrViP8",
+        "item_PYqETn",
+        "item_R94zV8",
+        "item_dE7LP3"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "product_image": "shopify://shop_images/moonshade-illo_svg.png",
+        "img-id": "specification",
+        "heading_text": "Specs"
+      }
+    },
+    "17361600450f9d5c83": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_69rD6G": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_69rD6G"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    },
+    "rich_text_qjPMma": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_c4QyD4": {
+          "type": "heading",
+          "settings": {
+            "heading": "MoonShade Reviews",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_c4QyD4"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "moon-review-heading-desktop",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_UHgxLj": {
+      "type": "rich-text",
+      "blocks": {
+        "text_xMkYWY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MoonShade<br/>Reviews</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_xMkYWY"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "moon-review-heading-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_fRhcQW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cnT3NF": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Moon Digital Gift Card",
+            "heading_size": "h1"
+          }
+        },
+        "text_zWBmaa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "heading_JTXRKL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gift Card Delivery",
+            "heading_size": "h1"
+          }
+        },
+        "text_caQfrt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>After checkout, the digital gift card code will be sent to you via email. You'll receive a special link to view your gift card, print it, or copy the code that can be used to make purchases on our website. To send your gift, just forward the email or the page link, or give your recipient the printed gift card page. You will not receive a physical gift card after purchase.<br/></p>"
+          }
+        },
+        "heading_TKCTai": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gift card amount suggestions:",
+            "heading_size": "h1"
+          }
+        },
+        "text_6cXTJT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>$500.00 - Covers a MoonShade and an anchor or two<br/>$250.00 - MoonWall(s) and an accessory or two<br/>$100.00 - MoonWall or a few anchors/accessories<br/>$50.00 - A couple anchors/accessories<br/>$25.00 - Small anchor or accessory</p>"
+          }
+        },
+        "button_KHdHM7": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cnT3NF",
+        "text_zWBmaa",
+        "heading_JTXRKL",
+        "text_caQfrt",
+        "heading_TKCTai",
+        "text_6cXTJT",
+        "button_KHdHM7"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "gift-card-heading",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 84
+      }
+    },
+    "gift_card_description_KgtkPC": {
+      "type": "gift-card-description",
+      "settings": {}
+    },
+    "1736157872bcb673c3": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "rich_text_eXmprB",
+    "multicolumn_er7aeB",
+    "primary_setup_xGhyzn",
+    "rich_text_wYGDAp",
+    "multicolumn_WbTTLf",
+    "moon_vehicle_bio_WdrVgw",
+    "collapsible_content_FQDwUH",
+    "rich_text_RBJUUP",
+    "home_product_bundle_LXc7Ym",
+    "rich_text_hEgmr7",
+    "product_page_icon_nRR9zT",
+    "rich_text_t7Dxj7",
+    "mobile_video_LQFKJc",
+    "image_link_text_bGV9Mh",
+    "multicolumn_gXCawc",
+    "multicolumn_rCVCXX",
+    "product_table_fPmJq3",
+    "17361600450f9d5c83",
+    "rich_text_qjPMma",
+    "rich_text_UHgxLj",
+    "rich_text_fRhcQW",
+    "gift_card_description_KgtkPC",
+    "1736157872bcb673c3"
+  ]
+}

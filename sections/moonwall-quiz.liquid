@@ -1,0 +1,155 @@
+<div class="moon-wal-quiz">
+<div class="bg-light pt-grid2" id="choose-moonwall">
+	<div class="container-xxl py-grid2">
+		<h2 class="text-center mb-grid">Even More Coverage</h2>
+        <p class="qiuz-detail">Which MoonWall is Right for My Setup?</p>
+		<div class="row">
+			<div class="col-md mb-4 mb-md-0">
+				{% assign product = all_products['moonwall-long'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'fa-van-shuttle|fa-truck-pickup|fa-rv' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonWall Short', width: 1200, height: 900, class: 'background-image h-100 w-100', loading: 'lazy' }}
+
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonWall - Long</a></h3>
+                    <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+{% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>$100 USD</span>{% endcomment %} 
+                                                             <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                        </p>
+                     </div>
+                  
+					<p class="moon-lp-des"><b>Best for:</b> SUV’s, Jeeps, small travel trailers, and any setup where MoonShade’s canopy is parallel...</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}" class="btn btn-primary">Shop MoonWall Long</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md">
+				{% assign product = all_products['moonwall-short'] %}
+				{% assign image = product.featured_image %}
+				{% assign icons = 'suv.svg|jeep.svg|fa-caravan' | split: '|' %}
+				<div class="card card-body">
+					<a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+						{{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonWall Short', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+						<div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem; top: auto; left: auto;">
+							<div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+								{% for icon in icons %}
+								<span class="col-auto">
+									{% if icon contains 'fa-' %}
+									<span class="far {{ icon }}"></span>
+									{% else %}
+									<img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+									{% endif %}
+								</span>
+								{% endfor %}
+							</div>
+						</div>
+					</a>
+					<h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonWall - Short</a></h3>
+                      <div class="pricesec_comp">
+    					<p class="custom-price-pro">
+{% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>$75 USD</span>{% endcomment %}                                                              <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+                        </p>
+                     </div>
+					<p class="moon-lp-des"><b>Best for:</b> vans, trucks w/ full-length racks, full-size SUVs, & mid-size & large travel trailers or RVs.</p>
+					<p class="mb-0">
+						<a href="{{ product.url }}"  class="btn btn-primary">Shop MoonWall Short</a>
+					</p>
+				</div>
+			</div>
+            <!-- MoonWall XL Column -->
+            <div class="col-md">
+  {% assign product = all_products['moonwall-xl'] %}
+  {% assign image = product.featured_image %}
+  {% assign icons = 'truck.svg|awning.svg|fa-trailer' | split: '|' %}
+  <div class="card card-body">
+    <a class="ratio ratio-4x3 bg-white rounded mb-3 text-dark" href="{{ product.url }}">
+      {{ image | image_url: width: 1200, height: 900 | image_tag: alt: 'MoonWall XL', width: 1200, height: 900, class: 'background-image', loading: 'lazy' }}
+      <div class="position-absolute p-2 rounded bg-white shadow" style="width: auto; height: auto; bottom: 1rem; right: 1rem;">
+        <div class="icons fs-3 mb-0 ms-sm-auto row gx-2">
+          {% for icon in icons %}
+            <span class="col-auto">
+              {% if icon contains 'fa-' %}
+                <span class="far {{ icon }}"></span>
+              {% else %}
+                <img style="height: 1.025em; width: auto;" src="{{ icon | asset_url }}">
+              {% endif %}
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </a>
+    <h3 class="mb-2"><a href="{{ product.url }}" class="text-decoration-none">MoonWall - XL</a></h3>
+    <div class="pricesec_comp">
+      <p class="custom-price-pro">
+        
+{% comment %}<span style="text-decoration: line-through; margin-right: 8px; opacity: 0.7;">{{ product.price | money_without_trailing_zeros }}</span>{% endcomment %}
+<span style="font-weight: bold; color: #3b4752;">{{ product.price | times: 1 | money_without_trailing_zeros }}</span>
+                {% comment %}<span>$125 USD</span>{% endcomment %}  
+                                         <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+      </p>
+    </div>
+    <p class="moon-lp-des"><b>Best for:</b> vans, RVs, or trailers with higher mounting heights or wider coverage needs.</p>
+    <p class="mb-0">
+      <a href="{{ product.url }}" class="btn btn-primary">Shop MoonWall XL</a>
+    </p>
+  </div>
+</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "moonwall quiz",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Select First Product"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Select Second Product"
+    }
+   
+  ],"blocks": [
+   
+  ],
+  "presets": [
+    {
+      "name": "moonwall quiz",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

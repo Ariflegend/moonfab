@@ -1,0 +1,411 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "moonwall_quiz_PH6UVr": {
+      "type": "moonwall-quiz",
+      "custom_css": [],
+      "settings": {
+        "product_1": "",
+        "product_2": ""
+      }
+    },
+    "rich_text_yLUM9t": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MqMMtM": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_VyRhdH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FEATURES</p>"
+          }
+        },
+        "button_R4DRzw": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MqMMtM",
+        "text_VyRhdH",
+        "button_R4DRzw"
+      ],
+      "settings": {
+        "rich-custom-cls": "feat-mobi",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-cd993f03-ca7c-415f-a02e-1034ba9654c7",
+        "full_width": true,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_wthjPT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QLKi7X": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Features",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_CAreBY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_0004bed1-7a33-4552-b292-aa318aaff251.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Durable<br/>Construction</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_A69U6F": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/feather.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Lightweight<br/>Materials</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cNfPtC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_009f1b54-3d8e-480f-8574-33ac27439804.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Packable Design</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UKaGHj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/caribiner.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Easy Attachment </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fRDibq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/setup_svg.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Simple Setup</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QLKi7X",
+        "column_CAreBY",
+        "column_A69U6F",
+        "column_cNfPtC",
+        "column_UKaGHj",
+        "column_fRDibq"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle featured-line moonshade-feature moonwall-short-feature moon-lp-set",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-cd993f03-ca7c-415f-a02e-1034ba9654c7",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_V7LbcG": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_RwDUGq": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Features",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_phTj8K": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_0004bed1-7a33-4552-b292-aa318aaff251.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Durable Construction</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wdUWnK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/feather.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Lightweight Materials</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eaQ7qm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_009f1b54-3d8e-480f-8574-33ac27439804.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Packable Design</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7nQz3E": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/caribiner.svg_fill.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Easy Attachment </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7XHWK3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/setup_svg.png",
+            "videoupload": "",
+            "title": "",
+            "text": "<p>Simple Setup</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_RwDUGq",
+        "column_phTj8K",
+        "column_wdUWnK",
+        "column_eaQ7qm",
+        "column_7nQz3E",
+        "column_7XHWK3"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle featured-line moonshade-feature moonwall-short-feature moon-lp-set mn-lp-mob",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-cd993f03-ca7c-415f-a02e-1034ba9654c7",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 48
+      }
+    },
+    "multicolumn_rxCbD8": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_t4PGjy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/255-F68A6644_jpg.png",
+            "videoupload": "",
+            "title": "Privacy",
+            "text": "<p>More privacy means you can prep meals in peace, take a nap, change or shower,  dance like no one’s watching, or just spend some quality time with your favorite person. </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_byWYQG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/245-F68A6580_jpg_9fc12b15-2bc9-4f63-a4bd-63ad16eebf13.png",
+            "videoupload": "",
+            "title": "Weather",
+            "text": "<p>Blocks out the sun's rays so you can work in peace. Additionally, MoonWall acts as a barrier for light winds and precipitation, making your space more comfortable.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_F8gUzj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/247-F68A6587_jpg.png",
+            "videoupload": "",
+            "title": "More Room",
+            "text": "<p>MoonWall expands your MoonShade’s liveable space. Spread out, invite the whole crew. More room = more fun.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_t4PGjy",
+        "column_byWYQG",
+        "column_F8gUzj"
+      ],
+      "settings": {
+        "give-title": "privacy-on-go",
+        "img-id": "set-video",
+        "title": "Privacy on the Go",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_aqprBm": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_pbH6TL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need help deciding which MoonWall is right for you?",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_B48WAP": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Message Moon Support",
+            "button_link_1": "shopify://pages/order-support",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pbH6TL",
+        "buttons_B48WAP"
+      ],
+      "settings": {
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "need-help",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/Group_2341f703-1811-4d71-a5dd-cfa36d3e61dd.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "mobile_video_KzYpdn": {
+      "type": "mobile-video",
+      "settings": {
+        "heading": "",
+        "img-id": "",
+        "video_controls": true,
+        "add_custom_class": "moonshade-product setup-video mn-lp-setup",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/wE7KT_JMxow",
+        "cover_image": "shopify://shop_images/Body_b5bf46ec-72db-4fb3-9436-a51071b70635.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recommended_product_mewwt8": {
+      "type": "recommended-product",
+      "settings": {
+        "heading": "Recommended With MoonWall",
+        "product_1": "moonshade",
+        "product_2": "steel-stakes",
+        "product_3": "orange-screw",
+        "product_4": "nite-ize-camjam-cord-tightener"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "moonwall_quiz_PH6UVr",
+    "rich_text_yLUM9t",
+    "multicolumn_wthjPT",
+    "multicolumn_V7LbcG",
+    "multicolumn_rxCbD8",
+    "image_banner_aqprBm",
+    "mobile_video_KzYpdn",
+    "recommended_product_mewwt8"
+  ]
+}

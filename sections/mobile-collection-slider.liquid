@@ -1,0 +1,192 @@
+<div class="slider">
+  <div class="slider-wrapper">
+    {% assign items_per_slide = 4 %}
+    {% assign slide_index = 0 %}
+    {% assign item_counter = 0 %}
+    
+    {% for block in section.blocks %}
+      {% assign collection = collections[block.settings.selected_collection_1] %}
+      {% if collection %}
+        
+        {% if item_counter == 0 %}
+          <div class="slider-for-mobile {% if slide_index == 0 %}active{% endif %}" data-slide-index="{{ slide_index }}">
+        {% endif %}
+        <div class="slide-item">
+          <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}">
+          <p>{{ collection.title }}</p>
+        </div>
+        {% assign item_counter = item_counter | plus: 1 %}
+        {% if item_counter == items_per_slide %}
+          </div> <!-- Close the current slide -->
+          {% assign item_counter = 0 %}
+          {% assign slide_index = slide_index | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if item_counter > 0 %}
+      </div> <!-- Close the last slide -->
+    {% endif %}
+  </div>
+  <button class="slider-btn prev-btn" style="display: none;">&lt;</button>
+  <button class="slider-btn next-btn">&gt;</button>
+  <!-- Dot Navigation -->
+  <div class="dot-navigation">
+    {% assign total_slides = slide_index | minus: 1 %}
+    {% for i in (0..total_slides) %}
+      <span class="dot {% if i == 0 %}active{% endif %}" data-slide="{{ i }}"></span>
+    {% endfor %}
+  </div>
+</div>
+<style>
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slider-for-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    min-width: 100%;
+    text-align: center;
+  }
+  .slide-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .slide-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .prev-btn {
+    left: 10px;
+  }
+  .next-btn {
+    right: 10px;
+  }
+  .dot-navigation {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .dot.active {
+    background-color: black;
+  }
+</style>
+<script>
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const slides = document.querySelectorAll('.slider-for-mobile');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const dots = document.querySelectorAll('.dot');
+  console.log(slides.length, dots.length);
+  let currentIndex = 0;
+  // Function to update the slider
+  function updateSlider(index) {
+    sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+    // Update dot navigation
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[index]) {
+      dots[index].classList.add('active');
+    }
+    // Show/Hide buttons based on position
+    prevBtn.style.display = index === 0 ? 'none' : 'block';
+    nextBtn.style.display = index === slides.length - 1 ? 'none' : 'block';
+  }
+  // Button Event Listeners
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      updateSlider(currentIndex);
+    }
+  });
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+      currentIndex += 1;
+      updateSlider(currentIndex);
+    }
+  });
+  // Dot Navigation Event Listeners
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      currentIndex = parseInt(dot.getAttribute('data-slide'), 10);
+      updateSlider(currentIndex);
+    });
+  });
+  // Initialize Slider
+  updateSlider(currentIndex);
+</script>
+{% schema %}
+{
+  "name": "mobile-collection-slider",
+  "settings": [
+      {
+      "type": "text",
+      "id": "shop",
+      "label": "Support Text",
+      "default": "Shop By vechicle"
+    },
+    {
+      "type": "text",
+      "id": "shop_btn",
+      "label": "Support Text",
+      "default": "SHOP ALL"
+    },
+    {
+      "type": "url",
+      "id": "shop_link",
+      "label": "Support Link",
+         }
+  ],
+ "blocks": [
+    {
+      "type": "collection_1",
+      "name": "Collection 1",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "selected_collection_1",
+          "label": "Select Collection 1"
+        }
+      ]
+    },
+   
+  ],
+  "presets": [
+    {
+      "name": "mobile-collection-slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

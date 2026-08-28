@@ -1,0 +1,987 @@
+{% paginate shop.metaobjects.moonshade_fitment.values by 250 %}
+{% assign fitments = shop.metaobjects.moonshade_fitment.values %}
+
+<link href="https://fonts.cdnfonts.com/css/poligon?styles=84984" rel="stylesheet">
+<section class="fitment-guide">
+    <div class="fitment-filter-modal">
+    <div class="fitment-filter-modal__content">
+        <div class="fitment-filter-modal__header">
+            <span>Filters</span>
+            <button class="js-close-filter">&times;</button>
+        </div>
+
+        <div class="mobile-filter-accordion">
+            <button class="mobile-accordion-toggle js-accordion-toggle">BY TYPE <span class="accordion-arrow">&#9660;</span></button>
+            <div class="mobile-accordion-body">
+                <label class="mobile-radio-option">
+                    <input type="radio" name="mobile-category" value="" checked> All vehicles
+                </label>
+                {% assign vehicle_options = "Vans:VAN|Trucks:TRUCK|SUVs & Crossovers:SUV|Motorhomes:MOTORHOME|Trailers:TRAILER|Truck Campers:TRUCK CAMPER" | split: "|" %}
+                {% for option in vehicle_options %}
+                    {% assign parts = option | split: ":" %}
+                    <label class="mobile-radio-option">
+                        <input type="radio" name="mobile-category" value="{{ parts[1] }}"> {{ parts[0] }}
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mobile-filter-accordion">
+            <button class="mobile-accordion-toggle js-accordion-toggle">BY PRODUCT <span class="accordion-arrow">&#9660;</span></button>
+            <div class="mobile-accordion-body">
+                <label class="mobile-radio-option">
+                    <input type="radio" name="mobile-product" value="" checked> All products
+                </label>
+                {% assign product_options = "OG:MoonShade|XL:MoonShade XL|Pro:MoonShade Pro|Apex:MoonShade Apex|RV:MoonShade RV" | split: "|" %}
+                {% for option in product_options %}
+                    {% assign parts = option | split: ":" %}
+                    <label class="mobile-radio-option">
+                        <input type="radio" name="mobile-product" value="{{ parts[1] }}"> {{ parts[0] }}
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button class="js-apply-filters">Apply Filters</button>
+    </div>
+    </div>
+    <div class="fitment-filters">
+        {% assign menu_icon = '<svg width="33" height="27" viewBox="0 0 36 30" fill="black"><path d="M1.5 1.5H34.5M1.5 15H34.5M1.5 28.5H34.5" stroke="#C2C2C2" stroke-width="3" stroke-linecap="round"/></svg>' %}
+        <div class="fitment-search-wrapper">
+            <div class="js-open-filter">
+                {{ menu_icon }}
+            </div>
+            <div class="search-wrapper">
+            {% assign search_icon = '<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.7097 14.7384L17.9848 18.0135M16.9502 8.97509C16.9502 11.0902 16.1099 13.1187 14.6143 14.6143C13.1187 16.1099 11.0902 16.9502 8.97509 16.9502C6.85996 16.9502 4.83147 16.1099 3.33585 14.6143C1.84023 13.1187 1 11.0902 1 8.97509C1 6.85996 1.84023 4.83147 3.33585 3.33585C4.83147 1.84023 6.85996 1 8.97509 1C11.0902 1 13.1187 1.84023 14.6143 3.33585C16.1099 4.83147 16.9502 6.85996 16.9502 8.97509Z" stroke="black" stroke-opacity="0.24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' %}
+             {{ search_icon }}
+            <input
+                type="text"
+                id="fitment-search"
+                placeholder="Search make, model, or category..."
+            >
+        </div>
+    </div>
+
+    <div class="filter-group vehicle-filter">
+      <strong>BY TYPE</strong>
+
+      <button class="active" data-category="">All vehicles</button>
+        {% assign vehicle_options = "Vans:VAN|Trucks:TRUCK|SUVs & Crossovers:SUV|Motorhomes:MOTORHOME|Trailers:TRAILER|Truck Campers:TRUCK CAMPER" | split: "|" %}
+
+        {% for option in vehicle_options %}
+            {% assign parts = option | split: ":" %}
+
+            <button data-category="{{ parts[1] }}">
+            {{ parts[0] }}
+            </button>
+        {% endfor %}
+     
+    </div>
+
+    <div class="filter-group product-filter">
+      <strong>BY PRODUCT</strong>
+
+      <button class="active" data-product="">All products</button>
+
+        {% assign product_options = "OG:MoonShade|XL:MoonShade XL|Pro:MoonShade Pro|Apex:MoonShade Apex|RV:MoonShade RV" | split: "|" %}
+
+        {% for option in product_options %}
+            {% assign parts = option | split: ":" %}
+
+            <button data-product="{{ parts[1] }}">
+            {{ parts[0] }}
+            </button>
+        {% endfor %}
+    </div>
+
+    <p id="fitment-count">
+      SHOWING {{ fitments.count }} OF {{ fitments.count }} VEHICLES
+    </p>
+
+  </div>
+  {%  assign sort_arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' %}
+  <div class="fitment-custom-scrollbar">
+    <div class="fitment-custom-scrollbar__thumb"></div>
+  </div>
+  <div class="fitment-table-wrapper">
+    <table class="fitment-table">
+        <thead>
+        <tr>
+            <th><span>Category</span></th>
+            <th><span class="js-sort-make" data-direction="asc">Make{{ sort_arrow }}</span></th>
+            <th><span>Model</span></th>
+            <th><span>MoonShade</span></th>
+            <th><span>Mounting</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for item in fitments %}
+        {%- # <spark:avge3> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'search.item', subject:item -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:avge3> -%}
+        
+
+            <tr
+            data-category="{{ item.category.value }}"
+            data-product="{{ item.moonshade.value }}"
+            data-search="{{ item.category.value }} {{ item.make.value }} {{ item.model.value }} {{ item.moonshade.value }}"
+            >
+            <td>{{ item.category }}</td>
+            <td>{{ item.make }}</td>
+            <td>{{ item.model }}</td>
+            <td><span>{{ item.moonshade }}</span></td>
+            <td>{{ item.mounting }}</td>
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+  </div>
+
+</section>
+{% endpaginate %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+{% if request.path == '/pages/search' or canonical_url contains '/pages/search' %}
+#rebuy-smart-search-results-sidebar-flyout-filter {
+    display: none !important;
+}
+{% endif %}
+.fitment-guide{
+    max-width:860px;
+    margin:auto;
+}
+
+.fitment-filters{
+    padding:26px 0px;  
+}
+
+.fitment-filters *{
+    font-size: 13px;
+}
+
+.fitment-search-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.fitment-search-wrapper svg{
+    display: none;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#fitment-search{
+    width:400px !important;
+    margin-bottom:20px !important;
+    border: none !important;
+    outline: none !important;
+    color: #757575 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+}
+
+#fitment-search::placeholder {
+    color: #757575 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+}
+
+.filter-group{
+    display:flex;
+    align-items:center;
+    gap:16px !important;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.filter-group strong{
+    width: 85px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    font-family: 'Poligon', sans-serif !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+    text-transform: uppercase !important;
+}
+
+#fitment-count{
+    color: #585858 !important;
+    font-family: 'Poligon', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+    text-transform: uppercase !important;
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+}
+
+.filter-group button{
+    cursor:pointer !important;
+    border:none !important;
+    outline: none !important;
+    background:#fff !important;
+    font-family: 'Poligon', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    border-radius: 25px !important;
+    padding: 7px 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 22px !important;
+    box-sizing: border-box !important;
+    gap: 10px !important;
+}
+
+.vehicle-filter button[data-category=""] {
+    width: 83px !important;
+}
+
+.product-filter button[data-product=""] {
+    width: 88px !important;
+}
+
+.filter-group button.active{
+    padding:7px 10px !important;
+    border-radius:25px !important;
+}
+
+.product-filter button.active{
+    background:#000 !important;
+    color:#fff !important;
+}
+.vehicle-filter button.active{
+    background:#DAC0A1 !important;
+    color:#000 !important;
+}
+
+.fitment-table-wrapper{
+    width:100%;
+    overflow-x: auto;
+    padding:40px 20px;
+    margin: 0px 0px;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;
+}
+
+.fitment-table-wrapper::-webkit-scrollbar {
+  display: none;             
+}
+
+.fitment-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.fitment-table th,
+.fitment-table td{
+    text-align:left;
+}
+.fitment-table th{
+    padding-bottom: 10px;
+    min-width: 120px;
+}
+.fitment-table th span{
+    font-family: 'Poligon_Regular', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    line-height: 100% !important;
+    letter-spacing: 0.76px !important;
+    vertical-align: middle !important;
+    text-transform: uppercase !important;
+    border-radius: 22px !important;
+    padding: 5px 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 18px !important;
+    box-sizing: border-box !important;
+    gap: 10px !important;
+    color: black !important;
+    background: #DEDEDE !important;
+}
+.js-sort-make{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+}
+
+.js-sort-make svg{
+    transition:transform .25s ease;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
+
+.js-sort-make.desc svg{
+    transform:rotate(180deg);
+}
+
+.fitment-table th:nth-child(1) span {
+    width: 90px !important;
+}
+
+.fitment-table th:nth-child(2) span {
+    min-width: 69px !important;
+    width: max-content !important;
+    background: #D6C0A4 !important;
+}
+
+.fitment-table th:nth-child(3) span {
+    width: 67px !important;
+    background: #DEDEDE !important;
+}
+
+.fitment-table th:nth-child(4) span {
+    width: 106px !important;
+}
+
+.fitment-table th:nth-child(5) span {
+    width: 90px !important;
+    background: #DEDEDE !important;
+}
+
+.fitment-table td{
+    padding:9px 8px !important;
+    border-bottom:1px solid #eee !important;
+    height: 28.39px !important;
+    min-width: 120px !important;
+    vertical-align: middle !important;
+}
+
+.fitment-table td:nth-child(1) {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 7.56px !important;
+    line-height: 100% !important;
+    letter-spacing: 0.53px !important;
+    vertical-align: middle !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+}
+
+.fitment-table td:nth-child(2) {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 9.08px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+}
+
+.fitment-table td:nth-child(3) {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 9.08px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+}
+
+.fitment-table td:nth-child(4) span {
+    font-size: 7.56px !important;
+    border-radius: 15.13px !important;
+    padding: 2.27px 6.81px !important;
+    border-width: 0.76px !important;
+    font-weight:500 !important;
+    font-family: 'Dm Sans' !important;
+
+}
+
+.fitment-table td:nth-child(5) {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 8.32px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+}
+
+/* Custom scrollbar – hidden on desktop */
+.fitment-custom-scrollbar {
+    display: none;
+}
+
+.fitment-filter-modal{
+    display: none;
+}
+
+@media (max-width:860px){
+    .fitment-guide {
+        max-width: 100% !important;
+        padding: 0;
+    }
+
+    .fitment-filters{
+        padding: 16px 16px 10px 16px;
+    }
+
+    #fitment-count{
+        text-align: center;
+        font-size: 13px !important;
+    }
+
+    .filter-group{
+        display: none !important;
+    }
+
+    /* Custom scrollbar track + thumb */
+    .fitment-custom-scrollbar {
+        display: block !important;
+        position: relative;
+        width: calc(100% - 40px) !important;
+        margin: 12px 20px 6px 20px !important;
+        height: 6px;
+        background: #E5E5E5;
+        border-radius: 100px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .fitment-custom-scrollbar__thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 33%;
+        background: #A8A8A8;
+        border-radius: 100px;
+        transition: left 0.05s linear;
+        cursor: grab;
+        will-change: left;
+        display: block !important;
+    }
+
+    .fitment-custom-scrollbar__thumb:active {
+        cursor: grabbing;
+    }
+
+    /* Search bar row */
+    .fitment-search-wrapper{
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .js-open-filter {
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+
+    .search-wrapper{
+        display: flex !important;
+        align-items: center !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+        height: 37px !important;
+        padding: 0 12px !important;
+        border: 1px solid rgba(0, 0, 0, 0.24) !important;
+        border-radius: 31px !important;
+        box-sizing: border-box !important;
+        gap: 8px !important;
+    }
+
+    .fitment-search-wrapper svg{
+        display: block !important;
+        flex-shrink: 0;
+    }
+
+    #fitment-search{
+        margin-bottom: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        background: transparent !important;
+        font-size: 12px !important;
+    }
+
+    /* Table wrapper — 20px padding on both sides, horizontal scroll */
+    .fitment-table-wrapper{
+        width: 100% !important;
+        padding: 0 20px !important;
+        margin: 10px 0 0 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+    .fitment-table-wrapper::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* Table itself */
+    .fitment-table {
+        width: max-content !important;
+        min-width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .fitment-table th {
+        padding-bottom: 10px !important;
+    }
+
+    .fitment-table th span {
+        font-size: 13px !important;
+        height: auto !important;
+        padding: 4px 10px !important;
+        letter-spacing: 0.5px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Column widths matching reference */
+    .fitment-table th:nth-child(1),
+    .fitment-table td:nth-child(1) {
+        min-width: 95px !important;
+    }
+    .fitment-table th:nth-child(2),
+    .fitment-table td:nth-child(2) {
+        min-width: 105px !important;
+    }
+    .fitment-table th:nth-child(3),
+    .fitment-table td:nth-child(3) {
+        min-width: 155px !important;
+    }
+    .fitment-table th:nth-child(4),
+    .fitment-table td:nth-child(4) {
+        min-width: 90px !important;
+    }
+    .fitment-table th:nth-child(5),
+    .fitment-table td:nth-child(5) {
+        min-width: 110px !important;
+    }
+
+    .fitment-table td {
+        font-size: 8px !important;
+        padding: 8px 6px !important;
+        height: auto !important;
+    }
+
+    .fitment-table td:nth-child(1) {
+        font-size: 7px !important;
+        letter-spacing: 0.4px !important;
+        white-space: normal !important;
+    }
+
+    .fitment-table td:nth-child(2) {
+        font-size: 9px !important;
+    }
+
+    .fitment-table td:nth-child(3) {
+        font-size: 8px !important;
+        white-space: normal !important;
+    }
+
+    .fitment-table td:nth-child(4) span {
+        font-size: 6.5px !important;
+        padding: 2px 5px !important;
+    }
+
+    .fitment-table td:nth-child(5) {
+        font-size: 7.5px !important;
+        white-space: normal !important;
+    }
+
+    /* Mobile filter modal */
+    .fitment-filter-modal{
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        z-index: 1000;
+        align-items: flex-end;
+    }
+    .fitment-filter-modal.open{
+        display: flex;
+    }
+    .fitment-filter-modal__content{
+        background: #fff;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .fitment-filter-modal__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    .fitment-filter-modal__header span{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .js-close-filter{
+        background: none;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        line-height: 1;
+    }
+    .mobile-filter-accordion{
+        border-bottom: 1px solid #eee;
+        margin-bottom: 4px;
+    }
+    .mobile-accordion-toggle{
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 12px 0;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .accordion-arrow{
+        font-size: 10px;
+        transition: transform 0.2s;
+    }
+    .mobile-accordion-toggle.open .accordion-arrow{
+        transform: rotate(180deg);
+    }
+    .mobile-accordion-body{
+        display: none;
+        padding-bottom: 10px;
+    }
+    .mobile-accordion-body.open{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .mobile-radio-option{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+    .mobile-radio-option input[type="radio"]{
+        accent-color: #000;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+    .js-apply-filters{
+        margin-top: 16px;
+        width: 100%;
+        padding: 12px;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+
+    const rows=[...document.querySelectorAll('.fitment-table tbody tr')];
+    console.log('Total fitment entries loaded:', rows.length);
+
+    const search=document.getElementById('fitment-search');
+    const count=document.getElementById('fitment-count');
+
+    let category='';
+    let product='';
+
+    function isCategoryMatch(rowCategory, filterCategory) {
+        if (!filterCategory) return true;
+        
+        const rowVal = (rowCategory || '').trim().toLowerCase();
+        const filterVal = (filterCategory || '').trim().toLowerCase();
+        
+        if (rowVal === filterVal) return true;
+        
+        const mappings = {
+            'van': ['van', 'vans'],
+            'truck': ['truck', 'trucks'],
+            'suv': ['suv', 'suvs', 'suvs & crossovers', 'suvs and crossovers'],
+            'motorhome': ['motorhome', 'motorhomes'],
+            'trailer': ['trailer', 'trailers'],
+            'truck camper': ['truck camper', 'truck campers']
+        };
+        
+        const equivalents = mappings[filterVal];
+        if (equivalents) {
+            return equivalents.includes(rowVal);
+        }
+        
+        return rowVal.includes(filterVal);
+    }
+
+    function filterRows(){
+
+        const text=search.value.toLowerCase();
+        let visible=0;
+
+        rows.forEach(row=>{
+
+            const matchCategory=isCategoryMatch(row.dataset.category, category);
+            const matchProduct=!product || (row.dataset.product || '').trim().toLowerCase()===product.trim().toLowerCase();
+            const matchSearch=row.dataset.search.toLowerCase().includes(text);
+
+            const show=matchCategory && matchProduct && matchSearch;
+
+            row.style.display=show ? '' : 'none';
+
+            if(show) visible++;
+
+        });
+
+        count.textContent=`SHOWING ${visible} OF ${rows.length} VEHICLES`;
+        console.log(`Filtered fitment entries: ${visible} showing out of ${rows.length} total`);
+    }
+
+    search.addEventListener('input',filterRows);
+
+    // Mobile modal
+    const modal = document.querySelector('.fitment-filter-modal');
+    document.querySelector('.js-open-filter').addEventListener('click', () => modal.classList.add('open'));
+    document.querySelector('.js-close-filter').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', e => { if(e.target === modal) modal.classList.remove('open'); });
+
+    document.querySelectorAll('.js-accordion-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            toggle.nextElementSibling.classList.toggle('open');
+        });
+    });
+
+    document.querySelectorAll('input[name="mobile-category"]').forEach(radio => {
+        radio.addEventListener('change', () => { category = radio.value; });
+    });
+    document.querySelectorAll('input[name="mobile-product"]').forEach(radio => {
+        radio.addEventListener('change', () => { product = radio.value; });
+    });
+
+    document.querySelector('.js-apply-filters').addEventListener('click', () => {
+        filterRows();
+        modal.classList.remove('open');
+        // sync desktop buttons
+        document.querySelectorAll('[data-category]').forEach(b => b.classList.toggle('active', b.dataset.category === category));
+        document.querySelectorAll('[data-product]').forEach(b => b.classList.toggle('active', b.dataset.product === product));
+    });
+
+    document.querySelectorAll('[data-category]').forEach(btn=>{
+
+        btn.addEventListener('click',()=>{
+
+            document.querySelectorAll('[data-category]').forEach(b=>b.classList.remove('active'));
+
+            btn.classList.add('active');
+
+            category=btn.dataset.category;
+
+            filterRows();
+
+        });
+
+    });
+
+    document.querySelectorAll('[data-product]').forEach(btn=>{
+
+        btn.addEventListener('click',()=>{
+
+            document.querySelectorAll('[data-product]').forEach(b=>b.classList.remove('active'));
+
+            btn.classList.add('active');
+
+            product=btn.dataset.product;
+
+            filterRows();
+
+        });
+
+    });
+
+    const colorMap = {
+  "MoonShade": {
+    bg: "#FFF3E0",
+    border: "#B8D9B9",
+    text: "#3D6B3E"
+  },
+  "MoonShade XL": {
+    bg: "#FDF5EE",
+    border: "#F0C49A",
+    text: "#8A4A1A"
+  },
+  "MoonShade RV": {
+    bg: "#FFF3E0",
+    border: "#F5D08A",
+    text: "#8A5A00"
+  },
+  "MoonShade Apex": {
+    bg: "#FDF5EE",
+    border: "#DBB8E8",
+    text: "#7A3A8A"
+  },
+  "MoonShade Pro": {
+    bg: "#FDF5EE",
+    border: "#B8BAF5",
+    text: "#3A3AA0"
+  }
+};
+
+document.querySelectorAll(".fitment-table td span").forEach(span => {
+  const product = span.textContent.trim();
+  const colors = colorMap[product];
+
+  if (!colors) return;
+
+  span.style.backgroundColor = colors.bg;
+  span.style.border = `1px solid ${colors.border}`;
+  span.style.color = colors.text;
+});
+const sortBtn = document.querySelector(".js-sort-make");
+const tbody = document.querySelector(".fitment-table tbody");
+
+sortBtn.addEventListener("click", () => {
+
+    const rows = [...tbody.querySelectorAll("tr")];
+
+    const isAsc = sortBtn.dataset.direction === "asc";
+
+    rows.sort((a, b) => {
+
+        const makeA = a.children[1].textContent.trim().toLowerCase();
+        const makeB = b.children[1].textContent.trim().toLowerCase();
+
+        return isAsc
+            ? makeA.localeCompare(makeB)
+            : makeB.localeCompare(makeA);
+
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    sortBtn.dataset.direction = isAsc ? "desc" : "asc";
+
+    sortBtn.classList.toggle("desc", isAsc);
+
+});
+
+    // Custom scrollbar sync on mobile
+    const tableWrapper = document.querySelector('.fitment-table-wrapper');
+    const scrollTrack = document.querySelector('.fitment-custom-scrollbar');
+    const scrollThumb = document.querySelector('.fitment-custom-scrollbar__thumb');
+
+    function updateScrollThumb() {
+        if (!tableWrapper || !scrollThumb) return;
+        const scrollRatio = tableWrapper.scrollLeft / (tableWrapper.scrollWidth - tableWrapper.clientWidth);
+        const thumbMaxLeft = (scrollTrack.clientWidth - scrollThumb.offsetWidth);
+        scrollThumb.style.left = (scrollRatio * thumbMaxLeft) + 'px';
+    }
+
+    if (tableWrapper && scrollTrack && scrollThumb) {
+        tableWrapper.addEventListener('scroll', updateScrollThumb);
+
+        // Drag to scroll logic
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        scrollThumb.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startScrollLeft = tableWrapper.scrollLeft;
+            document.body.style.userSelect = 'none';
+        });
+        scrollTrack.addEventListener('mousedown', (e) => {
+            if (e.target === scrollTrack) {
+                const clickRatio = e.offsetX / scrollTrack.clientWidth;
+                tableWrapper.scrollLeft = clickRatio * (tableWrapper.scrollWidth - tableWrapper.clientWidth);
+                updateScrollThumb();
+            }
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const trackRatio = dx / (scrollTrack.clientWidth - scrollThumb.offsetWidth);
+            tableWrapper.scrollLeft = startScrollLeft + trackRatio * (tableWrapper.scrollWidth - tableWrapper.clientWidth);
+        });
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            document.body.style.userSelect = '';
+        });
+
+        // Touch drag support
+        let touchStartX = 0;
+        let touchStartScrollLeft = 0;
+        scrollThumb.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartScrollLeft = tableWrapper.scrollLeft;
+        }, { passive: true });
+        scrollThumb.addEventListener('touchmove', (e) => {
+            const dx = e.touches[0].clientX - touchStartX;
+            const trackRatio = dx / (scrollTrack.clientWidth - scrollThumb.offsetWidth);
+            tableWrapper.scrollLeft = touchStartScrollLeft + trackRatio * (tableWrapper.scrollWidth - tableWrapper.clientWidth);
+        }, { passive: true });
+
+        // Set initial thumb width relative to visible vs total scroll width
+        function setThumbWidth() {
+            const ratio = tableWrapper.clientWidth / tableWrapper.scrollWidth;
+            scrollThumb.style.width = Math.max(ratio * 100, 15) + '%';
+        }
+        setThumbWidth();
+        window.addEventListener('resize', () => { setThumbWidth(); updateScrollThumb(); });
+    }
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Moonshade Fitment Table",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Moonshade Fitment Table"
+    }
+  ]
+}
+{% endschema %}

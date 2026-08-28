@@ -1,0 +1,78 @@
+{% schema %}
+{
+  "name": "spec new design",
+  "tag": "section",
+  "class": "image-text-blocks",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Your Main Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "main_text",
+      "label": "Main Rich Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subheading",
+      "name": "Heading Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading_block_text",
+          "label": "Heading",
+          "default": "Sub Heading"
+        }
+      ]
+    },
+    {
+      "type": "subtext",
+      "name": "Rich Text Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "rich_text_block",
+          "label": "Rich Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "spec new design",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-text-block-wrapper" style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; margin: 40px 0;">
+  <div class="left-image" style="flex: 1 1 40%;">
+    {% if section.settings.main_image != blank %}
+      <img src="{{ section.settings.main_image | image_url: width: 800 }}" alt="Image" style="max-width: 100%; border-radius: 8px;" />
+    {% endif %}
+  </div>
+  <div class="right-text" style="flex: 1 1 55%;">
+    {% if section.settings.main_heading != blank %}
+      <h2>{{ section.settings.main_heading }}</h2>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% if block.type == 'subheading' %}
+        <h4>{{ block.settings.heading_block_text }}</h4>
+      {% elsif block.type == 'subtext' %}
+        <div class="rte">{{ block.settings.rich_text_block }}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

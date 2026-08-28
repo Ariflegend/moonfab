@@ -1,0 +1,362 @@
+<!-- Latest compiled and minified CSS -->
+<!-- https://xstore.8theme.com/demos/hosting/-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Item slider-->
+<div class="ban-top">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+      <div class="top-">
+
+        <div class="firt"><h1>{{ section.settings.shop }}</h1></div>
+
+        <div id="slider-control">
+          
+          <a class="left carousel-control previous round" href="#itemslider" data-slide="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+                  <path d="M15 19l-7-7 7-7" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </a>
+          <a class="right carousel-control next round" href="#itemslider" data-slide="next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </a>
+        </div>
+
+          
+        <!-- <div id="slider-control">
+          <a class="left carousel-control previous round" href="#itemslider" data-slide="prev">&#8249;</a>
+          <a class="right carousel-control next round" href="#itemslider" data-slide="next">&#8250;</a>
+        </div> -->
+        
+      </div>
+      
+      <div class="carousel carousel-showmanymoveone slide" id="itemslider" style="margin-top: 10px;">
+        <div class="carousel-inner">
+          {% for block in section.blocks %}
+            {% assign collection = collections[block.settings.selected_collection_1] %}
+            {% if collection %}
+              <div class="item {% if forloop.first %}active{% endif %}">
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                  <a href="{{ collection.url }}">
+                    <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}" class="img-responsive center-block">
+                  </a>
+                  <h4 class="text-center">{{ collection.title }}</h4>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="shop-all">
+         <a href="{{ section.settings.shop_link }}" class="shop-new-button">{{ section.settings.shop_btn }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<style>
+
+
+
+
+
+  
+div#slider-control svg {
+    padding: 8px;
+    width: 45px;
+    border: 1px solid #858585;
+    border-radius: 50px;
+    height: 45px;
+}
+a.left.carousel-control.previous.round {
+    color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: url('path-to-your-left-arrow.svg') no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+a.right.carousel-control.next.round {
+    color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: url('path-to-your-right-arrow.svg') no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.shop-all {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+div#slider-control, .firt {
+    width: 50%;
+}
+a.shop-new-button {
+    color: #fff;
+    background-color: #3B4752;
+    padding: 15px 45px;
+    border-radius: 50px;
+    display: inline-block;
+}
+.firt h1 {
+    font-family: Berringer_Rough;
+    font-size: 26px;
+}
+.top- {
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-title {
+    display: flex;
+    align-items: center;
+}
+a.left.carousel-control.previous.round {
+    color: #858585;
+    border: 1px solid #858585;
+    width: 15px !IMPORTANT;
+    padding: 5px 0px;
+    background: #ffffff ! IMPORTANT;
+    height: 40px !important;
+    border-radius: 35px;
+} 
+a.right.carousel-control.next.round {
+    color: #858585;
+    border: 1px solid #858585;
+    width: 15px !IMPORTANT;
+    padding: 5px 12px;
+    background: #ffffff ! IMPORTANT;
+    height: 40px !important;
+    border-radius: 35px;
+}  
+.ban-top {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.center-block {
+    /* width: 280px !important; */
+    border-radius: 20px !important;
+    height: 300px !important;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: cover !important;
+}
+.carousel-inner h4.text-center {
+    text-transform: uppercase;
+    font-family: 'Poligon_Extra_Bold';
+    color: #37414B;
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: 800;
+}
+@media screen and (max-width: 992px){
+#slider-control img {
+  padding-top: 70px;
+  margin: 0 auto;
+}
+}
+div#slider-control {
+    text-align: right;
+}
+.carousel-control{
+position:inherit !important;
+top:0 !important;
+width: 0 !important;
+}
+.carousel-showmanymoveone .carousel-control {
+    height: 14%;
+  width: 4%;
+  background-image: none;
+}
+.carousel-showmanymoveone .carousel-control.left {
+  margin-left: 5px;
+}
+.carousel-showmanymoveone .carousel-control.right {
+  margin-right: 5px;
+}
+.carousel-showmanymoveone .cloneditem-1,
+.carousel-showmanymoveone .cloneditem-2,
+.carousel-showmanymoveone .cloneditem-3,
+.carousel-showmanymoveone .cloneditem-4,
+.carousel-showmanymoveone .cloneditem-5 {
+  display: none;
+}
+
+a.left.carousel-control.previous.round {
+    color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: url('path-to-your-left-arrow.svg') no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+a.right.carousel-control.next.round {
+    color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: url('path-to-your-right-arrow.svg') no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+  
+@media all and (min-width: 768px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left,
+  .carousel-showmanymoveone .carousel-inner > .prev {
+    left: -50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right,
+  .carousel-showmanymoveone .carousel-inner > .next {
+    left: 50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left,
+  .carousel-showmanymoveone .carousel-inner > .prev.right,
+  .carousel-showmanymoveone .carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+    display: block;
+  }
+}
+@media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right,
+  .carousel-showmanymoveone .carousel-inner > .item.next {
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+  .carousel-showmanymoveone .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+@media all and (min-width: 992px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left,
+  .carousel-showmanymoveone .carousel-inner > .prev {
+    left: -16.666%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right,
+  .carousel-showmanymoveone .carousel-inner > .next {
+    left: 16.666%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left,
+  .carousel-showmanymoveone .carousel-inner > .prev.right,
+  .carousel-showmanymoveone .carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+  .carousel-showmanymoveone .carousel-inner .cloneditem-3,
+  .carousel-showmanymoveone .carousel-inner .cloneditem-4,
+  .carousel-showmanymoveone .carousel-inner .cloneditem-5,
+  .carousel-showmanymoveone .carousel-inner .cloneditem-6  {
+    display: block;
+  }
+}
+@media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right,
+  .carousel-showmanymoveone .carousel-inner > .item.next {
+    -webkit-transform: translate3d(16.666%, 0, 0);
+    transform: translate3d(16.666%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev {
+    -webkit-transform: translate3d(-16.666%, 0, 0);
+    transform: translate3d(-16.666%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+  .carousel-showmanymoveone .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+</style>
+<script>
+    $(document).ready(function(){
+// $('#itemslider').carousel({ interval: 3000 });
+$('.carousel-showmanymoveone .item').each(function(){
+var itemToClone = $(this);
+for (var i=1;i<6;i++) {
+itemToClone = itemToClone.next();
+if (!itemToClone.length) {
+itemToClone = $(this).siblings(':first');
+}
+itemToClone.children(':first-child').clone()
+.addClass("cloneditem-"+(i))
+.appendTo($(this));
+}
+});
+});
+</script>
+{% schema %}
+  {
+  "name": "Homepage-collection",
+  "settings": [ {
+      "type": "text",
+      "id": "shop",
+      "label": "Support Text",
+      "default": "Shop By vechicle"
+    },
+    {
+      "type": "text",
+      "id": "shop_btn",
+      "label": "Support Text",
+      "default": "SHOP ALL"
+    },
+    {
+      "type": "url",
+      "id": "shop_link",
+      "label": "Support Link",
+         }],
+  "blocks": [
+    {
+      "type": "collection_1",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "selected_collection_1",
+          "label": "Select Collection"
+        }
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "New Slider Desktop",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,521 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="main page-width {{ section.settings.contact-form-bg }}">
+	<div class="row justify-content-center">
+		<div class="signup-content">
+			<div class="signup-form " id="signup_form">
+				<div class="login d-none">
+					<a href="https://af.uppromote.com/moon/login">
+						<button id="login" type="button" class="btn btn-primary"> Login </button>
+					</a>
+				</div>
+
+				<form
+					method="POST"
+					class="register-form needs-validation"
+					id="register-form"
+					action="https://af.uppromote.com/moon/register_aff"
+					novalidate>
+					<input type="hidden" name="_token" value="TfLQUIAJduw2IuPFR4Xx2OZeUpCwwsCk80RqdH2t">
+					<input type="hidden" name="shop_id" value="52005">
+					<input type="hidden" name="program_id" value="59676">
+					<input type="hidden" name="marketplace_user_id" value="">
+					<input type="hidden" name="marketplace_affiliate_profile" value="">
+
+
+					<div class="form-group">
+						<label for="first_name" id="first_name_label" class="required">First Name*</label>
+						<div class=" ">
+
+							<input type="text" name="first_name" id="first_name" value="" class="form-control" required>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="last_name" id="last_name_label" class="required">Last Name*</label>
+						<input type="text" name="last_name" id="last_name" value="" class="form-control" required="required">
+						<div class="invalid-feedback"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" id="email_label" class="required">Account Email*</label>
+						<input type="text" name="email" id="email" value="" class="form-control" required="required">
+						<div class="invalid-feedback"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="password" id="password_label" class="required">Password*</label>
+					
+
+						<input type="password" name="password" id="password" value="" class="form-control" required="required">
+						<div class="invalid-feedback"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="password_confirmation" id="password_confirmation_label" class="required">Confirm password*</label>
+						<div class=" ">
+
+							<input type="password" name="password_confirmation" id="password_confirmation" value="" class="form-control" required="required">
+							<div class="invalid-feedback" id="password_confirmation-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="coupon_code" id="coupon_code_label" class="required">Coupon Code*</label>
+						<div class=" ">
+
+							<input type="text" name="coupon_code" id="coupon_code" value="" class="form-control" required="required">
+							<div class="invalid-feedback"></div>
+							<small class="form-text text-muted">Enter 6 or more characters we will use to create your $30 OFF coupon.</small>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="F6jhzlYA" id="F6jhzlYA_label">Your pronouns</label>
+						<div class=" ">
+
+							<input type="text" name="F6jhzlYA" id="F6jhzlYA" value="" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="qOGJ6eB7" id="qOGJ6eB7_label" class="required">Do you currently own a MoonShade?*</label>
+						<div class=" ">
+							<select name="qOGJ6eB7" id="qOGJ6eB7" class="form-select">
+								<option value="yes">Yep!</option>
+								<option value="no">Nope, not yet</option>
+							</select>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="91C5jznh" id="91C5jznh_label" class="required">What vehicle/vessel do you plan to use MoonShade on?*</label>
+						<div class=" ">
+
+							<input type="text" name="91C5jznh" id="91C5jznh" value="" class="form-control" required="required">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="sTvDa3ev" id="sTvDa3ev_label" class="required">Why do you want to partner with Moon?*</label>
+						<div class=" ">
+
+							<textarea style="width: 100%; height: 100px;" name="sTvDa3ev" id="sTvDa3ev" class="form-control" required="required"></textarea>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="jHPAH9yE" id="jHPAH9yE_label" class="required">How do you plan to share your MoonShade?*</label>
+						<div class=" ">
+
+							<textarea style="width: 100%; height: 100px;" name="jHPAH9yE" id="jHPAH9yE" class="form-control" required="required"></textarea>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="Lnulqpyl" id="Lnulqpyl_label">Do you participate in any expos/events within your community?</label>
+						<div class=" ">
+
+							<input type="text" name="Lnulqpyl" id="Lnulqpyl" value="" class="form-control">
+							<small class="form-text text-muted">If so, let us know what type of events you participate in.</small>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="RAK2HYEC" id="RAK2HYEC_label" class="required">What are your preferred social media or community based platforms?*</label>
+						<div class=" ">
+
+							<input type="text" name="RAK2HYEC" id="RAK2HYEC" value="" class="form-control error" required="required" aria-invalid="true">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="hnGQp8ly" id="hnGQp8ly_label" class="required">Please enter a link to your primary community/social platform*</label>
+						<div class=" ">
+
+							<input type="text" name="hnGQp8ly" id="hnGQp8ly" value="" class="form-control" required="required">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+
+					<div class="form-submit">
+						<button type="submit" class="submit btn btn-primary btn-block" id="submit" name="submit" data-loading-text="<i class='fa fa-spinner fa-spin '></i>">Submit Application</button>
+					</div>
+					<div class="term text-muted mt-2">
+						<p>
+							<font>
+								<font>By joining, you agree to the </font>
+							</font><a href="" class="text-muted" data-bs-toggle="modal" data-bs-target="#termsModal">
+								<font>Terms</font>
+							</a>
+							<font class="and-none">
+								<font> and </font>
+							</font><a href="" class="text-muted" data-bs-toggle="modal" data-bs-target="#policyModal">
+								<font>
+									<font> Privacy Policy </font>
+								</font>
+							</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="termsModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+            	<h4 class="modal-title">Terms and Conditions</h4>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="content-container">
+                    <b>MoonFam Affiliate Program Terms And Conditions</b></div><div><br></div><div>FOREWARD</div><div><br></div><div>Our affiliates are very important to us. We do our best to treat you with the fairness and respect you deserve. We simply ask the same consideration of you. We have written the following affiliate agreement with you in mind, as well as to protect our company's good name. So please bear with us as we take you through this legal formality. If you have any questions, please don't hesitate to let us know.&nbsp;</div><div><br></div><div>Affiliate Agreement</div><div><br></div><div>PLEASE READ THE ENTIRE AGREEMENT.</div><div><br></div><div>THIS IS A LEGAL AGREEMENT BETWEEN YOU AND Moon Fabrications Inc. (Moon)</div><div><br></div><div>BY SUBMITTING THE ONLINE APPLICATION YOU ARE AGREEING THAT YOU HAVE READ AND UNDERSTAND THE TERMS AND CONDITIONS OF THIS AGREEMENT AND THAT YOU AGREE TO BE LEGALLY RESPONSIBLE FOR EACH AND EVERY TERM AND CONDITION.</div><div><br></div><div>OVERVIEW</div><div><br></div><div>This Agreement contains the complete terms and conditions that apply to you becoming an affiliate in Moon's Affiliate Program. The purpose of this Agreement is to allow HTML linking between your web site and the Moon web site. Please note that throughout this Agreement, "we," "us," and "our" refer to Moon, and "you," "your," and "yours" refer to the affiliate.</div><div><br></div><div>AFFILIATE OBLIGATIONS</div><div><br></div><div>2.1. To begin the enrollment process, you will complete and submit the online application on the Moon website. We may cancel your application if we determine that your site is unsuitable for our Program, including if it:</div><div><br></div><div>2.1.1. Promotes sexually explicit materials</div><div>2.1.2. Promotes violence</div><div>2.1.3. Promotes discrimination based on race, sex, religion, nationality, disability, sexual orientation, or age</div><div>2.1.4. Promotes illegal activities</div><div>2.1.5. Incorporates any materials which infringe or assist others to infringe on any copyright, trademark or other intellectual property rights or to violate the law</div><div>2.1.6. Includes "Merchant" or variations or misspellings thereof in its domain name</div><div>2.1.7. Is otherwise in any way unlawful, harmful, threatening, defamatory, obscene, harassing, or racially, ethnically or otherwise objectionable to us in our sole discretion.</div><div>2.1.8. Contains software downloads that potentially enable diversions of commission from other affiliates in our program.</div><div>2.1.9. You may not create or design your website or any other website that you operate, explicitly or implied in a manner which resembles our website nor design your website in a manner which leads customers to believe you are Moon or any other affiliated business.</div><div><br></div><div>2.2. As a member of Moon's Affiliate Program, you will have access to Affiliate Account Manager. Here you will be able to review our Program’s details and get trackable links and coupon codes. In order for us to accurately keep track of all guest visits from your site to ours, you must use the affiliate link or coupon code we provide you with.</div><div><br></div><div>2.3. Moon reserves the right, at any time, to review your placement and approve the use of Your Links and require that you change the placement or use to comply with the guidelines provided to you.</div><div><br></div><div>2.4. The maintenance and the updating of your promotions will be your responsibility. We may monitor your site as we feel necessary to make sure that it is up-to-date. We may notify you of important updates to product availability or pricing, but it is your responsibility to check the Moon website regularly and ensure your promotional campaigns accurately reflect our inventory, options, and pricing.</div><div><br></div><div>2.5. It is entirely your responsibility to follow all applicable intellectual property and other laws that pertain to your site. You must have express permission to use any person's copyrighted material, whether it be a writing, an image, or any other copyrightable work. We will not be responsible (and you will be solely responsible) if you use another person's copyrighted material or other intellectual property in violation of the law or any third party rights.</div><div><br></div><div>MOON RIGHTS AND OBLIGATIONS</div><div>3.1. We have the right to monitor your promotional activity at any time to determine if you are following the terms and conditions of this Agreement. We may notify you of any changes to your promotions that we feel should be made, or to make sure that your links to our web site are appropriate and to notify further you of any changes that we feel should be made. If you do not make the changes to your site that we feel are necessary, we reserve the right to terminate your participation in the Moon Affiliate Program.</div><div><br></div><div>3.2. Moon reserves the right to terminate this Agreement and your participation in the Moon Affiliate Program immediately and without notice to you should you commit fraud in your use of the Moon Affiliate Program or should you abuse this program in any way. If such fraud or abuse is detected, Moon shall not be liable to you for any commissions for such fraudulent sales.</div><div><br></div><div>3.3. This Agreement will begin upon our acceptance of your Affiliate application, and will continue unless terminated hereunder.</div><div><br></div><div>TERMINATION</div><div>Either you or we may end this Agreement AT ANY TIME, with or without cause, by giving the other party written notice. Written notice can be in the form of mail, email or fax. In addition, this Agreement will terminate immediately upon any breach of this Agreement by you.</div><div><br></div><div>MODIFICATION</div><div>We may modify any of the terms and conditions in this Agreement at any time at our sole discretion. In such event, you will be notified by email. Modifications may include, but are not limited to, changes in the payment procedures and Moon's Affiliate Program rules. If any modification is unacceptable to you, your only option is to end this Agreement. Your continued participation in Moon's Affiliate Program following the posting of the change notice or new Agreement on our site will indicate your agreement to the changes.</div><div><br></div><div>PAYMENT</div><div>Moon uses a third party to handle all of the tracking and payment. The third party is the affiliatewp.com affiliate platform.</div><div><br></div><div>ACCESS TO AFFILIATE ACCOUNT INTERFACE</div><div>You will create a password so that you may enter Moon's secure affiliate account dashboard. From this dashboard you will be able to view reports that will describe our calculation of the commissions due to you.</div><div><br></div><div>PROMOTION RESTRICTIONS</div><div>8.1. You are free to promote your own web sites, but naturally any promotion that mentions Moon could be perceived by the public or the press as a joint effort. You should know that certain forms of advertising are always prohibited by Moon. For example, advertising commonly referred to as "spamming" is unacceptable to us and could cause damage to our name. Other generally prohibited forms of advertising include the use of unsolicited commercial email (UCE), postings to non-commercial newsgroups and cross-posting to multiple newsgroups at once. In addition, you may not advertise in any way that effectively conceals or misrepresents your identity, your domain name, or your return email address. You may use mailings to customers to promote Moon so long as the recipient is already a customer or subscriber of your services or web site, and recipients have the option to remove themselves from future mailings. Also, you may post to newsgroups to promote Moon so long as the news group specifically welcomes commercial messages. At all times, you must clearly represent yourself and your web sites as independent from Moon. If it comes to our attention that you are spamming, we will consider that cause for immediate termination of this Agreement and your participation in the Moon Affiliate Program. Any pending balances owed to you will not be paid if your account is terminated due to such unacceptable advertising or solicitation.</div><div><br></div><div>8.2. Affiliates that among other keywords or exclusively bid in their Pay-Per-Click campaigns on keywords such as MoonFab, merchant, www.mooonfab.com, www.moonfabs.com, and/or any misspellings or similar alterations of these – be it separately or in combination with other keywords – and do not direct the traffic from such campaigns to their own website prior to re-directing it to ours, will be considered trademark violators, and will be banned from Merchant’s Affiliate Program. We will do everything possible to contact the affiliate prior to the ban. However, we reserve the right to expel any trademark violator from our affiliate program without prior notice, and on the first occurrence of such PPC bidding behavior.</div><div><br></div><div>8.3. Affiliates are not prohibited from keying in prospect’s information into the lead form as long as the prospects’ information is real and true, and these are valid leads (i.e. sincerely interested in Merchant’s service).</div><div><br></div><div>8.4. Affiliate shall not transmit any so-called “interstitials,” “Parasiteware™,” “Parasitic Marketing,” “Shopping Assistance Application,” “Toolbar Installations and/or Add-ons,” “Shopping Wallets” or “deceptive pop-ups and/or pop-unders” to consumers from the time the consumer clicks on a qualifying link until such time as the consumer has fully exited Merchant’s site (i.e., no page from our site or any Moon's content or branding is visible on the end-user’s screen). As used herein a. “Parasiteware™” and “Parasitic Marketing” shall mean an application that (a) through accidental or direct intent causes the overwriting of affiliate and non affiliate commission tracking cookies through any other means than a customer initiated click on a qualifying link on a web page or email; (b) intercepts searches to redirect traffic through an installed software, thereby causing, pop ups, commission tracking cookies to be put in place or other commission tracking cookies to be overwritten where a user would under normal circumstances have arrived at the same destination through the results given by the search (search engines being, but not limited to, Google, MSN, Yahoo, Overture, AltaVista, Hotbot and similar search or directory engines); (c) set commission tracking cookies through loading of Merchant site in IFrames, hidden links and automatic pop ups that open Moon's site; (d) targets text on web sites, other than those web sites 100% owned by the application owner, for the purpose of contextual marketing; (e) removes, replaces or blocks the visibility of Affiliate banners with any other banners, other than those that are on web sites 100% owned by the owner of the application.</div><div><br></div><div>GRANT OF LICENSES</div><div>9.1. We grant to you a non-exclusive, non-transferable, revocable right to (i) access our site through HTML links solely in accordance with the terms of this Agreement and (ii) solely in connection with such links, to use our logos, trade names, trademarks, and similar identifying material (collectively, the "Licensed Materials") that we provide to you or authorize for such purpose. You are only entitled to use the Licensed Materials to the extent that you are a member in good standing of Moon's Affiliate Program. You agree that all uses of the Licensed Materials will be on behalf of Moon and the good will associated therewith will inure to the sole benefit of Moon.</div><div><br></div><div>9.2. Each party agrees not to use the other's proprietary materials in any manner that is disparaging, misleading, obscene or that otherwise portrays the party in a negative light. Each party reserves all of its respective rights in the proprietary materials covered by this license. Other than the license granted in this Agreement, each party retains all right, title, and interest to its respective rights and no right, title, or interest is transferred to the other.</div><div><br></div><div>DISCLAIMER</div><div>MOON MAKES NO EXPRESS OR IMPLIED REPRESENTATIONS OR WARRANTIES REGARDING MOON SERVICE AND WEB SITE OR THE PRODUCTS OR SERVICES PROVIDED THEREIN, ANY IMPLIED WARRANTIES OF MOON'S ABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT ARE EXPRESSLY DISCLAIMED AND EXCLUDED. IN ADDITION, WE MAKE NO REPRESENTATION THAT THE OPERATION OF OUR SITE WILL BE UNINTERRUPTED OR ERROR FREE, AND WE WILL NOT BE LIABLE FOR THE CONSEQUENCES OF ANY INTERRUPTIONS OR ERRORS.</div><div><br></div><div>REPRESENTATIONS AND WARRANTIES</div><div>You represent and warrant that:</div><div><br></div><div>11.1. This Agreement has been duly and validly executed and delivered by you and constitutes your legal, valid, and binding obligation, enforceable against you in accordance with its terms;</div><div><br></div><div>11.2. You have the full right, power, and authority to enter into and be bound by the terms and conditions of this Agreement and to perform your obligations under this Agreement, without the approval or consent of any other party;</div><div><br></div><div>11.3. You have sufficient right, title, and interest in and to the rights granted to us in this Agreement.</div><div><br></div><div>LIMITATIONS OF LIABILITY</div><div>WE WILL NOT BE LIABLE TO YOU WITH RESPECT TO ANY SUBJECT MATTER OF THIS AGREEMENT UNDER ANY CONTRACT, NEGLIGENCE, TORT, STRICT LIABILITY OR OTHER LEGAL OR EQUITABLE THEORY FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR EXEMPLARY DAMAGES (INCLUDING, WITHOUT LIMITATION, LOSS OF REVENUE OR GOODWILL OR ANTICIPATED PROFITS OR LOST BUSINESS), EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. FURTHER, NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED IN THIS AGREEMENT, IN NO EVENT SHALL MOON'S CUMULATIVE LIABILITY TO YOU ARISING OUT OF OR RELATED TO THIS AGREEMENT, WHETHER BASED IN CONTRACT, NEGLIGENCE, STRICT LIABILITY, TORT OR OTHER LEGAL OR EQUITABLE THEORY, EXCEED THE TOTAL COMMISSION FEES PAID TO YOU UNDER THIS AGREEMENT.</div><div><br></div><div>INDEMNIFICATION</div><div>You hereby agree to indemnify and hold harmless Moon, and its subsidiaries and affiliates, and their directors, officers, employees, agents, shareholders, partners, members, and other owners, against any and all claims, actions, demands, liabilities, losses, damages, judgments, settlements, costs, and expenses (including reasonable attorneys' fees) (any or all of the foregoing hereinafter referred to as "Losses") insofar as such Losses (or actions in respect thereof) arise out of or are based on (i) any claim that our use of the affiliate trademarks infringes on any trademark, trade name, service mark, copyright, license, intellectual property, or other proprietary right of any third party, (ii) any misrepresentation of a representation or warranty or breach of a covenant and agreement made by you herein, or (iii) any claim related to your site, including, without limitation, content therein not attributable to us.</div><div><br></div><div>CONFIDENTIALITY</div><div>All confidential information, including, but not limited to, any business, technical, financial, and customer information, disclosed by one party to the other during negotiation or the effective term of this Agreement which is marked "Confidential," will remain the sole property of the disclosing party, and each party will keep in confidence and not use or disclose such proprietary information of the other party without express written permission of the disclosing party.</div><div><br></div><div>MISCELLANEOUS</div><div>15.1. You agree that you are an independent contractor, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between you and Moon. You will have no authority to make or accept any offers or representations on our behalf. You will not make any statement, whether on Your Site or any other of Your Site or otherwise, that reasonably would contradict anything in this Section.</div><div><br></div><div>15.2. Neither party may assign its rights or obligations under this Agreement to any party, except to a party who obtains all or substantially all of the business or assets of a third party.</div><div><br></div><div>15.3. This Agreement shall be governed by and interpreted in accordance with the laws of the State of Texas without regard to the conflicts of laws and principles thereof.</div><div><br></div><div>15.4. You may not amend or waive any provision of this Agreement unless in writing and signed by both parties.</div><div><br></div><div>15.5. This Agreement represents the entire agreement between us and you, and shall supersede all prior agreements and communications of the parties, oral or written.</div><div><br></div><div>15.6. The headings and titles contained in this Agreement are included for convenience only, and shall not limit or otherwise affect the terms of this Agreement.</div><div><br></div><div>15.7. If any provision of this Agreement is held to be invalid or unenforceable, that provision shall be eliminated or limited to the minimum extent necessary such that the intent of the parties is effectuated, and the remainder of this agreement shall have full force and effect
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" data-target="termsModal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="policyModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <h4 class="modal-title">Privacy Policy</h4>
+                <button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="content-container">
+					<b>Moon Privacy Policy</b></div><div><br></div><div>Last updated June 23, 2020</div><div><br></div><div>Thank you for choosing to be part of our community at Moon Fabrications Inc. (“Moon”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at info@moonfab.co.</div><div><br></div><div>When you visit our website https://moonfab.co, and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy policy, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy policy that you do not agree with, please discontinue use of our site and our services.</div><div><br></div><div>This privacy policy applies to all information collected through our website (such as https://moonfab.co), and/or any related services, sales, marketing or events (we refer to them collectively in this privacy policy as the “Services“).</div><div><br></div><div>Please read this privacy policy carefully as it will help you make informed decisions about sharing your personal information with us.</div><div><br></div><div>1. WHAT INFORMATION DO WE COLLECT?</div><div>Personal information you disclose to us</div><div><br></div><div>In Short:&nbsp; We collect personal information that you provide to us.</div><div><br></div><div>We collect personal information that you voluntarily provide to us when registering at the Services expressing an interest in obtaining information about us or our products and services, when participating in activities on the Services or otherwise contacting us.</div><div><br></div><div>The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make and the products and features you use. The personal information we collect can include the following:</div><div><br></div><div>Publicly Available Personal Information. We collect first name, maiden name, last name, and nickname; email addresses; phone numbers; current and former address; and other similar data.&nbsp;</div><div><br></div><div>Personal Information Provided by You. We collect purchase history; data collected from surveys; and other similar data.</div><div><br></div><div>Payment Data. We collect data necessary to process your payment if you make purchases, such as your payment instrument number (such as a credit card number), and the security code associated with your payment instrument. All payment data is stored by Stripe. You may find their privacy policy link(s) here: https://stripe.com/privacy.</div><div><br></div><div>All personal information that you provide to us must be true, complete and accurate, and you must notify us of any changes to such personal information.</div><div><br></div><div>2. HOW DO WE USE YOUR INFORMATION?</div><div><br></div><div>In Short:&nbsp; We process your information for purposes based on legitimate business interests, the fulfillment of our contract with you, compliance with our legal obligations, and/or your consent.</div><div><br></div><div>We use personal information collected via our Services for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations. We indicate the specific processing grounds we rely on next to each purpose listed below.</div><div><br></div><div>We use the information we collect or receive:</div><div><br></div><div>To facilitate account creation and logon process. If you choose to link your account with us to a third party account (such as your Google or Facebook account), we use the information you allowed us to collect from those third parties to facilitate account creation and logon process for the performance of the contract.</div><div>Fulfill and manage your orders. We may use your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services.</div><div>To enforce our terms, conditions and policies for Business Purposes, Legal Reasons and Contractual.</div><div>To respond to legal requests and prevent harm. If we receive a subpoena or other legal request, we may need to inspect the data we hold to determine how to respond.</div><div>To manage user accounts. We may use your information for the purposes of managing our account and keeping it in working order.</div><div>To deliver services to the user. We may use your information to provide you with the requested service.</div><div>To respond to user inquiries/offer support to users. We may use your information to respond to your inquiries and solve any potential issues you might have with the use of our Services.</div><div>For other Business Purposes. We may use your information for other Business Purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Services, products, marketing and your experience. We may use and store this information in aggregated and anonymized form so that it is not associated with individual end users and does not include personal information. We will not use identifiable personal information without your consent.</div><div>3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</div><div><br></div><div>In Short:&nbsp; We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.We may process or share data based on the following legal basis:</div><div><br></div><div>Consent: We may process your data if you have given us specific consent to use your personal information in a specific purpose.</div><div>Legitimate Interests: We may process your data when it is reasonably necessary to achieve our legitimate business interests.</div><div>Performance of a Contract: Where we have entered into a contract with you, we may process your personal information to fulfill the terms of our contract.</div><div>Legal Obligations: We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process, such as in response to a court order or a subpoena (including in response to public authorities to meet national security or law enforcement requirements).</div><div>Vital Interests: We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person and illegal activities, or as evidence in litigation in which we are involved.</div><div>More specifically, we may need to process your data or share your personal information in the following situations:</div><div><br></div><div>Vendors, Consultants and Other Third-Party Service Providers. We may share your data with third party vendors, service providers, contractors or agents who perform services for us or on our behalf and require access to such information to do that work. Examples include: payment processing, data analysis, email delivery, hosting services, customer service and marketing efforts. We may allow selected third parties to use tracking technology on the Services, which will enable them to collect data about how you interact with the Services over time. This information may be used to, among other things, analyze and track data, determine the popularity of certain content and better understand online activity. Unless described in this Policy, we do not share, sell, rent or trade any of your information with third parties for their promotional purposes.</div><div>Business Transfers. We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</div><div>Third-Party Advertisers. We may use third-party advertising companies to serve ads when you visit the Services. These companies may use information about your visits to our Website(s) and other websites that are contained in web cookies and other tracking technologies in order to provide advertisements about goods and services of interest to you.</div><div>4. HOW LONG DO WE KEEP YOUR INFORMATION?</div><div><br></div><div>In Short:&nbsp; We keep your information for as long as necessary to fulfill the purposes outlined in this privacy policy unless otherwise required by law.</div><div><br></div><div>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy policy, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements). No purpose in this policy will require us keeping your personal information for longer than the period of time in which users have an account with us.</div><div><br></div><div>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize it, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</div><div><br></div><div>5. HOW DO WE KEEP YOUR INFORMATION SAFE?</div><div><br></div><div>In Short:&nbsp; We aim to protect your personal information through a system of organizational and technical security measures.</div><div><br></div><div>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the services within a secure environment.</div><div><br></div><div>6. DO WE COLLECT INFORMATION FROM MINORS?</div><div><br></div><div>In Short:&nbsp; We do not knowingly collect data from or market to children under 18 years of age.</div><div><br></div><div>We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we have collected from children under age 18, please contact us at info@moonfab.co.</div><div><br></div><div>7. WHAT ARE YOUR PRIVACY RIGHTS?</div><div><br></div><div>In Short:&nbsp; You may review, change, or terminate your account at any time.</div><div><br></div><div>If you are resident in the European Economic Area and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here: http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.</div><div><br></div><div>If you have questions or comments about your privacy rights, you may email us at info@moonfab.co.</div><div>Account Information</div><div><br></div><div>If you would at any time like to review or change the information in your account or terminate your account, you can:</div><div><br></div><div>&nbsp; &nbsp; ■&nbsp; Contact us using the contact information provided.</div><div><br></div><div>Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, some information may be retained in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our Terms of Use and/or comply with legal requirements.</div><div><br></div><div>Opting out of email marketing: You can unsubscribe from our marketing email list at any time by clicking on the unsubscribe link in the emails that we send or by contacting us using the details provided below. You will then be removed from the marketing email list – however, we will still need to send you service-related emails that are necessary for the administration and use of your account. To otherwise opt-out, you may:</div><div><br></div><div>&nbsp; &nbsp; ■&nbsp; Contact us using the contact information provided.</div><div><br></div><div>8. CONTROLS FOR DO-NOT-TRACK FEATURES</div><div><br></div><div>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (“DNT”) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. No uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy policy.</div><div><br></div><div>9. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</div><div><br></div><div>In Short:&nbsp; Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.</div><div><br></div><div>California Civil Code Section 1798.83, also known as the “Shine The Light” law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided below.</div><div><br></div><div>If you are under 18 years of age, reside in California, and have a registered account with the Services, you have the right to request removal of unwanted data that you publicly post on the Services. To request removal of such data, please contact us using the contact information provided below, and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the Services, but please be aware that the data may not be completely or comprehensively removed from our systems.</div><div><br></div><div>10. DO WE MAKE UPDATES TO THIS POLICY?</div><div><br></div><div>In Short:&nbsp; Yes, we will update this policy as necessary to stay compliant with relevant laws.</div><div><br></div><div>We may update this privacy policy from time to time. The updated version will be indicated by an updated “Revised” date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy policy, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy policy frequently to be informed of how we are protecting your information.</div><div><br></div><div>11. HOW CAN YOU CONTACT US ABOUT THIS POLICY?</div><div><br></div><div>If you have questions or comments about this policy, you may email us at info@moonfab.co or by post to: Moon Fabrications Inc. 300 Cabrillo St. #8 San Francisco, CA 94118 United States</div><div><br></div><div>HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</div><div><br></div><div>Based on the laws of some countries, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here. We will respond to your request within 30 days.
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" data-bs-target="policyModal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} <iframe style="overflow: hidden; display: block; width: 100%; border: 0;" src="https://af.uppromote.com/moon/register" id="uppromote-register"></iframe>
+<script>
+	window.addEventListener('message', function({origin, data}) {
+		if (origin === 'https://af.uppromote.com') {
+			document.getElementById('uppromote-register').style.height = data.height;
+		}
+	});
+</script> {% endcomment %}
+
+
+  <style>
+        body.gradient {
+            background-color: #fbf5e7;
+        }
+        .contact-head h2.rich-text__heading.rte.inline-richtext.h1 {
+            font-size: 56px;
+            font-family: Berringer_Rough !important;
+            color: #3B4752;
+        }
+        .contact-head p {
+            margin-top: -10px !important;
+            color: #3B4752;
+            font-family: 'Poligon_Light';
+            line-height: 24px;
+        }  
+       
+      .contact-form-first {
+           max-width: 56rem;
+           padding: 0;
+      }
+
+      .contact-form-first{
+           margin-bottom: 100px;
+      }
+
+      .contact-head p {
+          margin-top: -10px !important;
+          color: #3B4752;
+          font-family: 'Poligon_Light';
+          line-height: 24px;
+          font-size: 16px;
+          font-weight: 600;
+      }
+      
+      div#signup_form label {
+          font-size: 13.34px;
+          font-family: 'Poligon_Bold';
+          color: #3B4752;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-bottom: 12px;
+      }
+      
+      div#signup_form input, div#signup_form select, div#signup_form textarea{
+          font-size: 16px;
+          height: 48px;
+          color: #3B4752;
+          border: 2px solid #DDDBD7;
+          background-color: #fff;
+          border-radius: 36px !important;
+          padding-left: 20px;
+      }
+      
+      small.form-text.text-muted {
+          color: #3B4752BF !important;
+          font-size: 12px;
+          font-family: 'Poligon_Light';
+          font-weight: 600;
+      }
+      
+      .form-group {
+          margin-bottom: 18px;
+      }
+      
+      button#submit {
+          width: 100%;
+          padding: 16px;
+          font-size: 14.63px;
+          font-weight: 700;
+          text-transform: uppercase;
+          background-color: #3B4752;
+          height: 56px;
+          border-radius: 4.25rem;
+          border: 0;
+      }
+    
+      .term.text-muted.mt-2 {
+          font-size: 12px;
+          margin-top: 15px !important;
+      }
+    
+      div#termsModal, div#policyModal {
+        background: #00000061;
+        font-size: 16px !important;
+    }
+    
+    div#termsModal .modal-body, div#policyModal .modal-body{
+        font-family: 'Poligon_Regular';
+        padding: 15px 20px;
+        color: rgb(59, 71, 82);
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    h4.modal-title {
+        font-family: 'Poligon_Regular';
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: rgb(59, 71, 82);
+    }
+    
+    .modal-footer button.btn.btn-outline-dark {
+        padding: 12px 24px !important;
+        font-size: 16px;
+        text-transform: uppercase;
+        border-radius: 30px;
+        font-weight: 600;
+        border-width: 2px;
+        margin: 10px;
+    }
+
+    div#signup_form .form-control.is-invalid, div#signup_form .was-validated .form-control:invalid {
+        border-color: red !important;
+    }
+    
+    .invalid-feedback {
+        font-size: 13px;
+        font-family: 'Poligon_Regular';
+        letter-spacing: 0;
+    }
+    
+      </style>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" defer referrerpolicy="no-referrer"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("register-form");
+
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
+        let firstInvalidField = null;
+
+        // Helper function to show error
+        function showError(input, message) {
+            const feedback = input.nextElementSibling;
+            input.classList.add("is-invalid");
+            feedback.textContent = message;
+            feedback.style.display = "block";
+            if (!firstInvalidField) {
+                firstInvalidField = input;
+            }
+        }
+
+        // Helper function to clear error
+        function clearError(input) {
+            const feedback = input.nextElementSibling;
+            input.classList.remove("is-invalid");
+            feedback.textContent = "";
+            feedback.style.display = "none";
+        }
+
+        // Validate required fields
+        form.querySelectorAll("input[required], textarea[required], select[required]").forEach(input => {
+            if (!input.value.trim()) {
+                showError(input, "This field is required");
+                isValid = false;
+            } else {
+                clearError(input);
+            }
+        });
+
+        // Validate email format
+        const email = document.getElementById("email");
+        if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+            showError(email, "Enter a valid email address");
+            isValid = false;
+        }
+
+        // Validate password match
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("password_confirmation");
+        if (password.value && confirmPassword.value && password.value !== confirmPassword.value) {
+            showError(confirmPassword, "Passwords do not match");
+            isValid = false;
+        }
+
+        // Validate coupon code length
+        const coupon = document.getElementById("coupon_code");
+        if (coupon.value && coupon.value.length < 6) {
+            showError(coupon, "Coupon code must be at least 6 characters");
+            isValid = false;
+        }
+
+        // Scroll to first invalid field
+        if (!isValid && firstInvalidField) {
+            firstInvalidField.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        // Prevent form submission if validation fails
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+});
+
+</script>
+{% schema %}
+{
+  "name": "moonfab-affiliate-form",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact-form-bg",
+      "label": "Add Contact Class"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.contact-form.settings.title.default",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "moonfab-affiliate-form"
+    }
+  ]
+}
+{% endschema %}

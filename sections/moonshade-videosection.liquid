@@ -1,0 +1,113 @@
+<style>
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    column-gap: 60px;
+  }
+ .vido-box .video-item iframe {
+  width: 100%;
+  height: 235px;
+}
+  .video-item {
+    text-align: center;
+  }
+
+  .video-item h3 {
+    margin-bottom: 10px;
+  }
+
+
+ @media screen and (max-width: 749px){
+.vido-box .video-item iframe {
+  width: 100%;
+  height: 193px;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+.video-item h3 {
+    margin-bottom: 5px !important;
+}
+.question-title {
+    padding-bottom: 50px !important;
+}
+}
+
+</style>
+
+<div class="video-grid page-width vido-box {{ section.settings.add_video_title }}">
+  {% for video in section.blocks %}
+    <div id="{{ video.settings.add_video_id }}" class="video-item">
+      <h3>{{ video.settings.video_title }}</h3>
+      <iframe src="{{ video.settings.video_url }}" allowfullscreen></iframe>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Moonshade Video Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Video Title"
+        },
+        {
+          "type": "text",
+          "id": "add_video_title",
+          "label": "Add Video Class"
+        },
+         {
+          "type": "text",
+          "id": "add_video_id",
+          "label": "Add Video Id"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "YouTube Video ID",
+          "info": "Enter only the YouTube video ID (e.g., dQw4w9WgXcQ)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moonshade Video Section",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonShade XL Setup",
+            "video_url": "YOUR_VIDEO_ID"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "MoonShade Introduction",
+            "video_url": "YOUR_VIDEO_ID"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "Setup Walkthrough",
+            "video_url": "YOUR_VIDEO_ID"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

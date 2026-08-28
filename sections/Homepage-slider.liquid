@@ -1,0 +1,374 @@
+
+
+<div class="slider product-slider-home slidd-hom">
+    <!-- Slider Wrapper -->
+  <div class="page-width custom-cls">
+    <div class="slides">
+        <!-- Individual Product Slides -->
+        {% assign block_count = section.blocks.size %}
+        {% assign imagesPerSlide = 4 %}
+        {% assign last_index = block_count | minus: 1 %} <!-- Calculate last index -->
+        
+        {% for i in (0..last_index) %}
+            {% assign product = all_products[section.blocks[i].settings.product_handle] %}
+            {% if product %}
+                <div class="image-container">
+                  <div class="under-box">
+                    <a href="{{ product.url }}" class="product-link">
+                      <div class="product-img-contain">
+                        <img src="{{ product.featured_image | img_url: '800x' }}">
+                      </div>
+                        <div class="product-title">{{ product.title }}</div>
+                    </a>
+                  </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+   <button class="arrow arrow-left">
+        <img src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/chevron-right.svg?v=1734522485" alt="Left Arrow">
+    </button>
+    <button class="arrow arrow-right">
+        <img src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Path_Stroke.svg?v=1734522919" alt="Right Arrow">
+    </button>
+    <!-- Navigation Arrows -->
+    <!-- <button class="arrow arrow-left">&#8592;</button>
+    <button class="arrow arrow-right">&#8594;</button> -->
+</div>
+<!-- Navigation Dots -->
+<div class="navigation-dots">
+    {% assign total_images = block_count %}
+    {% assign dots_count = total_images | divided_by: imagesPerSlide %}
+    
+    {% assign remainder = total_images | modulo: imagesPerSlide %}
+    {% if remainder != 0 %}
+        {% assign dots_count = dots_count | plus: 1 %}
+    {% endif %}
+    
+    <!-- Display the correct number of dots -->
+    {% for dot in (1..dots_count) %}
+        <div class="dot {% if dot == 1 %}active{% endif %}" data-index="{{ dot }}"></div>
+    {% endfor %}
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.slides');
+    const imageContainers = document.querySelectorAll('.image-container');
+    const leftArrow = document.querySelector('.arrow-left');
+    const rightArrow = document.querySelector('.arrow-right');
+    const dotsContainer = document.querySelector('.navigation-dots');
+    let currentIndex = 0; // Track the current dot index
+    let itemsPerSlide = 2; // Show 2 products per slide for mobile
+    let totalDots = Math.ceil(imageContainers.length / itemsPerSlide); // Total number of dots
+    // Function to update dots dynamically
+    function updateDots() {
+        dotsContainer.innerHTML = ''; // Clear existing dots
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.dataset.index = i;
+            if (i === currentIndex) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlider();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    // Function to update the slider position and dots
+    function updateSlider() {
+        const slideWidth = 100 / itemsPerSlide; // Width of each product
+        slides.style.transform = `translateX(-${currentIndex * slideWidth * itemsPerSlide}%)`;
+        updateDots();
+    }
+    // Move to the next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalDots;
+        updateSlider();
+    }
+    // Move to the previous slide
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalDots) % totalDots;
+        updateSlider();
+    }
+    // Add event listeners for navigation arrows
+    rightArrow.addEventListener('click', nextSlide);
+    leftArrow.addEventListener('click', prevSlide);
+    // Initialize the slider
+    function initSlider() {
+        itemsPerSlide = window.innerWidth < 768 ? 2 : 4; // Update items per slide (mobile = 2, desktop = 4)
+        totalDots = Math.ceil(imageContainers.length / itemsPerSlide); // Recalculate total dots
+        currentIndex = 0; // Reset index
+        updateDots();
+        updateSlider();
+    }
+
+   slides.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    slides.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        let moveX = e.touches[0].clientX;
+        let diff = startX - moveX;
+
+        if (diff > 50) {
+            nextSlide(); // Swipe left (next slide)
+            isDragging = false;
+        } else if (diff < -50) {
+            prevSlide(); // Swipe right (previous slide)
+            isDragging = false;
+        }
+    });
+
+    slides.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+      // Drag functionality for desktop (mouse)
+    slides.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        isDragging = true;
+    });
+
+    slides.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        moveX = e.clientX;
+        let diff = startX - moveX;
+
+        if (diff > 50) {
+            nextSlide(); // Drag left (next slide)
+            isDragging = false;
+        } else if (diff < -50) {
+            prevSlide(); // Drag right (previous slide)
+            isDragging = false;
+        }
+    });
+
+    slides.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    slides.addEventListener('mouseleave', () => {
+        isDragging = false;
+    });
+    // Listen for window resize to adjust slider for responsiveness
+    window.addEventListener('resize', initSlider);
+    // Initialize on page load
+    initSlider();
+});
+</script>
+ <style>
+   .navigation-dots  .dot.active {
+    display: inline-block !important;
+    background: #A4BBCA;
+}
+  .navigation-dots .dot {
+    display: inline-block !important;
+}
+        /* Slider Container */
+        .slider {
+            /* width: 800px; */
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .navigation-dots {
+            padding-bottom: 70px;
+            margin-top: 0;
+            background-color: #fbf5e7;
+        }
+   
+        .slider.product-slider-home {
+            background-color: #FBF5E7;
+            /* padding-top: 70px; */
+        }
+          .arrow {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 10px; /* Adjust padding for spacing */
+          }
+         .image-container.under-box {
+              box-shadow: 2px 2px 2px 2px #dbdbdb99;
+              /* border: 15px !IMPORTANT; */
+              /* border: 2px solid #000 !IMPORTANT; */
+              border-radius: 5px;
+              width: 265px;
+              height: 265px;
+              box-shadow: 1px 1px 10px 0px #6e6e6e24;
+          }
+          .arrow-left img,
+          .arrow-right img {
+              max-width: 100%;
+              max-height: 100%;
+          }
+           
+             .product-title {
+                line-height: 22px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                color: #3B4752;
+                padding: 0 2px;
+                height: 65px;
+                background-color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+            
+           .dot:after {
+            left: 50%;
+            top: 50%;
+            content: '';
+            display: block;
+            border: 2px solid #A4BBCA;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 500px;
+            transform: translate(-50%, -50%);
+        }
+        .dot {
+            color: #A4BBCA;
+            position: relative;
+        }
+       .custom-cls {
+            padding: 0;
+            overflow: hidden;
+            margin: auto;
+        }
+   
+        /* Slide Wrapper */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+@media (max-width: 1259px) {
+      .arrow-right {
+            padding: 14px 17px;
+            right: 10px !important;
+        }
+        .arrow-left {
+            left: 10px !important;
+        }
+}
+   
+@media (max-width: 768px) {
+    .image-container {
+        flex: 0 0 calc(100% / 2) !important; /* 2 items per slide for mobile */
+    }
+  .arrow-left img, .arrow-right img {
+    display: none;
+   
+}
+}
+        /* Individual Image (Div) */
+        .image-container {
+            flex: 0 0 calc(100% / 4); /* 3 images in one slide */
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+        .image-container img {
+            border-top-left-radius: 15px !important;
+            border-top-right-radius: 15px !important;
+            width: 70%;
+        
+        }
+        /* Arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            padding: 10px;
+            border-radius: 50%;
+        }
+           .arrow-right {
+            padding: 14px 17px;
+            right: 20px;
+        }
+        .arrow-left {
+            left: 20px;
+        }
+        /* Dots Navigation */
+        .navigation-dots {
+            text-align: center;
+        }
+        .dot {
+            margin-right: 13px !important;
+            margin-left: 13px !important;
+            margin-top: 50px !important;
+            width: 12px;
+            height: 12px;
+            margin: 0 9px;
+            display: inline-block;
+            background: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active {
+            background: #A4BBCA;
+        }
+    </style>
+{% schema %}
+{
+  "name": "Homepage-slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product Slide",
+      "settings": [
+        {
+          "type": "product",
+          "label": "Select product",
+          "id": "product_handle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage-slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  function addClassOnMobileScreen() {
+    const sliderElement = document.querySelector(".slider.product-slider-home");
+    if (window.innerWidth <= 1200) { // Mobile screen width check
+      if (sliderElement && !sliderElement.classList.contains("page-width")) {
+        sliderElement.classList.add("page-width");
+      }
+    } else {
+      if (sliderElement && sliderElement.classList.contains("page-width")) {
+        sliderElement.classList.remove("page-width");
+      }
+    }
+  }
+
+  // Initial check on page load
+  addClassOnMobileScreen();
+
+  // Check on window resize
+  window.addEventListener("resize", addClassOnMobileScreen);
+});
+
+</script>

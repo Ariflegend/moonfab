@@ -1,0 +1,219 @@
+{% comment %}
+  Section: Match My Rig
+  Desktop: text left, image right
+  Mobile: image first, then title, subtitle, button
+{% endcomment %}
+
+<section class="match-rig-section">
+  <div class="match-rig-inner">
+
+    <div class="match-rig-text">
+      <h2 class="match-rig-title">{{ section.settings.title }}</h2>
+      <p class="match-rig-subtitle">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.button_url }}" class="match-rig-btn">
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+
+    <div class="match-rig-image">
+      {% if section.settings.image != blank %}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+          width="900"
+        >
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'match-rig-placeholder' }}
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+<script>
+  const waitForElement = (element, callback) => {
+  const waitingInterval = setInterval(() => {
+    var selector = document.querySelector(element);
+    if (selector) {
+      callback();
+      clearInterval(waitingInterval);
+    }
+  }, 180);
+};
+
+function updateMatchRigTitle() {
+  const path = window.location.pathname;
+  const params = new URLSearchParams(window.location.search);
+
+  const collectionMap = {
+    '/collections/vans':         'van',
+    '/collections/trucks':       'truck',
+    '/collections/truck-campers':'truck camper',
+    '/collections/suv':          'SUV',
+    '/collections/jeeps':        'Jeep',
+    '/collections/trailers':     'Trailer',
+    '/collections/buses':        'Bus',
+    '/collections/rvs':          'RV',
+  };
+
+  // Check filter param for all-vehicle-types
+const vehicleTypeParam = params.get('filter.p.m.custom.vehicle_type');
+if (path === '/collections/all-vehicle-types' && vehicleTypeParam) {
+  const label = vehicleTypeParam.replace(/s$/i, ''); // "Expedition Vehicles" → "Expedition Vehicle"
+  document.querySelector('.match-rig-title').textContent = "Couldn't find your " + label + "?";
+  return;
+}
+
+  // Check path map
+  const match = collectionMap[path];
+  if (match) {
+    document.querySelector('.match-rig-title').textContent = "Couldn't find your " + match + "?";
+  }
+  // else: leave default "Couldn't find your vehicle?"
+}
+
+waitForElement('.match-rig-title', () => {
+  updateMatchRigTitle();
+});
+</script>
+<style>
+  .match-rig-section {
+   padding: 60px 80px;
+   background:#F3F3F3;
+  }
+
+  .match-rig-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 130px;
+  }
+
+  .match-rig-text {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .match-rig-title {
+    font-weight: 400;
+    font-size: 23.81px;
+    line-height: 27.6px;
+    color: #3B4752;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Berringer_Rough';
+  }
+
+  .match-rig-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28.8px;
+    letter-spacing: 0.6px;
+    color: #3B4752;
+    margin: 0;
+    font-family: 'Poligon_Regular';
+  }
+
+  .match-rig-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    background-color: #3B4752;
+    color: #fff;
+    border: 2px solid #3B4752;
+    border-radius: 36px;
+    font-weight: 700;
+    font-size: 14.3px;
+    line-height: 25.65px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 10px;
+    font-family: 'HelveticaNeueBold';
+  }
+
+
+  .match-rig-image {
+    flex: 1;
+  }
+
+  .match-rig-image img,
+  .match-rig-image svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 749px) {
+    .match-rig-section {
+      padding: 0 0 40px;
+    }
+
+    .match-rig-inner {
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .match-rig-image {
+      order: -1;
+      width: 100%;
+    }
+
+    .match-rig-text {
+              text-align: center;
+      flex: none;
+      width: 100%;
+      padding: 0 20px;
+    }
+    .match-rig-btn{
+    width:100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Match My Rig",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Couldn't find your vehicle?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "This guide will match you with the right MoonShade setup."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Match My Rig"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Collage Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Match My Rig"
+    }
+  ]
+}
+{% endschema %}

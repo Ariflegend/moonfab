@@ -1,0 +1,229 @@
+{% schema %}
+{
+  "name": "Meet Moonshade Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "MEET MOONSHADE"
+    },
+    {
+      "type": "text",
+      "id": "title-1",
+      "label": "Heading",
+      "default": "MEET MOONSHADE"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Short description"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "YouTube Video URL",
+      "default": "https://www.youtube.com/embed/VIDEO_ID"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width Layout",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Structured data (JSON-LD)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_schema",
+      "default": false,
+      "label": "Enable VideoObject schema",
+      "info": "Outputs VideoObject schema from the YouTube video and section content."
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video title",
+      "info": "Optional override. Defaults to the section headings."
+    },
+    {
+      "type": "text",
+      "id": "video_upload_date",
+      "label": "Video upload date",
+      "info": "Optional. Use ISO format, e.g. 2024-03-15"
+    },
+    {
+      "type": "text",
+      "id": "video_duration",
+      "label": "Video duration",
+      "info": "Optional. Use ISO 8601 format, e.g. PT2M30S for 2 minutes 30 seconds"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meet Moonshade",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{%- liquid
+  assign video_iframe_title = section.settings.video_title
+  if video_iframe_title == blank
+    assign video_iframe_title = section.settings.title | append: ' ' | append: section.settings.title-1 | strip
+  endif
+  if video_iframe_title == blank
+    assign video_iframe_title = 'MoonShade Introduction Video'
+  endif
+
+  assign youtube_id = ''
+  assign video_source = section.settings.video_url
+  if video_source contains 'embed/'
+    assign youtube_id = video_source | split: 'embed/' | last | split: '?' | first | split: '&' | first
+  elsif video_source contains 'watch?v='
+    assign youtube_id = video_source | split: 'watch?v=' | last | split: '&' | first
+  elsif video_source contains 'youtu.be/'
+    assign youtube_id = video_source | split: 'youtu.be/' | last | split: '?' | first | split: '&' | first
+  endif
+-%}
+
+<section class="container-you {% if section.settings.full_width %}full-width{% endif %}">
+  <div class="left-content">
+    <div class="moon-headings">
+      <h1>{{ section.settings.title }}</h1>
+      <h1>{{ section.settings.title-1 }}</h1>
+    </div>
+    <p>{{ section.settings.description }}</p>
+    <a href="{{ section.settings.button_url }}" class="button">{{ section.settings.button_text }}</a>
+  </div>
+  <div class="right-content">
+    <iframe width="1280" height="720" src="{{ section.settings.video_url }}" title="{{ video_iframe_title | escape }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </div>
+</section>
+
+{%- if section.settings.enable_video_schema and youtube_id != blank -%}
+  {%- liquid
+    assign video_name = video_iframe_title
+    assign video_description = section.settings.description | strip_html | strip
+    if video_description == blank
+      assign video_description = shop.description | default: shop.name
+    endif
+    assign video_watch_url = 'https://www.youtube.com/watch?v=' | append: youtube_id
+    assign video_embed_url = 'https://www.youtube.com/embed/' | append: youtube_id
+    assign video_thumbnail_url = 'https://i.ytimg.com/vi/' | append: youtube_id | append: '/maxresdefault.jpg'
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": {{ video_name | json }},
+      "description": {{ video_description | json }},
+      "thumbnailUrl": {{ video_thumbnail_url | json }},
+      "embedUrl": {{ video_embed_url | json }},
+      "contentUrl": {{ video_watch_url | json }},
+      "url": {{ video_watch_url | json }}
+      {%- if section.settings.video_upload_date != blank -%}
+      ,
+      "uploadDate": {{ section.settings.video_upload_date | json }}
+      {%- endif -%}
+      {%- if section.settings.video_duration != blank -%}
+      ,
+      "duration": {{ section.settings.video_duration | json }}
+      {%- endif -%}
+      ,
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
+        "url": {{ request.origin | json }}
+        {%- if settings.logo -%}
+        ,
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }}
+        }
+        {%- endif -%}
+      }
+    }
+  </script>
+{%- endif -%}
+
+<style>
+  .container-you {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #3B4752;
+  color: white;
+}
+
+.container-you.full-width {
+  padding: 100px 60px !important;
+  width: 100%;
+  padding: 0;
+}
+
+.container-you .left-content {
+  width: 33%;
+}
+
+.container-you .left-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.container-you .left-content p {
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.container-you .left-content .button {
+    font-weight: bold;
+    width: 260px;
+    background-color: white;
+    color: #3B4752;
+    text-decoration: none;
+    padding: 21px 40px;
+    font-size: 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.container-you .right-content {
+  width: 64%;
+}
+
+.container-you iframe {
+  width: 100%;
+  height: 570px;
+  border: none;
+  border-radius: 10px;
+}
+.left-content p {
+font-family: 'Poligon_Regular' !important;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+letter-spacing: 0%;
+}
+
+</style>

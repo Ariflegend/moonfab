@@ -1,0 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_fH8gca": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ez3ADH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Register Your Account",
+            "heading_size": "h1"
+          }
+        },
+        "text_mk3Gnz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Create your Moon account to access order history, special offers, and more.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ez3ADH",
+        "text_mk3Gnz"
+      ],
+      "settings": {
+        "rich-custom-cls": "register-ac for-mob-resgiter",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_fAxNwf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UBgfwa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Register Your",
+            "heading_size": "h1"
+          }
+        },
+        "heading_JcjaNK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Account",
+            "heading_size": "h1"
+          }
+        },
+        "text_qd9bRk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Create your Moon account to access order history, special offers, and more.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UBgfwa",
+        "heading_JcjaNK",
+        "text_qd9bRk"
+      ],
+      "settings": {
+        "rich-custom-cls": "register-ac",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_JtxYFe": {
+      "type": "rich-text",
+      "blocks": {
+        "text_4xG3A6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Already have an account? <a href=\"https://moonfab.com/account/login\" title=\"https://moonfab.com/account/login\">Log in here.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4xG3A6"
+      ],
+      "settings": {
+        "rich-custom-cls": "already-have",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 72
+      }
+    },
+    "rich_text_MWGEhK": {
+      "type": "rich-text",
+      "settings": {
+        "rich-custom-cls": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "rich_text_fH8gca",
+    "rich_text_fAxNwf",
+    "main",
+    "rich_text_JtxYFe",
+    "rich_text_MWGEhK"
+  ]
+}

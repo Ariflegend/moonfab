@@ -1,0 +1,129 @@
+<div class="bio-full-width">
+  <h1>{{ product.metafields.custom.custom.bio_banner_image }}</h1>
+
+  <div id="shopify-section-template--{{ section.id }}__primary_setup_xGhyzn" class="shopify-section products-meta page-width">
+      {% assign images = product.metafields.custom.bio_banner_image.value | uniq %}
+      {% if images %}
+          <!-- {% for image in images %}
+              <img src="{{ image | file_url }}" alt="Product Image">
+          {% endfor %} -->
+      {% else %}
+          <p>No images available in the metafield.</p>
+      {% endif %}
+  </div>
+  <div class="shopify-section products-meta page-width">
+    <div class="left-side">
+      {% assign images = product.metafields.custom.bio_image.value | uniq %}
+      {% if images %}
+          {% for image in images %}
+              <img src="{{ image | file_url }}" alt="Product products-meta">
+          {% endfor %}
+      </div>
+      <div class="right-side">
+        <h3>{{ product.metafields.custom.expert_bio_shorttitle }}</h3>
+   <h1> 
+  <span class="hidden-quotes">"</span>{{ product.metafields.custom.expert_bio }}<span class="hidden-quotes">"</span>
+</h1>
+        
+        {% assign expert_bio = product.metafields.custom.expertbio %}
+        {% if expert_bio %}
+          {% assign expert_bio_text = expert_bio.value.children[0].children[0].value %}
+          <div class="products-meta page-width pera moon-vh-bio-desk">
+            <span id="bio-content">{{ expert_bio_text | truncatewords: 76 }}</span>
+            <span id="more-content" style="display:none">{{ expert_bio_text }}</span>
+          </div>
+          
+          <button id="read-more-btn" onclick="toggleBioContent()">Read More.</button>
+          <div class="moon-vh-bio-mobile"> {{ expert_bio_text }} </div>
+        {% else %}
+          <p>No expert bio available.</p>
+        {% endif %}
+      </div>
+    {% else %}
+        <p>No images available in the metafield.</p>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all image elements inside the specific section
+    const images = document.querySelectorAll(".products-meta img");
+
+    images.forEach((img) => {
+        let src = img.getAttribute("src"); // Get the current src
+        // Replace double 'files/' with single 'files/'
+        let updatedSrc = src.replace(/files\/files\//, "files/");
+        img.setAttribute("src", updatedSrc); // Update the src attribute
+    });
+});
+
+function toggleBioContent() {
+    const moreContent = document.getElementById('more-content');
+    const bioContent = document.getElementById('bio-content');
+    const btn = document.getElementById('read-more-btn');
+
+    if (moreContent.style.display === "none") {
+        moreContent.style.display = "inline";
+        bioContent.style.display = "none";
+        btn.innerHTML = "Read Less.";
+    } else {
+        moreContent.style.display = "none";
+        bioContent.style.display = "inline";
+        btn.innerHTML = "Read More.";
+    }
+}
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all image elements inside the specific section
+    const images = document.querySelectorAll(".products-meta img");
+
+    images.forEach((img) => {
+        let src = img.getAttribute("src"); // Get the current src
+        // Replace double 'files/' with single 'files/'
+        let updatedSrc = src.replace(/files\/files\//, "files/");
+        img.setAttribute("src", updatedSrc); // Update the src attribute
+    });
+});
+
+</script>
+{% schema %}
+{
+  "name": "moon-vehicle-bio",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Primary Setup Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default Title"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Primary Setup Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moon-Vehicle Bio",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

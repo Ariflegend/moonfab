@@ -1,0 +1,303 @@
+
+<style>
+  .moonshade-specs-section-wrapper {
+    background: #F9F9FA;
+    width: 100%;
+  }
+
+  .moonshade-specs-section {
+    width: 100%;
+    max-width: 1440px; 
+    margin: 0 auto;
+    padding: 47px 39px;
+    box-sizing: border-box;
+  }
+
+  .moonshade-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; 
+    align-items: flex-start;
+  }
+
+  .moonshade-left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 461px; 
+  }
+
+  .moonshade-right-col {
+    flex: 1;
+    max-width: 874px; 
+  }
+
+  .moonshade-main-title {
+    font-family: 'Berringer_Rough', sans-serif; 
+    font-weight: 400;
+    font-style: normal;
+    font-size: 37.25px;
+    line-height: 42.96px;
+    color: #3B4752;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+  }
+
+  .moonshade-image-wrapper img {
+    width: 100%;
+    max-width: 461px; 
+    height: auto;
+    display: block;
+  }
+
+  .moonshade-specs-title {
+    font-family: 'Berringer_Rough', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
+    line-height: 58.94px;
+    color: #3B4752;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .moonshade-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* * BORDER FIX: 
+   * Borders moved from .moonshade-table-row to the cells (th/td) 
+   * to fix the 1px rendering gap in WebKit/Safari browsers.
+   */
+  .moonshade-table-heading {
+    width: 35%; 
+    padding: 10px 20px 10px 20px;
+    border-top: 1px solid #A3A3A3;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 21.86px;
+    line-height: 32.79px;
+    color: #3B4752;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .moonshade-table-data {
+    width: 65%;
+    padding: 10px 20px;
+    border-top: 1px solid #A3A3A3;
+    border-left: 1px solid #A3A3A3; /* This adds the vertical column divider */
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21.86px;
+    line-height: 32.79px;
+    color: #3B4752;
+    vertical-align: top;
+    letter-spacing:0px;
+  }
+
+  /* Apply bottom border only to the cells in the last row */
+  .moonshade-table-row:last-child .moonshade-table-heading,
+  .moonshade-table-row:last-child .moonshade-table-data {
+    border-bottom: 1px solid #A3A3A3; 
+  }
+
+  .moonshade-table-data a {
+    color: #3B4752;
+    text-decoration: underline;
+  }
+
+  .moonshade-table-data p {
+    font-family: 'Arial', sans-serif !important;
+    margin: 0 0 10px 0;
+  }
+  
+  .moonshade-table-data p:last-child {
+    margin: 0;
+  }
+
+  /* Tablet Styles */
+  @media screen and (max-width: 900px) {
+    .moonshade-specs-section {
+      padding: 40px 30px; /* Reduced padding slightly for tablet */
+    }
+
+    .moonshade-specs-section-wrapper {
+      width: 100%;
+    }
+
+    .moonshade-container {
+      flex-direction: column;
+    }
+    
+    .moonshade-left-col, .moonshade-right-col {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .moonshade-image-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .moonshade-table-heading, 
+    .moonshade-table-data {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    .moonshade-table-heading {
+      padding: 15px 15px 15px 0;
+      width: 40%; /* Give headings slightly more room on mobile */
+    }
+
+    .moonshade-table-data {
+      padding: 15px 0 15px 15px;
+      width: 60%;
+    }
+    
+    .moonshade-main-title {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .moonshade-specs-title {
+      text-align: left;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media screen and (max-width: 600px) {
+    .moonshade-specs-section {
+      padding: 30px 15px; /* Maximize screen real estate on small phones */
+    }
+
+    .moonshade-specs-section-wrapper {
+      width: 100%;
+    }
+
+    .moonshade-main-title {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .moonshade-specs-title {
+      text-align:center;
+      font-size: 21px;
+    }
+
+    .moonshade-table-heading, 
+    .moonshade-table-data {
+      font-size: 16px; 
+      line-height: 22px;
+    }
+
+    .moonshade-table-heading {
+      padding: 12px 10px 12px 0;
+    }
+
+    .moonshade-table-data {
+      padding: 12px 0 12px 10px;
+    }
+  }
+</style>
+
+<div class="moonshade-specs-section-wrapper">
+  <section class="moonshade-specs-section">
+    <div class="moonshade-container">
+      
+      <div class="moonshade-left-col">
+        <h2 class="moonshade-main-title">{{ section.settings.main_title }}</h2>
+        
+        <div class="moonshade-image-wrapper">
+          {% if section.settings.product_image != blank %}
+            <img src="{{ section.settings.product_image | image_url: width: 800 }}" 
+                 alt="{{ section.settings.product_image.alt | default: section.settings.main_title }}"
+                 loading="lazy"
+                 width="{{ section.settings.product_image.width }}"
+                 height="{{ section.settings.product_image.height }}">
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="moonshade-right-col">
+        <h3 class="moonshade-specs-title">{{ section.settings.specs_title }}</h3>
+        
+        <table class="moonshade-table">
+          <tbody>
+            {% for block in section.blocks %}
+              <tr class="moonshade-table-row" {{ block.shopify_attributes }}>
+                <th class="moonshade-table-heading">{{ block.settings.row_heading }}</th>
+                <td class="moonshade-table-data">{{ block.settings.row_content }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Moonshade Specs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "MOONSHADE (OG)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Diagram Image"
+    },
+    {
+      "type": "text",
+      "id": "specs_title",
+      "label": "Specs Column Title",
+      "default": "SPECS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec_row",
+      "name": "Spec Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "row_heading",
+          "label": "Heading (Left)",
+          "default": "Coverage"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "label": "Content (Right)",
+          "default": "<p>63 sq ft — all 3 sides</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moonshade Specs",
+      "blocks": [
+        { "type": "spec_row", "settings": { "row_heading": "Coverage", "row_content": "<p>63 sq ft — all 3 sides (driver / passenger / back)</p>" } },
+        { "type": "spec_row", "settings": { "row_heading": "Size deployed", "row_content": "<p>9 ft × 7 ft</p>" } },
+        { "type": "spec_row", "settings": { "row_heading": "Size Stowed", "row_content": "<p>28 × 6 in (~camping-chair size)</p>" } },
+        { "type": "spec_row", "settings": { "row_heading": "Weight", "row_content": "<p>8 lbs</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,82 @@
+@font-face{
+  font-family:'Poligon_thin';
+  src:url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Thin.otf?v=1783686747') format('otf');
+  font-weight:300;
+}
+@font-face {
+  font-family: 'Poligon_Regular';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Regular.woff2?v=1734411765') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Poligon_Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Bold.woff2?v=1734411765') format('woff2');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Poligon_Semi_Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Semi_Bold_52400275-ea62-44e6-8be8-c2c4c22a9d00.woff2?v=1734411765') format('woff2');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Poligon_Extra_Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Extra_Bold.woff2?v=1734583487') format('woff2');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Berringer_Rough';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Berringer_Rough.ttf?v=1734411065') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Berringer_Regular_Oblique';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Berringer_Regular_Oblique.ttf?v=1734411065') format('woff2');
+  font-weight: Regular;
+}
+@font-face {
+  font-family: 'HelveticaNeueBold';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/HelveticaNeueBold_f7663ce0-75b4-41b9-bcd5-040e8b7115cb.woff2?v=1734584346') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'HelveticaNeueMedium';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/HelveticaNeueMedium.woff2?v=1734584490') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Helvetica_Neue_Regular';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/HelveticaNeueRoman.otf?v=1741581300') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/HelveticaNeueLight.woff2?v=1734938547') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'HelveticaNeueBlack';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/HelveticaNeueBlack.woff2?v=1735533716') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Poligon_Light';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Poligon_Light_70df23d9-9199-45eb-88e3-70d688c1fd1e.woff2?v=1734592199') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'ARIALN';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/ARIALN.TTF?v=1740568327') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Berringer Aged Oblique';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Berringer_Aged.woff2?v=1744025020') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Berringer_Aged';
+  src: url('https://cdn.shopify.com/s/files/1/0549/2637/7049/files/Berringer_Aged.woff2?v=1746601034') format('woff2');
+  font-weight: 400;
+}
+
+

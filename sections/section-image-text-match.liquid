@@ -1,0 +1,137 @@
+
+  {{ 'section-image-text-match.css' | asset_url | stylesheet_tag }}
+
+<section 
+  class="image-text-match"
+  style="--section-bg: {{ section.settings.background_color }}; --text-color: {{ section.settings.text_color }}; --button-bg: {{ section.settings.button_background }}; --button-text: {{ section.settings.button_text_color }};"
+>
+  <div class="image-text-match__container">
+    <div class="image-text-match__image-wrapper">
+      {%- if section.settings.image != blank -%}
+        <img 
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                  {{ section.settings.image | image_url: width: 900 }} 900w,
+                  {{ section.settings.image | image_url: width: 1200 }} 1200w"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="{{ section.settings.image.alt | default: section.settings.heading }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+          class="image-text-match__image"
+        >
+      {%- else -%}
+        <div class="image-text-match__placeholder">
+          {{ 'image' | placeholder_svg_tag: 'image-text-match__placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="image-text-match__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="image-text-match__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="image-text-match__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a 
+          href="{{ section.settings.button_link }}" 
+          class="image-text-match__button"
+          {%- if section.settings.button_link == blank -%}
+            role="link" 
+            aria-disabled="true"
+          {%- endif -%}
+        >
+          {{ section.settings.button_text }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image Text Match",
+  "tag": "section",
+  "class": "section-image-text-match",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Recommended: Upload a composed image showing multiple product variations (1200x800px)"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Let's Find Your Match"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "This guide will match you with the right setup."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Match My Rig"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#D4C4B0"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2C3E50"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background",
+      "default": "#3D4F5F"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text Match"
+    }
+  ]
+}
+{% endschema %}

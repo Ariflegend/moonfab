@@ -1,0 +1,546 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding {{ section.settings.contact-form-bg }}">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+
+    {%- liquid
+      assign contact_form_class = 'isolate'
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+      endif
+    -%}
+
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+  <style>
+        body.gradient {
+            background-color: #fbf5e7;
+        }
+        .contact-head h2.rich-text__heading.rte.inline-richtext.h1 {
+            font-size: 56px;
+            font-family: Berringer_Rough !important;
+        }
+        .contact-head p {
+            margin-top: -10px !important;
+            color: #3B4752;
+            font-family: 'Poligon_Light';
+            line-height: 24px;
+        }
+        .contact__button button.button {
+            font-size: 14.63px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #3B4752;
+            height: 52px;
+        }
+        .field:after {
+          box-shadow: none !important;
+        }
+        span.all-label-form {
+            font-size: 13.34px;
+            font-family: 'Poligon_Bold';
+            color: #3B4752;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        input::placeholder {
+           color: #3B4752BF;
+        }
+        input.field__input[type=text], input.field__input[type=email], select.field__input {
+            font-size: 16px;
+            height: 48px;
+            color: #3B4752BF;
+            border: 2px solid #DDDBD7;
+            background-color: transparent;
+            border-radius: 36px !important;
+        }
+        textarea#ContactForm-body {
+             height: 48px;
+            border: 2px solid #DDDBD7;
+            background-color: transparent;
+            border-radius: 36px !important;
+        }
+        .field-row {
+          display: flex;
+          gap: 15px;
+        }
+        
+        .field-row .field {
+          flex: 1;
+        }
+        
+        .field--full-width {
+          width: 100%;
+        }
+      .contact__fields {
+          padding: 20px;
+          padding-bottom: 40px !important;
+      }
+        .contact-form-first {
+          background-color: #fff;
+      }
+      .contact-form-first {
+          border-radius: 6px;
+          margin-bottom: 100px;
+          box-shadow: 1px 1px 2px 1px #0000001A;
+      }
+    
+    .contact .field {
+        margin-bottom: 2rem;
+    }
+
+    .tipbottom{
+      margin-bottom:20px;font-size: 12px;
+    }
+
+    .m-bottom-0{
+      margin-bottom: 0 !important;
+    }
+    
+    .contact-head h2.rich-text__heading.rte.inline-richtext.h2 {
+           text-transform: uppercase;
+           font-family: Poligon_Semi_Bold;
+           font-size: 22px;
+    }
+    
+    /* .contact-head h2.rich-text__heading.rte.inline-richtext.h1{
+           padding-bottom: 20px;
+           margin-bottom: 25px;
+           border-bottom: solid 1.8px #0000001c;
+    } */
+
+    .contact__fields select {
+        padding: 0 20px !important;
+        height: 50px !important;
+        background: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%233B4752%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: 96% 18px;
+        background-size: 13px;
+    }
+    
+    .field.field--full-width.column {
+        flex-direction: column;
+    }
+    
+    input[type=checkbox] {
+        appearance: auto;
+        float: left;
+        height: auto;
+        width: auto;
+    }
+
+    .checkwrap {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .checkwrap label {
+        color: #3B4752 !important;
+        width: 80%;
+        font-family: 'Poligon_Light';
+    }
+    
+    .checkwrap {
+        margin-bottom: 10px;
+    }
+    
+    .checkwrap input[type=checkbox] {
+        position: relative !important;
+        top: 4px;
+        appearance: none;
+        -webkit-appearance: none;
+        border: solid 1px #dddbd7;
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .checkwrap input[type=checkbox]:checked {
+        background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27m6 10 3 3 6-6%27/%3e%3c/svg%3e");
+        background-color: #3b4752;
+        border-color: #3b4752;
+    }
+
+    .field.nolabel .field__input {
+        padding: 10px !important;
+    }
+    
+
+    .input-group {
+        position: relative;
+        display: flex;
+        /* flex-wrap: wrap; */
+        margin-bottom: 20px;
+        /* align-items: stretch; */
+        /* width: 100%; */
+    }
+    
+    .social input {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+        min-width: 0;
+    }
+    
+    .input-group-text {
+        display: flex;
+        align-items: center;
+        padding: .75rem 1.5rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #3b4752;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #f9f9fa;
+        border: 2px solid #DDDBD7;
+        border-radius: 2.25rem 0 0 2.25rem;
+    }
+    
+    .input-group input.field__input[type=text], .input-group input.field__input[type=email], .input-group select.field__input{
+        border-radius: 0 36px 36px 0 !important;
+        margin: 0;
+        border-left: 0;
+    }
+
+    .field.field--full-width.column.social label.field__label {
+        padding-left: 60px;
+    }
+    
+        
+    @media screen and (min-width: 990px) {
+        .page-width--narrow {
+            max-width: 78rem;
+            padding: 0;
+        }
+    }
+            
+      @media screen and (min-width: 750px){
+        .contact__fields {
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-column-gap: 2rem;
+        }
+      }
+        @media screen and (max-width: 749px){
+            .contact__button {
+                margin-top: 3rem;
+                /* width: 100%; */
+                /* display: block; */
+            }
+            .contact__button button.button {
+                width: 100%;
+            }
+            .contact__fields {
+                padding: 0 1.5rem;
+            }
+            .contact-form-first {
+                margin-right: 30px;
+                margin-left: 30px;
+                border-radius: 6px;
+                margin-bottom: 50px;
+                box-shadow: 1px 1px 2px 1px #0000001A;
+            }
+            .contact-form-first {
+                padding-bottom: 40px !important;
+                background-color: #fff;
+                padding: 15px;
+            }
+    
+            .contact-head h2.rich-text__heading.rte.inline-richtext.h1 {
+                font-size: 32px;
+            }
+        }
+        
+      </style>
+  {%- if form.posted_successfully? -%}
+    <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+      {{- 'icon-success.svg' | inline_asset_content -}}
+      {{ 'templates.contact.form.post_success' | t }}
+    </h2>
+  {%- elsif form.errors -%}
+    <div class="form__message">
+      <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+        {{- 'icon-error.svg' | inline_asset_content -}}
+        {{ 'templates.contact.form.error_heading' | t }}
+      </h2>
+    </div>
+    <ul class="form-status-list caption-large" role="list">
+      <li>
+        <a href="#ContactForm-email" class="link">
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}
+        </a>
+      </li>
+    </ul>
+  {%- endif -%}
+
+  <div class="contact__fields">
+    <span class="all-label-form">Name*</span>
+    <!-- First Row: First Name & Last Name -->
+    <div class="field-row">
+      <div class="field m-bottom-0">
+        <input
+          class="field__input"
+          autocomplete="given-name"
+          type="text"
+          id="ContactForm-first-name"
+          name="contact[first_name]"
+          placeholder="First Name"
+        >
+        <label class="field__label" for="ContactForm-first-name">First</label>
+      </div>
+      <div class="field m-bottom-0">
+        <input
+          class="field__input"
+          autocomplete="family-name"
+          type="text"
+          id="ContactForm-last-name"
+          name="contact[last_name]"
+          placeholder="Last Name"
+        >
+        <label class="field__label" for="ContactForm-last-name">Last</label>
+      </div>
+    </div>
+    <div class="tipbottom"><span>Your name will not be shared without permission.</span></div>
+    <span class="all-label-form">Email*</span>
+    <!-- Second Row: Email (Full Width) -->
+    <div class="field field--full-width m-bottom-0">
+      <input
+        autocomplete="email"
+        type="email"
+        id="ContactForm-email"
+        class="field__input"
+        name="contact[email]"
+        spellcheck="false"
+        autocapitalize="off"
+        aria-required="true"
+        placeholder="Placeholder here"
+      >
+      <label class="field__label" for="ContactForm-email">
+        your@email.com
+      </label>
+     
+    </div>
+    <div class="tipbottom"><span>Your email will not be shared.</span></div>
+
+    <span class="all-label-form">Do you own a MoonShade?*</span>
+    <!-- Third Row: own_moonshade -->
+    <div class="field field--full-width">
+      <select class="field__input" id="ContactForm-own_moonshade" name="contact[own_moonshade]">
+        <option>—</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+
+    <span class="all-label-form">What type of vehicle will you use with MoonShade?</span>
+    <!-- Fourth Row: Vehicle type -->
+    <div class="field field--full-width nolabel">
+      <input
+        type="text"
+        id="ContactForm-vehicle_type"
+        class="field__input"
+        name="contact[vehicle_type]"
+      >
+    </div>
+    
+
+    <span class="all-label-form">What type of partnership are you interested in? (select all that apply)</span>
+    <!-- Fifth Row: partnership -->
+    <div class="field field--full-width column">
+      <div class="checkwrap">
+        <input
+        type="checkbox"
+        id="ContactForm-partnership_1"
+        name="contact[referral_program]"
+      ><label>Referral Program (We give you a unique link with a coupon code to share, you get $30 for every referral)</label></div>
+
+       <div class="checkwrap">
+         <input
+        type="checkbox"
+        id="ContactForm-partnership_2"
+        name="contact[content_partner]"
+      ><label>Content Partner</label></div>
+
+        <div class="checkwrap">
+          <input
+        type="checkbox"
+        id="ContactForm-partnership_3"
+        name="contact[event_partnership]"
+      ><label>Event Partnership</label></div>
+
+        <div class="checkwrap">
+          <input
+        type="checkbox"
+        id="ContactForm-partnership_4"
+        name="contact[other]"
+      ><label>Other</label></div>
+    </div>
+
+    <span class="all-label-form">What are you envisioning for this partnership?</span>
+    <!-- Sixth Row: Envisioning for Partnership -->
+    <div class="field field--full-width nolabel">
+      <input
+        type="text"
+        id="ContactForm-envisioning_partnership"
+        class="field__input"
+        name="contact[envisioning_partnership]"
+        placeholder="Placeholder here"
+      >
+    </div>
+
+    <div class="field field--full-width column social">
+          <span class="all-label-form">Social Handles</span>
+          <div class="mb-3">
+              <label for="social_handles_1" class="visually-hidden">Instagram</label>
+              <div class="input-group">
+                  <div class="input-group-text"><i class="fab fa-instagram fa-lg fa-fw"></i></div>
+                  <input type="text" class="field__input" name="contact[social_handles]" id="social_handles_1" aria-labelledby="label_instagram" placeholder="Instagram">
+                   <label class="field__label" for="ContactForm-first-name">Instagram</label>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="social_handles_2" class="visually-hidden">Facebook</label>
+              <div class="input-group">
+                  <div class="input-group-text"><i class="fab fa-facebook fa-lg fa-fw"></i></div>
+                  <input type="text" class="field__input" name="contact[social_handles]" id="social_handles_2" placeholder="Facebook">
+                  <label class="field__label" for="ContactForm-first-name">Facebook</label>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="social_handles_3" class="visually-hidden">YouTube</label>
+              <div class="input-group">
+                  <div class="input-group-text"><i class="fab fa-youtube fa-lg fa-fw"></i></div>
+                  <input type="text" class="field__input" name="contact[social_handles]" id="social_handles_3" placeholder="YouTube">
+                  <label class="field__label" for="ContactForm-first-name">YouTube</label>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="social_handles_4" class="visually-hidden">TikTok</label>
+              <div class="input-group">
+                  <div class="input-group-text"><i class="fab fa-tiktok fa-lg fa-fw"></i></div>
+                  <input type="text" class="field__input" name="contact[social_handles]" id="social_handles_4" placeholder="TikTok">
+                  <label class="field__label" for="ContactForm-first-name">TikTok</label>
+              </div>
+          </div>
+    </div>
+    <!-- Submit Button -->
+    <div class="contact__button">
+      <button type="submit" class="button">
+        Submit
+      </button>
+    </div>
+  </div>
+{%- endform -%}
+
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "partner-with-moon-form",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact-form-bg",
+      "label": "Add Contact Class"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.contact-form.settings.title.default",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "partner-with-moon-form"
+    }
+  ]
+}
+{% endschema %}

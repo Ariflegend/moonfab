@@ -1,0 +1,111 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+{{ 'more-moonshade-models.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'more-moonshade-models.js' | asset_url }}" defer="defer"></script>
+
+
+{% assign current_collection = product.metafields.custom.collection_type %}
+
+<section class="related-collection-section custom-swiper-section">
+  <div class="related-collection-container custom-swiper-container">
+
+    <div class="related-collection-header">
+      <h2 class="related-collection-heading custom-swiper-heading">
+      {{ section.settings.heading_text }}
+      </h2>
+      
+      <div class="swiper-nav-buttons">
+        <button class="swiper-button-prev swiper-button-prev-v2 custom-swiper-button-prev" aria-label="Previous slide">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-0.5" y="0.5" width="42.5" height="42.5" rx="21.25" transform="matrix(-1 0 0 1 42.5 0)" stroke="#8D8D8D"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.7952 12.1877C26.5013 11.8938 26.0249 11.8938 25.731 12.1877L16.7009 21.2178C16.407 21.5117 16.407 21.9882 16.7009 22.282L25.731 31.3122C26.0249 31.606 26.5013 31.606 26.7952 31.3122C27.0891 31.0183 27.0891 30.5418 26.7952 30.248L18.2972 21.7499L26.7952 13.2519C27.0891 12.958 27.0891 12.4816 26.7952 12.1877Z" fill="#858585"/>
+          </svg>
+        </button>
+
+        <button class="swiper-button-next swiper-button-next-v2 custom-swiper-button-next" aria-label="Next slide">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="42.5" height="42.5" rx="21.25" stroke="#8D8D8D"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7048 12.1877C16.9987 11.8938 17.4751 11.8938 17.769 12.1877L26.7991 21.2178C27.093 21.5117 27.093 21.9882 26.7991 22.282L17.769 31.3122C17.4751 31.606 16.9987 31.606 16.7048 31.3122C16.4109 31.0183 16.4109 30.5418 16.7048 30.248L25.2028 21.7499L16.7048 13.2519C16.4109 12.958 16.4109 12.4816 16.7048 12.1877Z" fill="#858585"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+    <div class="swiper-container related-products-swiper" id="relatedProductsSwiper">
+      <div class="swiper-wrapper related-products-wrapper">
+        {% assign related_products_count = 0 %}
+
+        {% for prod in collections[current_collection].products %}
+        {%- # <spark:ikcuz> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:prod -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:ikcuz> -%}
+          {% if prod.id != product.id %}
+            {% assign related_products_count = related_products_count | plus: 1 %}
+            <div class="swiper-slide related-products-slide">
+           
+                <img 
+                  src="{{ prod.featured_image | image_url: width: 400 }}" 
+                  alt="{{ prod.title }}" 
+                  class="custom-product-image"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                >
+               
+                  <h3 class="custom-product-title">{{ prod.title }}</h3>
+                                  
+  <div class="subtext-metafield">
+                    {{ prod.metafields.custom.product_subtext | metafield_tag }}
+  </div>
+                  <a href="{{ prod.url }}" class="custom-product-link">{{ section.settings.button_text }}</a>
+       
+              </div>
+         
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Pagination (optional) -->
+      <div class="swiper-pagination swiper-pagination-related-2 "></div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "more moonshade models",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "MORE MOONSHADE MODELS",
+      "info": "Custom heading for related products section"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    }
+  ],
+  "presets": [
+    {
+      "name": "more moonshade models",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

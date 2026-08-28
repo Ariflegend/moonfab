@@ -1,0 +1,368 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_mENcKC": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_6GAfcD": {
+          "type": "heading",
+          "settings": {
+            "heading": "MOON Pro Program",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6GAfcD"
+      ],
+      "settings": {
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "moon-pro-banner",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/f537bb4b216e6bbaf36e76856a1798f5.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_7bxAPE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_HnqEei": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At MoonFab, we believe spending time outdoors should be simple, enjoyable, and accessible to everyone. That’s why we create straightforward tools like MoonShade and MoonAnchors, designed to make outdoor experiences easier and more enjoyable.<br/><br/>We’re proud to support the outdoor community through our MoonFab Pro Deal Program, offering 15% off to professionals in outdoor-related industries, as well as military members and first responders. It’s our way of recognizing your role as a partner in the industry. To join, simply verify your affiliation.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_HnqEei"
+      ],
+      "settings": {
+        "rich-custom-cls": "moon-description-pro",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_4LX7Kn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JkGwJP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Apply for a Moon Pro Program",
+            "heading_size": "h1"
+          }
+        },
+        "button_RhgEcW": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply now",
+            "button_link": "shopify://pages/partner-with-moon",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JkGwJP",
+        "button_RhgEcW"
+      ],
+      "settings": {
+        "rich-custom-cls": "apply-moon-pro-program",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_i73pUM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Fzemmy": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Apply for a Moon Pro Program",
+            "heading_size": "h1"
+          }
+        },
+        "text_yqFmJz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Apply for a Moon<br/>Pro Program</p>"
+          }
+        },
+        "button_zgRQ9P": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply now",
+            "button_link": "https://moonfab.com/pages/partner-with-moon-v2",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Fzemmy",
+        "text_yqFmJz",
+        "button_zgRQ9P"
+      ],
+      "settings": {
+        "rich-custom-cls": "apply-moon-pro-program apply-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_AdxMKH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xdHwXG": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xdHwXG"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_xeCTmd": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_rqxqJY": {
+          "type": "column",
+          "settings": {
+            "title": "Featured in",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4e3bHV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_e6b5958e-fd01-49fb-8210-c61d3fac3efc.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_URAijF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JRzT3V": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FWLV8y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EcJd7j": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_rqxqJY",
+        "column_4e3bHV",
+        "column_URAijF",
+        "column_JRzT3V",
+        "column_FWLV8y",
+        "column_EcJd7j"
+      ],
+      "settings": {
+        "give-title": "featured-in special-colr",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_iw7iGU": {
+      "type": "rich-text",
+      "blocks": {
+        "button_MRRecj": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_MRRecj"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_EzL6ek": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Q9CzyC": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Q9CzyC"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile width-100",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "17401138790a1df4a5": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_dfENNi": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_dfENNi"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_mENcKC",
+    "rich_text_7bxAPE",
+    "rich_text_4LX7Kn",
+    "rich_text_i73pUM",
+    "rich_text_AdxMKH",
+    "multicolumn_xeCTmd",
+    "rich_text_iw7iGU",
+    "rich_text_EzL6ek",
+    "17401138790a1df4a5"
+  ]
+}

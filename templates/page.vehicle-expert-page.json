@@ -1,0 +1,912 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_rtGXNK": {
+      "type": "rich-text",
+      "settings": {
+        "rich-custom-cls": "moon-vehicle-opa",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_EYyPbK": {
+      "type": "image-banner",
+      "blocks": {
+        "text_EtYNrX": {
+          "type": "text",
+          "settings": {
+            "text": "Moon Vehicle Experts (MVE) are enthusiasts just like you, </br>passionate about enjoying the outdoors in the comfort of shade.</br> They have perfected their <strong>MoonShade setups</strong> to assist you in </br>finding the ideal configuration for your vehicle.",
+            "text_style": "body"
+          }
+        },
+        "buttons_VKMknM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "APPLY / BECOME AN EXPERT",
+            "open_in_new_tab_1": true,
+            "button_link_1": "https://docs.google.com/forms/d/e/1FAIpQLSeAbikAkaZwp4LpwsiQ6MHZwykDSKN05hwuz99gCI0mm_Uwww/viewform",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "heading_iHHiEY": {
+          "type": "heading",
+          "settings": {
+            "heading": "43 MVE’s & Counting",
+            "heading_size": "h2"
+          }
+        },
+        "text_EbweRJ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "XX  MVE Community",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_EtYNrX",
+        "buttons_VKMknM",
+        "heading_iHHiEY",
+        "text_EbweRJ"
+      ],
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/image_4eb3d30a-7ead-4469-8159-9fe30e1154d1.png",
+        "review_title": "",
+        "user_name": "",
+        "image_moon": "shopify://shop_images/Frame_881234731_e6de400c-cebd-41b2-af6c-7f72b4b25756.png",
+        "total_reviews": 0,
+        "add-im-class": "banner-versatile-awning banner-vehicle-expert",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/Hero_Image_a72db47d-ba30-4eb4-82ef-b970690b7726.png",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_npPbc4": {
+      "type": "image-banner",
+      "blocks": {
+        "text_jCU4mk": {
+          "type": "text",
+          "settings": {
+            "text": "Moon Vehicle Experts (MVE) are enthusiasts just like you, </br>passionate about enjoying the outdoors in the comfort of shade.</br> They have perfected their <strong>MoonShade setups</strong> to assist you in </br>finding the ideal configuration for your vehicle.",
+            "text_style": "body"
+          }
+        },
+        "buttons_EeMLzD": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "APPLY / BECOME AN EXPERT",
+            "open_in_new_tab_1": true,
+            "button_link_1": "https://docs.google.com/forms/d/e/1FAIpQLSeAbikAkaZwp4LpwsiQ6MHZwykDSKN05hwuz99gCI0mm_Uwww/viewform",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "heading_TxUjqY": {
+          "type": "heading",
+          "settings": {
+            "heading": "25 MVE’s & Counting",
+            "heading_size": "h2"
+          }
+        },
+        "text_fwGqVb": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "XX  MVE Community",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_jCU4mk",
+        "buttons_EeMLzD",
+        "heading_TxUjqY",
+        "text_fwGqVb"
+      ],
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/image_4eb3d30a-7ead-4469-8159-9fe30e1154d1.png",
+        "review_title": "",
+        "user_name": "",
+        "image_moon": "shopify://shop_images/Frame_881234731_e6de400c-cebd-41b2-af6c-7f72b4b25756.png",
+        "total_reviews": 0,
+        "add-im-class": "banner-versatile-awning banner-vehicle-expert veh-mobile-hide",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/hero_Mobile_b6c0ce80-14f9-40ad-8627-86ec26833098.png",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "collection_slider_TrEPQi": {
+      "type": "collection-slider",
+      "blocks": {
+        "collection_slide_FizGNr": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "vans"
+          }
+        },
+        "collection_slide_AMCcBJ": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "trucks"
+          }
+        },
+        "collection_slide_na8LGj": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "suv"
+          }
+        },
+        "collection_slide_xMJMq4": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "jeeps"
+          }
+        },
+        "collection_slide_pzGUL7": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "trailers"
+          }
+        },
+        "collection_slide_Htq8jC": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "all-vehicle-types"
+          }
+        }
+      },
+      "block_order": [
+        "collection_slide_FizGNr",
+        "collection_slide_AMCcBJ",
+        "collection_slide_na8LGj",
+        "collection_slide_xMJMq4",
+        "collection_slide_pzGUL7",
+        "collection_slide_Htq8jC"
+      ],
+      "settings": {
+        "slider_title": "Shop By Vehicle",
+        "add_custom_class": "Shop By Vehicle vehicle-expert-collection",
+        "add_button_class": "vehicle-button",
+        "button_url": "shopify://collections/all-vehicle-types",
+        "button_title": "Shop All"
+      }
+    },
+    "image_banner_9mKNea": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "heading-plane": "GOT A PLANE?",
+        "button_1_text": "SHOP PLANE KIT",
+        "button_1_link": "",
+        "button_2_text": "WATCH TRENT’S VIDEO",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/image_3b484bfe-c021-4442-98b7-042a5fe3e4a4.png",
+        "review_title": "",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "mobilebanner",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/image_4ef135bb-f096-4585-988c-6b51445bf149.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "video_6mQT6W": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "video_controls": true,
+        "add_custom_class": "video-vehicle-expert",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=8zGu9du7tBc",
+        "cover_image": "shopify://shop_images/image_da02d156-45a1-4c9b-bf7c-65c859f7e386.png",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_H8A9at": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "video_controls": true,
+        "add_custom_class": "video-vehicle-expert",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=8zGu9du7tBc",
+        "cover_image": "shopify://shop_images/image_da02d156-45a1-4c9b-bf7c-65c859f7e386.png",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "popup_video_CpqtiK": {
+      "type": "popup-video",
+      "disabled": true,
+      "name": "Video Popup Section",
+      "settings": {
+        "background_image": "shopify://shop_images/d428313fcd8d1d88fe1cdea2672f59dd677d724f.png",
+        "video_url": "https://www.youtube.com/watch?v=8zGu9du7tBc",
+        "button_text": "Watch the Video"
+      }
+    },
+    "mobile_video_xGTBD6": {
+      "type": "mobile-video",
+      "settings": {
+        "heading": "",
+        "img-id": "",
+        "video_controls": true,
+        "add_custom_class": "mobile-video",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=8zGu9du7tBc",
+        "cover_image": "shopify://shop_images/image_ab028491-937b-4b9e-a966-03dc2da4b315.png",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "enable_video_schema": true,
+        "video_title": "",
+        "video_upload_date": "",
+        "video_duration": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_DVgwGj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JybWpt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Check out the latest vehicle experts",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JybWpt"
+      ],
+      "settings": {
+        "rich-custom-cls": "latest-vehicle-exprt",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "moon_vehicle_expert_product_MwY9dz": {
+      "type": "moon-vehicle-expert-product",
+      "blocks": {
+        "product_slide_H8qAGz": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "lauren-and-jasons-promaster-setup"
+          }
+        },
+        "product_slide_BT8jdE": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "susan-and-marcs-casita-setup"
+          }
+        },
+        "product_slide_W697Ce": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "ryans-setup"
+          }
+        },
+        "product_slide_ehnBBC": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "john-and-carlys-setup"
+          }
+        },
+        "product_slide_TnPh4C": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "stefans-setup"
+          }
+        },
+        "product_slide_zfHzPL": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "gabe-ochoa-polydrops-awning"
+          }
+        },
+        "product_slide_rhVJ4Y": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "jason-fletchers-setup"
+          }
+        },
+        "product_slide_PYdTTz": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "tim-and-tamaras-setup"
+          }
+        },
+        "product_slide_z7azrL": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "kevin-and-danis-setup"
+          }
+        },
+        "product_slide_YBgrrY": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "patrick-and-lindseys-setup"
+          }
+        },
+        "product_slide_g8gNtY": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "george-and-arlenes-setup"
+          }
+        },
+        "product_slide_p7iFQU": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "larissas-setup"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_H8qAGz",
+        "product_slide_BT8jdE",
+        "product_slide_W697Ce",
+        "product_slide_ehnBBC",
+        "product_slide_TnPh4C",
+        "product_slide_zfHzPL",
+        "product_slide_rhVJ4Y",
+        "product_slide_PYdTTz",
+        "product_slide_z7azrL",
+        "product_slide_YBgrrY",
+        "product_slide_g8gNtY",
+        "product_slide_p7iFQU"
+      ],
+      "settings": {
+        "button_url": "shopify://collections/all-vehicle-types",
+        "enable_itemlist_schema": true
+      }
+    },
+    "rich_text_XDjfdB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4TN6Ma": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4TN6Ma"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile featured-mobile vehicle-feature",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_LKCdKN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QjgNmX": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "FEATURED IN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fxMhKP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_b25c5058-ce87-46d1-8fa1-a3f2e80093c3.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PwgK4P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KXpEeY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TV4tHJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HG8RMd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QjgNmX",
+        "column_fxMhKP",
+        "column_PwgK4P",
+        "column_KXpEeY",
+        "column_TV4tHJ",
+        "column_HG8RMd"
+      ],
+      "settings": {
+        "give-title": "feature-vehicle vehicle-feature",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_PdyEwW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pyGKU9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Want to Become a Moon Vehicle Expert?",
+            "heading_size": "h2"
+          }
+        },
+        "text_RbfBVU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, MoonShade setup and tell a bit of your story all while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and we'll get in touch with you!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_pYcL4X": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "https://docs.google.com/forms/d/e/1FAIpQLSeAbikAkaZwp4LpwsiQ6MHZwykDSKN05hwuz99gCI0mm_Uwww/viewform",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pyGKU9",
+        "text_RbfBVU",
+        "button_pYcL4X"
+      ],
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert mobile-size vechicle-exper-banner",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_BnzwGg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cbLA3y": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Want to Become a Moon Vehicle Expert?</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_aLEk6D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Showcase your rig, MoonShade setup and tell a bit of your story all while earning 10% commission on sales generated from your MVE page. Please fill out the membership application and we'll get in touch with you!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_YYthMy": {
+          "type": "button",
+          "settings": {
+            "button_label": "Become an Expert",
+            "button_link": "https://docs.google.com/forms/d/e/1FAIpQLSeAbikAkaZwp4LpwsiQ6MHZwykDSKN05hwuz99gCI0mm_Uwww/viewform",
+            "button_style_secondary": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cbLA3y",
+        "text_aLEk6D",
+        "button_YYthMy"
+      ],
+      "settings": {
+        "img-with-txt-class": "become-moon-vehicle-expert moon-experts",
+        "img-id": "about",
+        "image": "shopify://shop_images/18-F68A4887_jpg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "meet_the_team_PQYWkg": {
+      "type": "meet-the-team",
+      "blocks": {
+        "team_member_4zVhaF": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Group_6.svg",
+            "name": "Henry Proegler",
+            "role": "Co-Founder & CEO",
+            "bio": "<p>Henry is a co-founder and CEO of Moon, where he leads the company’s vision, brand, and growth. He helped shape Moon from a single product into a platform for people who live, travel, and explore outdoors, building partnerships across the outdoor, vanlife, and RV communities.</p>"
+          }
+        },
+        "team_member_mnTVwq": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Group_5.svg",
+            "name": "Matthew Pearson",
+            "role": "Co-Founder & Inventor",
+            "bio": "<p>Matthew Pearson is the inventor of the MoonShade and co-founder of Moon. What began as a personal solution for creating shade while camping grew into Moon's flagship product and the foundation of the company. He continues to shape Moon's vision by identifying real-world camping problems worth solving and turning them into products people love.</p>"
+          }
+        },
+        "team_member_cLjTai": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Group_4.svg",
+            "name": "Eric Myers",
+            "role": "Product Manager",
+            "bio": "<p>Eric is Moon’s Product Manager and a full-time nomad who has been living on the road since 2020. His firsthand experience camping, traveling, and testing gear informs every product decision, ensuring Moon products are practical, durable, and built for real-world use.</p>"
+          }
+        },
+        "team_member_dzAeWg": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Group_4_1.svg",
+            "name": "Brandon Davey",
+            "role": "Lead Designer",
+            "bio": "<p>Brandon is Moon's Lead Designer, bringing more than 20 years of experience designing award-winning outdoor gear. He has led product development for some of the industry's most respected brands, and now oversees the design of Moon's growing product lineup. Working from sketch to prototype, Brandon creates gear that's shaped by the people who use it every day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_4zVhaF",
+        "team_member_mnTVwq",
+        "team_member_cLjTai",
+        "team_member_dzAeWg"
+      ],
+      "name": "Meet the team",
+      "settings": {
+        "heading": "Meet the Moon Team.",
+        "heading_size": 39,
+        "intro_text": "<p>Moon was started by people who were already living out of vans and spending weekends in the desert — who built MoonShade because the awning they actually wanted didn't exist yet. Every product has been tested in real conditions and refined based on real feedback. That hasn't changed.</p>",
+        "intro_size": 15,
+        "columns": 4,
+        "background_color": "#fcf3e7",
+        "color_scheme": "",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "collapsible_content_z8DPKk": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_hJUdMw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is a Moon Vehicle Expert?",
+            "icon": "none",
+            "row_content": "<p>A Moon Vehicle Expert is a community member or Moon-affiliated installer with verified, hands-on setup experience on a specific vehicle type. They're the right resource when you want to know how a setup actually works on your rig before you buy.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GdDJXF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of becoming a Moon Vehicle Expert?",
+            "icon": "none",
+            "row_content": "<p>Vehicle Experts get early access to new products, a direct line to the Moon team, and the ability to help other owners in their vehicle community find the right setup</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6e3H96": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What awning setup works on a Sprinter without drilling?",
+            "icon": "none",
+            "row_content": "<p>MoonShade XL or MoonShade Pro with MoonMounts attaches to the Sprinter's exterior without drilling. No roof rack required.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KPt9ME": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the right MoonShade for a Jeep Wrangler?",
+            "icon": "none",
+            "row_content": "<p>MoonShade (OG) is the most popular Wrangler setup — confirmed by Moon and hundreds of customers. Sets up in about 5 minutes, attaches with suction or magnetic MoonAnchors, and packs behind the rear seat.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VrYW3j": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What size awning do I need for a Ford Transit?",
+            "icon": "none",
+            "row_content": "<p>MoonShade XL is typically the right call for a full-size Transit. It covers about 12 feet of mounting span and handles both side and rear door configurations.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_hJUdMw",
+        "collapsible_row_GdDJXF",
+        "collapsible_row_6e3H96",
+        "collapsible_row_KPt9ME",
+        "collapsible_row_VrYW3j"
+      ],
+      "settings": {
+        "caption-custom-cls": "faq-sec",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "<p>For more information check out <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\"><strong>FAQ page</strong></a></p>",
+        "caption": "",
+        "heading": "FAq",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_KPx8W6": {
+      "type": "rich-text",
+      "blocks": {
+        "button_gcKWQQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_gcKWQQ"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_8eJVnV": {
+      "type": "rich-text",
+      "blocks": {
+        "button_JqXCzL": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_JqXCzL"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "1735817810dbd4937f": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_94D6Ej": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_94D6Ej"
+      ],
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_rtGXNK",
+    "image_banner_EYyPbK",
+    "image_banner_npPbc4",
+    "collection_slider_TrEPQi",
+    "image_banner_9mKNea",
+    "video_6mQT6W",
+    "video_H8A9at",
+    "popup_video_CpqtiK",
+    "mobile_video_xGTBD6",
+    "rich_text_DVgwGj",
+    "moon_vehicle_expert_product_MwY9dz",
+    "rich_text_XDjfdB",
+    "multicolumn_LKCdKN",
+    "image_with_text_PdyEwW",
+    "image_with_text_BnzwGg",
+    "meet_the_team_PQYWkg",
+    "collapsible_content_z8DPKk",
+    "rich_text_KPx8W6",
+    "rich_text_8eJVnV",
+    "1735817810dbd4937f"
+  ]
+}

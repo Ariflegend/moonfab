@@ -1,0 +1,47 @@
+<div class="gift-bg-round">
+<div class="gift-data page-width">
+{% if product %}
+  <h1>ABOUT {{ product.title }}</h1>
+  <div>{{ product.description }}</div>
+{% else %}
+  <p>Product data available nahi hai.</p>
+{% endif %}
+</div>
+</div>
+
+<style>
+ .gift-data h3, .gift-data h1 {
+    color: #3B4752;
+    font-size: 24px;
+    font-family: 'Berringer_Rough';
+}
+ .gift-data p {
+    font-size: 16px;
+    color: #3B4752;
+    line-height: 24px;
+    font-family: 'Poligon_Light';
+}
+.gift-bg-round {
+    padding: 70px 5rem;
+    background-color: #fbf5e7;
+}
+
+</style>
+
+
+
+{% schema %}
+{
+  "name": "gift-card-description",
+  "settings": [],
+  "blocks": [
+ 
+  ],
+  "presets": [
+    {
+      "name": "gift-card-description",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

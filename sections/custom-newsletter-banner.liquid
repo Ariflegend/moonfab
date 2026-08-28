@@ -1,0 +1,226 @@
+<section id="shopify-section-{{ section.id }}" class="section newsletter-banner">
+  {% if section.settings.bg_image != blank %}
+    <div class="newsletter-bg" style="background-image:url({{ section.settings.bg_image | image_url: width: 2000 }});">
+      <div class="newsletter-overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  {% endif %}
+
+  <div class="newsletter-banner-content page-width">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    {% comment %} <form method="post" action="/contact#newsletter" class="newsletter-form">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="email" name="contact[email]" placeholder="Your email" required>
+      <button type="submit">{{ section.settings.newsletter_button_text }}</button>
+    </form> {% endcomment %}
+
+    {% if section.settings.cta_button_link != blank %}
+      <a href="{{ section.settings.cta_button_link }}" class="cta-btn">
+        {{ section.settings.cta_button_text }}
+      </a>
+    {% endif %}
+
+    {% if section.settings.note_text != blank %}
+      <p class="note">{{ section.settings.note_text }}</p>
+    {% endif %}
+
+    {% if section.settings.custom_liquid != blank %}
+      <div class="custom-liquid-content">
+        {{ section.settings.custom_liquid }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.bg_image != blank %}
+    </div>
+  {% endif %}
+</section>
+
+<style>
+.newsletter-banner {
+  position: relative;
+  min-height: 811px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.newsletter-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #000;
+}
+
+.newsletter-banner-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  max-width: 100%;
+  margin: auto;
+}
+
+.newsletter-banner-content h2 {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 58px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: 'Berringer_Rough';
+}
+
+.newsletter-banner-content .subheading {
+  font-size: 18px;
+  line-height: 28.6px;
+  margin-top: 0;
+  padding-top: 0;
+  max-width: 467px;
+  padding-bottom: 40px;
+  margin: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-banner-content .newsletter-form input {
+  padding-left: 20px !important;
+  width: 413px;
+  padding: 10px;
+  height: 52px;
+  border-radius: 43px;
+  border: 1px solid #E7E7E7;
+  font-size: 16.8px !important;
+  line-height: 100%;
+  color: #757575;
+  font-family: 'Poligon_Regular';
+}
+
+.newsletter-banner-content .newsletter-form button {
+  background: #DFBF9D;
+  color: #3B4752;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  width: 413px;
+  border-radius: 36px;
+  height: 52px;
+  border: none !important;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #264653;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #DFBF9D;
+}
+
+.custom-liquid-content {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 16px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Newsletter Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SAVE XX% WITH VIP PRICING!"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Put down $1 today and guarantee XX% off when we go live."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Newsletter Button Text",
+      "default": "Sign Up"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Secure Early Bird Offer"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "*Limited Time Offer"
+    },
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom Liquid"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Newsletter Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

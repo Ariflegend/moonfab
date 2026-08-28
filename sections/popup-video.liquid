@@ -1,0 +1,145 @@
+{% schema %}
+{
+  "name": "Video Popup",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL (MP4 or YouTube Embed Link)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Watch the Video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Popup"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="video-popup-section">
+  <div class="video-background" style="background-image: url({{ section.settings.background_image | image_url: width: 1600 }});">
+    <button class="video-button" onclick="openVideoModal()">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
+      </svg>
+      <span>{{ section.settings.button_text }}</span>
+    </button>
+  </div>
+
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+      <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+     <iframe id="videoPlayer" width="100%" height="500" frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+  style="display: none;"
+></iframe>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.video-popup-section {
+  position: relative;
+  text-align: center;
+}
+.video-background {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.video-button svg {
+  width: 20px;
+  height: 20px;
+  color: #000;
+}
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+}
+.video-modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+.video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.video-modal video {
+  width: 100%;
+  height: auto;
+}
+</style>
+
+<script>
+  function openVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoPlayer");
+
+    // Get original YouTube URL from section settings
+    const rawUrl = "{{ section.settings.video_url }}";
+    const videoId = extractYouTubeID(rawUrl);
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+    iframe.src = embedUrl;
+    iframe.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoPlayer");
+
+    iframe.src = ""; // stop video
+    iframe.style.display = "none";
+    modal.style.display = "none";
+  }
+
+  function extractYouTubeID(url) {
+    const match = url.match(/(?:youtube\.com\/.*v=|youtu\.be\/)([^&]+)/);
+    return match ? match[1] : "";
+  }
+</script>
+

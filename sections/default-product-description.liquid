@@ -1,0 +1,115 @@
+{%- liquid
+assign current_variant = product.selected_or_first_available_variant
+
+assign included_free = false
+if product.metafields.my_fields.included_free == true
+	assign included_free = true
+endif
+unless current_variant.price > 0
+	assign included_free = true
+endunless
+
+assign addon_only = false
+if product.metafields.my_fields.addon_only == true
+	assign addon_only = true
+endif
+
+assign product_images = product.media | where: "media_type", "image"
+assign uploaded_videos = product.media | where: "media_type", "video"
+assign external_videos = product.media | where: "media_type", "external_video"
+assign all_videos = uploaded_videos | concat: external_videos
+
+assign is_anchor = false
+
+for collection in product.collections
+	if collection.handle == 'moonanchors'
+		assign is_anchor = true
+		assign primary_collection = collection
+	endif
+
+	if collection.handle == 'apparel'
+		assign primary_collection = collection
+	endif
+
+	if collection.handle == 'moonwall'
+		assign primary_collection = collection
+	endif
+
+endfor
+
+-%}
+
+
+
+<section class="bg-light border-top {{ section.settings.add-pro-cls }}">
+
+		<div class="container py-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<h3>About {{ product.title }}</h3>
+					<div class="description">
+						{{ product.description }}
+					</div>
+					{% if all_videos.size > 0 %}
+						<div class="videos mt-4" id="video">
+							<h3>Installation {{ all_videos.size | pluralize: 'Video', 'Videos' }}</h3>
+							{% for media in all_videos %}
+								{% if media.media_type == 'external_video' %}
+									<div class="ratio ratio-16x9 mb-5">
+										{{ media | external_video_tag }}
+									</div>
+								{% endif %}
+								{% if media.media_type == 'video' %}
+									<div class="ratio ratio-16x9 mb-5">
+										{{ media | video_tag }}
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					{% endif %}
+					
+					{% unless product.metafields.my_fields.hide_reviews %}
+					<hr class="my-5">
+					<div id="reviews" class="mb-5">
+						<h3 class="mb-4">{{ product.title }} Reviews</h3>
+						<div class="card">
+							<div class="card-body">
+								{% render 'okendo-reviews-widget', product: product %}
+							</div>
+						</div>
+					</div>
+					{% endunless %}
+
+					{% if is_anchor %}
+					<div class="card card-body text-center p-sm-4 p-lg-5">
+						<p><span class="far fa-question-circle text-secondary" style="font-size: 2.5rem;"></span></p>
+						<h3>Not Sure if you need these?</h3>
+						<p>Answer a few basic questions about your setup to get hardware suggestions or browse all anchor solutions.</p>
+						<p class="mb-0">
+							<a href="#setup-quiz" data-bs-toggle="modal" class="btn btn-primary btn-xs-block">Find Your Setup</a>
+							<a href="/collections/moonanchors/" class="btn-xs-block btn btn-outline-primary ms-sm-2">View All Anchors</a></p>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+ {% schema %}
+{
+  "name": "product-description",
+  "settings": [
+    {
+      "type": "text",
+      "id": "add-pro-cls",
+      "label": "Add Class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product-description",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

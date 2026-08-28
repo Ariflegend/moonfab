@@ -1,0 +1,1515 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_Lf8WQ7": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_ttpWAk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mount It Anywhere",
+            "heading_size": "hxxl"
+          }
+        },
+        "heading_7TzEBR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Now AVAILABLE in <em>ORANGE!</em>",
+            "heading_size": "h0"
+          }
+        },
+        "text_FnAL4C": {
+          "type": "text",
+          "settings": {
+            "text": "The awning that doesn't care what you drive.",
+            "text_style": "body"
+          }
+        },
+        "text_FRgHTD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The MoonShade is your go-to for maximum sun",
+            "text_style": "subtitle"
+          }
+        },
+        "text_9PADhn": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "protection, light packing, and easy set up.",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_GGj3Yn": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP MOONSHADE OG",
+            "open_in_new_tab_1": true,
+            "button_link_1": "shopify://products/moonshade",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ttpWAk",
+        "heading_7TzEBR",
+        "text_FnAL4C",
+        "text_FRgHTD",
+        "text_9PADhn",
+        "buttons_GGj3Yn"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".hxxl {font-family: \"Berringer Aged Oblique\" !important; font-size: 75px; margin-top: 0px; text-shadow: 1px 1px 1px black;}",
+        ".h1 {line-height: 1; font-size: 40px; text-shadow: 2px 1px 7px black; margin-top: 100px;}",
+        ".rte {left: 0px; right: 0px; margin-top: 125px;}",
+        ".body {line-height: 1; font-size: 22px; text-shadow: 1px 1px 3px black; margin-top: 15px;}",
+        ".button {top: 175px;}"
+      ],
+      "settings": {
+        "heading-plane": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/31fdb7c45d679fcbd02711f8e15d1c18_41256f47-1ee1-440f-b441-b0ee0c2823e9.jpg",
+        "review_title": "",
+        "user_name": "The Matneys",
+        "star_rating": "shopify://shop_images/Frame_18.png",
+        "total_reviews": 467,
+        "add-im-class": "blck-bnnr dekk",
+        "add-idd-class": "most-banner-desktop",
+        "image": "shopify://shop_images/MoonShade_OG_Banner.webp",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_4iz8GQ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_XUhQxf": {
+          "type": "heading",
+          "settings": {
+            "heading": "MOUNT IT ANYWHERE",
+            "heading_size": "hxxl"
+          }
+        },
+        "heading_xz9ijc": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "for Every Season",
+            "heading_size": "h1"
+          }
+        },
+        "text_XQgDaX": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The awning that doesn't care what you drive.",
+            "text_style": "body"
+          }
+        },
+        "buttons_VqkjVN": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "UPGRADE YOUR SHADE",
+            "open_in_new_tab_1": false,
+            "button_link_1": "shopify://products/moonshade",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XUhQxf",
+        "heading_xz9ijc",
+        "text_XQgDaX",
+        "buttons_VqkjVN"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".hxxl {font-family: \"Berringer Aged Oblique\" !important; font-size: 60px; margin-top: 75px; text-shadow: 1px 1px 1px black;}",
+        ".h1 {line-height: 1; font-size: 40px; text-shadow: 2px 1px 7px black; margin-top: 100px;}",
+        ".rte {left: 0px; right: 0px; margin-top: 125px;}",
+        ".body {line-height: 1; font-size: 40px; text-shadow: 1px 1px 3px black; margin-top: 15px;}",
+        ".button {background-color: #32404c; border: 2px solid #ffffff; bottom: 15px;}"
+      ],
+      "name": "Image banner Mobile",
+      "settings": {
+        "heading-plane": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/100_Off_MoonShae_OG_MoonMounts_Mobile_4__comp.png",
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "blck-bnnr moblll",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/MoonShade_OG_Mobile.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4ee06d37-e4ed-47a7-bdd2-ee03159bfd4d",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_x8PPcD": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_gtxaaf": {
+          "type": "heading",
+          "settings": {
+            "heading": "— A-FRAME AWNING SALE —",
+            "heading_size": "h1"
+          }
+        },
+        "heading_NCJ4fK": {
+          "type": "heading",
+          "settings": {
+            "heading": "MOONSHADE APEX",
+            "heading_size": "hxxl"
+          }
+        },
+        "heading_BU99XR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "SALE IS ON.",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_xRrKy7": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "heading_mgA47n": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>+ 3X OVAL MOUNTS </strong><em><strong>$100 OFF</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "heading_QyrNzr": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "ENDS Monday 7/6",
+            "heading_size": "h2"
+          }
+        },
+        "text_K3WYNB": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_mKepGD": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP THE BUNDLE",
+            "open_in_new_tab_1": false,
+            "button_link_1": "shopify://products/moonshade-apex",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "text_qBryBM": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Offer ends Monday 8/31</strong>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gtxaaf",
+        "heading_NCJ4fK",
+        "heading_BU99XR",
+        "text_xRrKy7",
+        "heading_mgA47n",
+        "heading_QyrNzr",
+        "text_K3WYNB",
+        "buttons_mKepGD",
+        "text_qBryBM"
+      ],
+      "custom_css": [
+        ".hxxl {font-family: \"Berringer Aged Oblique\" !important; font-size: 75px; margin-top: 0px; text-shadow: 1px 1px 1px black;}",
+        ".h2 {line-height: 1; font-size: 30px; /*text-shadow: 1px 1px 3px black;*/ margin-top: 0px;}",
+        ".h1 {line-height: 1; font-size: 45px; /*text-shadow: 1px 1px 3px black;*/ margin-top: 0px;}",
+        ".button {background-color: #ffffff; border: 2px solid #ffffff; bottom: 0px; width: 250px; color: #32404c;}",
+        ".banner__content.page-width {max-width: 100% !important; margin: 0 !important; padding-left: 2rem;}",
+        ".banner__box {margin-left: 50px !important;}"
+      ],
+      "name": "Image banner Desktop",
+      "settings": {
+        "heading-plane": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "",
+        "button_2_link": "",
+        "image_mobile": "shopify://shop_images/100_Off_MoonShade_APEX_3_MoonMounts_Banner.webp",
+        "review_title": "",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "blck-bnnr dekk july-bnnr",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/100_Off_MoonShade_APEX_3_MoonMounts_Banner.webp",
+        "image_overlay_opacity": 10,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4ee06d37-e4ed-47a7-bdd2-ee03159bfd4d",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_ffbpaF": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GQhtYb": {
+          "type": "heading",
+          "settings": {
+            "heading": "— A-FRAME AWNING SALE —",
+            "heading_size": "hxl"
+          }
+        },
+        "heading_3acDpG": {
+          "type": "heading",
+          "settings": {
+            "heading": "MOONSHADE APEX",
+            "heading_size": "hxxl"
+          }
+        },
+        "heading_a7frdq": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "for Every Season",
+            "heading_size": "h1"
+          }
+        },
+        "text_e8ffmQ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The awning that doesn't care what you drive.",
+            "text_style": "body"
+          }
+        },
+        "heading_rh68hH": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Give Dad more time outside.",
+            "heading_size": "h2"
+          }
+        },
+        "heading_VLznM9": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>+ 3X OVAL MOUNTS </strong><em><strong>$100 OFF</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_4mY7iA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP THE BUNDLE",
+            "open_in_new_tab_1": false,
+            "button_link_1": "shopify://products/moonshade-apex",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "heading_kYia6g": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<em><strong>Offer ends Monday 8/31</strong></em>",
+            "heading_size": "h0"
+          }
+        },
+        "text_tEG3PE": {
+          "type": "text",
+          "settings": {
+            "text": "<em><strong>Offer ends Monday 8/31</strong></em>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GQhtYb",
+        "heading_3acDpG",
+        "heading_a7frdq",
+        "text_e8ffmQ",
+        "heading_rh68hH",
+        "heading_VLznM9",
+        "buttons_4mY7iA",
+        "heading_kYia6g",
+        "text_tEG3PE"
+      ],
+      "custom_css": [
+        ".hxxl {font-family: \"Berringer Aged Oblique\" !important; font-size: 45px; margin-top: 10px; line-height: 0.95;}",
+        ".hxl {font-family: \"Berringer Aged Oblique\" !important; font-size: 25px; line-height: 1; margin-top: 70px;}",
+        ".h1 {line-height: 1; font-size: 27px; margin-top: 75px;}",
+        ".h2 {line-height: 1; font-size: 10px; margin-top: 410px;}",
+        ".subtitle {line-height: 1; font-size: 12px; text-shadow: 1px 1px 3px black; margin-top: 375px;}",
+        ".button {background-color: #fbf5e7; /*border: 2px solid #ffffff;*/ color: #32404c; bottom: 0px;}"
+      ],
+      "name": "Image banner Mobile",
+      "settings": {
+        "heading-plane": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "",
+        "button_2_link": "",
+        "review_title": "The most high quality, best value awning on the market.",
+        "user_name": "Name 1",
+        "total_reviews": 467,
+        "add-im-class": "blck-bnnr moblll july-bnnr",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/100_Off_MoonShade_APEX_3_MoonMounts_Mobile.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4ee06d37-e4ed-47a7-bdd2-ee03159bfd4d",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text_Capyta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kd944d": {
+          "type": "heading",
+          "settings": {
+            "heading": "FEATURED IN",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kd944d"
+      ],
+      "settings": {
+        "rich-custom-cls": "featured-in-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_VzpULB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QXCTYY": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "Featured in",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wraGVn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/outside-magazine_png_b25c5058-ce87-46d1-8fa1-a3f2e80093c3.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FR3C3F": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/trendhunter_png_6322f3ef-3467-47a1-af45-20429e939d53.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NycEVr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/uncrate_png_3bbdf04e-c0be-4a30-91f0-cafe9824f1b9.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pyHxir": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gear-junkie_png_0ad91696-7ba6-4a8c-84df-530b1d72f5fd.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jmW63r": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/engearment_png_62cb0931-1501-4420-9305-c4751dcad8f2.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QXCTYY",
+        "column_wraGVn",
+        "column_FR3C3F",
+        "column_NycEVr",
+        "column_pyHxir",
+        "column_jmW63r"
+      ],
+      "settings": {
+        "give-title": "featured-in",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "collection_slider_JhaR8i": {
+      "type": "collection-slider",
+      "blocks": {
+        "collection_slide_NNktfB": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "vans"
+          }
+        },
+        "collection_slide_7PLjAD": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "trucks"
+          }
+        },
+        "collection_slide_b3mTJa": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "suv"
+          }
+        },
+        "collection_slide_tQ9kWm": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "jeeps"
+          }
+        },
+        "collection_slide_Yj6dPU": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "trailers"
+          }
+        },
+        "collection_slide_aFbbNp": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "buses"
+          }
+        },
+        "collection_slide_yEnVLQ": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "truck-campers"
+          }
+        },
+        "collection_slide_LRVqRg": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "rvs"
+          }
+        },
+        "collection_slide_icdVLy": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "other"
+          }
+        },
+        "collection_slide_R7FCUD": {
+          "type": "collection_slide",
+          "settings": {
+            "collection_handle": "all-vehicle-types"
+          }
+        }
+      },
+      "block_order": [
+        "collection_slide_NNktfB",
+        "collection_slide_7PLjAD",
+        "collection_slide_b3mTJa",
+        "collection_slide_tQ9kWm",
+        "collection_slide_Yj6dPU",
+        "collection_slide_aFbbNp",
+        "collection_slide_yEnVLQ",
+        "collection_slide_LRVqRg",
+        "collection_slide_icdVLy",
+        "collection_slide_R7FCUD"
+      ],
+      "settings": {
+        "slider_title": "Shop By Vehicle",
+        "add_custom_class": "Shop By Vehicle",
+        "add_button_class": "",
+        "button_url": "shopify://collections/all-vehicle-types",
+        "button_title": "Shop all"
+      }
+    },
+    "multicolumn_U6aGnX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mtPqiA": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "quote-sign": "shopify://shop_images/2f468a669e33a7cb08153b16a6b6dcba.png",
+            "title": "Discover Latest vehicle experts",
+            "text": "<p>Moon Vehicle Experts (MVE) are enthusiasts just like you. Explore examples of MoonShade setups tailored to different vehicle<br/>types to envision how it could enhance your unique rig.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mtPqiA"
+      ],
+      "settings": {
+        "give-title": "discover-latest discove-desktop",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_YYVciw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_qCYbik": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "quote-sign": "shopify://shop_images/image_9.png",
+            "title": "Discover Latest vehicle experts",
+            "text": "<p>Moon Vehicle Experts (MVE) are enthusiasts just like you. Explore examples of MoonShade setups tailored to different vehicle types to envision how it could enhance your unique rig</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_qCYbik"
+      ],
+      "settings": {
+        "give-title": "discover-latest discove-mobile",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "home_product_bundle_h4LXhx": {
+      "type": "home-product-bundle",
+      "blocks": {
+        "product_slide_hbdVxJ": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "rylee-and-justins-setup"
+          }
+        },
+        "product_slide_Q8RrHH": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "george-and-arlenes-setup"
+          }
+        },
+        "product_slide_YAVj4j": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "jason-fletchers-setup"
+          }
+        },
+        "product_slide_wUxibk": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "george-and-arlenes-setup"
+          }
+        },
+        "product_slide_fQy6WU": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "ryans-setup"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_hbdVxJ",
+        "product_slide_Q8RrHH",
+        "product_slide_YAVj4j",
+        "product_slide_wUxibk",
+        "product_slide_fQy6WU"
+      ],
+      "settings": {
+        "slider_title": "SEE ALL",
+        "add_button_class": "",
+        "button_url": "shopify://pages/vehicle-expert-page",
+        "button_title": "",
+        "add_title-cls": ""
+      }
+    },
+    "multicolumn_WpVjTX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Wqh6W8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/man-woman-in-front-of-moonvan_jpg_1f641abb-7866-4121-b978-9a3e84e8a234.jpg",
+            "videoupload": "",
+            "quote-sign": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "title": "Simply the most high quality, best value awning on the market.",
+            "text": "<p>The Matneys</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GXDMmA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/man-woman-in-front-of-moonvan_jpg_3020000f-c4ee-4279-9ef9-f75e1d7db5fa.jpg",
+            "videoupload": "",
+            "quote-sign": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "title": "An easy way to add a lot of convenience and comfort to our vanlife.",
+            "text": "<p>Mrs. Adventure</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PRgtQm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/man-woman-in-front-of-moonvan_jpg_1b457172-5bf4-4305-beaa-8bcca21b3588.jpg",
+            "videoupload": "",
+            "quote-sign": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "title": "Truly the most versatile awning and a crucial piece of adventure gear.",
+            "text": "<p>Trent & Allie</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Wqh6W8",
+        "column_GXDMmA",
+        "column_PRgtQm"
+      ],
+      "custom_css": [
+        "div#set-video {background: white;}"
+      ],
+      "settings": {
+        "give-title": "testimonial-sec",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_image_text_match_CCBbh4": {
+      "type": "section-image-text-match",
+      "name": "Image Text Match",
+      "settings": {
+        "image": "shopify://shop_images/Frame_1597885326.png",
+        "heading": "Let’s find Your MoonShade Match",
+        "description": "This guide will match you with the right MoonShade setup.",
+        "button_text": "Match My Rig",
+        "button_link": "https://moonfab.com/pages/which-moonshade-is-right-for-me",
+        "background_color": "#fbf5e7",
+        "text_color": "#2c3e50",
+        "button_background": "#3d4f5f",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "image_with_text_Hk3Ncy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MpUiWn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Over-the-top Compatible",
+            "heading_size": "h1"
+          }
+        },
+        "text_NFf6dA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Versatile anchor hardware options make MoonShade™ compatible with just about any vehicle. Use our setup quiz to find out which anchor options fit your setup best.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_XR7QEP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Your Setup",
+            "button_link": "https://moonfab.com/#setup-quiz",
+            "button_style_secondary": false,
+            "second_button_label": "Browse Anchors",
+            "second_button_link": "shopify://collections/moonanchors",
+            "second_button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MpUiWn",
+        "text_NFf6dA",
+        "button_XR7QEP"
+      ],
+      "settings": {
+        "img-with-txt-class": "Over-the-top",
+        "img-id": "about",
+        "image": "shopify://shop_images/Picture_moon-anchors-hero_jpg_1.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 32
+      }
+    },
+    "homepage_slider_hMQfRP": {
+      "type": "Homepage-slider",
+      "blocks": {
+        "product_slide_w4jgFE": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "magnet-anchors"
+          }
+        },
+        "product_slide_gG6Hqj": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "nite-ize-gear-tie-loopable-twist-tie"
+          }
+        },
+        "product_slide_eEwkfc": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "sprinter-rail-anchors"
+          }
+        },
+        "product_slide_CYXdnr": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "awning-rail-anchors-5-16"
+          }
+        },
+        "product_slide_kWGPCx": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "moonshade-canopy-sandbags"
+          }
+        },
+        "product_slide_CwQpMV": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "orange-screw"
+          }
+        },
+        "product_slide_C7Xb6V": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "4-5-vacuum-mount"
+          }
+        },
+        "product_slide_8JGKXc": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "full-zip-orbit-hoodie-unisex"
+          }
+        },
+        "product_slide_XRX8FV": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "awning-rail-anchors-5-16"
+          }
+        },
+        "product_slide_GzNrGL": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "ms-short-sleeve-orbit-eco-tee"
+          }
+        },
+        "product_slide_y9h6iD": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "moonmount-oval-vacuum-mount-with-eyelet"
+          }
+        },
+        "product_slide_jqVJVh": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "nite-ize-camjam-cord-tightener"
+          }
+        },
+        "product_slide_bLD7n8": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "eyebolt-kit"
+          }
+        },
+        "product_slide_j3zrhq": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "sprinter-rail-anchors"
+          }
+        },
+        "product_slide_EPRUkQ": {
+          "type": "product_slide",
+          "settings": {
+            "product_handle": "large-suction-cup-anchors"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_w4jgFE",
+        "product_slide_gG6Hqj",
+        "product_slide_eEwkfc",
+        "product_slide_CYXdnr",
+        "product_slide_kWGPCx",
+        "product_slide_CwQpMV",
+        "product_slide_C7Xb6V",
+        "product_slide_8JGKXc",
+        "product_slide_XRX8FV",
+        "product_slide_GzNrGL",
+        "product_slide_y9h6iD",
+        "product_slide_jqVJVh",
+        "product_slide_bLD7n8",
+        "product_slide_j3zrhq",
+        "product_slide_EPRUkQ"
+      ],
+      "settings": {}
+    },
+    "rich_text_NCAY3Y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_EPLVBL": {
+          "type": "heading",
+          "settings": {
+            "heading": "MEET THE MOONSHADE",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EPLVBL"
+      ],
+      "settings": {
+        "rich-custom-cls": "meet-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-02e839c3-091e-4a6c-a229-a18975526580",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
+    },
+    "youtube_section_qC4ALj": {
+      "type": "youtube-section",
+      "settings": {
+        "title": "MEET MOONSHADE",
+        "title-1": "",
+        "description": "Shade wherever you park. MoonShade is a portable vehicle awning that sets up in 5 minutes and packs into a bag when you're done. No roof rack, no permanent installation, no single vehicle it's locked to. Works on Jeeps, Sprinters, 4Runners, Tacomas, Subarus, pop-up trailers, and most things in between.",
+        "button_text": "SHOP NOW",
+        "button_url": "shopify://products/moonshade",
+        "video_url": "https://www.youtube.com/embed/8zGu9du7tBc?controls=0",
+        "full_width": true,
+        "enable_video_schema": true,
+        "video_title": "",
+        "video_upload_date": "",
+        "video_duration": ""
+      }
+    },
+    "rich_text_YhnDW3": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jffcBd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sets up easily, packs light, and delivers<br/>wide coverage everywhere you go.</p>"
+          }
+        },
+        "button_9VfUpd": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop now",
+            "button_link": "https://moonfab.com/products/moonshade",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_jffcBd",
+        "button_9VfUpd"
+      ],
+      "settings": {
+        "rich-custom-cls": "meet-mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-02e839c3-091e-4a6c-a229-a18975526580",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_HyGPFT": {
+      "type": "rich-text",
+      "blocks": {
+        "text_4xhnGH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Moon creates simple tools that </p><p>make it easier to enjoy the outdoors.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4xhnGH"
+      ],
+      "disabled": true,
+      "settings": {
+        "rich-custom-cls": "moon-creates mobile-title",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-02e839c3-091e-4a6c-a229-a18975526580",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_fNXyfJ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QUCk9n": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_805a2af5-d33c-4632-a632-e8a3b4e5bc0d.png",
+            "videoupload": "",
+            "title": "Durable",
+            "text": "<p>Quality materials and</p><p>construction built to last.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mXtd3A": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_58feec6e-2491-44f1-bb00-3e60d64ccdd1.png",
+            "videoupload": "",
+            "title": "Efficient",
+            "text": "<p>Portable, simple designs</p><p>that do more with less.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VRU7t7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_3a688a1c-8e78-454a-a788-09cfee26c935.png",
+            "videoupload": "",
+            "title": "Sustainable",
+            "text": "<p>Responsibly manufactured</p><p>for small footprint.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QUCk9n",
+        "column_mXtd3A",
+        "column_VRU7t7"
+      ],
+      "settings": {
+        "give-title": "moon-creates",
+        "img-id": "set-video",
+        "title": "Moon creates simple tools that make it easier to enjoy the outdoors.",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-02e839c3-091e-4a6c-a229-a18975526580",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 60
+      }
+    },
+    "introduce_video_VCrX79": {
+      "type": "introduce-video",
+      "blocks": {
+        "image_Wb4mn8": {
+          "type": "image",
+          "settings": {
+            "top_image": "shopify://shop_images/Picture_0ecb9f8b-de1f-4a2b-adf0-3a260d22f5c7.png"
+          }
+        },
+        "text_ncTi6A": {
+          "type": "text",
+          "settings": {
+            "text": "Intro",
+            "text_style": "body"
+          }
+        },
+        "heading_PqM7TU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Introducing: On the Road",
+            "heading_size": "h0"
+          }
+        },
+        "buttons_weJcL9": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Watch the Video",
+            "button_link_1": "https://youtu.be/YTRcP5wTxzo?si=rG_Lpxf6poqtI2lu",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "image_Wb4mn8",
+        "text_ncTi6A",
+        "heading_PqM7TU",
+        "buttons_weJcL9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "add-im-class": "on-the",
+        "image": "shopify://shop_images/Container.jpg",
+        "image_overlay_opacity": 100,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-16e2a3ff-fa1e-4735-89a8-6c4b44436227",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "about_image_with_text_P4V7ck": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "paragraph_f9xikX": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p><strong>Moon is a certified carbon-neutral company,</strong> and has been featured in renowned publications like Outside and Gear Junkie over the years. The community is made up of 20,000+ members including van lifers, RVers, overlanders, and weekend campers across the country.</p>"
+          }
+        },
+        "paragraph_ANhM7g": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p><strong>MoonShade has been tested in every condition</strong> — desert sun, mountain wind, Pacific Northwest rain — and refined based on real feedback from real rigs. The design principle hasn't changed since day one: Designed to go anywhere. Built to stay there.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_f9xikX",
+        "paragraph_ANhM7g"
+      ],
+      "name": "About text with image",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_5_3ed7688c-2015-450d-8837-27f17290918a.png",
+        "image_width": 45,
+        "image_radius": 12,
+        "column_gap": 48,
+        "heading": "About Moon",
+        "heading_size": 20,
+        "heading_line_height": 1.2,
+        "body_size": 14,
+        "body_line_height": 1.6,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "collapsible_content_dWWQrY": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_yXABa3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is a MoonShade awning?",
+            "icon": "none",
+            "row_content": "<p>MoonShade is a portable vehicle awning that attaches to cars, vans, RVs, SUVs, and trucks without permanent installation. It deploys in minutes and packs down small.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8hM8tG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What vehicles does MoonShade work with?",
+            "icon": "none",
+            "row_content": "<p>MoonShade works with most cars, SUVs, vans, trucks, and RVs — including Jeeps, Sprinters, Ford Transits, and Subarus. No roof rack or permanent modifications required. View our <a href=\"/pages/vehicle-compatibility-list\" title=\"Vehicle Compatibility List\">Vehicle Compatibility List</a> to see recommended setups for your vehicle.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GmP4QL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need a roof rack to use MoonShade?",
+            "icon": "none",
+            "row_content": "<p>No. MoonShade can attach using a variety of anchor methods — including MoonAnchors, magnets, suction mounts, existing roof racks, and other attachment points — without permanent modifications.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cXkBqQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is MoonShade waterproof?",
+            "icon": "none",
+            "row_content": "<p>We don’t “waterproof” our fabric because it would degrade the integrity of its UV resistance over time. That said, it is seam-sealed and the fabric is a technical 420 ripstop that sheds water like an umbrella.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_BLjGiq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I apply a coupon/discount code?",
+            "icon": "none",
+            "row_content": "<p>If you have a discount code, first add MoonShade to your cart <a href=\"https://moonfab.com/products/moonshade/\" title=\"https://moonfab.com/products/moonshade/\">here</a> as well as any other <a href=\"https://moonfab.com/collections/moonanchors/\" title=\"https://moonfab.com/collections/moonanchors/\">MoonAnchors</a> and accessories. When you're ready to checkout, click your cart at the top right of the screen and select \"Checkout\".</p><p><strong>If you're shopping on a mobile device</strong>, enter your information and shipping address, select your shipping option, and enter the discount code on the \"Payment\" page. In the input labeled \"Discount\", enter your code and click the arrow button to apply the discount. You will see the discount reflected at the top of the page.</p><p><strong>If you're shopping on a personal computer</strong>, enter your code into the input next to the “Apply\" button. Once your code is entered, click “Apply,” and you’ll see the discount reflected in your shopping cart.</p><p></p><p>Discount codes are not combinable and only one discount code will be applied at checkout.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qCzK6e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I’m having trouble with my payment, discount, or shipment. Where can I get help?",
+            "icon": "none",
+            "row_content": "<p>For help placing an order, or if you’re having trouble with an existing order, use our Order Support <a href=\"https://moonfab.co/order-support/\">form here.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bxYDTp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where can I buy MoonShade?",
+            "icon": "none",
+            "row_content": "<p>MoonShade is currently exclusively available through our website. To buy now, click <a href=\"https://moonfab.co/buy-moonshade\">here</a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bKR6QE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take MoonShade to ship?",
+            "icon": "none",
+            "row_content": "<p>Orders to the lower 48 United States usually arrive within 4-7 business days of your purchase.</p><p></p><p>Orders for in-stock items are typically <strong>processed within 2-3 business days</strong>. Processing times may be longer (4-6+ business days) during peak spring and summer travel seasons and during the winter holidays. If you need your order more quickly, please contact <a href=\"https://moonfab.com/pages/order-support\" title=\"Moon Order and Sales Support\">Moon Customer Experience</a>.</p><p></p><p>Orders containing backorder or out-of-stock items may not ship until all items are available. Contact <a href=\"https://moonfab.com/pages/order-support\" title=\"Moon Order and Sales Support\">Moon Customer Experience</a> for assistance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nNqwDQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does Moon offer international shipping?",
+            "icon": "none",
+            "row_content": "<p>Moon currently offers shipping to:</p><p>-United States</p><p>-Canada</p><p>-United Kingdom</p><p>-Ireland</p><p>-Germany</p><p>-Australia</p><p>-New Zealand</p><p></p><p>To get an accurate shipping charge calculation for your order, add MoonShade and other items to your cart. Then, proceed to checkout and enter your shipping address within one of the seven destination countries. Your shipping charge will appear if valid address information is provided.</p><p></p><p><strong>Delivered Duty Unpaid (DDU)</strong></p><p>Moon international orders are delivered duty unpaid (DDU). The purchaser/recipient of the order is responsible for calculating and paying the exact duty and taxes owed for the specific order upon receipt. This amount is in addition to the shipping charge collected at checkout.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_FPNdR6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What shipping carrier does Moon use?",
+            "icon": "none",
+            "row_content": "<p>Moon orders are shipped via UPS, DHL, or USPS depending on the location of the destination (e.g., Orders sent to PO Boxes will ship via USPS).</p><p>For U.S. orders, we offer Standard or Express shipping at checkout.</p><p>For International orders, we offer UPS Worldwide Expedited or Saver at checkout.</p><p><em>Please note: Orders to addresses outside of the U.S. are delivered duty unpaid (DDU) and the recipient is responsible for calculating and paying any taxes and import fees at receipt of the order.</em></p><p>For assistance with a delivery, please contact the carrier, or email Moon for assistance at <a href=\"mailto:support@moonfab.com\" title=\"mailto:support@moonfab.com\">support@moonfab.com</a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AF7KDp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is Moon's return policy?",
+            "icon": "none",
+            "row_content": "<p>Here at Moon Fabrications we are committed to 100% customer satisfaction. If you are not completely satisfied with your Moon order, please contact us <a href=\"https://moonfab.com/returns/\">here</a> within 30 days of purchase to receive a refund. We can only accept your return of new product with the tags still attached. For returns requested after 30 days, we offer store credit only.</p><p>If you need repairs or replacement parts, please use the form on the product support page <a href=\"https://moonfab.com/product-support/\">here</a>.</p><p>Cancellations placed before your order has shipped will not be charged.</p><p><strong>Please note</strong>: Depending on the reason for your return<strong> </strong>a shipping fee will be deducted from your refund to cover the cost of shipping when you use the prepaid label provided via email. Any additional shipping costs that occur will also be deducted from your refund.</p><p>We do our best to process returns and exchanges within <strong>7-10</strong> business days of receipt at our warehouse.</p><p><strong>General Return Instructions:</strong></p><p>Once you have your return label, please follow these steps:</p><p>1. Print your return label provided via email.</p><p>2. Pack the products and their original packaging inside the original shipping box (if possible). Please make sure to add your <strong>proof of purchase </strong>inside the box.</p><p>3. Tape your package up securely and attach the return shipping label to the front. Make sure all other shipping labels are removed or scratched out with dark marker. Tip: Attach a piece of paper over the previous labels and then affix the return label.</p><p>Once we receive your return, we will issue your refund or store credit. Refunds will take <strong>7-10 business days</strong> to post to the original form of payment.</p><p><em><strong>Note: We are unable to process returns outside of the United States or Canada.</strong></em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cXcf9k": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Route Shipping Insurance (Opt In or Out)",
+            "icon": "none",
+            "row_content": "<p>Route is a package tracking and shipping protection provider. We support brands by protecting their customers’ online orders from damage, loss, and theft. If something goes wrong, customers (that’s you!) can quickly and conveniently resolve their issue in just a few steps. And, they can track all their orders in one place via our mobile app.<br/><br/><strong>Please note</strong>: If the customer chooses not to Opt in to Route shipping insurance, Moon is not responsible for any damage, loss, or theft that may occur while in the hands of the carrier in transit to the delivery location.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_yXABa3",
+        "collapsible_row_8hM8tG",
+        "collapsible_row_GmP4QL",
+        "collapsible_row_cXkBqQ",
+        "collapsible_row_BLjGiq",
+        "collapsible_row_qCzK6e",
+        "collapsible_row_bxYDTp",
+        "collapsible_row_bKR6QE",
+        "collapsible_row_nNqwDQ",
+        "collapsible_row_FPNdR6",
+        "collapsible_row_AF7KDp",
+        "collapsible_row_cXcf9k"
+      ],
+      "settings": {
+        "caption-custom-cls": "faq-sec",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "<p>For more information check out <a href=\"https://moonfab.com/pages/moonshade-faq\" title=\"https://moonfab.com/pages/moonshade-faq\"><strong>FAQ page</strong></a></p>",
+        "caption": "",
+        "heading": "FAq",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "rich_text_CwxDc4": {
+      "type": "rich-text",
+      "blocks": {
+        "button_BBgHAh": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_BBgHAh"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_jTVHX7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Bm8ETC": {
+          "type": "button",
+          "settings": {
+            "button_label": "@moon_fabrications",
+            "button_link": "https://www.instagram.com/moon_fabrications/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Bm8ETC"
+      ],
+      "settings": {
+        "rich-custom-cls": "insta-btn mobile",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1736139247705581ba": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_JTTkcA": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_JTTkcA"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "image_banner_Lf8WQ7",
+    "image_banner_4iz8GQ",
+    "image_banner_x8PPcD",
+    "image_banner_ffbpaF",
+    "rich_text_Capyta",
+    "multicolumn_VzpULB",
+    "collection_slider_JhaR8i",
+    "multicolumn_U6aGnX",
+    "multicolumn_YYVciw",
+    "home_product_bundle_h4LXhx",
+    "multicolumn_WpVjTX",
+    "section_image_text_match_CCBbh4",
+    "image_with_text_Hk3Ncy",
+    "homepage_slider_hMQfRP",
+    "rich_text_NCAY3Y",
+    "youtube_section_qC4ALj",
+    "rich_text_YhnDW3",
+    "rich_text_HyGPFT",
+    "multicolumn_fNXyfJ",
+    "introduce_video_VCrX79",
+    "about_image_with_text_P4V7ck",
+    "collapsible_content_dWWQrY",
+    "rich_text_CwxDc4",
+    "rich_text_jTVHX7",
+    "1736139247705581ba"
+  ]
+}

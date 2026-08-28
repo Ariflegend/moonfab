@@ -1,0 +1,106 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_LXJVTT": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_Emtwwr": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop-1",
+            "custom_class": "mobile-footer-menu"
+          }
+        },
+        "link_list_VpcGiW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "shop",
+            "custom_class": "mobile-footer-menu"
+          }
+        },
+        "link_list_feRLfr": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Partnerships",
+            "menu": "partnerships",
+            "custom_class": "mobile-footer-menu"
+          }
+        },
+        "link_list_NhYjgR": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Account",
+            "menu": "account",
+            "custom_class": "mobile-footer-menu"
+          }
+        },
+        "link_list_qyeULA": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About Moon",
+            "menu": "about-moon",
+            "custom_class": "mobile-footer-menu"
+          }
+        },
+        "brand_information_zEyqFe": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_LXJVTT",
+        "link_list_Emtwwr",
+        "link_list_VpcGiW",
+        "link_list_feRLfr",
+        "link_list_NhYjgR",
+        "link_list_qyeULA",
+        "brand_information_zEyqFe"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4ee06d37-e4ed-47a7-bdd2-ee03159bfd4d",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "support_text": "Billing Terms",
+        "support_link": "https://moonfab.com/pages/billing-terms/",
+        "support_text-2": "Privacy Policy",
+        "support_link-2": "https://moonfab.com/pages/privacy-policy/",
+        "support_text-3": "Contact",
+        "support_link-3": "https://moonfab.com/pages/contact/",
+        "image-foot": "shopify://shop_images/green-place.svg_fill.png",
+        "copy-right": "<p>Moon is a certified carbon-neutral company.</p><p>Copyright 2026 Moon Fabrications Inc.</p>",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 72,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

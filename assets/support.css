@@ -1,0 +1,350 @@
+.purchasing-collapse svg.icon.icon-caret {
+    display: none;
+}
+.purchasing-collapse .collapsible-content-wrapper-narrow {
+    max-width: 81.4rem;
+}
+.purchasing-collapse .accordion.content-container {
+    border-top: 1px;
+    margin-bottom: 0;
+    border: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: #DDDBD7;
+}
+.purchasing-collapse .accordion.content-container:nth-child(1) {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.purchasing-collapse  .accordion.content-container.color-scheme-5.gradient {
+    margin-top: 0;
+}
+.row.pdf-sec {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 65px;
+    justify-content: space-between;
+}
+.row.pdf-sec .col-md-6.col-xl-3.text-center {
+    max-width: 100%;
+}
+.row.pdf-sec img.img-fluid {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+.row.pdf-sec figure.wp-block-image.size-large.border.w-100 {
+    margin: 0 0 1rem!important;
+    margin-top: -15px !IMPORTANT;
+    border: 1px solid #DDDBD7;
+}
+.video-grid.page-width {
+    max-width: 100%;
+}
+.container.pdf-section.page-width {
+    max-width: 100%;
+}
+.moonshade-setup-banner-content .page-width {
+    max-width: 100%;
+}
+.moonshade-setup-banner-content .rich-text__blocks {
+    max-width: 100%;
+}
+.moonshade-setup-banner-content p {
+    padding-top: 15px;
+    border-bottom: 1px solid #3B4752;
+    border-top: 1px solid #090B0C1A;
+    font-size: 20px;
+    color: #3b4752;
+    font-family: Poligon_Light;
+    padding-bottom: 60px;
+}
+.moonshade-setup-banner-content h2.rich-text__heading.rte.inline-richtext.h1 {
+    color: #3b4752;
+    margin-bottom: -2px;
+    font-size: 56px;
+    font-family: Berringer_Rough;
+}
+.video-item h3 {
+    color: #3B4752;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: left;
+    margin-top: 0;
+    font-family: 'Berringer_Rough';
+}
+.pdf-section h3 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Berringer_Rough';
+    margin-top: 0;
+}
+a.button.download-btn {
+    margin-top: 20px !IMPORTANT;
+    font-size: 15.13px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    height: 52px;
+    background-color: #3b4752;
+    line-height: 52px;
+    font-family: Poligon_Semi_Bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.question-title .page-width {
+    max-width: 100%;
+    width: 100%;
+}
+.question-title h2.rich-text__heading.rte.inline-richtext.h2 {
+    font-size: 24px;
+    margin-bottom: -16px;
+    font-family: Berringer_Rough;
+}
+p.info-line {
+    position: relative;
+    top: -21px;
+    color: #3B4752BF;
+    font-family: 'Poligon_Light';
+    font-size: 12.8px;
+}
+textarea#ContactForm-body {
+    height: 120px !important;
+}
+.contact-1 .contact__button {
+    margin-top: 0px;
+}
+.contact-1 .contact__fields {
+    padding-left: 27px;
+    padding-top: 46px;
+}
+.contact-1 .contact .form__message {
+    padding-left: 30px;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+.contact-1 ul.form-status-list.caption-large {
+    padding-left: 30px;
+}
+.faq-shade h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: Berringer_Rough;
+    font-size: 56px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #090B0C1A;
+}
+.faq-shade .page-width {
+  max-width: 100%;
+}
+.faq-shade  p {
+    font-size: 15.88px;
+    font-family: 'Poligon_Light';
+    color: #3B4752;
+}
+.free-ship h2.rich-text__heading.rte.inline-richtext.h2 {
+    font-size: 24px;
+    color: #3B4752;
+    margin-bottom: -13px;
+    font-family: Berringer_Rough;
+}
+.free-ship p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #3b4752;
+    font-family: 'Poligon_Light';
+}
+.purchasing-collapse h2.collapsible-content__heading.inline-richtext.h1 {
+    color: #3B4752;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: Berringer_Rough;
+}
+.purchasing-collapse h3.inline-richtext {
+    font-weight: 700;
+    color: #3b4752;
+    letter-spacing: 0;
+    font-family: Poligon_Bold;
+    text-decoration: none !important;
+}
+.faq-shade {
+    padding-top: 40px;
+}
+.purchasing-collapse  p a {
+  color: #3B4752 !important;
+}
+.request-part h2.rich-text__heading.rte.inline-richtext.h1 {
+    color: #3B4752;
+    font-family: 'Berringer_Rough';
+    font-size: 56px;
+}
+.request-part p {
+    margin-bottom: 0;
+    color: #3b4752;
+    font-size: 16px;
+    line-height: 24px;
+}
+.request-replace .contact__fields {
+    border-radius: 6px;
+    background-color: #fff;
+}
+.request-part .rich-text__text.rte {
+    margin-top: 10px;
+    margin-bottom: -30px;
+}
+.special-note p {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 1px #00000017;
+}
+.request-replace {
+    margin-bottom: 60px !important;
+}
+
+/* .request-replace {
+    margin-top: -30px;
+}
+ */
+.request-replace {
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+}
+a:focus, a:hover {
+    /* color: #000000 !important; */
+    text-decoration: underline;
+}
+
+@media screen and (min-width:750px) and (max-width:990px) {
+.faq-shade .rich-text__blocks, .free-ship .rich-text__blocks {
+    max-width: 100rem !important;
+}
+.request-part .rich-text__blocks {
+    max-width: 100rem !Important;
+    padding-left: 40px !Important;
+    padding-right: 40px !Important;
+}
+}
+
+
+
+@media screen and (max-width: 749px){
+.request-part.special-note .rich-text__text.rte {
+    margin-top: -30px !important;
+}
+.request-part {
+    padding-top: 50px !important;
+}
+
+.request-part h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 32px;
+}
+.request-replace .contact__fields {
+    margin: 8px;
+}
+.request-part .page-width {
+  padding: 0;
+}
+.request-replace {
+    margin-bottom: 30px !important;
+}
+.request-replace {
+    margin-bottom: 0px;
+}
+.contact__button button.button {
+    height: 49px !important;
+}
+.request-part h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 32px;
+}
+.request-replace .contact__fields {
+    padding-bottom: 50px !important;
+    padding: 20px;
+}
+.contact__fields span {
+    font-size: 11px;
+}
+.purchasing-collapse h3.inline-richtext {
+    font-size: 14.63px;
+}
+.purchasing-collapse .collapsible-content-wrapper-narrow {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.purchasing-collapse h2.collapsible-content__heading.inline-richtext.h1 {
+    font-size: 28px;
+    text-align: left;
+}
+.free-ship h2.rich-text__heading.rte.inline-richtext.h2 {
+    font-size: 21.6px;
+}
+.faq-shade h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-family: Berringer_Rough;
+    font-size: 31.88px;
+}
+.question-title {
+    padding-top: 40px !important;
+}
+.question-title {
+    padding-top: 35px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+.row.pdf-sec {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr)!important;
+    gap: 40px;
+    margin-top: 65px;
+    justify-content: space-between;
+}
+.video-item h3 {
+    font-size: 21.6px;
+}
+.video-grid.page-width.vido-box {
+    padding: 30px;
+}
+.moonshade-setup-banner-content h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 32px;
+}
+.contact-head h2.rich-text__heading.rte.inline-richtext.h1 {
+    font-size: 32px !important;
+}
+.contact-head .contact-head p {
+    font-size: 16px;
+}
+.contact-head {
+    padding-top: 50px;
+}
+.contact-1 .contact__fields {
+    padding: 5px !important;
+    padding-left: 27px;
+    padding-top: 46px;
+}
+p.info-line {
+    top: -13px !important;
+}
+.contact-form-first .field {
+    margin-bottom: 0px !important;
+}
+.contact-1 .contact__button {
+    margin-top: 15px;
+}
+.contact-form-first span.all-label-form {
+    margin-top: 0;
+    display: block;
+}
+}
+
+@media screen and (max-width: 400px){
+p.info-line {
+    position: relative;
+    top: -34px;
+    color: #3b4752bf;
+    font-family: Poligon_Light;
+    font-size: 10.8px;
+}
+}

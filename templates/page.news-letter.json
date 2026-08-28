@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_Fa9WpA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pQ3Dc7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Keep In Touch",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pQ3Dc7"
+      ],
+      "settings": {
+        "rich-custom-cls": "keep-in-tch",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 92,
+        "padding_bottom": 52
+      }
+    },
+    "news_letter_LkHabk": {
+      "type": "news-letter",
+      "settings": {
+        "form_title": "",
+        "submit_button_text": "",
+        "image-pick": "shopify://shop_images/Image_needsclick.png",
+        "news-letter-text": "<p>Subscribe to our newsletter now for special, seasonal surprises!</p>",
+        "text_last": "<h5>By submitting this form, you agree to receive marketing text messages from us at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our <a href=\"https://moonfab.com/pages/privacy-policy/\" title=\"https://moonfab.com/pages/privacy-policy/\">Privacy Policy</a>.</h5>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Fa9WpA",
+    "news_letter_LkHabk"
+  ]
+}

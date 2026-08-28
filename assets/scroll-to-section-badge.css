@@ -1,0 +1,97 @@
+.mobile-gallery-badge-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .mobile-gallery-badge-wrapper {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  .mobile-gallery-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background-color: var(--badge-bg-color, #3B4752);
+    color: var(--badge-text-color, #FFFFFF);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mobile-gallery-badge:hover,
+  .mobile-gallery-badge:focus {
+    opacity: 0.95;
+  }
+  
+  .mobile-gallery-badge__logo {
+    flex-shrink: 0;
+    width: 70px;
+    height: auto;
+    background: #fff;
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+  
+  .mobile-gallery-badge__logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .mobile-gallery-badge__text {
+    flex: 1;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    letter-spacing: -0.01em;
+  }
+  
+  .mobile-gallery-badge__icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--badge-text-color, #FFFFFF);
+    border-radius: 50%;
+  }
+  
+  .mobile-gallery-badge__icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--badge-text-color, #FFFFFF);
+  }
+  
+  /* Ensure parent has relative positioning */
+  .product__media-wrapper,
+  #product-image-slider-wrapper {
+    position: relative;
+  }
+  
+  /* Add bottom padding to swiper to make room for badge */
+  body .swiper-main {
+    padding-bottom: 65px;
+  }
+  
+  /* Adjust progress bar position if needed */
+  body .progress-bar-container {
+    bottom: 70px;
+  }
+}
+
+/* Ensure hidden on desktop */
+@media screen and (min-width: 750px) {
+  .mobile-gallery-badge-wrapper {
+    display: none !important;
+  }
+}

@@ -1,0 +1,154 @@
+{% assign skip_quiz_modal = false %}
+{% if product %}
+  {% for tag in product.tags %}
+    {% assign tag_down = tag | downcase %}
+    {% if tag_down == 'b2b-only' %}
+      {% assign skip_quiz_modal = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% unless skip_quiz_modal %}
+<div class="modal fade" id="setup-quiz" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body py-4">
+        <div class="quiz-wrapper">
+          <!-- Progress Bar -->
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 0%;">&nbsp;</div>
+          </div>
+          <!-- Step 1: Start -->
+          <div class="quiz-step text-center" data-question="start">
+            <img
+              class="rounded box-shadow mb-3"
+              src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/moonshade-connecting.webp?v=1742561071"
+              alt=""
+              width="1024"
+              height="448"
+              style="width:100%;height:auto;"
+            >
+            <h2>Let's Connect</h2>
+            <p>
+              MoonShade was designed to be compatible with almost any solid structure. MoonAnchors each have different
+              use cases that will help you set up MoonShade with your specific vehicle. Answer a few simple questions to
+              find out which MoonAnchors will work best for you.
+            </p>
+            <button class="btn btn-primary" id="beginQuiz">Begin</button>
+            <p class="mb-0">
+              <a href="#setup-quiz" data-bs-toggle="modal" data-bs-target="#setup-quiz">Cancel</a>
+            </p>
+          </div>
+
+          <!-- Step 2: Hardware Selection -->
+          <div class="quiz-step" style="display: none;" data-question="hardware">
+            <h3 class="text-center">What existing hardware do you have?</h3>
+            <div class="row align-items-stretch my-3 justify-content-center g-3">
+              <div class="col-6 col-lg d-flex align-items-stretch quizz-btn">
+                <button class="btn btn-quiz"><p>Sprinter w/ Roof Rails</p></button>
+                <button class="btn btn-quiz"><p>Awning Rail</p></button>
+                <button class="btn btn-quiz"><p>Roof Rack</p></button>
+                <button class="btn btn-quiz"><p>Bare Roof</p></button>
+              </div>
+            </div>
+            <div class="btns-div">
+              <button class="btn btn-outline-primary btn-back">Back</button>
+              <button class="btn btn-primary btn-next disabled">Next</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Awning Rail Size Selection (For Awning Rail) -->
+          <div class="quiz-step" style="display: none;" data-question="awning-rail-size">
+            <h3 class="text-center">What size is your awning rail?</h3>
+            <div class="row align-items-stretch my-3 justify-content-center g-3">
+              <div class="col-6 col-lg d-flex align-items-stretch quizz-btn">
+                <button class="btn btn-quiz">1/2" (Basecamp)</button>
+                <button class="btn btn-quiz">3/8"</button>
+                <button class="btn btn-quiz">5/6"</button>
+              </div>
+            </div>
+            <div class="btns-div">
+              <button class="btn btn-outline-primary btn-back">Back</button>
+              <button class="btn btn-primary btn-next disabled">Next</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Roof Material Selection (For Roof Rack) -->
+          <div class="quiz-step" style="display: none;" data-question="roof-material">
+            <h3 class="text-center">What is your roof made of?</h3>
+            <div class="row align-items-stretch my-3 justify-content-center g-3">
+              <div class="col-6 col-lg d-flex align-items-stretch quizz-btn">
+                <button class="btn btn-quiz">Steel</button>
+                <button class="btn btn-quiz">Not Steel</button>
+              </div>
+            </div>
+            <div class="btns-div">
+              <button class="btn btn-outline-primary btn-back">Back</button>
+              <button class="btn btn-primary btn-next disabled">Next</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Smooth or Textured Roof Selection -->
+          <div class="quiz-step" style="display: none;" data-question="roof-texture">
+            <h3 class="text-center">Smooth/Textured Roof?</h3>
+            <div class="row align-items-stretch my-3 justify-content-center g-3">
+              <div class="col-6 col-lg d-flex align-items-stretch quizz-btn">
+                <button class="btn btn-quiz">Smooth</button>
+                <button class="btn btn-quiz">Textured</button>
+              </div>
+            </div>
+            <div class="btns-div">
+              <button class="btn btn-outline-primary btn-back">Back</button>
+              <button class="btn btn-primary btn-next disabled">Next</button>
+            </div>
+          </div>
+
+          <!-- Step 5: Results -->
+          <div class="quiz-step final-step" style="display: none;">
+            <div class="finall-steppp">
+              <div class="col-lg text-lg-start leftt-col">
+                <img
+                  class="mb-3"
+                  src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/moon-anchors-hero_6802f19b-06c7-40f2-9dd2-ca140204da11.webp?v=1742447230"
+                  alt=""
+                  width="1024"
+                  height="683"
+                >
+                <h3>Your MoonShade Setup</h3>
+                <p class="mb-0">
+                  Based on your answers, we found these anchor solutions that should have you covered. Just add the anchor
+                  hardware you want, or click "Add Full Package" to add every recommended anchor to your order. Still have questions?
+                  Reach out to <a href="mailto:support@moonfab.com" class="quiz-link-hrf">support@moonfab.com</a> and we’ll be glad to help.
+
+                  {% comment %} Based on your answers, we found an anchor package that should have you covered. Every 9ftx7ft
+                  MoonShade includes suction cup anchors for free, which can be temporarily anchored to smooth surfaces.
+                  You may also want to add the recommended additional anchors. Just add the anchor hardware you want, or
+                  click "Add Full Package" to add every recommended anchor to your order. {% endcomment %}
+                </p>
+              </div>
+
+              <div class="final-step-content text-center">
+                <!-- Content populated dynamically -->
+              </div>
+            </div>
+            <p class="mb-0 text-center btm-textt">
+              Or, <a href="#" class="text-decoration-underline fw-bold btn btn-outline-primary btn-back">go back</a> and
+              edit your answers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  a.quiz-link-hrf {
+    color: #3b4752;
+}
+</style>
+{% endunless %}

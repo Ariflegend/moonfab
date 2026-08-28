@@ -1,0 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_LC38fH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FnTcMb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Wholesale Partners",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FnTcMb"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_GUycrk": {
+      "type": "rich-text",
+      "blocks": {
+        "text_J9BP8F": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Moon is building a network of wholesale partners or sales partners.</p>"
+          }
+        },
+        "text_qdPJVB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If your organization is interested in a wholesale or promotional partnership, contact us using the form below.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_J9BP8F",
+        "text_qdPJVB"
+      ],
+      "settings": {
+        "rich-custom-cls": "whole-sale-des",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 4,
+        "padding_bottom": 20
+      }
+    },
+    "wholesale_partners_X4TziU": {
+      "type": "wholesale-partners",
+      "settings": {
+        "contact-form-bg": "request-replace",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LC38fH",
+    "rich_text_GUycrk",
+    "wholesale_partners_X4TziU"
+  ]
+}

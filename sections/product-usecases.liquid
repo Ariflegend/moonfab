@@ -1,0 +1,702 @@
+<style>
+  .use-cases-section {
+    width: 100%;
+  }
+
+  .use-cases-section__wrapper {
+    max-width: 1447px;
+    margin: 0 auto;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 768px) {
+    .use-cases-section__wrapper {
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .use-cases-section__wrapper {
+      padding-left: 84px !important;
+      padding-right: 84px !important;
+    }
+  }
+
+  .use-cases-section__layout {
+    display: grid;
+    grid-template-columns: {{ section.settings.image_width }}% 1fr;
+    gap: {{ section.settings.column_gap }}px;
+    align-items: start;
+  }
+
+  @media screen and (max-width: 767px) {
+    .use-cases-section__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .use-cases-section__image-wrap {
+      position: static;
+    }
+  }
+
+  .use-cases-section__image-wrap {
+    position: relative;
+    width: 100%;
+    {%- if section.settings.image != blank -%}
+      aspect-ratio: {{ section.settings.image.aspect_ratio }};
+    {%- else -%}
+      aspect-ratio: 491 / 620;
+    {%- endif -%}
+  }
+
+  .use-cases-section__image-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    border-radius: {{ section.settings.image_radius }}px;
+    object-fit: cover !important;
+  }
+
+  .use-cases-section__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: rgba(var(--color-foreground, 0,0,0), 0.06);
+    border-radius: {{ section.settings.image_radius }}px;
+  }
+
+  {%- if section.settings.equalize_height -%}
+  @media screen and (min-width: 768px) {
+    .use-cases-section__layout {
+      align-items: stretch;
+    }
+    .use-cases-section__image-wrap {
+      height: 100%;
+      width: 100%;
+      aspect-ratio: auto;
+    }
+    .use-cases-section__image-placeholder {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      aspect-ratio: auto !important;
+    }
+  }
+  {%- endif -%}
+
+  @media screen and (min-width: 1400px) {
+    .use-cases-section__layout {
+      grid-template-columns: 491px 1fr;
+      gap: 48px;
+    }
+    .use-cases-section__image-wrap {
+      width: 491px;
+      height: 620px;
+      aspect-ratio: auto;
+    }
+  }
+
+  .use-cases-section__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .use-cases-section__title {
+    font-family: 'Berringer_Rough', sans-serif;
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    color: #3B4752;
+  }
+
+  .use-cases-section__description {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-weight: 400;
+    font-size: 15.5px;
+    line-height: 130%;
+    color: #3B4752 !important;
+    letter-spacing: 0;
+    vertical-align: middle;
+    opacity: 1;
+    max-width: 683px;
+    width: 100%;
+  }
+
+  .use-cases-section__description p {
+    margin: 0;
+    color: #3B4752 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-weight: 400;
+    font-size: 15.5px;
+    line-height: 130%;
+    letter-spacing: 0;
+    vertical-align: middle;
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 1400px) {
+    .use-cases-section__description,
+    .use-cases-section__description p {
+      {% comment %} white-space: nowrap; {% endcomment %}
+    }
+  }
+
+  .use-cases-section__group {
+    margin-top: 34px;
+  }
+
+  .use-cases-section__group-heading {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 14.38px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #717E8A !important;
+    margin: 0 0 15px 0;
+  }
+
+  .use-cases-section__popular .use-cases-section__group-heading {
+    margin-bottom: 8px;
+  }
+
+  .use-cases-section__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.grid_columns }}, 1fr);
+    gap: {{ section.settings.row_gap }}px {{ section.settings.column_item_gap }}px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .use-cases-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .use-cases-section__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .use-cases-section__icon {
+    flex-shrink: 0;
+    width: {{ section.settings.icon_width }}px;
+    height: {{ section.settings.icon_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .use-cases-section__group--works-best .use-cases-section__icon {
+    width: 80px;
+    height: 62px;
+  }
+
+  .use-cases-section__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .use-cases-section__icon-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground, 0,0,0), 0.08);
+  }
+
+  .use-cases-section__label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    color: #3B4752 !important;
+    line-height: 110%;
+    margin: 0;
+    padding-top: 0.2rem;
+  }
+
+  .use-cases-section__popular {
+    margin-top: 2.25rem;
+    padding-top: 1.5rem;
+    max-width: 672px;
+    width: 100%;
+  }
+
+  .use-cases-section__popular-list {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    color: #3B4752 !important;
+    margin: 0;
+    letter-spacing:0px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .use-cases-section {
+      padding-top: 53px !important;
+    }
+
+    .use-cases-section__wrapper {
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+
+    .use-cases-section__image-wrap {
+      max-width: 323px;
+      width: 100%;
+      aspect-ratio: 323 / 281;
+      margin: 0 auto;
+    }
+
+    .use-cases-section__title {
+      font-family: 'Berringer', 'Berringer_Rough', sans-serif !important;
+      font-weight: 400 !important;
+      font-size: 30px !important;
+      line-height: 46px !important;
+      letter-spacing: 0 !important;
+      vertical-align: middle !important;
+      color: #3B4752 !important;
+    }
+
+    .use-cases-section__description,
+    .use-cases-section__description p {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-weight: 400 !important;
+      font-size: 13px !important;
+      line-height: 130% !important;
+      letter-spacing: 0 !important;
+      vertical-align: middle !important;
+    }
+
+    .use-cases-section__group-heading {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 14.38px !important;
+      line-height: 20px !important;
+      letter-spacing: 2px !important;
+      vertical-align: middle !important;
+      text-transform: uppercase !important;
+    }
+
+    .use-cases-section__label {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-weight: 400 !important;
+      font-size: 12.79px !important;
+      line-height: 110% !important;
+      letter-spacing: 0 !important;
+      vertical-align: middle !important;
+    }
+
+    .use-cases-section__popular,
+    .use-cases-section__popular-list {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-weight: 400 !important;
+      font-size: 13px !important;
+      line-height: 130% !important;
+      letter-spacing: 0 !important;
+      vertical-align: middle !important;
+    }
+
+    .use-cases-section__grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px 12px !important;
+      max-width: 317px;
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="use-cases-section color-{{ section.settings.color_scheme.id }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="use-cases-section__wrapper page-width">
+    <div class="use-cases-section__layout">
+
+      <div class="use-cases-section__image-wrap">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400,600,900,1200' }}
+        {% else %}
+          <div class="use-cases-section__image-placeholder"></div>
+        {% endif %}
+      </div>
+
+      <div class="use-cases-section__content">
+        <div class="use-cases-section__header">
+          {% if section.settings.title != blank %}
+            <h2 class="use-cases-section__title">{{ section.settings.title }}</h2>
+          {% endif %}
+          {% if section.settings.description != blank %}
+            <div class="use-cases-section__description">{{ section.settings.description }}</div>
+          {% endif %}
+        </div>
+
+        {%- assign use_case_blocks = section.blocks | where: 'type', 'use_case' -%}
+        {%- if use_case_blocks.size > 0 -%}
+          <div class="use-cases-section__group">
+            {% if section.settings.use_cases_heading != blank %}
+              <h3 class="use-cases-section__group-heading">{{ section.settings.use_cases_heading }}</h3>
+            {% endif %}
+            <div class="use-cases-section__grid">
+              {% for block in use_case_blocks %}
+                <div class="use-cases-section__item" {{ block.shopify_attributes }}>
+                  <div class="use-cases-section__icon">
+                    {% if block.settings.icon != blank %}
+                      {% if block.settings.icon.src contains '.svg' %}
+                        <img src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.label | escape }}" loading="lazy" width="{{ section.settings.icon_width }}" height="{{ section.settings.icon_height }}">
+                      {% else %}
+                        {{ block.settings.icon | image_url: width: 120 | image_tag: loading: 'lazy', widths: '40,60,80,120' }}
+                      {% endif %}
+                    {% else %}
+                      <div class="use-cases-section__icon-placeholder"></div>
+                    {% endif %}
+                  </div>
+                  <p class="use-cases-section__label">{{ block.settings.label }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- assign works_best_blocks = section.blocks | where: 'type', 'works_best' -%}
+        {%- if works_best_blocks.size > 0 -%}
+          <div class="use-cases-section__group use-cases-section__group--works-best">
+            {% if section.settings.works_best_heading != blank %}
+              <h3 class="use-cases-section__group-heading">{{ section.settings.works_best_heading }}</h3>
+            {% endif %}
+            <div class="use-cases-section__grid">
+              {% for block in works_best_blocks %}
+                <div class="use-cases-section__item" {{ block.shopify_attributes }}>
+                  <div class="use-cases-section__icon">
+                    {% if block.settings.icon != blank %}
+                      {% if block.settings.icon.src contains '.svg' %}
+                        <img src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.label | escape }}" loading="lazy" width="{{ section.settings.icon_width }}" height="{{ section.settings.icon_height }}">
+                      {% else %}
+                        {{ block.settings.icon | image_url: width: 120 | image_tag: loading: 'lazy', widths: '40,60,80,120' }}
+                      {% endif %}
+                    {% else %}
+                      <div class="use-cases-section__icon-placeholder"></div>
+                    {% endif %}
+                  </div>
+                  <p class="use-cases-section__label">{{ block.settings.label }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {% if section.settings.popular_setups_heading != blank or section.settings.popular_setups_list != blank %}
+          <div class="use-cases-section__popular">
+            {% if section.settings.popular_setups_heading != blank %}
+              <h3 class="use-cases-section__group-heading">{{ section.settings.popular_setups_heading }}</h3>
+            {% endif %}
+            {% if section.settings.popular_setups_list != blank %}
+              <p class="use-cases-section__popular-list">{{ section.settings.popular_setups_list }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product use cases",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image column width",
+      "min": 25,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "equalize_height",
+      "label": "Match image height to text height",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Gap between image and content",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "MOONSHADE OG"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>One awning. Fits almost any vehicle. No roof rack, no permanent install, no single rig it's locked to.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Group headings"
+    },
+    {
+      "type": "text",
+      "id": "use_cases_heading",
+      "label": "First group heading",
+      "default": "COMMON USE CASES"
+    },
+    {
+      "type": "text",
+      "id": "works_best_heading",
+      "label": "Second group heading",
+      "default": "WORKS BEST ON"
+    },
+    {
+      "type": "range",
+      "id": "group_heading_size",
+      "label": "Group heading size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Icon and label sizing"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "label": "Icon width",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_height",
+      "label": "Icon height",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label text size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "grid_columns",
+      "label": "Items per row (desktop)",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "label": "Vertical gap between items",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "column_item_gap",
+      "label": "Horizontal gap between items",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Popular setups"
+    },
+    {
+      "type": "text",
+      "id": "popular_setups_heading",
+      "label": "Popular setups heading",
+      "default": "POPULAR SETUPS"
+    },
+    {
+      "type": "textarea",
+      "id": "popular_setups_list",
+      "label": "Popular setups list",
+      "info": "Separate items with a dash, e.g. Jeep Wrangler - Ford Bronco - Toyota 4Runner",
+      "default": "Jeep Wrangler - Ford Bronco - Toyota 4Runner - Toyota Tacoma - Ford F-150 - Subaru Outback - Honda Passport"
+    },
+    {
+      "type": "range",
+      "id": "popular_list_size",
+      "label": "Popular setups text size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 53
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 53
+    }
+  ],
+  "blocks": [
+    {
+      "type": "use_case",
+      "name": "Use case icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Text",
+          "default": "Weekend camping trips"
+        }
+      ]
+    },
+    {
+      "type": "works_best",
+      "name": "Works best on icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Text",
+          "default": "SUVs & crossovers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product use cases",
+      "blocks": [
+        { "type": "use_case", "settings": { "label": "Weekend camping trips" } },
+        { "type": "use_case", "settings": { "label": "Overlanding road-trips" } },
+        { "type": "use_case", "settings": { "label": "Beach days" } },
+        { "type": "use_case", "settings": { "label": "Backyard gatherings" } },
+        { "type": "use_case", "settings": { "label": "Outdoor booths & shows" } },
+        { "type": "use_case", "settings": { "label": "Boondocking" } },
+        { "type": "use_case", "settings": { "label": "Tailgating" } },
+        { "type": "works_best", "settings": { "label": "SUVs & crossovers" } },
+        { "type": "works_best", "settings": { "label": "Mid-size & full-size trucks" } },
+        { "type": "works_best", "settings": { "label": "Jeeps & open-top vehicles" } },
+        { "type": "works_best", "settings": { "label": "Lightweight towable trailers" } },
+        { "type": "works_best", "settings": { "label": "Teardrop & pop-up campers" } },
+        { "type": "works_best", "settings": { "label": "Truck campers & toppers" } },
+        { "type": "works_best", "settings": { "label": "Airstream Basecamp" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

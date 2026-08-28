@@ -1,0 +1,534 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "multicolumn_CmnwQA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_TreXCw": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_b9NrAa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Link_bcbbaa93-5444-4927-ac1f-ee07ff6d7771.png",
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_T6eYdV": {
+          "type": "column",
+          "settings": {
+            "videoupload": "",
+            "title": "",
+            "text": "",
+            "link_label": "Secure Early Bird Offer",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "column_TreXCw",
+        "column_b9NrAa",
+        "column_T6eYdV"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "give-title": "",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1721341d-c332-4413-909e-7a5c6bf59721",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "moon_surface_d4Gfrr": {
+      "type": "moon-surface",
+      "name": "Moon Surface Section",
+      "settings": {
+        "heading": "THE MOONSURFACE",
+        "subheading": "A strong, adaptable table that packs down small.",
+        "caption": "Legs are overrated; ditch the wobble and finding \"perfectly level\" ground. MoonSurface is the just-the-right-size surface ready to serve as a mobile work bench, food prep table, or whatever else you come up with.",
+        "button_text": "",
+        "button_note": "",
+        "video_url": "https://www.youtube.com/watch?v=TRATkLrWPFI",
+        "video_embed": "",
+        "custom_liquid": "<div class=\"klaviyo-form-XVA5D8\"></div>"
+      }
+    },
+    "multirow_E9aa3x": {
+      "type": "multirow",
+      "blocks": {
+        "row_YbBjr6": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/MGRdeesYjlXFy1iQAEFqL8NZ9Vi6w2kzPtomAzHB_jpg.jpg",
+            "caption": "",
+            "heading": "A 36-Inch .09 Aluminum Table",
+            "text": "<p>After testing multiple sizes and gauges of aluminum and steel, we landed on a 36in .09 Aluminum, C-channel reinforced MoonSurface that is strong enough to handle anything you throw at it while still being lightweight, packable, and waterproof.  <br/><br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_cpHPyC": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/MGRdeesYjlXFy1iQAEFqL8NZ9Vi6w2kzPtomAzHB.jpg_1.jpg",
+            "caption": "",
+            "heading": "Solid and Vacuum Mounted",
+            "text": "<p>The MoonSurface is held up by two incredibly strong 4.5-inch round MoonMounts that easily hold 100lbs and give you the flexibility to mount your surface whenever and wherever you want. Yes, we tested it with 190 lbs—but don’t try this at home. For safe everyday use, keep loads well below this weight.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_YbBjr6",
+        "row_cpHPyC"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "custom-cls-roww": "all-row-title",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "row_color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "scrolling_text_carousel_3DztEN": {
+      "type": "scrolling-text-carousel",
+      "name": "Scrolling Text Carousel",
+      "settings": {
+        "marquee_items": "NO LEGS., HEAVY-DUTY., NO RUST., MADE IN THE USA.",
+        "speed": 20,
+        "direction": "left"
+      }
+    },
+    "rich_text_DamLxA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6Q43Pp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Adaptable & Customizable",
+            "heading_size": "h1"
+          }
+        },
+        "text_Ph36nt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The MoonSurface straps and bumpers allow you to mount it on virtually any vehicle, whether a totally flat Box Truck or a curved SUV. Once mounted, the versatile MOLLE grid panel enables you to strap in utensils, tools, and whatever else you need. <br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Q43Pp",
+        "text_Ph36nt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "rich-custom-cls": "made-in-us adaptable",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_3pYdJE": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HNENbN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/EASY_SETUP_1.jpg",
+            "videoupload": "",
+            "title": "1. Attach the MoonMounts",
+            "text": "<p>Stick your MoonMount vacuum anchors to a clean, smooth surface on your rig.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9M67iB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/STEEL_STAKES.jpg",
+            "videoupload": "",
+            "title": "2. Adjust the straps & bumpers",
+            "text": "<p>Hook the table onto the anchors, pull the straps tight, and twist the bumpers until everything’s snug.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9jyfAh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WEATHERPROOF.png",
+            "videoupload": "",
+            "title": "3. Fold + Roll",
+            "text": "<p>When you’re done, detach, fold it flat, and slide it into the carry bag until the next stop.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HNENbN",
+        "column_9M67iB",
+        "column_9jyfAh"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "give-title": "attach-surface",
+        "img-id": "set-video",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_QRd3nb": {
+      "type": "multirow",
+      "blocks": {
+        "row_WcHF9d": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-09-23_at_13.29.17_1.png",
+            "caption": "",
+            "heading": "Lightweight & Packable",
+            "text": "<p>The Surface folds down to 2” in and weighs X lbs. Making dinner at your neighbor's campsite? Bring the MoonSurface with you!</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_B37Dyh": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/MGRdeesYjlXFy1iQAEFqL8NZ9Vi6w2kzPtomAzHB_jpg.png",
+            "caption": "",
+            "heading": "Moon Surface specs",
+            "text": "<p><strong>Size deployed: </strong></p><ul><li>Table surface: 36” x 20”</li><li>MOLLE panel height: 20”</li></ul><p><strong>Size Stowed:</strong> 20” x 36” x2”<br/><strong>Weight:</strong> TBD<br/><strong>Table Materials: </strong>Aluminum (powder coated black), Black nylon webbing<br/><br/><strong>Table Components: </strong></p><ul><li>Aluminum table surface</li><li>Aluminum MOLLE panel back panel</li><li>Welded on aluminum bullet hinges with adjustable webbing straps and rubber bumpers<br/></li></ul><p><strong>Hinges:</strong> Aluminum, welded-on,  bullet hinges<br/><strong>Straps:</strong> 1” wide nylon webbing, adjustable<br/><strong>Mounts:</strong> MoonMount Vacuum Anchors</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_WcHF9d",
+        "row_B37Dyh"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "custom-cls-roww": "all-row-title lightweight-align",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "row_color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_T4TzfB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TJneCr": {
+          "type": "heading",
+          "settings": {
+            "heading": "MADE IN USA",
+            "heading_size": "h1"
+          }
+        },
+        "text_R6e48R": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We started Moon while converting our van and couldn’t find an awning we liked. That project turned into a company, and the best product ideas still come from testing gear with our friends out in the wild.<br/><br/>We’re proud to say Moon Surface is made with that same spirit. It’s built by our Amish partners in Indiana, who share our care for quality, simplicity, and things that last.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TJneCr",
+        "text_R6e48R"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "rich-custom-cls": "made-in-us for-desk",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_HMKEzk": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "heading-plane": "",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_2_text": "",
+        "button_2_link": "",
+        "review_title": ".",
+        "user_name": "",
+        "total_reviews": 467,
+        "add-im-class": "made-in-usa",
+        "add-idd-class": "",
+        "image": "shopify://shop_images/MGRdeesYjlXFy1iQAEFqL8NZ9Vi6w2kzPtomAzHB_jpg_acafc90b-a025-485b-bc7b-d369a01c5a85.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-360f400a-fbe5-422b-9b90-707363bb61e2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_TmdkRD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_b8cAbj": {
+          "type": "heading",
+          "settings": {
+            "heading": "MADE IN USA",
+            "heading_size": "h1"
+          }
+        },
+        "text_69qJEG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We started Moon while converting our van and couldn’t find an awning we liked. That project turned into a company, and the best product ideas still come from testing gear with our friends out in the wild.<br/><br/>We’re proud to say Moon Surface is made with that same spirit. It’s built by our Amish partners in Indiana, who share our care for quality, simplicity, and things that last.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_b8cAbj",
+        "text_69qJEG"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "rich-custom-cls": "made-in-us for-mob",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_8zMDW8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_ekND4t": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How is Moon Surface different from traditional camp tables? ",
+            "icon": "none",
+            "row_content": "<p>How is Moon Surface different from traditional camp tables? Fold-leg tables eat ground space, fight you on uneven terrain, and still wobble (and take up far too much space when you store them). Moon Surface mounts straight to your rig with vacuum anchors—no legs, no wobble, no hassle. Then it folds down to 2” wide for easy storage.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_R7ePma": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will Moon Surface fit my vehicle?",
+            "icon": "none",
+            "row_content": "<p>Yes—if you’ve got at least 36 inches of smooth, non-porous panel space. Vans, SUVs, trucks, trailers, and RVs all work.<br/>How much weight can it hold?<br/><br/> We’ve tested it with up to 100 lbs. Stability depends on clean panels, snug straps, and firm bumper contact.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_R4tEna": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will it scratch my paint?",
+            "icon": "none",
+            "row_content": "<p>No. Adjustable rubber bumpers spread the load and protect your finish. Just mount on clean panels so dirt doesn’t get trapped.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_k6jN3t": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the grid pattern on the back for? ",
+            "icon": "none",
+            "row_content": "<p>That’s a MOLLE panel. It lets you clip or strap utensils, tools, or camp gear so your essentials are always right where you want them.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Pb8FKC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How big is it?",
+            "icon": "none",
+            "row_content": "<p>Open: 36 inches wide by 20 inches deep.<br/>Closed: 36 by 20 by just 2 inches flat. Big enough to prep a full meal, small enough to tuck away.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_K4iPMy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does it mount?",
+            "icon": "none",
+            "row_content": "<p>Moon Surface attaches with MoonMount vacuum anchors, the same system we use for MoonShade. Stick them to any clean, smooth surface, hook the table, tighten the straps, and twist the bumpers into place.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_W7kKVQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I move it around?",
+            "icon": "none",
+            "row_content": "<p>Yes. Pop the anchors off and stick them somewhere else on your rig if you want shade, more space, or a new view.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jnJfRq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it made in the USA?",
+            "icon": "none",
+            "row_content": "<p>Yep, made in Indiana with US partners.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KarhjE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will I get mine?",
+            "icon": "none",
+            "row_content": "<p>We’ll share a full production and shipping timeline on Kickstarter. Backers will get updates every step of the way.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_ekND4t",
+        "collapsible_row_R7ePma",
+        "collapsible_row_R4tEna",
+        "collapsible_row_k6jN3t",
+        "collapsible_row_Pb8FKC",
+        "collapsible_row_K4iPMy",
+        "collapsible_row_W7kKVQ",
+        "collapsible_row_jnJfRq",
+        "collapsible_row_KarhjE"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption-custom-cls": "faq-moon-surface",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "faq",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-856a008f-e12c-4b56-95ce-827008207333",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_newsletter_banner_CaXzpm": {
+      "type": "custom-newsletter-banner",
+      "name": "Custom Newsletter Banner",
+      "settings": {
+        "bg_image": "shopify://shop_images/Screenshot_2025-08-28_at_20.07.09_1.jpg",
+        "overlay_opacity": 30,
+        "heading": "SAVE 25% WITH VIP PRICING!",
+        "subheading": "Put down $1 today and guarantee 25% off the Moon Surface when our Kickstarter goes live—the best price we'll ever offer for VIP backers only!",
+        "newsletter_button_text": "",
+        "cta_button_text": "",
+        "cta_button_link": "",
+        "note_text": "",
+        "custom_liquid": "<div class=\"klaviyo-form-XVA5D8 btm-form\"></div>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_CmnwQA",
+    "moon_surface_d4Gfrr",
+    "multirow_E9aa3x",
+    "scrolling_text_carousel_3DztEN",
+    "rich_text_DamLxA",
+    "multicolumn_3pYdJE",
+    "multirow_QRd3nb",
+    "rich_text_T4TzfB",
+    "image_banner_HMKEzk",
+    "rich_text_TmdkRD",
+    "collapsible_content_8zMDW8",
+    "custom_newsletter_banner_CaXzpm"
+  ]
+}

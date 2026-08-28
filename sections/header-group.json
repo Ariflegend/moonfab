@@ -1,0 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_pFaqgW": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Happy Father's Day | 20% OFF SITEWIDE - ENDS FRIDAY 6/26",
+            "link": "shopify://pages/which-moonshade-is-right-for-me"
+          }
+        },
+        "announcement_bAYbxE": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "\"Spring is nature's way of saying, 'Let's party!'\"",
+            "link": "shopify://pages/which-moonshade-is-right-for-me"
+          }
+        },
+        "announcement_RfEqU3": {
+          "type": "announcement",
+          "settings": {
+            "text": "We’re currently transitioning our warehouse and shipments may be delayed. Got questions?",
+            "link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_pFaqgW",
+        "announcement_bAYbxE",
+        "announcement_RfEqU3"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.announcement-bar {padding-top: 15px; padding-bottom: 5px; }}",
+        ".announcement-bar {padding-top: 0px; padding-bottom: 5px;}"
+      ],
+      "settings": {
+        "announcement_heading_cstm_cls": "first-anc-bar cstm-anchr-bar",
+        "color_scheme": "scheme-1721341d-c332-4413-909e-7a5c6bf59721",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true
+      }
+    },
+    "announcement_bar_VhtxUD": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_fYUbpW": {
+          "type": "announcement",
+          "settings": {
+            "text": "Pre-reserve by 3/16 for an additional 5% off.",
+            "link": ""
+          }
+        },
+        "announcement_D3LUmC": {
+          "type": "announcement",
+          "settings": {
+            "text": "Launches on Kickstarter 3/17.",
+            "link": "https://www.kickstarter.com/projects/moonfab/moonsurface-the-versatile-outdoor-table-built-with-purpose?ref=b3u4rh"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_fYUbpW",
+        "announcement_D3LUmC"
+      ],
+      "custom_css": [],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "announcement_heading_cstm_cls": "second-lp-reseve",
+        "color_scheme": "scheme-d2ac83c9-49a5-4baf-9d6b-6bb745b2aadb",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "header-menu-16",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "always",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
+        "mobile_logo_position": "center",
+        "enable_webpage_schema": true,
+        "enable_search_action_schema": true,
+        "webpage_name": "",
+        "webpage_description": "",
+        "margin_bottom": 0,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "announcement_bar_VhtxUD",
+    "header"
+  ]
+}

@@ -1,0 +1,307 @@
+<section
+  class="moonshade-fitment-guide"
+  style="
+    --desktop-padding-top: {{ section.settings.desktop_padding_top }}px;
+    --desktop-padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    --desktop-padding-horizontal: {{ section.settings.desktop_padding_horizontal }}px;
+    --mobile-padding-top: {{ section.settings.mobile_padding_top }}px;
+    --mobile-padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    --mobile-padding-horizontal: {{ section.settings.mobile_padding_horizontal }}px;
+
+    --eyebrow-size: {{ section.settings.eyebrow_size }}px;
+    --eyebrow-letter-spacing: {{ section.settings.eyebrow_letter_spacing }}px;
+    --heading-size: {{ section.settings.heading_size }}px;
+    --mobile-heading-size: {{ section.settings.mobile_heading_size }}px;
+    --body-size: {{ section.settings.body_size }}px;
+    --mobile-body-size: {{ section.settings.mobile_body_size }}px;
+
+    --bg: {{ section.settings.background_color }};
+    --eyebrow-color: {{ section.settings.eyebrow_color }};
+    --heading-color: {{ section.settings.heading_color }};
+    --body-color: {{ section.settings.body_color }};
+  "
+>
+  <div class="moonshade-fitment-guide__inner">
+    <div class="moonshade-fitment-guide__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="moonshade-fitment-guide__eyebrow">
+          {{ section.settings.eyebrow }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="moonshade-fitment-guide__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+    </div>
+
+    {% if section.settings.description != blank %}
+      <div class="moonshade-fitment-guide__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .moonshade-fitment-guide {
+    background: var(--bg);
+    width: 100%;
+  }
+
+  .moonshade-fitment-guide__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: var(--desktop-padding-top) var(--desktop-padding-horizontal) var(--desktop-padding-bottom);
+    box-sizing: border-box;
+  }
+
+  .moonshade-fitment-guide__content {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .moonshade-fitment-guide__eyebrow {
+    margin: 0;
+    color: var(--eyebrow-color);
+    font-size: var(--eyebrow-size);
+    letter-spacing: var(--eyebrow-letter-spacing);
+    text-transform: uppercase;
+    font-family: "Helvetica Neue", sans-serif;
+    line-height: 20px;
+    font-weight:700 !important;
+  }
+
+  .moonshade-fitment-guide__heading {
+    margin: 0;
+    color: var(--heading-color);
+    font-size: var(--heading-size);
+    line-height: 64.4px;
+    font-family: "Berringer_Rough", sans-serif;
+  }
+
+  .moonshade-fitment-guide__description {
+    max-width: 705px;
+    color: var(--body-color);
+    font-size: var(--body-size);
+    line-height: 130%;
+    font-weight: 300;
+    letter-spacing:0px;
+  }
+
+  .moonshade-fitment-guide__description p {
+    font-family: "Poligon", sans-serif !important;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .moonshade-fitment-guide__inner {
+      padding: var(--mobile-padding-top) var(--mobile-padding-horizontal) var(--mobile-padding-bottom);
+      gap: 30px;
+    }
+
+    .moonshade-fitment-guide__heading {
+      font-size: var(--mobile-heading-size);
+    }
+
+    .moonshade-fitment-guide__description {
+      max-width: 100%;
+      font-size: var(--mobile-body-size);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Moonshade Fitment Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "MOON FABRICATIONS — VEHICLE FITMENT GUIDE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WHICH MOONSHADE FITS MY VEHICLE?"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Based on real customer setups and vehicle characteristics like size, shape, and roofline, this guide helps you find the MoonShade that's the best fit for your vehicle.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Top Padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Bottom Padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_horizontal",
+      "label": "Desktop Horizontal Padding",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Top Padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Bottom Padding",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_horizontal",
+      "label": "Mobile Horizontal Padding",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 31
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow Size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Eyebrow Letter Spacing",
+      "min": 0,
+      "max": 8,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Desktop Heading Size",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile Heading Size",
+      "min": 40,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Desktop Body Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_body_size",
+      "label": "Mobile Body Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#3B4752"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color",
+      "default": "#717E8A"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moonshade Fitment Guide"
+    }
+  ]
+}
+{% endschema %}

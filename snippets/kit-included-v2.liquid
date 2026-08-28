@@ -1,0 +1,106 @@
+{% comment %}
+  Alternate “Included in this kit” UI for kit PDPs only. Same data as .purchase-included
+  (choose_bundle_product) + same add-to-cart variant as .button-cart.
+  Scoped to .kit-included-v2 — does not alter original markup.
+{% endcomment %}
+{{ 'kit-included-v2.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign product_handles = product.metafields.custom.choose_bundle_product
+  assign fit_href = section.settings.kit_v2_fit_quiz_url | strip
+  assign quiz_pg = section.settings.kit_v2_fit_quiz_page
+  if fit_href == blank and quiz_pg != blank
+    assign fit_href = quiz_pg.url
+  endif
+  assign fit_h = section.settings.kit_v2_fit_heading | default: 'Check if it fits your vehicle'
+  assign fit_s = section.settings.kit_v2_fit_subtext | default: 'Find your MoonShade →'
+  assign full_lbl = section.settings.kit_v2_full_kit_label | default: 'Want the full kit? Add everything →'
+%}
+
+<div class="kit-included-v2" data-kit-included-v2>
+  <h2 class="kit-included-v2__heading">Included in this kit</h2>
+
+  <div class="kit-included-v2__cards">
+    {% if product_handles %}
+      {% assign handles_array = product_handles | split: ',' %}
+      {% for handle in handles_array %}
+        {% assign trimmed_handle = handle | strip %}
+        {% assign related_product = all_products[trimmed_handle] %}
+        {%- # <spark:9qu7j> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:related_product -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:9qu7j> -%}
+        {% if related_product %}
+          {% liquid
+            assign card_title = related_product.title
+            if related_product.handle == 'moonmount-oval-vacuum-mount-with-eyelet' or related_product.handle == '4-5-vacuum-mount'
+              assign card_title = card_title | append: ' (pair)'
+            endif
+            assign sub = related_product.metafields.custom.bundle_card_subtitle.value
+            if sub == blank
+              assign sub = related_product.description | strip_html | truncate: 110
+            endif
+          %}
+
+          <article class="kit-included-v2__card">
+            <div class="kit-included-v2__media">
+              <div
+                class="info-icon popup-trigger"
+                data-title="{{ related_product.title | escape }}"
+                data-description="{{ related_product.description | escape }}"
+                data-image="{{ related_product.featured_image | img_url: 'medium' }}"
+                data-price="{{ related_product.price | money }}"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="1.38637" y="1.49086" width="13.778" height="13.778" rx="6.88902" stroke="#3B4752" stroke-opacity="0.5" stroke-width="1.05985"/>
+                  <path d="M7.81726 11.9937V6.93584H8.73341V11.9937H7.81726ZM8.27534 5.96243C8.0972 5.96243 7.94769 5.90517 7.82681 5.79065C7.71229 5.67613 7.65503 5.53617 7.65503 5.37075C7.65503 5.19898 7.71229 5.05583 7.82681 4.94131C7.94769 4.82679 8.0972 4.76953 8.27534 4.76953C8.45348 4.76953 8.59981 4.82679 8.71432 4.94131C8.8352 5.04946 8.89564 5.18625 8.89564 5.35167C8.89564 5.52344 8.83839 5.66977 8.72387 5.79065C8.60935 5.90517 8.45984 5.96243 8.27534 5.96243Z" fill="#3B4752" fill-opacity="0.5"/>
+                </svg>
+              </div>
+              <img
+                src="{{ related_product.featured_image | img_url: 'medium' }}"
+                alt="{{ related_product.title | escape }}"
+                width="144"
+                height="144"
+                loading="lazy"
+              >
+            </div>
+            <div class="kit-included-v2__body">
+              <h3 class="kit-included-v2__title">{{ card_title }}</h3>
+              {% if sub != blank %}
+                <p class="kit-included-v2__sub">{{ sub }}</p>
+              {% endif %}
+            </div>
+            <a href="{{ related_product.url }}" class="kit-included-v2__view">
+              <span>View</span>
+              <svg width="17" height="8" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0.5 3.18164H0V4.18164H0.5V3.68164V3.18164ZM16.3536 4.03519C16.5488 3.83993 16.5488 3.52335 16.3536 3.32809L13.1716 0.146107C12.9763 -0.0491555 12.6597 -0.0491555 12.4645 0.146107C12.2692 0.341369 12.2692 0.657951 12.4645 0.853214L15.2929 3.68164L12.4645 6.51007C12.2692 6.70533 12.2692 7.02191 12.4645 7.21717C12.6597 7.41244 12.9763 7.41244 13.1716 7.21717L16.3536 4.03519ZM0.5 3.68164V4.18164H16V3.68164V3.18164H0.5V3.68164Z" fill="black"/>
+              </svg>
+            </a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="kit-included-v2__cta">
+    {% if fit_href != blank %}
+      <a href="{{ fit_href }}" class="kit-included-v2__fit">
+        <span class="kit-included-v2__fit-inner">
+          <span class="kit-included-v2__fit-title">{{ fit_h }}</span>
+          <span class="kit-included-v2__fit-sub">{{ fit_s }}</span>
+        </span>
+      </a>
+    {% endif %}
+
+    <div class="kit-included-v2__cart-wrap">
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-form-kit-included-v2" class="kit-included-v2__cart-form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="kit-included-v2__full-kit">{{ full_lbl }}</button>
+      </form>
+    </div>
+  </div>
+</div>

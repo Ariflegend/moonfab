@@ -1,0 +1,717 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_PUXDDC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_z8VP83": {
+          "type": "heading",
+          "settings": {
+            "heading": "MoonShade FAQ",
+            "heading_size": "h1"
+          }
+        },
+        "text_8XmykR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find detailed info below about MoonShade purchases, features, setup, care, and design. If you have a question about how to setup or use MoonShade and can’t find the answers below, send us a product support request <a href=\"https://moonfab.com/pages/product-support-1\" title=\"https://moonfab.com/pages/product-support-1\">here</a>.  If you need help with a Moon purchase or shipment, contact us <a href=\"https://moonfab.com/pages/contact\" title=\"https://moonfab.com/pages/contact\">here.</a></p>"
+          }
+        },
+        "button_XAjRdc": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_z8VP83",
+        "text_8XmykR",
+        "button_XAjRdc"
+      ],
+      "settings": {
+        "rich-custom-cls": "faq-shade",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_8mdGcR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kefe4q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Free Shipping on MoonShade Awning Orders",
+            "heading_size": "h2"
+          }
+        },
+        "text_xzPeHR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free shipping deal applies to any orders that total $300 USD or more. At this time, free shipping applies to Standard Shipping to destinations within the 48 contiguous United States for shipping rates totaling under $35. International, Alaska, Hawaii, U.S. Postal Territories, and expedited delivery will incur normal shipping rates.</p>"
+          }
+        },
+        "button_kJpLgQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kefe4q",
+        "text_xzPeHR",
+        "button_kJpLgQ"
+      ],
+      "settings": {
+        "rich-custom-cls": "free-ship",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_c3e9MK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UUqdBX": {
+          "type": "heading",
+          "settings": {
+            "heading": "MoonShade/MoonWall Bundle Deal",
+            "heading_size": "h2"
+          }
+        },
+        "text_piw3q3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Purchase one <a href=\"https://moonfab.com/products/moonshade\" title=\"https://moonfab.com/products/moonshade\">MoonShade</a>  and a  <a href=\"https://moonfab.com/products/moonwall-short\" title=\"https://moonfab.com/products/moonwall-short\">MoonWall Short</a> or <a href=\"https://moonfab.com/products/moonwall-long\" title=\"https://moonfab.com/products/moonwall-long\">MoonWall Long</a>  and receive $10 off each MoonWall. Can be combined with certain other discounts, including MoonShade referral discount and free shipping promotions. Deal can be redeemed once per transaction, for $10 off each MoonWall bundled with the MoonShade. Deal will be auto-applied at checkout, no code needed. Exclusions may apply. Moon reserves the right to limit or discontinue the bundle deal at any time.</p>"
+          }
+        },
+        "button_kKehwM": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UUqdBX",
+        "text_piw3q3",
+        "button_kKehwM"
+      ],
+      "settings": {
+        "rich-custom-cls": "free-ship",
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 16
+      }
+    },
+    "collapsible_content_wtH4jV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_dWLCN3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I apply a coupon/discount code?",
+            "icon": "none",
+            "row_content": "<p>If you have a discount code, first add MoonShade to your cart <a href=\"https://moonfab.com/products/moonshade/\" title=\"https://moonfab.com/products/moonshade/\">here</a> as well as any other <a href=\"https://moonfab.com/collections/moonanchors/\" title=\"https://moonfab.com/collections/moonanchors/\">MoonAnchors</a> and accessories. When you're ready to checkout, click your cart at the top right of the screen and select \"Checkout\".</p><p><strong>If you're shopping on a mobile device</strong>, enter your information and shipping address, select your shipping option, and enter the discount code on the \"Payment\" page. In the input labeled \"Discount\", enter your code and click the arrow button to apply the discount. You will see the discount reflected at the top of the page.</p><p><strong>If you're shopping on a personal computer</strong>, enter your code into the input next to the “Apply\" button. Once your code is entered, click “Apply,” and you’ll see the discount reflected in your shopping cart.</p><p></p><p>Discount codes are not combinable and only one discount code will be applied at checkout.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wz37nM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I’m having trouble with my payment, discount, or shipment. Where can I get help?",
+            "icon": "none",
+            "row_content": "<p>For help placing an order, or if you’re having trouble with an existing order, use our Order Support form <a href=\"https://moonfab.co/order-support/\">here</a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TinAJP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where can I buy MoonShade?",
+            "icon": "none",
+            "row_content": "<p>MoonShade is currently exclusively available through our website. To buy now, click <a href=\"https://moonfab.co/buy-moonshade\">here</a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XN8Wjf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take MoonShade to ship?",
+            "icon": "none",
+            "row_content": "<p>Orders to the lower 48 United States usually arrive within 4-7 business days of your purchase.</p><p></p><p>Orders for in-stock items are typically <strong>processed within 2-3 business days</strong>. Processing times may be longer (4-6+ business days) during peak spring and summer travel seasons and during the winter holidays. If you need your order more quickly, please contact <a href=\"https://moonfab.com/pages/order-support\" title=\"Moon Order and Sales Support\">Moon Customer Experience</a>.</p><p></p><p>Orders containing backorder or out-of-stock items may not ship until all items are available. Contact <a href=\"https://moonfab.com/pages/order-support\" title=\"Moon Order and Sales Support\">Moon Customer Experience</a> for assistance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GBgbYj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does Moon offer international shipping?",
+            "icon": "none",
+            "row_content": "<p>Moon currently offers shipping to:</p><p>-United States</p><p>-Canada</p><p>-United Kingdom</p><p>-Ireland</p><p>-Germany</p><p>-Australia</p><p>-New Zealand.</p><p></p><p>To get an accurate shipping charge calculation for your order, add MoonShade and other items to your cart. Then, proceed to checkout and enter your shipping address within one of the seven destination countries. Your shipping charge will appear if valid address information is provided.</p><p></p><p><strong>Delivered Duty Unpaid (DDU)</strong></p><p>Moon international orders are delivered duty unpaid (DDU). The purchaser/recipient of the order is responsible for calculating and paying the exact duty and taxes owed for the specific order upon receipt. This amount is in addition to the shipping charge collected at checkout.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dwNxgX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What shipping carrier does Moon use?",
+            "icon": "none",
+            "row_content": "<p>Moon orders are shipped via UPS, DHL, or USPS depending on the location of the destination (e.g., Orders sent to PO Boxes will ship via USPS).</p><p>For U.S. orders, we offer Standard or Express shipping at checkout.</p><p>For International orders, we offer UPS Worldwide Expedited or Saver at checkout.</p><p><em>Please note: Orders to addresses outside of the U.S. are delivered duty unpaid (DDU) and the recipient is responsible for calculating and paying any taxes and import fees at receipt of the order.</em></p><p>For assistance with a delivery, please contact the carrier, or email Moon for assistance at <a href=\"mailto:support@moonfab.com\" title=\"mailto:support@moonfab.com\">support@moonfab.com.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AT3gVX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is Moon's return policy?",
+            "icon": "none",
+            "row_content": "<p>Here at Moon Fabrications we are committed to 100% customer satisfaction. If you are not completely satisfied with your Moon order, please contact us <a href=\"https://moonfab.com/returns/\">here</a> within 30 days of purchase to receive a refund. We can only accept your return of new product with the tags still attached. For returns requested after 30 days, we offer store credit only.</p><p>If you need repairs or replacement parts, please use the form on the product support page <a href=\"https://moonfab.com/product-support/\">here</a>.</p><p>Cancellations placed before your order has shipped will not be charged.</p><p><strong>Please note: Depending on the reason for your return </strong>a shipping fee will be deducted from your refund to cover the cost of shipping when you use the prepaid label provided via email. Any additional shipping costs that occur will also be deducted from your refund.</p><p>We do our best to process returns and exchanges within <strong>7-10</strong> business days of receipt at our warehouse.</p><p><strong>General Return Instructions:</strong></p><p>Once you have your return label, please follow these steps:</p><p>1. Print your return label provided via email.</p><p>2. Pack the products and their original packaging inside the original shipping box (if possible). Please make sure to add your <strong>proof of purchase </strong>inside the box.</p><p>3. Tape your package up securely and attach the return shipping label to the front. Make sure all other shipping labels are removed or scratched out with dark marker. Tip: Attach a piece of paper over the previous labels and then affix the return label.</p><p>Once we receive your return, we will issue your refund or store credit. Refunds will take <strong>7-10 business days</strong> to post to the original form of payment.</p><p><em><strong>Note: We are unable to process returns outside of the United States or Canada.</strong></em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NYaxL7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Route Shipping Insurance (Opt In or Out)",
+            "icon": "none",
+            "row_content": "<p>Route is a package tracking and shipping protection provider. They support brands by protecting their customers’ online orders from damage, loss, and theft. If something goes wrong, customers (that’s you!) can quickly and conveniently resolve their issue in just a few steps. And, they can track all their orders in one place via our mobile app.<br/><br/><strong>Please note:  </strong>If the customer chooses not to Opt in to Route shipping insurance, Moon is not responsible for any damage, loss, or theft that may occur while in the hands of the carrier in transit to the delivery location.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_dWLCN3",
+        "collapsible_row_wz37nM",
+        "collapsible_row_TinAJP",
+        "collapsible_row_XN8Wjf",
+        "collapsible_row_GBgbYj",
+        "collapsible_row_dwNxgX",
+        "collapsible_row_AT3gVX",
+        "collapsible_row_NYaxL7"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Purchasing & Shipping",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "collapsible_content_Umm6iB": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_eH9W6n": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is MoonShade waterproof?",
+            "icon": "none",
+            "row_content": "<p>We don’t “waterproof” our fabric because it would degrade the integrity of its UV resistance over time. That said, it is seam-sealed and the fabric is very a technical 420 ripstop fabric that will shed water like an umbrella.<br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ec3Faa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the packed weight of MoonShade Original (9ft x 7ft)?",
+            "icon": "none",
+            "row_content": "<p>Not including anchors, a packed MoonShade (9ft x 7ft) weighs about 8lbs.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cHWALj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the packed weight of MoonShade XL (12ft x 9ft)?",
+            "icon": "none",
+            "row_content": "<p>Not including anchors, a packed MoonShade XL (12ft x 9ft) weighs about 12.6lbs.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QHbtpD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the maximum height of MoonShade/poles?",
+            "icon": "none",
+            "row_content": "<p>The front upright support poles are adjustable and extend to a maximum height of ~ 8 ft. MoonShade can certainly be mounted higher than this, it will simply tilt downward.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xNbREU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does MoonShade also work in the rain?",
+            "icon": "none",
+            "row_content": "<p>Yes! While MoonShade is not technically “waterproof,” it will shed rain in much the same way as an umbrella does. That is, there isn’t a waterproof membrane or coating and the seams are unsealed, but the 420D ripstop polyester fabric is water-resistant and will shed rainwater off the sides and away from what’s beneath it.</p><p>In our manufacturing process, we’ve opted not to use chemical waterproofing treatments or polyurethane/DWR coatings. This was done for two reasons: First, these coatings decrease the service life of the fabric, so MoonShade should enjoy a much longer life in the sun without the added coatings. And second, many of these coatings are very harmful to the environment. While there are no special waterproofing treatments, polyester fabrics by nature absorb less water and dry faster than their nylon counterparts. The domed shape also helps to shed water more efficiently, where flat awnings often sag as water puddles on their surface.</p><p>MoonShade's seams can be sealed to improve wet weather performance using the instructions <a href=\"https://cdn.shopify.com/s/files/1/0549/2637/7049/files/MoonShade_Seam_Seal_Instructions.pdf?v=1648735039\" target=\"_blank\">here</a>. Some users will experience dripping at MoonShade's unsealed seams during sustained or heavy rain.</p><p>Please note that while MoonShade can work well to shield you from light rain and was designed to be durable and strong, no awning is engineered for extreme weather or environments, including thunderstorms or gusty winds. If bad weather moves in, it is safest for you, others, and your equipment to stow your MoonShade until it passes. Don’t forget to dry it out once the sun returns!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_86tXLV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is there a reflective coating on the underside of MoonShade fabric?",
+            "icon": "none",
+            "row_content": "<p>In addition to looking great during the day, the reflective coating reflects and blocks the sun’s rays, keeping you cooler. At night, it evenly reflects the light from your LED lantern (not included). The domed shape of MoonShade keeps more light under MoonShade to illuminate all of your after-dark shenanigans.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_eH9W6n",
+        "collapsible_row_Ec3Faa",
+        "collapsible_row_cHWALj",
+        "collapsible_row_QHbtpD",
+        "collapsible_row_xNbREU",
+        "collapsible_row_86tXLV"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Features & Technical Details",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "collapsible_content_GAnecJ": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_MbEtYF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can you let me in on some special setup features?",
+            "icon": "none",
+            "row_content": "<p>Of course. In addition to all of the great features we’ve mentioned above, here are some standout features we think are the bee’s knees:</p><p>- A simple cord pull set-up allows you to easily mount MoonShade to high/out-of-reach points.</p><p>- The included strut pole allows you to mount MoonShade to narrow structures or use only one mounting point (for attaching to a tree, for example).</p><p>- In addition to resting on the ground, using two suction cups to replace the rubber feet of the support poles, you can set up an angled attachment of the support poles, affixing the base of the poles to your vehicle with the suction cups. This configuration opens a bit more space under MoonShade.</p><p>All of these are described further below… read on!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dA6fgP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does MoonShade take to set up?",
+            "icon": "none",
+            "row_content": "<p>MoonShade is simple and quick to set up, even for one person. With practice, one person can set up MoonShade in about 5 minutes. Your first few set ups will take a bit longer as you figure out the best method for your vehicle, so more like 10 minutes to start. Two people can setup MoonShade even faster!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UDT3Q6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does MoonShade XL take to set up?",
+            "icon": "none",
+            "row_content": "<p>We designed MoonShade XL to be easily set up by two people in less than 5 minutes, however it can be setup up by one person in calm weather conditions with a few extra minutes of setup time. If you anchor your MoonShade out of reach (like the roof of a tall van), you don’t have to climb up or get out a ladder—the MoonShade can be anchored from the ground using a simple cord pull, allowing you to connect and disconnect your MoonShade with ease, without your feet ever leaving the ground. With MoonShade XL being 70% bigger than MoonShade (9ft by 7ft) we do not recommend setting it up or breaking it down as one person as it is a risk to the safety of the individual as well as to the MoonShade XL itself. Having a buddy for this will make set up and break down easier, quicker, and safer.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XPGVCJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What anchors are compatible with the MoonShade XL?",
+            "icon": "none",
+            "row_content": "<p>Because of the size of MoonShade XL (12ftx9ft), and the need for the anchor points to be either set at 12ft or 9ft, this series will be compatible with larger vehicles and units, like but not limited to RVs, larger Vans (e.g., Sprinters, Transits, + Promasters), Airstreams (e.g., Basecamp), medium and large travel trailers, fifth wheels, and more.</p><p>Please note: XL anchors are sold-separately.<em><br/><br/></em>For securing down the MoonShade XL, folks may choose from any of the following anchor options (semi- & permanent):<em><br/><br/></em>All the awesomeness of the original <a href=\"https://moonfab.com/products/seasucker-4-5-seasucker-suction-cups\" target=\"_blank\">4.5″ SeaSucker</a>, but with a stainless steel D-ring for holding ropes, straps, etc. SeaSucker vacuum cups lend themselves to an almost infinite number of uses (e.g., windows, body panels, smooth fiberglass, etc.). If you need to attach something to a rigid, non-porous surface without drilling any holes, this is the best way to do it. You can choose to simply use <a href=\"https://moonfab.com/products/nite-ize-gear-tie-loopable-twist-tie\" target=\"_blank\">Nite Ize Gear Ties</a> (must have a roof rack or other fixed point at 9ft or 12ft to loop ties on) as a semi permanent anchor.<br/><br/>Our semi-permanent <a href=\"https://moonfab.com/products/adhesive-aluminum-anchor\" target=\"_blank\">Adhesive Aluminum Anchors</a> are popular for their always-ready install and secure performance in light and moderate winds.</p><p>Our <a href=\"https://moonfab.com/products/pad-eye-anchors\" target=\"_blank\">Pad Eye Anchors</a> are the strongest permanent anchoring method that uses a stainless steel pad and eye mounted with 3M VHB adhesive and included self-tapping screws. [These are our top recommendation if you cannot mount directly to the roof rack or existing roof hardware and don’t mind making holes (please always contact the manufacturer of your vehicle before any drilling) in your unit.]</p><p>We also offer <a href=\"https://moonfab.com/products/sprinter-rail-anchors\" target=\"_blank\">Sprinter Rail</a>, <a href=\"https://moonfab.com/products/basecamp-rail-anchors/\" target=\"_blank\">1/2\" (Basecamp) Awning Rail</a>, <a href=\"https://moonfab.com/products/awning-rail-anchors-3-8/\" target=\"_blank\">3/8\" Awning Rail</a> and <a href=\"https://moonfab.com/products/awning-rail-anchors-5-16\" target=\"_blank\">5/16\" Awning Rail</a> anchors in case your unit/vehicle has an awning rail channel (check with your manufacturer for location and sizing) as these are considered permanent anchor options.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VXtLhk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I attach MoonShade to something that is very high, like the top of my van?",
+            "icon": "none",
+            "row_content": "<p>MoonShade comes with several thin lines of paracord that can be attached to the carabiners to create simple cord pulls that will allow you to clip the carabiners to out-of-reach anchor/mounting points without your feet leaving the ground. Stay tuned for a setup instruction video!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jfpbr6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the strut pole for?",
+            "icon": "none",
+            "row_content": "<p>The strut pole is included for use whenever you are mounting the short side of MoonShade (9ft x 7ft) to a structure that is narrower than MoonShade (9ft x 7ft) . In other words, in setups where MoonShade (9ft x 7ft) will actually be longer than what you are attaching it to. It works well for mounting MoonShade (9ft x 7ft) to small vehicles or attaching MoonShade (9ft x 7ft) to structures with a single mounting/anchor point, such as a tree.</p><p>If this applies to your setup situation, you can attach the strut pole by feeding the pole through the webbing loop along the center of the short side of MoonShade (9ft x 7ft) fabric that will be attached to the mounting location, then connect the grommet pins on each end of the pole through the grommets on the corners of MoonShade (9ft x 7ft) fabric.</p><p><em>Please note: The Strut Pole is not included with or compatible with the MoonShade XL.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kyP6YY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I attach the upright support poles to my vehicle?",
+            "icon": "none",
+            "row_content": "<p>If you have mounted the long side of MoonShade to your vehicle using either fixed anchor points (such as a roof rack or another fixed point on your roof) or another strong, non-suction cup mounting solution, you have a second option for the placement of your upright support poles.</p><p>The first option is to set the poles upright with the base on the ground (standard setup). To do this, simply attach the support poles to the front corners of MoonShade’s fabric by connecting the grommet pins at the top end of the poles through the grommets in the front corners of the fabric. Extend the bottom ends of the poles to the ground and adjust the height as necessary.</p><p>The second option is to use suction cups to affix the poles to the side of your vehicle at a 45° angle, keeping the base of the pole off the ground and opening up a bit more space at the front of MoonShade. To do this, remove the rubber feet on the base of the support poles and replace them with the non-velcro suction cups using the pinholes at the base of the poles to affix the suction cups. Attach the top of the support poles to MoonShade fabric as noted above, then extend the poles back to the vehicle, affixing the suction cups and locking them in place.</p><p>Note that it is not recommended to affix the upright support poles to the vehicle with suction cups if you are already using suction cups for the top anchors of MoonShade.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_W36k94": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "You mention anchors a lot. What exactly are anchors? What can I use for anchors?",
+            "icon": "none",
+            "row_content": "<p>When we refer to anchors in our descriptions, we are referring to what you are using to mount MoonShade. Typically when you set up MoonShade, one side will be mounted (“anchored”) to some sort of structure - a vehicle, fence, tree, etc. - and the other side will be supported by the upright support poles. The points/parts/pieces you are using to mount MoonShade are referred to as “anchors.”</p><p>For the side of MoonShade that is mounted to a structure, you have several options for how you can anchor MoonShade. Depending on your setup situation, you may use fixed/permanent anchors or set up temporary anchors.</p><p>Fixed anchors are things that are already available on or attached to what you are mounting MoonShade to. They may be the structure itself. Some examples would be mounting MoonShade directly to the roof rack of your vehicle or directly to a chain link fence. MoonShade comes with sturdy carabiners attached to each corner, so you will typically be anchoring MoonShade by clipping the carabiners to your anchors. In the case of a chain link fence, you can clip the carabiners directly to the fence. Depending on the bar size and length (or width) of your vehicle’s roof rack, you may also be able to clip/anchor MoonShade directly to the roof rack with the carabiners.</p><p>In many setup situations, fixed anchors are not available. In this case, you can set up temporary anchors. Temporary anchors are accessory parts that you can set up to serve as anchors and then remove when you are finished using MoonShade. We’ve designed MoonShade to be versatile, so there are many temporary anchor options that you can use to set MoonShade up in different locations.</p><p>To assist with set up, we’ve included a set of four heavy-duty suction cups that can be used as anchors in MoonShade Original and Golden Hour orders <em>(MoonShade XL anchors need to be purchased separately).</em> Two of the suction cups have velcro straps, to be used when you are mounting the short side of MoonShade using the strut pole, and two of the suction cups are without velcro straps and can be used when you are mounting the long side of 9ftx7ft MoonShade (see the setup guide <a href=\"https://moonfab.co/setup/\">here</a>).</p><p>The suction cups work best on vehicles with metal surfaces and will suction the best to spaces that are flat and clean. While they will work with most vehicles, due to the shape and materials of some vehicles, suction cups will not necessarily work for every setup. Suction cups also work very well on glass/windows, making them a great solution if you are setting MoonShade up along a storefront window or similar location (we don’t want those Girl Scouts (or their cookies) to melt).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xm3wUR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does MoonShade mount on the 9ft or 7ft side?",
+            "icon": "none",
+            "row_content": "<p>Both! MoonShade is extremely versatile and can be mounted on either its long sides (9ft) or short sides (7ft). As long as anchors or attachment points can be placed at either 9ft or 7ft distance, MoonShade's corner carabiners can attach for simple setup.</p><p>See FAQ <em>What is the strut pole for? </em>if you must place anchor points less than 7ft apart.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YngUeX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does MoonShade XL mount on the 9ft or the 12ft side?",
+            "icon": "none",
+            "row_content": "<p>Both! MoonShade XL can be mounted on either of its long sides (12ft) or short sides (9ft). Because of the size of the MoonShade XL (12ftx9ft), and the need for the anchor points to be either set at 12ft or 9ft, this series will be compatible with larger vehicles and units, like but not limited to RVs, larger Vans (e.g., Sprinters, Transits, + Promasters), Airstreams (e.g., Basecamp), medium and large travel trailers, fifth wheels, and more.</p><p><em>Note: The XL is not compatible with the Strut Pole.</em></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_MbEtYF",
+        "collapsible_row_dA6fgP",
+        "collapsible_row_UDT3Q6",
+        "collapsible_row_XPGVCJ",
+        "collapsible_row_VXtLhk",
+        "collapsible_row_jfpbr6",
+        "collapsible_row_kyP6YY",
+        "collapsible_row_W36k94",
+        "collapsible_row_xm3wUR",
+        "collapsible_row_YngUeX"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Set Up",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "collapsible_content_PQNQmF": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_P7Ut4P": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are your recommendations for product care and cleaning?",
+            "icon": "none",
+            "row_content": "<p>Like any sunshade, awning, or tent, make sure to give your MoonShade a little TLC from time to time.</p><p>The Basics: Wash it when it’s dirty. Keep it Clean. Let it Dry. Store it Dry.</p><p><strong>Cleaning</strong></p><p>Keeping both MoonShade fabric and poles clean will help to extend the life and performance of MoonShade. Clean your shade after each trip or periodically/seasonally depending on the amount of use. Take special care to clean MoonShade if it’s been exposed to especially grimy and gritty things like tree sap, bird droppings, fine dust, sand, or salt/sea-spray from the ocean air. Salts can be particularly damaging, so always wipe down your shade, all poles, and any other accessories after leaving an ocean environment.<br/>Often an easy wipe down with a damp cloth is all that is needed; however, below are some additional tips for cleaning.</p><p><em>To Clean:</em></p><p>Never machine wash or dry MoonShade fabric. Hand wash only!</p><p>Use a mild, non-detergent soap and a soft bristle or non-abrasive brush or sponge.</p><p>Avoid using any harsh household cleaners such as bleach, harsh dish soaps, spot removers, or other laundry pre-wash products. Also avoid perfumed products.</p><p>Don’t forget to wipe down the poles! Use a washcloth or soft sponge to wipe any dirt, grime, etc. off the poles.</p><p>Rinse everything with cool/cold water.</p><p>Allow MoonShade fabric to completely air dry. See below for more drying info and tips!</p><p><strong>Drying</strong></p><p>If it has rained, you’ve washed MoonShade, or it’s otherwise gotten wet in a massive water balloon fight or sprinkler storm, make sure to let everything, especially MoonShade fabric, dry out before packing it away.</p><p>Never pack MoonShade away when it is still wet!! Storing while wet is one of the quickest and easiest ways to damage your shade fabric. Storing the fabric while wet, especially in hot or warm weather, can cause the fabric to mildew. Not only will mildew give your tent a particular funk, it can also break down fabric coatings and may leave stains. Stains from mildew are often permanent and the use of harsh chemical cleaners to remove mildew or other stains can damage MoonShade fabric and fabric coatings.</p><p>Mildew, dirt, stains and/or damage from improper use of sprays, coatings, cleaning agents, or other non-recommended substances are not considered a manufacturer’s defect and are not covered under the product warranty.</p><p><em>To Dry:</em></p><p>Unfold MoonShade completely.</p><p>Drape or hang it indoors or in a shaded outdoor spot. Shaded, you say? Yes. Your MoonShade works hard to keep you in MoonShade. Whenever possible, give it a break from UV rays and dry it out in a shaded area.</p><p>Allow to air dry completely.</p><p><strong>Storage</strong></p><p>Ensure the entire shade is dry before folding it up and storing it away! And.. a note on storing. It’s equally important that you store your shade in a cool dry place. Storing in a warm, damp, or musty location, such as a basement, attic, or car trunk, can also cause mildew. If you must store it in a location that isn’t ideal, store it in a sealed plastic tub, bin, or another container.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TtmFm3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Any other care recommendations?",
+            "icon": "none",
+            "row_content": "<p>Yes, one more thing. It’s not a bad idea to reapply UV protectant annually*. While MoonShade fabric is constructed of a heavy UV-coated polyester, reapplying UV protectant annually will help to extend the life of the fabric.</p><p>*How often you need to reapply will depend on how often you are using MoonShade. If it’s something you are busting out quite a bit (hooray!), reapply annually. If you only use MoonShade from time-to-time, you won’t need to reapply as often.</p><p>Everything comes with a disclaimer tag… what are the product warnings?</p><p>To protect yourself, others, and MoonShade, please take the following precautions.</p><p><strong>Keep away from flames.</strong></p><p>Keep all flames and heat sources away from MoonShade fabric. Nylon, polyester, and other synthetic fabrics typically resist ignition; however, if left in continuous contact with a flame source, they will ignite. Once they do start to burn and melt, they will turn into a molten goo that is very scary and will cause serious burns. Keep your shade well away from all flame sources.</p><p><strong>Don’t set up in high winds.</strong></p><p>With solid structural anchoring, MoonShade can withstand winds up to 30mph. It is not engineered for more extreme weather or environments.</p><p><strong>Always make sure all guylines are secure.</strong></p><p>Take care to ensure that all guylines are secure and fully tensioned to ensure your MoonShade is as stable as possible.</p><p><strong>Do not leave your MoonShade set up unattended.</strong></p><p>Don’t leave MoonShade set up unattended for long periods of time. In the event of a freak wind, storm, or other natural (or manmade) disaster, it’s best to be near.</p><p><strong>Do not spray MoonShade fabric with other coatings/treatments/materials.</strong></p><p>Other than reapplying UV Protectant annually and using a mild soap to clean MoonShade, do not use any other sprays, coatings, cleaners or other substances on MoonShade fabric.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CHwahV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is covered by the product warranty?",
+            "icon": "none",
+            "row_content": "<p><strong>Summary</strong></p><p>We built MoonShade to last a long time and we guarantee it against defects for the life of the product. Like anything else in the sun, it won’t last forever, but until the elements take their toll, we’ve got you covered. When MoonShade fabric finally succumbs to the elements, you can recycle your old fabric and purchase a replacement shade fabric at about half the cost of a new MoonShade.</p><p><strong>Details</strong></p><p>We guarantee your MoonShade against material and manufacturer construction defects. Moon’s warranty does not cover general wear and tear or damage caused by the environment or the user.<br/><br/>The MoonShade fabric canopy, like any fabric, will eventually succumb to the effects of the elements, especially UV rays. How long it lasts depends on how much sun it’s exposed to and how much/how you use it, but we built it out of heavy UV-coated polyester, so it will last a long time.</p><p>Note that mildew, dirt, stains, and/or damage from improper use of sprays, coatings, cleaning agents, or other non-recommended substances are not considered a manufacturer’s defect and are not covered under the product warranty.</p><p><strong>Registration</strong><br/>This warranty applies to the original purchaser of MoonShade and is not transferable. Your original order confirmation receipt is all you need to request warranty service for Moon products. Please <a href=\"https://moonfab.com/pages/order-support/\" target=\"_blank\" title=\"https://moonfab.com/pages/order-support/\">contact us here</a> or email us at <a href=\"mailto:support@moonfab.com\" title=\"mailto:support@moonfab.com\">support@moonfab.com</a> for additional assistance.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_P7Ut4P",
+        "collapsible_row_TtmFm3",
+        "collapsible_row_CHwahV"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Product Care, Warnings, & Warranty",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "collapsible_content_t4PhBa": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_P6KJFX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where is MoonShade designed?",
+            "icon": "none",
+            "row_content": "<p>MoonShade was dreamed and designed by Matthew Pearson in San Francisco, California. Together with co-founder Henry Proegler, Moon is committed to creating products that are simple, elegant, and versatile.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_q9XwJy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where is MoonShade manufactured?",
+            "icon": "none",
+            "row_content": "<p>MoonShade is manufactured in China. We have chosen some of the best tent-making manufacturers in the world, sourcing and assembling our product in Shenzhen, Guangdong Province.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_p6yz9P": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I provide product feedback?",
+            "icon": "none",
+            "row_content": "<p>We’d love to hear from you. Use the following links to ask a question or give feedback on your experience with MoonShade.</p><p>- <a href=\"https://moonfab.co/order-support/\">Order/Sales Support</a></p><p>- <a href=\"https://moonfab.co/product-support/\">Product Support</a></p><p>- <a href=\"https://moonfab.co/leave-a-review/\">Leave a Review</a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_P6KJFX",
+        "collapsible_row_q9XwJy",
+        "collapsible_row_p6yz9P"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Product Design & Manufacturing",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_4JcDdj": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RTmjWQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes MoonShade different from other vehicle awnings on the market?",
+            "icon": "none",
+            "row_content": "<p>MoonShade's strength is in the awning itself, not the attachment. Most vehicle awnings are permanently mounted to a roof rack — which means you need the right rack, the right vehicle, and you're committing to one setup. MoonShade uses a range of anchor systems (vacuum, magnet, adhesive, rail, strut) to attach to almost any sturdy structure without drilling or permanent hardware. It weighs 8 lbs, packs down to the size of a yoga mat, and works on a Sprinter, a Jeep, a pickup truck, a fence post, or a friend's rig. You're not locked in.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3MQJFU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does MoonShade compare to roof rack awnings?",
+            "icon": "none",
+            "row_content": "<p>Hardmounted awnings are heavy, expensive, and locked to one vehicle. MoonShade weighs 8 lbs (OG) or under 13 lbs (XL), packs into a carry bag, sets up in 5 minutes, and moves between rigs without tools. If you want something permanent, a hardmounted awning works. If you want something that fits every vehicle you own and stores under the back seat, MoonShade is the answer.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ef8Ki7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does a suction-cup or anchor-based vehicle awning hold up in wind compared to a pole-supported awning?",
+            "icon": "none",
+            "row_content": "<p>In moderate wind, a well-staked MoonShade holds reliably. In sustained high wind, take it down — same as any portable awning. For the most secure attachment, Pad Eye Anchors or Rail Anchors give you the strongest hold. The vacuum anchors are built for vehicle use and have held up in rain and wind for thousands of customers.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aT4mk8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What vehicles is MoonShade best suited for?",
+            "icon": "none",
+            "row_content": "<p>MoonShade works best on vehicles with a smooth, flat surface for vacuum mounting or a sturdy structure a Strut Pole can grip. Top setups include full-size vans (Sprinter, Transit, ProMaster), trucks (F-150, Tacoma, Tundra), SUVs (4Runner, Wrangler, Bronco, Outback), and Class A/B/C motorhomes. → See the full <a href=\"/pages/vehicle-compatibility-list\" title=\"Vehicle Compatibility List\">Vehicle Compatibility Guide</a> for a complete list of makes and models.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_P4cc9K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use a vehicle awning on a car or crossover, or only on vans and trucks?",
+            "icon": "none",
+            "row_content": "<p>Yes. MoonShade works on cars and crossovers. MoonMount vacuum anchors attach to smooth metal roofs on sedans, hatchbacks, and compact SUVs. The main consideration is roofline length — MoonShade OG needs about 7ft between anchor points. Crossovers like the Honda CR-V, Subaru Outback, and Mazda CX-5 are popular setups.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RnY4yM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What surfaces or setups are not ideal for MoonShade?",
+            "icon": "none",
+            "row_content": "<p>A few situations where MoonShade needs a workaround or a specific anchor:</p><ul><li>Textured or non-metal roofs — use Pad Eye or adhesive anchors instead of vacuum</li><li>Fiberglass or plastic surfaces — Pad Eye Anchors with 3M VHB adhesive are best</li><li>Open vehicles with no smooth roof (Jeeps, open trucks) — the Strut Pole handles these</li><li>Rooflines under 7ft — check your vehicle in the <a href=\"/pages/vehicle-compatibility-list\" title=\"Vehicle Compatibility List\">compatibility guide</a> before ordering</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6jCfDi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I look for when buying a vehicle awning for the first time?",
+            "icon": "none",
+            "row_content": "<p>Four things: Coverage (9x7ft for solo or couples, 12x9ft for groups); Weight (you're setting it up every trip — 8–13 lbs is manageable); Attachment (does it need a roof rack, or can it mount to your specific vehicle without one?); and Pack size (does it fit in your rig without eating storage you need?).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fTR3px": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I look for when buying a portable awning for overlanding?",
+            "icon": "none",
+            "row_content": "<p>Weight and pack size matter more for overlanding than basecamp camping. Look for ripstop fabric rated for UV and rain, aluminum poles, a vehicle attachment that doesn't require a roof rack, and a pack size that doesn't eat into gear storage. MoonShade OG is 8 lbs and packs to 36 x 6 inches. MoonShade XL covers 12ft x 9ft at under 13 lbs.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NhyA3P": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do vehicle awnings attach without a roof rack?",
+            "icon": "none",
+            "row_content": "<p>A few ways depending on your vehicle: vacuum anchors grip smooth metal roofs and side panels; magnetic anchors work on steel roofs; rail anchors slide into Sprinter roof rails, RV keder rails, or Airstream awning rails; Strut Poles mount to roll bars and bed rails on open vehicles; and adhesive anchors bond to fiberglass, wood, or any surface that won't take a vacuum. Moon makes all of these — use the <a href=\"https://moonfab.com/collections/moonanchors\" title=\"https://moonfab.com/collections/moonanchors\">anchor quiz </a>to find the right one for your rig.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RTmjWQ",
+        "collapsible_row_3MQJFU",
+        "collapsible_row_Ef8Ki7",
+        "collapsible_row_aT4mk8",
+        "collapsible_row_P4cc9K",
+        "collapsible_row_RnY4yM",
+        "collapsible_row_6jCfDi",
+        "collapsible_row_fTR3px",
+        "collapsible_row_NhyA3P"
+      ],
+      "settings": {
+        "caption-custom-cls": "purchasing-collapse",
+        "ask-subtile": "Ask the Expert",
+        "ask-subtile-url": "",
+        "show_ask_expert": false,
+        "add-text-faq": "",
+        "caption": "",
+        "heading": "Compatibility & Real-World Use",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "container_color_scheme": "scheme-5",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "enable_faq_schema": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_PUXDDC",
+    "rich_text_8mdGcR",
+    "rich_text_c3e9MK",
+    "collapsible_content_wtH4jV",
+    "collapsible_content_Umm6iB",
+    "collapsible_content_GAnecJ",
+    "collapsible_content_PQNQmF",
+    "collapsible_content_t4PhBa",
+    "collapsible_content_4JcDdj"
+  ]
+}

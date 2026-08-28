@@ -1,0 +1,181 @@
+{% assign skip_anchor_modal = false %}
+{% for tag in product.tags %}
+  {% assign tag_down = tag | downcase %}
+  {% if tag_down == 'b2b-only' %}
+    {% assign skip_anchor_modal = true %}
+  {% endif %}
+{% endfor %}
+
+{% unless skip_anchor_modal %}
+<div class="whole-model">
+<div id="first-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        {% if template == 'product.moonsurface-template' %}
+          <h5 class="modal-title first-title">Select Your Add-Ons</h5>
+        {%  else %}
+        <h5 class="modal-title first-title">Select Your Anchor Hardware.</h5>
+        {% endif %}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if template == 'product.moonsurface-template' %}
+        <p>
+          Note: MoonSurfaces come with a semi-permanent cleat mount. If you prefer to use MoonMounts (sold separately) please select them below. Also the custom carrying bag is not included in the base package.
+        </p>
+        {% else %}
+        <p>
+          <strong>MoonShade packages no longer include anchors or a strut pole, but you can easily add them below based on your setup needs.  </strong> <br><br>
+MoonShade was added to your cart, but it requires permanent or semi-permanent anchor hardware to attach to your vehicle. Select an anchor option below to be included with your order.
+        </p>
+      {% endif %}
+{% if product.template_suffix == 'moonshade-sunset' %}
+        {% assign product_handles = '4-5-vacuum-mount,moonmounts-oval-test-bundle,strut-pole-for-moonshade-original-7ft,basecamp-rail-anchors,sprinter-rail-anchors,adhesive-aluminum-anchor'
+          | split: ','
+        %}
+        <style>
+          .whole-model .product-item {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    justify-content: normal !important;
+    gap: 30px;
+}
+        </style>
+        {% elsif product.template_suffix == 'moonshade' %}
+           {% assign product_handles = '4-5-vacuum-mount,moonmounts-oval-test-bundle,basecamp-rail-anchors,strut-pole-replacement-moonshade-original,sprinter-rail-anchors,adhesive-aluminum-anchor,nite-ize-gear-tie-loopable-twist-tie,pad-eye-anchors'
+          | split: ','
+        %}
+         {% elsif product.template_suffix == 'moonshade-apex' %}
+             {% assign product_handles = 'oval-moonmount-3-pack,pad-eye-anchors'
+          | split: ','
+        %}
+      {% elsif template == 'product.moonsurface-template' %}
+            {% assign product_handles = '4-5-vacuum-mount,moonsurface-carry-bag'
+          | split: ','
+        %}
+      {% else %}
+         {% assign product_handles = '4-5-vacuum-mount,moonmounts-oval-test-bundle,basecamp-rail-anchors,sprinter-rail-anchors,adhesive-aluminum-anchor,nite-ize-gear-tie-loopable-twist-tie,pad-eye-anchors'
+          | split: ','
+        %}
+      {% endif %}
+  
+        <div id="product-list">
+          {% comment %} {% if product.template_suffix == 'moonshade' %} {% endcomment %}
+          <button class="withoutt-addon">
+           {% if template == 'product.moonsurface-template' %} No Add-Ons Needed? Click Here
+          {% else %}
+            No Anchoring Needed? Click Here
+          {% endif %}</button>
+          {% comment %} {% endif %} {% endcomment %}
+          {% for handle in product_handles %}
+            {% assign product = all_products[handle] %}
+            {%- # <spark:yff3d> -%}
+              {%- capture visibility -%}
+                {%- render 'sparklayer-b2b-catalogs-func', type:'product', subject:product -%}
+              {%- endcapture -%}
+              {%- if visibility == 'hide' -%}
+                {%- continue -%}
+              {%- endif -%}
+            {%- # </spark:yff3d> -%}
+             {% if product and product.available and product.published_at and product.title != blank and product.price > 0 %}
+            <div class="product-item" data-handle="{{ product.id }}" {% if template == 'product.moonshade-apex' and product.handle == 'oval-moonmount-3-packedd' %} data-variant-id=42876764979289 {% elsif product.handle == 'moonmounts-oval-test-bundle' %}data-variant-id=43700380074073 {% else %} data-variant-id="{{ product.variants.first.id }}"{% endif %}>
+              <div class="left-con">
+                <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
+              </div>
+              <div class="right-con">
+                {%if product.handle == 'moonmounts-oval-test-bundle' or product.handle == '4-5-vacuum-mount' %}
+                <h2>{{ product.title }} (pair)</h2>
+                {%else %}
+                  <h2>{{ product.title }}</h2>
+                  {%endif %}
+                  {% if product.handle == 'moonmounts-oval-test-bundle' %}
+  <p class="price-popup">
+    ${{ product.variants | where: 'id', 43700380074073 | first | map: 'price' | first | money_without_currency | round }}
+  </p>
+{%  else %}
+                <p class="price-popup">
+                  
+  ${{ product.variants.first.price | default: product.price | money_without_currency | round }}
+</p>
+{% endif %}
+                <p class="pro-price">{{ product.metafields.descriptors.summary }}</p>
+
+                <button class="select-btn button">Select</button>
+                <a href="{{ product.url }}" class="more-details-btn button">More Details</a>
+                <div class="selected-info" style="display: none;">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                  <span>Selected</span>
+                  <!--
+                    <button id="confirm-selection" class="confirm-select" style="display: none;">Confirm Selection</button>
+                  -->
+                  {% if template != 'product.moonsurface-template' %}
+                  <button id="confirm-selection" class=" confirm-select trigrctabtn button">Confirm Selection</button>
+                  {% endif %}
+                </div>
+              </div>
+              <!-- Selected Message & Confirm Button (Hidden by Default) -->
+            </div>
+           {% endif %}
+          {% endfor %}
+        </div>
+       
+        <!-- Confirm Selection Button (Hidden by Default) -->
+      </div>
+      <div class="modal-footer">
+        <button id="confirm-selection2" class="disabled confirm-select button">Confirm Selection</button>
+
+        <!-- <button id="confirm-selection2" class="btn  disabled confirm-select button">Confirm Selection</button> -->
+        <!--
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="confirmation-modal" class="modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content confirmation-modals">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title">Selection Confirmed</h5> -->
+        <img src="https://cdn.shopify.com/s/files/1/0549/2637/7049/files/YuLqxkGVv9.gif?v=1742973113" alt="GIF Image">
+      </div>
+      <div class="modal-body">
+        <p class="cart-add">Adding item to cart</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary close">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="success-modal" class="modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header success-message">
+        <i class="far fa-check-circle" style="font-size:36px"></i>
+        <h1 class="modal-title success">Success</h1>
+        <button type="button" class="close" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="moonshade-desc"></p>
+        <div class="success-btns">
+          <!-- Direct Checkout Button -->
+          <a href="/checkout" class="checkout-btn button">Checkout Now</a>
+          <!-- <button   id="confirm-selection" class=" confirm-select button" >Confrimation Selection</button> -->
+
+          <!-- View Cart Button (Will Open Cart Drawer) -->
+          <a href="#" id="view-cart-btn" class="btn mt-2">or <span class="viewcart">View Your Cart.</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endunless %}

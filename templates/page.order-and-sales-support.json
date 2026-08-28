@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_PRBaB4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_V4Kwbn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order and Sales Support",
+            "heading_size": "h1"
+          }
+        },
+        "text_fT3yDp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Let us know how we can help. Use this form to reach out to our customer support team regarding:</p><ul><li>Issues placing an order</li><li>Trouble applying discount</li><li>Undelivered orders</li><li>Damaged or defective items</li></ul><p>For return requests, use the form <a href=\"https://moonfab.com/pages/returns/\"><strong>here</strong></a>.</p><p>For product questions or issues, use the form <a href=\"https://moonfab.com/pages/product-support/\"><strong>here</strong></a>.</p><p>For answers to common questions, visit our <a href=\"https://moonfab.com/pages/moonshade-faq\"><strong>FAQ page</strong></a>. You can also email us directly at <a href=\"mailto:support@moonfab.com\" target=\"_blank\" title=\"Moon Customer Experience email\">support@moonfab.com</a>.</p>"
+          }
+        },
+        "button_PjptNT": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_V4Kwbn",
+        "text_fT3yDp",
+        "button_PjptNT"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_fCCFRK": {
+      "type": "rich-text",
+      "blocks": {
+        "text_TDzNFP": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>NOTE: International shipping is available to most countries.</strong> To get accurate shipping calculations, add MoonShade to your cart by clicking <a href=\"https://moonfab.com/products/moonshade\">here</a>, then click “Change Address” near the bottom right corner of the page to enter your shipping information.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_TDzNFP"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part special-note",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "order_sales_support_4Fka7q": {
+      "type": "order-sales-support",
+      "settings": {
+        "contact-form-bg": "request-replace",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_PRBaB4",
+    "rich_text_fCCFRK",
+    "order_sales_support_4Fka7q"
+  ]
+}

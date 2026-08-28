@@ -1,0 +1,407 @@
+{% comment %}
+  MoonFab - Responsive Features Grid Section
+  Pixel-perfect adaptation for 1440px (Desktop) and 360px (Mobile)
+{% endcomment %}
+
+<section class="moonanchors-section-{{ section.id }} moonanchors-global-wrapper">
+  <div class="moonanchors-container">
+    
+    <!-- Left/Top Info Block Component -->
+    <div class="moonanchors-info-block">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="moonanchors-heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="moonanchors-description">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Right/Bottom Features Grid Component -->
+    <div class="moonanchors-grid-block">
+      {%- for block in section.blocks -%}
+        <div class="moonanchors-card" {{ block.shopify_attributes }}>
+          
+          <!-- Image Container (Top Half) -->
+          <div class="moonanchors-card-image-wrap">
+            {%- if block.settings.image != blank -%}
+              <img 
+                src="{{ block.settings.image | img_url: '470x' }}" 
+                alt="{{ block.settings.bold_text | escape }}"
+                loading="lazy"
+                width="235"
+                height="68"
+              >
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'moonanchors-placeholder' }}
+            {%- endif -%}
+          </div>
+
+          <!-- Mixed Sizing Typography Container (Bottom Half) -->
+          <div class="moonanchors-card-text-wrap">
+            <p class="moonanchors-card-text">
+              {%- if block.settings.bold_text != blank -%}
+                <span class="moonanchors-text-bold">{{ block.settings.bold_text }}</span>
+              {%- endif -%}
+              {{ block.settings.regular_text }}
+            </p>
+          </div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Base Definitions & System Architecture */
+  .moonanchors-global-wrapper {
+    width: 100%;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .moonanchors-global-wrapper *,
+  .moonanchors-global-wrapper *::before,
+  .moonanchors-global-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  /* --- DESKTOP VIEWPORT LAYOUT SPECIFICATIONS (1440px) --- */
+  @media screen and (min-width: 769px) {
+    .moonanchors-section-{{ section.id }} {
+      padding: 58px 247px; 
+    }
+
+    .moonanchors-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 74px; /* Exact Figma Desktop horizontal gap specification */
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .moonanchors-info-block {
+      flex: 1;
+      max-width: 373px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px; 
+      text-align: left;
+    }
+
+    .moonanchors-heading {
+      font-family: 'Berringer_Rough';
+      font-weight: 400;
+      font-size: 39.84px; /* High-res scale spec */
+      line-height: 1.2;
+      color: #3B4752;
+      margin: 0;
+    }
+
+    .moonanchors-description {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.35;
+      color: #3B4752;
+      letter-spacing:0px;
+    }
+
+    .moonanchors-grid-block {
+      display: grid;
+      grid-template-columns: repeat(2, 235px); /* Forces exact 235px card widths */
+      gap: 15px; /* Symmetrical desktop card grid layout */
+      width: 485px; /* (235px * 2) + 15px gap */
+      flex-shrink: 0;
+    }
+
+    .moonanchors-card {
+      width: 235px;
+      height: 149px;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+    }
+
+    .moonanchors-card-text-wrap {
+      height: 80px; /* Explicit desktop lower text module constraint */
+      padding: 10px;
+      gap: 10px;
+      background-color: #FFFFFF;
+      border-radius: 0px 0px 10px 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .moonanchors-card-text {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.10; /* Clean 110% layout baseline scaling */
+      color: #3B4752;
+      margin: 0;
+      letter-spacing:0px;
+    }
+  }
+
+  /* Common Shared Card Inner CSS Rules */
+  .moonanchors-card-image-wrap {
+    width: 235px;
+    height: 68px; /* Locked identical across viewports */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .moonanchors-card-image-wrap img,
+  .moonanchors-card-image-wrap .moonanchors-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .moonanchors-placeholder {
+    background-color: #f4f4f4;
+    fill: #999;
+  }
+
+  .moonanchors-text-bold {
+    font-weight: 700;
+  }
+
+  /* --- INTERMEDIATE VIEWPORT LAYOUT SPECIFICATIONS (1024px–1300px) --- */
+  @media screen and (min-width: 769px) and (max-width: 1300px) {
+    .moonanchors-section-{{ section.id }} {
+      padding: 58px 40px;
+    }
+
+    .moonanchors-container {
+      gap: 40px;
+      max-width: 100%;
+    }
+
+    .moonanchors-info-block {
+      max-width: 280px;
+      flex-shrink: 0;
+    }
+
+    .moonanchors-heading {
+      font-size: 30px;
+    }
+
+    .moonanchors-description {
+      font-size: 14px;
+    }
+
+    .moonanchors-grid-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      width: auto;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .moonanchors-card {
+      width: 100%;
+      height: auto;
+      min-height: 149px;
+    }
+
+    .moonanchors-card-image-wrap {
+      width: 100%;
+      height: 68px;
+    }
+
+    .moonanchors-card-text-wrap {
+      flex: 1;
+      height: auto;
+      min-height: 60px;
+    }
+  }
+
+  /* --- MOBILE VIEWPORT LAYOUT SPECIFICATIONS (360px) --- */
+  @media screen and (max-width: 768px) {
+    .moonanchors-section-{{ section.id }} {
+      padding: 55px 0px; /* Target 55px layout spacing bounds */
+    }
+
+    .moonanchors-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 31px; /* Target item spacing block logic */
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 0 26px; /* Balance canvas symmetry */
+    }
+
+    .moonanchors-info-block {
+      width: 308px;
+      min-height: 165px;
+      display: flex;
+      flex-direction: column;
+      gap: 23px; /* Compressed copy container padding matrix */
+      text-align: center;
+      align-items: center;
+    }
+
+    .moonanchors-heading {
+      font-family: 'Berringer_Rough';
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 46px; /* Explicit mobile font height metric */
+      color: #3B4752;
+      margin: 0;
+      text-align: center;
+    }
+
+    .moonanchors-description {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.30; /* Locked 130% mobile line height specifications */
+      color: #3B4752;
+      text-align: center;
+      margin: 0;
+      width: 308px;
+      height: 136px;
+      letter-spacing:0px;
+    }
+
+    .moonanchors-grid-block {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Standard structural list gap stack */
+      width: 235px;
+      align-items: center;
+    }
+
+    .moonanchors-card {
+      width: 235px;
+      min-height: 145px; 
+      border: 1px solid #000000;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+    }
+
+    .moonanchors-card-text-wrap {
+      width: 100%;
+      min-height: 77px; /* Taller viewport bounds allowance */
+      padding: 10px;
+      gap: 10px;
+      background-color: #FFFFFF;
+      border-radius: 0px 0px 10px 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .moonanchors-card-text {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13px; /* Mobile font specification adjustment */
+      line-height: 1.10;
+      color: #3B4752;
+      margin: 0;
+      width: 190px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "MoonAnchors Features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "ABOUT MOONANCHORS"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "MoonAnchors are how MoonShade attaches to your vehicle. They're the compatibility layer between the canopy and your specific surface — the reason MoonShade works on a Sprinter, a Jeep, a teardrop trailer, and a beach house fence without drilling into any of them. Which anchor is right for you depends on your vehicle type and how permanent you want the mount to be."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Feature Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image Asset"
+        },
+        {
+          "type": "text",
+          "id": "bold_text",
+          "label": "Leading Bold Text",
+          "default": "MoonMounts"
+        },
+        {
+          "type": "textarea",
+          "id": "regular_text",
+          "label": "Following Regular Text",
+          "default": " offer a stronger semi-permanent hold for vans and larger rigs."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MoonAnchors Features Layout",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "bold_text": "MoonSuckers ",
+            "regular_text": "use a vacuum mechanism to grip smooth glass and painted metal — removable, no residue."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "bold_text": "Magnetic anchors ",
+            "regular_text": "bond to steel surfaces."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "bold_text": "MoonMounts ",
+            "regular_text": "offer a stronger semi-permanent hold for vans and larger rigs."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "bold_text": "Pad Eye and Adhesive Anchors ",
+            "regular_text": "are semi-permanent solutions."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

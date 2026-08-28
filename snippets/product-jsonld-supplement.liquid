@@ -1,0 +1,221 @@
+{%- comment -%}
+  Supplementary Product JSON-LD merged into the primary Product schema via matching @id.
+  Weight is intentionally omitted here — Shopify structured_data already outputs variant weight.
+  Parameters:
+  - product (required)
+  - include_aggregate_rating (boolean)
+  - include_product_specs (boolean)
+  - spec_blocks (optional) — product-table section blocks; otherwise uses product metafields
+{%- endcomment -%}
+
+{%- liquid
+  assign product_schema_url = canonical_url | default: product.url
+  unless product_schema_url contains '://'
+    assign product_schema_url = request.origin | append: product.url
+  endunless
+  assign product_schema_id = product_schema_url | append: '#product'
+
+  assign schema_materials = blank
+  assign schema_additional_properties = blank
+  assign schema_material_count = 0
+  assign schema_property_count = 0
+
+  assign review_rating = blank
+  assign review_count = blank
+  assign review_scale_max = 5
+  assign review_scale_min = 1
+
+  if include_aggregate_rating
+    assign review_rating = product.metafields.reviews.rating.value.rating
+    assign review_count = product.metafields.reviews.rating_count
+    assign review_scale_max = product.metafields.reviews.rating.value.scale_max | default: 5
+    assign review_scale_min = product.metafields.reviews.rating.value.scale_min | default: 1
+  endif
+
+  if include_product_specs
+    if spec_blocks != blank and spec_blocks.size > 0
+      for block in spec_blocks
+        assign spec_name = block.settings.spec_title | strip
+        assign spec_value = block.settings.rich_text | strip_html | strip | replace: '  ', ' '
+
+        if spec_name == blank or spec_value == blank
+          continue
+        endif
+
+        assign spec_name_downcase = spec_name | downcase
+
+        if spec_name_downcase contains 'material'
+          assign schema_material_count = schema_material_count | plus: 1
+          if schema_materials == blank
+            assign schema_materials = spec_value
+          else
+            assign schema_materials = schema_materials | append: '||' | append: spec_value
+          endif
+        else
+          assign schema_property_count = schema_property_count | plus: 1
+          assign schema_additional_properties = schema_additional_properties | append: spec_name | append: '::' | append: spec_value | append: '||'
+        endif
+      endfor
+    else
+      assign metafield_weight = product.metafields.custom.product_weight.value | default: product.metafields.custom.product_weight
+      assign metafield_dimensions = product.metafields.custom.product_dimensions.value | default: product.metafields.custom.product_dimensions
+      assign metafield_materials = product.metafields.custom.product_materials.value | default: product.metafields.custom.product_materials
+      assign metafield_technical_specs = product.metafields.custom.technical_specifications.value | default: product.metafields.custom.technical_specifications
+
+      if metafield_weight != blank
+        assign schema_property_count = schema_property_count | plus: 1
+        assign schema_additional_properties = schema_additional_properties | append: 'Weight' | append: '::' | append: metafield_weight | append: '||'
+      endif
+
+      if metafield_dimensions != blank
+        assign schema_property_count = schema_property_count | plus: 1
+        assign schema_additional_properties = schema_additional_properties | append: 'Dimensions' | append: '::' | append: metafield_dimensions | append: '||'
+      endif
+
+      if metafield_materials != blank
+        assign schema_materials = metafield_materials | replace: ', ', '||'
+        assign schema_material_items = schema_materials | split: '||'
+        assign schema_material_count = 0
+        for schema_material_item in schema_material_items
+        # <spark:p0928>
+          capture visibility
+            render 'sparklayer-b2b-catalogs-func', type:'search.item', subject:schema_material_item
+          endcapture
+          if visibility == 'hide'
+            continue
+          endif
+        # </spark:p0928>
+          assign schema_material_item = schema_material_item | strip
+          if schema_material_item != blank
+            assign schema_material_count = schema_material_count | plus: 1
+          endif
+        endfor
+      endif
+
+      if metafield_technical_specs != blank
+        assign technical_spec_parts = metafield_technical_specs | split: '|'
+        if technical_spec_parts.size == 1
+          assign technical_spec_parts = metafield_technical_specs | split: ';'
+        endif
+        for technical_spec_line in technical_spec_parts
+          assign technical_spec_line = technical_spec_line | strip
+          if technical_spec_line == blank
+            continue
+          endif
+
+          assign technical_spec_name = technical_spec_line
+          assign technical_spec_value = technical_spec_line
+          if technical_spec_line contains ':'
+            assign technical_spec_segments = technical_spec_line | split: ':'
+            assign technical_spec_name = technical_spec_segments[0] | strip
+            assign technical_spec_value = technical_spec_segments[1] | strip
+            if technical_spec_segments.size > 2
+              assign technical_spec_value = technical_spec_line | remove_first: technical_spec_name | remove_first: ':' | strip
+            endif
+          endif
+
+          if technical_spec_name != blank and technical_spec_value != blank
+            assign schema_property_count = schema_property_count | plus: 1
+            assign schema_additional_properties = schema_additional_properties | append: technical_spec_name | append: '::' | append: technical_spec_value | append: '||'
+          endif
+        endfor
+      endif
+    endif
+  endif
+
+  assign schema_has_aggregate_rating = false
+  if include_aggregate_rating and review_rating != blank and review_count != blank and review_count > 0
+    assign schema_has_aggregate_rating = true
+  endif
+
+  assign schema_has_materials = false
+  if schema_materials != blank and schema_material_count > 0
+    assign schema_has_materials = true
+  endif
+
+  assign schema_has_additional_properties = false
+  if schema_property_count > 0
+    assign schema_has_additional_properties = true
+  endif
+
+  assign schema_has_output = false
+  if schema_has_aggregate_rating or schema_has_materials or schema_has_additional_properties
+    assign schema_has_output = true
+  endif
+-%}
+
+{%- if schema_has_output -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "@id": {{ product_schema_id | json }}
+      {%- if schema_has_aggregate_rating -%}
+      ,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ review_rating | json }},
+        "reviewCount": {{ review_count | json }}
+      }
+      {%- endif -%}
+      {%- if schema_has_materials -%}
+      ,
+      "material": [
+        {%- assign schema_material_items = schema_materials | split: '||' -%}
+        {%- assign schema_material_index = 0 -%}
+        {%- for schema_material_item in schema_material_items -%}
+        {%- # <spark:ay8ih> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'search.item', subject:schema_material_item -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:ay8ih> -%}
+          {%- assign schema_material_item = schema_material_item | strip -%}
+          {%- if schema_material_item != blank -%}
+            {%- if schema_material_index > 0 -%},{%- endif -%}
+            {{ schema_material_item | json }}
+            {%- assign schema_material_index = schema_material_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+      {%- endif -%}
+      {%- if schema_has_additional_properties -%}
+      ,
+      "additionalProperty": [
+        {%- assign schema_property_items = schema_additional_properties | split: '||' -%}
+        {%- assign schema_property_index = 0 -%}
+        {%- for schema_property_item in schema_property_items -%}
+        {%- # <spark:azwlu> -%}
+          {%- capture visibility -%}
+            {%- render 'sparklayer-b2b-catalogs-func', type:'search.item', subject:schema_property_item -%}
+          {%- endcapture -%}
+          {%- if visibility == 'hide' -%}
+            {%- continue -%}
+          {%- endif -%}
+        {%- # </spark:azwlu> -%}
+          {%- if schema_property_item == blank -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign schema_property_segments = schema_property_item | split: '::' -%}
+          {%- assign schema_property_name = schema_property_segments[0] | strip -%}
+          {%- assign schema_property_value = schema_property_segments[1] | strip -%}
+          {%- if schema_property_segments.size > 2 -%}
+            {%- assign schema_property_value = schema_property_item | remove_first: schema_property_name | remove_first: '::' | strip -%}
+          {%- endif -%}
+          {%- if schema_property_name != blank and schema_property_value != blank -%}
+            {%- if schema_property_index > 0 -%},{%- endif -%}
+            {
+              "@type": "PropertyValue",
+              "name": {{ schema_property_name | json }},
+              "value": {{ schema_property_value | json }}
+            }
+            {%- assign schema_property_index = schema_property_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+      {%- endif -%}
+    }
+  </script>
+{%- endif -%}

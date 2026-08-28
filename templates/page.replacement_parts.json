@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_3rwHQf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UTYdxT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Request Replacement Parts",
+            "heading_size": "h1"
+          }
+        },
+        "text_MYma7c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use the form below to request replacement parts for your Moon product. Be sure to include your order details and a description of the part you need. We’ll get back to you as soon as possible.</p>"
+          }
+        },
+        "button_d6P3Eq": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UTYdxT",
+        "text_MYma7c",
+        "button_d6P3Eq"
+      ],
+      "settings": {
+        "rich-custom-cls": "request-part",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "request_replacement_form_QBPq6M": {
+      "type": "request-replacement-form",
+      "settings": {
+        "contact-form-bg": "request-replace",
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-48aaf96d-36b5-4b77-90ad-c916c2e06602",
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_3rwHQf",
+    "request_replacement_form_QBPq6M"
+  ]
+}
