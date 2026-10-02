@@ -6911,6 +6911,27 @@ h2.rich-text__heading.rte.inline-richtext.h1 {
 });
     </script>
 
+{% if request.page_type == 'index' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ shop.url }}/#website",
+  "url": "{{ shop.url }}",
+  "name": {{ shop.name | json }},
+  "description": {{ shop.description | strip_html | json }},
+  "inLanguage": {{ request.locale.iso_code | json }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %} 
 
     <script>
 const interval = setInterval(() => {
