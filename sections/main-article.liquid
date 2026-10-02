@@ -507,7 +507,35 @@ document.addEventListener("DOMContentLoaded", function() {
 </article>
 
 <script type="application/ld+json">
-  {{ article | structured_data }}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ article.title }}",
+    "image": [
+      "{{ article.image | img_url: '1200x630' }}"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "{{ article.author }}",
+      "url": "{{ article.url }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ shop.logo | img_url: '1200x630' }}"
+      }
+    },
+    "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "dateModified": "{{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "description": "{{ article.excerpt | strip_html | escape }}",
+    "url": "{{ article.url }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ article.url }}"
+    }
+  }
 </script>
 
 {% schema %}
